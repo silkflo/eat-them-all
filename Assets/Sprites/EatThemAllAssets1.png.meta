@@ -1,0 +1,1161 @@
+fileFormatVersion: 2
+guid: 7c84700e7015b1d4cbcba6788a8c3127
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3904298324045533440
+    second: Frog(0)
+  - first:
+      213: -1096099275020501707
+    second: Frog(1)
+  - first:
+      213: -3398732362277001130
+    second: Frog(2)
+  - first:
+      213: 5127809135983975886
+    second: Frog(3)
+  - first:
+      213: 7572957158184294829
+    second: Frog(4)
+  - first:
+      213: -7905581806810757066
+    second: Frog(5)
+  - first:
+      213: 8234347690246159001
+    second: Frog(6)
+  - first:
+      213: 7395197984200641495
+    second: DragonFly
+  - first:
+      213: -4555387294154990926
+    second: Bomb(0)
+  - first:
+      213: 8388335831681477513
+    second: Bomb(1)
+  - first:
+      213: -2018429080601413819
+    second: Bomb(2)
+  - first:
+      213: -579607862542221372
+    second: Bomb(3)
+  - first:
+      213: -3093791296924496115
+    second: Bomb(4)
+  - first:
+      213: -7384071006091028139
+    second: Bomb(5)
+  - first:
+      213: -2913681378260253980
+    second: Bomb(6)
+  - first:
+      213: 4617925684107994125
+    second: Bomb(7)
+  - first:
+      213: -3425630826075800462
+    second: Bomb(10)
+  - first:
+      213: 5416194704999509392
+    second: Bomb(11)
+  - first:
+      213: -129901663149912482
+    second: EatThemAllAssets1_18
+  - first:
+      213: 7790587330685889333
+    second: EatThemAllAssets1_19
+  - first:
+      213: -2602140989061281081
+    second: Bomb(8)
+  - first:
+      213: 3343616418236207302
+    second: Bomb(9)
+  - first:
+      213: -5034938649238497952
+    second: EatThemAllAssets1_22
+  - first:
+      213: 2066358602851097979
+    second: EatThemAllAssets1_23
+  - first:
+      213: -4225967743793060172
+    second: EatThemAllAssets1_24
+  - first:
+      213: -3474823578684712356
+    second: Fly
+  - first:
+      213: 4337777710338459135
+    second: Bomb(12)
+  - first:
+      213: -2418925616194373987
+    second: EatThemAllAssets1_27
+  - first:
+      213: 887389954012545636
+    second: Bomb(13)
+  - first:
+      213: 2932272689935499360
+    second: EatThemAllAssets1_29
+  - first:
+      213: -5325840892766816774
+    second: EatThemAllAssets1_30
+  - first:
+      213: 7651917189925589208
+    second: EatThemAllAssets1_31
+  - first:
+      213: 7948169863620568892
+    second: EatThemAllAssets1_32
+  - first:
+      213: -776287812659688517
+    second: EatThemAllAssets1_33
+  - first:
+      213: -6658523941221999164
+    second: EatThemAllAssets1_34
+  - first:
+      213: -6439368699703276959
+    second: EatThemAllAssets1_35
+  - first:
+      213: 4194920747805147416
+    second: Tongue(0)
+  - first:
+      213: -6749638820800394608
+    second: Tongue(1)
+  - first:
+      213: -6371123970438931342
+    second: Tongue(2)
+  - first:
+      213: -1661072381215555046
+    second: Tongue(3)
+  - first:
+      213: 4552130572339668335
+    second: Tongue(4)
+  - first:
+      213: -1578074071638013544
+    second: Tongue(5)
+  - first:
+      213: 8071279791189728952
+    second: Tongue(6)
+  - first:
+      213: 7883053454023925061
+    second: Bomb(14)
+  - first:
+      213: -5851172907281957745
+    second: Bomb(15)
+  - first:
+      213: 7821830764851554352
+    second: Flame(0)
+  - first:
+      213: -3994113184455575925
+    second: Flame(1)
+  - first:
+      213: -9204167219028826319
+    second: Flame(2)
+  - first:
+      213: 8900565365532281984
+    second: Flame(3)
+  - first:
+      213: -5677673845980147236
+    second: Flame(4)
+  - first:
+      213: 740038872085583909
+    second: Flame(5)
+  - first:
+      213: 4205568142720749839
+    second: Bomb(16)
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Frog(0)
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 615
+        width: 297
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebc531a2d241544692f40b5891dfb90
+      internalID: -3904298324045533440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frog(1)
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 615
+        width: 298
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f089706415ccd4da23a03c9aad70c0
+      internalID: -1096099275020501707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frog(2)
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 615
+        width: 297
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03446da534b053d4ba2a5b18483f3874
+      internalID: -3398732362277001130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frog(3)
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 615
+        width: 298
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d20509d2ff48c94988fd32ec3b54d10
+      internalID: 5127809135983975886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frog(4)
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 615
+        width: 297
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab1be2e301fa4e4f8f8547f6f3883af
+      internalID: 7572957158184294829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frog(5)
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 615
+        width: 298
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a57ba84035e504a47852b8ca57f1fda0
+      internalID: -7905581806810757066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frog(6)
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 146
+        width: 297
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dda2f58bd70c7e43ad1ad6a99cc89a8
+      internalID: 8234347690246159001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DragonFly
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 340
+        width: 323
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71334916a1008854ba0bee41823c9b62
+      internalID: 7395197984200641495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(0)
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 437
+        width: 134
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e3ad3a05206e3409af62acfb8b080a
+      internalID: -4555387294154990926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(1)
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 431
+        width: 137
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c05b8764c2d02946808c9806b9e77b7
+      internalID: 8388335831681477513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(2)
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 434
+        width: 140
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b20bc9e0008d44d999404724095014
+      internalID: -2018429080601413819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(3)
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 432
+        width: 142
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5a6abb036368a44848db004336a0b1
+      internalID: -579607862542221372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(4)
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 431
+        width: 145
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83813b9ba6d979a46ba95c8e7f37680b
+      internalID: -3093791296924496115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(5)
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 428
+        width: 148
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ee9039ee97eed4489b094b910fb1eb
+      internalID: -7384071006091028139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(6)
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 426
+        width: 152
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aaacb2cc32b0a34d8b863d596954013
+      internalID: -2913681378260253980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(7)
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 423
+        width: 158
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d276535ae6e594aa8aa3569d265536
+      internalID: 4617925684107994125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(10)
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 187
+        width: 179
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1629f6a41152d41b4b5ecaf462dd89
+      internalID: -3425630826075800462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(11)
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 179
+        width: 192
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d14b7df7c3fded4f8db680fd277e217
+      internalID: 5416194704999509392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(8)
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 193
+        width: 157
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd73fc74c243f8d458fa4f00b0f0b15a
+      internalID: -2602140989061281081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(9)
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 192
+        width: 162
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113ef7718710bb74c8c423d0e996af7a
+      internalID: 3343616418236207302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets1_22
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 334
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe46825640b6f140b2008f2c55c39ec
+      internalID: -5034938649238497952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fly
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 149
+        width: 120
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7545804da1c2d7a4e9abc2b4207c7729
+      internalID: -3474823578684712356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(12)
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 181
+        width: 185
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de12a7d4867c6bf41b9ee920e0e52ad5
+      internalID: 4337777710338459135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(13)
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 157
+        width: 242
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b52775063d0de9409f9d1f1e19e7564
+      internalID: 887389954012545636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets1_32
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 217
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb82ab0c203848e4aa950ad040d34af3
+      internalID: 7948169863620568892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets1_35
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 186
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fd5cca91d9f3fa4bb2844a4fb01d227
+      internalID: -6439368699703276959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tongue(0)
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 21
+        width: 96
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7323481f8f6907c4487a7cd7d438fd49
+      internalID: 4194920747805147416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tongue(1)
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 20
+        width: 98
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da769b2d214a5c945bb49bc386d906a4
+      internalID: -6749638820800394608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tongue(2)
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 18
+        width: 94
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2fd6398d83f6c43a6e9a682391cb17
+      internalID: -6371123970438931342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tongue(3)
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 17
+        width: 94
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f7645a1af8e149438a3fcaea77d62eb
+      internalID: -1661072381215555046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tongue(4)
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 11
+        width: 102
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ced3bfa237f131448e76fb808972606
+      internalID: 4552130572339668335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tongue(5)
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 10
+        width: 96
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef28d3c6e7843de4bb47c9ca1530e8ba
+      internalID: -1578074071638013544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tongue(6)
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 7
+        width: 86
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d1433971bf38548a899a75c17e0e70
+      internalID: 8071279791189728952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(14)
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 22
+        width: 90
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebcd2bd18b215914ba02614b937d198d
+      internalID: 7883053454023925061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(15)
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 27
+        width: 76
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a707fceda6d1b4041b036fcc9a63a746
+      internalID: -5851172907281957745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame(0)
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 0
+        width: 110
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03447731d0717f545bc191746699d852
+      internalID: 7821830764851554352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame(1)
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 0
+        width: 108
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd003651f6510a47a1188bf289bf0b5
+      internalID: -3994113184455575925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame(2)
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 0
+        width: 109
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5729cc72e6d12498119f18d2915b0b
+      internalID: -9204167219028826319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame(3)
+      rect:
+        serializedVersion: 2
+        x: 1486
+        y: 0
+        width: 107
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b73a39dec491ac48b7904ee4ed67cc8
+      internalID: 8900565365532281984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame(4)
+      rect:
+        serializedVersion: 2
+        x: 1628
+        y: 0
+        width: 108
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f2eedda55d30547be3241adc99ca91
+      internalID: -5677673845980147236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame(5)
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 0
+        width: 109
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea148e90c29139d428361ebab3b0459f
+      internalID: 740038872085583909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb(16)
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 34
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737a3f872a06d9d47b0d5f24daa31d38
+      internalID: 4205568142720749839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 653d1c3a230d4224c9d6fd467126860d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
