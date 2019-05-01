@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpawnFood : MonoBehaviour
 {
     public static SpawnFood instance;
-
+      
     public float startPositionFoodX = -1f;
     public float startPositionFoodY = 20f;
 
