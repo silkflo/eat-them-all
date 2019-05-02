@@ -9,19 +9,29 @@ public class BombRadius : MonoBehaviour
     [SerializeField] Animator anim;
     public float powerX = 3f, powerY = 1f;
 
+    public static bool hasExploded;
+
+    private void Update()
+    {
+        print("has exploded : " + hasExploded);
+    }
 
     void OnTriggerStay2D(Collider2D target)
     {
         if (anim.GetBool(TagManager.FLAME_TAG) == true)
         {
             //reset bool canlose true in case of multiple bomb explode simultanery
-            //Lose.canLose = true;
+
+            hasExploded = true;
+            Lose.canLose = false;
 
             if (target.tag == TagManager.FOOD_TAG || 
                 target.tag == TagManager.BOMB_TAG)
             {
-                Lose.canLose = false;
+
+             
                 StartCoroutine (ForceApplied());
+               
             }
 
            
@@ -31,6 +41,7 @@ public class BombRadius : MonoBehaviour
                 target.attachedRigidbody.AddRelativeForce(new Vector2(powerX, powerY), ForceMode2D.Impulse);
             }
          
+            
         }
      
     }

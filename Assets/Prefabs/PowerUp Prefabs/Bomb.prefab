@@ -101,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 3156256642729395239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.50266457, y: 8.354811, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 413996348}
   - {fileID: 8060058382520226174}
@@ -237,8 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5362a2d12c4901408825248a82f9c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minY: -25
-  maxY: 25
 --- !u!1 &4306887331055859567
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,9 +283,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06, y: -0.63}
+  m_Offset: {x: -0.08437221, y: -0.6300001}
   serializedVersion: 2
-  m_Radius: 2.59
+  m_Radius: 2.355502
 --- !u!114 &6301976850965572980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,8 +305,8 @@ MonoBehaviour:
   flyBody: {fileID: 5952734701540911319, guid: cb643c564e55fb2419240e28feb696e3, type: 3}
   bombBody: {fileID: 4459781722316496430}
   anim: {fileID: 3156256642729395238}
-  powerX: 3
-  powerY: 1
+  powerX: 5
+  powerY: 7
 --- !u!50 &248588196748563350
 Rigidbody2D:
   serializedVersion: 4

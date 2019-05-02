@@ -43,6 +43,8 @@ public class Movement : MonoBehaviour
             
             CheckUserInput();
         }
+
+        LetFallItem();
     }
 
 
@@ -91,12 +93,11 @@ public class Movement : MonoBehaviour
         if ((target.collider.tag == TagManager.LEVEL_COLLIDER_TAG ||
              target.collider.tag == TagManager.BOMB_TAG ||
              target.collider.tag == TagManager.WORM_TAG || 
-             target.collider.tag == TagManager.FOOD_TAG ||
-             SpawnSecurity.timeElapsed > 150 ) && 
+             target.collider.tag == TagManager.FOOD_TAG) && 
              cantMove == false)
         {
             cantMove = true;
-
+            
             StartCoroutine(SpawnDelay());
 
         }
@@ -113,6 +114,15 @@ public class Movement : MonoBehaviour
         }
     }
     
+    void LetFallItem()
+    {
+        if(SpawnSecurity.timeElapsed > 150)
+        {
+            cantMove = true;
+            myRigidBody.velocity = new Vector2(0, fallingSpeed);
+        }
+    }
+
 }
 
 

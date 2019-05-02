@@ -9,13 +9,14 @@ public class Lose : MonoBehaviour
     public float minY = -25f;
     public float maxY = 21f;
 
+
     
     void Update()
     {
         
         SetCanLoseTrue();
 
-        print("Can Lose? "+ canLose);
+        print("Can Lose : "+ canLose);
     }
 
 
@@ -29,30 +30,31 @@ public class Lose : MonoBehaviour
     }
 
  
-
+    
     void SetCanLoseTrue()
     {
-        if (canLose == false)
+        
+        if ( BombRadius.hasExploded == true)
         {
-            
-            StartCoroutine(CanLoseTiming());
+            StopCoroutine("CanLoseTiming");
+            BombRadius.hasExploded = false;
         }
-        else if (canLose == true)
+        else if (canLose == false)
         {
-            
-            StopCoroutine(CanLoseTiming());
+            StartCoroutine("CanLoseTiming");
         }
+    }
 
-        IEnumerator CanLoseTiming()
-        {
-            yield return new WaitForSeconds(10f);
-            
-            canLose = true;
+    IEnumerator CanLoseTiming()
+    {
+        yield return new WaitForSeconds(5f);
+
+        canLose = true;
+        BombRadius.hasExploded = false;
 
 
-        }
     }
 
     //Lose by bomb Cf BombScript
 
- }
+}
