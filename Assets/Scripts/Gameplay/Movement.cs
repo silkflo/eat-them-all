@@ -23,6 +23,7 @@ public class Movement : MonoBehaviour
     private bool rightLimit = false;
 
 
+
     void Awake()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
@@ -32,7 +33,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-      
+        
     }
 
 
@@ -92,7 +93,6 @@ public class Movement : MonoBehaviour
 
         if ((target.collider.tag == TagManager.LEVEL_COLLIDER_TAG ||
              target.collider.tag == TagManager.BOMB_TAG ||
-             target.collider.tag == TagManager.WORM_TAG || 
              target.collider.tag == TagManager.FOOD_TAG) && 
              cantMove == false)
         {
@@ -116,13 +116,14 @@ public class Movement : MonoBehaviour
     
     void LetFallItem()
     {
-        if(SpawnSecurity.timeElapsed > 150)
+        if(SpawnSecurity.timeElapsed > 230)
         {
             cantMove = true;
             myRigidBody.velocity = new Vector2(0, fallingSpeed);
         }
     }
 
+   
 }
 
 
