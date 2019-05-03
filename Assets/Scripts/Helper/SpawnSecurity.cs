@@ -14,6 +14,7 @@ public class SpawnSecurity : MonoBehaviour
 
      void Update()
      {
+        
         if (newObject == true)
         {
             timeElapsed = 0f;
@@ -22,9 +23,12 @@ public class SpawnSecurity : MonoBehaviour
         {
             timeElapsed++;
         }
+        
+        
+
 
         newObject = false;
-      //  print(timeElapsed);
+        //print(timeElapsed);
 
 
         SpawnMissingObject();
@@ -44,10 +48,11 @@ public class SpawnSecurity : MonoBehaviour
 
     void SpawnMissingObject()
     {
-        if(timeElapsed == spawnSecurityTime)
+        
+        if(timeElapsed == spawnSecurityTime )
         {
             print("SPAWN SECURITY");
-
+            
             canSpawn = false;
             StartCoroutine(SpawnNewFood());
 
@@ -58,7 +63,7 @@ public class SpawnSecurity : MonoBehaviour
             yield return new WaitForSeconds(2f);
             print("canSpawn");
             
-          //  Movement.instance.CheckUserInput();
+          
             SpawnFood.instance.StartSpawningFood();
         }
 

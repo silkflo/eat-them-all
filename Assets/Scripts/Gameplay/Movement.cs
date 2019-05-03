@@ -22,8 +22,9 @@ public class Movement : MonoBehaviour
 
     //bool
     private bool cantMove = false;
+    static public bool canSpawnSecurity = true;
 
-   
+
 
 
     void Awake()
@@ -39,7 +40,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-     
+     //INCREASE THE SPEED LAUNCHER, COMMENT THIS LINE IF YOU DON T WANT INCREASE THE SPEED
         InvokeRepeating("increaseSpeed", 60f, 60f);
        
     }
@@ -112,7 +113,7 @@ public class Movement : MonoBehaviour
              cantMove == false)
         {
             cantMove = true;
-            
+            SpawnSecurity.timeElapsed = 0f;
             StartCoroutine(SpawnDelay());
 
         }
@@ -126,6 +127,7 @@ public class Movement : MonoBehaviour
             yield return new WaitForSeconds(1f);
             
             FindObjectOfType<SpawnFood>().StartSpawningFood();
+            canSpawnSecurity = true;
         }
     }
 
