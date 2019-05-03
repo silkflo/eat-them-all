@@ -4,36 +4,44 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-   //Gameobject
+
+
+    //Gameobject
     private Rigidbody2D myRigidBody;
     private BoxCollider2D myBoxCollier;
+   
 
     //movement
    
     private float forwardSpeed = 10f;
     private Vector3 angleZ;
     private float rotateZ = 0;
-    private float fallingSpeed = -2.5f;
+    public static float fallingSpeed = -2.5f;
     //public float freeFallSpeed = -0.5f;
 
 
     //bool
     private bool cantMove = false;
-    private bool leftLimit = false;
-    private bool rightLimit = false;
 
+   
 
 
     void Awake()
     {
+        
         myRigidBody = GetComponent<Rigidbody2D>();
         myBoxCollier = GetComponent<BoxCollider2D>();
+  
         angleZ = GetComponent<Transform>().eulerAngles;
+
+        CheckUserInput();
     }
 
     void Start()
     {
-        
+     
+        InvokeRepeating("increaseSpeed", 60f, 60f);
+       
     }
 
 
@@ -45,11 +53,14 @@ public class Movement : MonoBehaviour
             CheckUserInput();
         }
 
+    
+        
         LetFallItem();
+        
     }
 
-
-    void CheckUserInput()
+  
+    public void CheckUserInput()
     {
         
         //RIGHT
@@ -77,11 +88,15 @@ public class Movement : MonoBehaviour
             rotateZ = transform.eulerAngles.z;
         }
         //DOWN
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             myRigidBody.velocity = new Vector2(0, fallingSpeed * 15);
         }
         else if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            myRigidBody.velocity = new Vector2(0, fallingSpeed);
+        }
+        else
         {
             myRigidBody.velocity = new Vector2(0, fallingSpeed);
         }
@@ -93,7 +108,7 @@ public class Movement : MonoBehaviour
 
         if ((target.collider.tag == TagManager.LEVEL_COLLIDER_TAG ||
              target.collider.tag == TagManager.BOMB_TAG ||
-             target.collider.tag == TagManager.FOOD_TAG) && 
+             target.collider.tag == TagManager.FOOD_TAG) &&
              cantMove == false)
         {
             cantMove = true;
@@ -113,17 +128,25 @@ public class Movement : MonoBehaviour
             FindObjectOfType<SpawnFood>().StartSpawningFood();
         }
     }
-    
+
     void LetFallItem()
     {
-        if(SpawnSecurity.timeElapsed > 230)
+        if (SpawnSecurity.timeElapsed > 230)
         {
             cantMove = true;
             myRigidBody.velocity = new Vector2(0, fallingSpeed);
         }
     }
 
-   
+
+    void increaseSpeed()
+    {
+        fallingSpeed = fallingSpeed - 0.2f;
+        forwardSpeed = forwardSpeed + 50f;
+
+    }
+
+    
 }
 
 

@@ -16,7 +16,7 @@ public class Lose : MonoBehaviour
         
         SetCanLoseTrue();
 
-        print("Can Lose : "+ canLose);
+      //  print("Can Lose : "+ canLose);
     }
 
 

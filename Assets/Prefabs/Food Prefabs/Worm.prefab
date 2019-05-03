@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3103821656925982635}
   - component: {fileID: 3103821656925982292}
-  - component: {fileID: 3103821656925982294}
+  - component: {fileID: 5795704046954703292}
   m_Layer: 0
   m_Name: Worm_1
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3103821656925982634}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.12900043, y: 1.967, z: 29.460938}
+  m_LocalPosition: {x: 0.13, y: 1.97, z: 29.460938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3103821657804534701}
@@ -81,44 +81,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &3103821656925982294
-PolygonCollider2D:
+--- !u!70 &5795704046954703292
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3103821656925982634}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.34, y: 0.45}
-    newSize: {x: 1.34, y: 0.45}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.57, y: 0.225}
-      - {x: 0.35, y: 0.225}
-      - {x: 0.03, y: 0.175}
-      - {x: -0.26, y: 0.175}
-      - {x: -0.39999998, y: 0.205}
-      - {x: -0.58, y: 0.175}
-      - {x: -0.66999996, y: 0.085}
-      - {x: -0.66999996, y: -0.145}
-      - {x: -0.55, y: -0.225}
-      - {x: 0.58, y: -0.225}
-      - {x: 0.66999996, y: -0.125}
-      - {x: 0.66999996, y: 0.074999996}
-      - {x: 0.59999996, y: 0.21499999}
+  m_Offset: {x: -4.682487e-16, y: -0.026114088}
+  m_Size: {x: 1.3400005, y: 0.45210916}
+  m_Direction: 1
 --- !u!1 &3103821657453421574
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,10 +107,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3103821657453421575}
   - component: {fileID: 3103821657453421568}
-  - component: {fileID: 3103821657453421570}
+  - component: {fileID: 6845435550190332795}
   m_Layer: 0
   m_Name: Worm_2
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3103821657453421574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.17, y: 1.972, z: 29.460938}
+  m_LocalPosition: {x: 1.17, y: 1.99, z: 29.460938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3103821657804534701}
@@ -200,45 +178,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &3103821657453421570
-PolygonCollider2D:
+--- !u!70 &6845435550190332795
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3103821657453421574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.32, y: 0.48}
-    newSize: {x: 1.32, y: 0.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.28, y: 0.17}
-      - {x: 0.14999999, y: 0.24}
-      - {x: -0.57, y: 0.24}
-      - {x: -0.58, y: 0.22999999}
-      - {x: -0.65999997, y: 0.17999999}
-      - {x: -0.65999997, y: -0.16}
-      - {x: -0.61, y: -0.21}
-      - {x: -0.53, y: -0.24}
-      - {x: -0.14999999, y: -0.24}
-      - {x: 0.099999994, y: -0.17}
-      - {x: 0.39, y: -0.24}
-      - {x: 0.65999997, y: -0.24}
-      - {x: 0.65999997, y: -0.089999996}
-      - {x: 0.56, y: -0.01}
+  m_Offset: {x: 0.043524425, y: -0.008704486}
+  m_Size: {x: 1.4070487, y: 0.5017477}
+  m_Direction: 1
 --- !u!1 &3103821657621204381
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,10 +204,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3103821657621204382}
   - component: {fileID: 3103821657621204383}
-  - component: {fileID: 3103821657621204377}
+  - component: {fileID: 8309276598273175334}
   m_Layer: 0
   m_Name: Worm_0
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,7 +220,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3103821657621204381}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0920002, y: 1.9833537, z: 29.460938}
+  m_LocalPosition: {x: -1.09, y: 2.02, z: 29.460938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3103821657804534701}
@@ -320,51 +275,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &3103821657621204377
-PolygonCollider2D:
+--- !u!70 &8309276598273175334
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3103821657621204381}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.74, y: 0.46}
-    newSize: {x: 1.74, y: 0.46}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.81, y: 0.17999999}
-      - {x: 0.42999998, y: 0.22999999}
-      - {x: -0.14999999, y: 0.22999999}
-      - {x: -0.29, y: 0.21}
-      - {x: -0.68, y: 0.08}
-      - {x: -0.77, y: 0.02}
-      - {x: -0.87, y: -0.07}
-      - {x: -0.87, y: -0.22999999}
-      - {x: -0.76, y: -0.19999999}
-      - {x: -0.57, y: -0.19999999}
-      - {x: -0.35, y: -0.22999999}
-      - {x: -0.29, y: -0.22999999}
-      - {x: -0.13, y: -0.19999999}
-      - {x: 0.04, y: -0.19}
-      - {x: 0.41, y: -0.17999999}
-      - {x: 0.56, y: -0.22999999}
-      - {x: 0.83, y: -0.22999999}
-      - {x: 0.87, y: -0.17999999}
-      - {x: 0.87, y: 0.11}
-      - {x: 0.83, y: 0.16}
+  m_Offset: {x: -0.0000002103693, y: -0.017409181}
+  m_Size: {x: 1.7400005, y: 0.48650643}
+  m_Direction: 1
 --- !u!1 &3103821657804534700
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,6 +302,7 @@ GameObject:
   - component: {fileID: 3103821657804534701}
   - component: {fileID: 4900768471418665181}
   - component: {fileID: 2231971145130356862}
+  - component: {fileID: 5354509422605902442}
   - component: {fileID: 3103821657804534703}
   - component: {fileID: 3103821657804534702}
   m_Layer: 0
@@ -392,7 +319,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3103821657804534700}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.7, y: 1.7, z: 2}
   m_Children:
@@ -401,7 +328,7 @@ Transform:
   - {fileID: 3103821657453421575}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!50 &4900768471418665181
 Rigidbody2D:
   serializedVersion: 4
@@ -442,6 +369,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &5354509422605902442
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3103821657804534700}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.020181147, y: 1.9674848}
+  m_Size: {x: 3.873113, y: 0.51971036}
+  m_Direction: 1
 --- !u!114 &3103821657804534703
 MonoBehaviour:
   m_ObjectHideFlags: 0

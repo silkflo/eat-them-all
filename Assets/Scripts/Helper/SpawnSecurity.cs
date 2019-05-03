@@ -5,12 +5,15 @@ using UnityEngine;
 public class SpawnSecurity : MonoBehaviour
 {
     static public float timeElapsed;
-    private bool newObject;
-    public int spawnSecurityTime = 250;
-
+    static public bool canSpawn;
     
-    void Update()
-    {
+    private bool newObject;
+    private int spawnSecurityTime = 250;
+
+
+
+     void Update()
+     {
         if (newObject == true)
         {
             timeElapsed = 0f;
@@ -25,7 +28,7 @@ public class SpawnSecurity : MonoBehaviour
 
 
         SpawnMissingObject();
-    }
+     }
 
 
     private void OnTriggerEnter2D(Collider2D target)
@@ -43,9 +46,22 @@ public class SpawnSecurity : MonoBehaviour
     {
         if(timeElapsed == spawnSecurityTime)
         {
-            print("Spawn");
+            print("SPAWN SECURITY");
+
+            canSpawn = false;
+            StartCoroutine(SpawnNewFood());
+
+        }
+
+        IEnumerator SpawnNewFood()
+        {
+            yield return new WaitForSeconds(2f);
+            print("canSpawn");
+            
+          //  Movement.instance.CheckUserInput();
             SpawnFood.instance.StartSpawningFood();
         }
+
     }
 
 }

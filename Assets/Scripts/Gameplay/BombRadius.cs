@@ -13,7 +13,7 @@ public class BombRadius : MonoBehaviour
 
     private void Update()
     {
-        print("has exploded : " + hasExploded);
+       // print("has exploded : " + hasExploded);
     }
 
     void OnTriggerStay2D(Collider2D target)
