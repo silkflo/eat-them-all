@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         //INCREASE THE SPEED LAUNCHER, COMMENT THIS LINE IF YOU DON T WANT INCREASE THE SPEED
-        InvokeRepeating("increaseSpeed", 60f, 60f);
+       // InvokeRepeating("increaseSpeed", 60f, 60f);
      
     }
 

@@ -48,6 +48,7 @@ public class GamePlayController : MonoBehaviour
     {
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
+        SpawnSecurity.timeElapsed = 0f;
     }
 
 

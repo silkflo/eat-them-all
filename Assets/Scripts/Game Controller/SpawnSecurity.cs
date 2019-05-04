@@ -15,7 +15,7 @@ public class SpawnSecurity : MonoBehaviour
      void Update()
      {
         
-        if (newObject == true)
+        if (newObject == true || Time.deltaTime == 0)
         {
             timeElapsed = 0f;
         }
@@ -25,7 +25,7 @@ public class SpawnSecurity : MonoBehaviour
         }
         
          newObject = false;
-        //print(timeElapsed);
+        print(timeElapsed);
         
         SpawnMissingObject();
      }

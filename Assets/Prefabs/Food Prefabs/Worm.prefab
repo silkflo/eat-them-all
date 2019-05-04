@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3103821656925982635}
   - component: {fileID: 3103821656925982292}
   - component: {fileID: 5795704046954703292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Worm_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 3103821657453421575}
   - component: {fileID: 3103821657453421568}
   - component: {fileID: 6845435550190332795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Worm_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 3103821657621204382}
   - component: {fileID: 3103821657621204383}
   - component: {fileID: 8309276598273175334}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Worm_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 5354509422605902442}
   - component: {fileID: 3103821657804534703}
   - component: {fileID: 3103821657804534702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Worm
   m_TagString: Food
   m_Icon: {fileID: 0}
