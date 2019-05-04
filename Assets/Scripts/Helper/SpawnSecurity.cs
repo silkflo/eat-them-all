@@ -5,12 +5,12 @@ using UnityEngine;
 public class SpawnSecurity : MonoBehaviour
 {
     static public float timeElapsed;
-    static public bool canSpawn;
-    
+    static public int scoreBySpawn;
+
     private bool newObject;
     private int spawnSecurityTime = 250;
 
-
+   
 
      void Update()
      {
@@ -24,13 +24,9 @@ public class SpawnSecurity : MonoBehaviour
             timeElapsed++;
         }
         
-        
-
-
-        newObject = false;
+         newObject = false;
         //print(timeElapsed);
-
-
+        
         SpawnMissingObject();
      }
 
@@ -42,6 +38,9 @@ public class SpawnSecurity : MonoBehaviour
           target.tag == TagManager.BOMB_TAG)
         {
             newObject = true;
+            
+            scoreBySpawn =  scoreBySpawn + 1;
+            
         }
     }
 
@@ -49,22 +48,21 @@ public class SpawnSecurity : MonoBehaviour
     void SpawnMissingObject()
     {
         
-        if(timeElapsed == spawnSecurityTime )
+        if(timeElapsed == spawnSecurityTime)
         {
             print("SPAWN SECURITY");
-            
-            canSpawn = false;
+                      
             StartCoroutine(SpawnNewFood());
-
+        
         }
 
         IEnumerator SpawnNewFood()
         {
             yield return new WaitForSeconds(2f);
-            print("canSpawn");
-            
-          
+            print("Spawning!!");
+                      
             SpawnFood.instance.StartSpawningFood();
+         
         }
 
     }

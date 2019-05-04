@@ -35,6 +35,10 @@ public class TagManager
     public static string FROG_DELAYED_ANIM = "FrogDelayedAnim";
     public static string FLAME_PARAMETER = "Flame";
 
+    //LOADLEVEL
+    public static string MAIN_MENU_NAME = "MainMenu";
+
+
 
 }
 

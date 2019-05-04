@@ -6,7 +6,9 @@ public class BombScript : MonoBehaviour
 {
     
     private Animator anim;
- 
+
+    static public int scoreByBomb = 0;
+
     void Awake()
     {
         anim = GetComponentInParent<Animator>();
@@ -32,6 +34,7 @@ public class BombScript : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
+        scoreByBomb = scoreByBomb + 10;
         this.transform.parent.gameObject.SetActive(false);
     }
 
@@ -40,8 +43,9 @@ public class BombScript : MonoBehaviour
     {
         if (transform.position.y <=-20f && Lose.canLose == true)
         {
-                print("GAME OVER by a bomb!!!");
-                Time.timeScale = 0f;
+            print("GAME OVER by a bomb!!!");
+            SpawnFood.canScore = false;
+            Time.timeScale = 0f;
         }
     }
 

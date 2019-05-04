@@ -25,6 +25,7 @@ public class Lose : MonoBehaviour
         if (target.tag == TagManager.FOOD_TAG && canLose == true)
         {
             print("GAME OVER by food!!!");
+            SpawnFood.canScore = false;
             Time.timeScale = 0f;
         }
     }

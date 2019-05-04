@@ -4,70 +4,56 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
-
-    //Gameobject
+   //Gameobject
     private Rigidbody2D myRigidBody;
     private BoxCollider2D myBoxCollier;
-   
 
     //movement
-   
     private float forwardSpeed = 10f;
     private Vector3 angleZ;
     private float rotateZ = 0;
     public static float fallingSpeed = -2.5f;
-    //public float freeFallSpeed = -0.5f;
-
-
+    
     //bool
-    private bool cantMove = false;
-    static public bool canSpawnSecurity = true;
-
+    private bool cantMove ;
+    
 
 
 
     void Awake()
     {
-        
         myRigidBody = GetComponent<Rigidbody2D>();
         myBoxCollier = GetComponent<BoxCollider2D>();
-  
         angleZ = GetComponent<Transform>().eulerAngles;
-
-        CheckUserInput();
     }
 
     void Start()
     {
-     //INCREASE THE SPEED LAUNCHER, COMMENT THIS LINE IF YOU DON T WANT INCREASE THE SPEED
+        //INCREASE THE SPEED LAUNCHER, COMMENT THIS LINE IF YOU DON T WANT INCREASE THE SPEED
         InvokeRepeating("increaseSpeed", 60f, 60f);
-       
+     
     }
 
 
     void Update()
     {
+        
         if (cantMove == false)
         {
-            
             CheckUserInput();
         }
 
-    
-        
-        LetFallItem();
-        
+         LetFallItem();
+
     }
 
-  
+
     public void CheckUserInput()
     {
-        
         //RIGHT
         if (Input.GetKey(KeyCode.RightArrow))
         {
-             myRigidBody.velocity = new Vector2(forwardSpeed, fallingSpeed);
+            myRigidBody.velocity = new Vector2(forwardSpeed, fallingSpeed);
         }
         else if (Input.GetKeyUp(KeyCode.RightArrow))
         {
@@ -101,9 +87,8 @@ public class Movement : MonoBehaviour
         {
             myRigidBody.velocity = new Vector2(0, fallingSpeed);
         }
-
     }
- 
+
     private void OnCollisionEnter2D(Collision2D target)
     {
 
@@ -113,28 +98,29 @@ public class Movement : MonoBehaviour
              cantMove == false)
         {
             cantMove = true;
+            //TO AVOID THE DOUBLE SPAWN
             SpawnSecurity.timeElapsed = 0f;
             StartCoroutine(SpawnDelay());
 
         }
     }
 
-    
+
     IEnumerator SpawnDelay()
     {
         if (cantMove == true)
         {
             yield return new WaitForSeconds(1f);
-            
+
             FindObjectOfType<SpawnFood>().StartSpawningFood();
-            canSpawnSecurity = true;
         }
     }
 
     void LetFallItem()
     {
-        if (SpawnSecurity.timeElapsed > 230)
+        if (SpawnSecurity.timeElapsed == 230)
         {
+            print("fall");
             cantMove = true;
             myRigidBody.velocity = new Vector2(0, fallingSpeed);
         }
@@ -145,10 +131,9 @@ public class Movement : MonoBehaviour
     {
         fallingSpeed = fallingSpeed - 0.2f;
         forwardSpeed = forwardSpeed + 50f;
-
     }
 
-    
+
 }
 
 
