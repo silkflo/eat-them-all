@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     private float forwardSpeed = 10f;
     private Vector3 angleZ;
     private float rotateZ = 0;
+    private float smash = 20;
     public static float fallingSpeed = -2.5f;
     
     //bool
@@ -30,8 +31,9 @@ public class Movement : MonoBehaviour
     void Start()
     {
         //INCREASE THE SPEED LAUNCHER, COMMENT THIS LINE IF YOU DON T WANT INCREASE THE SPEED
-       // InvokeRepeating("increaseSpeed", 60f, 60f);
-     
+        //[speedname,1st time, frequency) --1-4-7-10'
+        InvokeRepeating("increaseSpeed", 60f, 180f);
+       
     }
 
 
@@ -69,17 +71,17 @@ public class Movement : MonoBehaviour
             myRigidBody.velocity = new Vector2(0, fallingSpeed);
         }
         //TURN
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0, 0, rotateZ - 90);
             rotateZ = transform.eulerAngles.z;
         }
         //DOWN
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.Space))
         {
-            myRigidBody.velocity = new Vector2(0, fallingSpeed * 15);
+            myRigidBody.velocity = new Vector2(0, fallingSpeed * smash);
         }
-        else if (Input.GetKeyUp(KeyCode.DownArrow))
+        else if (Input.GetKeyUp(KeyCode.Space))
         {
             myRigidBody.velocity = new Vector2(0, fallingSpeed);
         }

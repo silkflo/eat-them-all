@@ -25,7 +25,7 @@ public class SpawnSecurity : MonoBehaviour
         }
         
          newObject = false;
-        print(timeElapsed);
+       // print(timeElapsed);
         
         SpawnMissingObject();
      }
