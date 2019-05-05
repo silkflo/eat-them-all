@@ -13,7 +13,7 @@ public class SpawnFood : MonoBehaviour
 
     public GameObject[] foods;
 
-    public static bool canScore;
+    
 
     void Awake()
     {
@@ -22,7 +22,7 @@ public class SpawnFood : MonoBehaviour
 
     void Start()
     {
-        canScore = true;
+        
         StartSpawningFood();
     }
      

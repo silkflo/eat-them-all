@@ -31,8 +31,9 @@ public class Movement : MonoBehaviour
     void Start()
     {
         //INCREASE THE SPEED LAUNCHER, COMMENT THIS LINE IF YOU DON T WANT INCREASE THE SPEED
+        //Over 4' speed and move to fast and can creates bugs of colliders
         //[speedname,1st time, frequency) --1-4-7-10'
-        InvokeRepeating("increaseSpeed", 60f, 180f);
+        InvokeRepeating("increaseSpeed", 60f, 240f);
        
     }
 
@@ -133,6 +134,8 @@ public class Movement : MonoBehaviour
     {
         fallingSpeed = fallingSpeed - 0.2f;
         forwardSpeed = forwardSpeed + 50f;
+
+        print("speed increased by : (" + fallingSpeed + ";" + forwardSpeed + ")");
     }
 
 

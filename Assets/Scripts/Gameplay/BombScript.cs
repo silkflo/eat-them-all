@@ -34,7 +34,9 @@ public class BombScript : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        scoreByBomb = scoreByBomb + 10;
+      
+            scoreByBomb = scoreByBomb + 10;
+        
         this.transform.parent.gameObject.SetActive(false);
     }
 
@@ -44,8 +46,9 @@ public class BombScript : MonoBehaviour
         if (transform.position.y <=-20f && Lose.canLose == true)
         {
             print("GAME OVER by a bomb!!!");
-            SpawnFood.canScore = false;
-            Time.timeScale = 0f;
+            Lose.gameOver = true;
+           
+            
         }
     }
 

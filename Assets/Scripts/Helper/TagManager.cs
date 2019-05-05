@@ -36,7 +36,8 @@ public class TagManager
     public static string FLAME_PARAMETER = "Flame";
 
     //LOADLEVEL
-    public static string MAIN_MENU_NAME = "MainMenu";
+    public static string MAIN_MENU_SCENE = "MainMenu";
+    public static string LEVEL1_SCENE = "Level1";
 
 
 

@@ -9,8 +9,13 @@ public class Lose : MonoBehaviour
     public float minY = -25f;
     public float maxY = 21f;
 
+    static public bool gameOver = false;
 
-    
+    private void Awake()
+    {
+        gameOver = false;
+    }
+
     void Update()
     {
         
@@ -25,8 +30,11 @@ public class Lose : MonoBehaviour
         if (target.tag == TagManager.FOOD_TAG && canLose == true)
         {
             print("GAME OVER by food!!!");
-            SpawnFood.canScore = false;
-            Time.timeScale = 0f;
+            gameOver = true;
+
+            GameManager.instance.CheckGameStatus(Score.totalScore);
+          
+            
         }
     }
 

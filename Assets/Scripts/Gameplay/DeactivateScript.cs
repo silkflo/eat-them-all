@@ -12,8 +12,9 @@ public class DeactivateScript : MonoBehaviour
         if (target.tag == TagManager.DEACTIVATE_LINE_TAG && Lose.canLose == false)
         {
             // print("food deactivated??");
-
+                        
             itemDeactivateScore = itemDeactivateScore + 5;
+            
             gameObject.SetActive(false);
         }
     }

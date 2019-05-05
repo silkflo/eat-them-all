@@ -8,7 +8,7 @@ public class SpawnSecurity : MonoBehaviour
     static public int scoreBySpawn;
 
     private bool newObject;
-    private int spawnSecurityTime = 250;
+    private int spawnSecurityTime = 250; //250
 
    
 
@@ -38,8 +38,9 @@ public class SpawnSecurity : MonoBehaviour
           target.tag == TagManager.BOMB_TAG)
         {
             newObject = true;
-            
-            scoreBySpawn =  scoreBySpawn + 1;
+
+            scoreBySpawn = scoreBySpawn + 1;
+
             
         }
     }
