@@ -77,13 +77,13 @@ public class GameManager : MonoBehaviour
 
       */
 
-    public void CheckGameStatus(int score)
+    public void CheckGameStatus(int score, float time)
     {
                if(Lose.gameOver == true)
                {
                  gameRestarted = false;
 
-                GamePlayController.instance.GameOver(score);
+                GamePlayController.instance.GameOver(score, time);
 
                   // GamePlayController.instance.GameOver(score);    
                }
