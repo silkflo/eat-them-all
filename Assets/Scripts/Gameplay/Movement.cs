@@ -34,7 +34,17 @@ public class Movement : MonoBehaviour
         //INCREASE THE SPEED LAUNCHER, COMMENT THIS LINE IF YOU DON T WANT INCREASE THE SPEED
         //Over 4' speed and move to fast and can creates bugs of colliders
         //[speedname,1st time, frequency) --1-4-7-10'
-        //InvokeRepeating("increaseSpeed", 60f, 240f);
+
+        if (Lose.gameOver == false || GameManager.instance.gameRestarted == true)
+        {
+
+            InvokeRepeating("increaseSpeed", 60f, 240f);
+        }
+        else
+        {
+            CancelInvoke();
+            fallingSpeed = -2.5f;
+        }
        
     }
 
@@ -48,7 +58,7 @@ public class Movement : MonoBehaviour
         }
 
          LetFallItem();
-        TimeIncreaseSpeed();
+        
        
     }
 
@@ -141,24 +151,6 @@ public class Movement : MonoBehaviour
     }
 
 
-    void TimeIncreaseSpeed()
-    {
-
-        switch (Mathf.Round(Score.currentTime))
-        {
-            case 5:
-                fallingSpeed = fallingSpeed - fallingSpeedAdjust;
-                print("falling speed : " + fallingSpeed);
-           break;
-            case 10:
-                fallingSpeed = fallingSpeed - fallingSpeedAdjust;
-                print("falling speed : " + fallingSpeed);
-                break;
-        }
-
-
-
-    }
 
 
 }
