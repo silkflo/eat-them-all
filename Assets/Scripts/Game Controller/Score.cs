@@ -47,18 +47,21 @@ public class Score : MonoBehaviour
             //  GameManager.instance.CheckGameStatus(totalScore);
         }
 
-        if (GameManager.instance.gameRestarted == true)
+        if (GameManager.instance != null)
         {
-            print("reset score");
-            SpawnSecurity.scoreBySpawn = 0;
-            BombScript.scoreByBomb = 0;
-            DeactivateScript.itemDeactivateScore = 0;
-            totalScore = SpawnSecurity.scoreBySpawn + BombScript.scoreByBomb + DeactivateScript.itemDeactivateScore;
-            currentTime = 0f;
-            GamePlayController.instance.SetScore(totalScore);
-            GamePlayController.instance.SetTime(currentTime);
+            if (GameManager.instance.gameRestarted == true)
+            {
+                print("reset score");
+                SpawnSecurity.scoreBySpawn = 0;
+                BombScript.scoreByBomb = 0;
+                DeactivateScript.itemDeactivateScore = 0;
+                totalScore = SpawnSecurity.scoreBySpawn + BombScript.scoreByBomb + DeactivateScript.itemDeactivateScore;
+                currentTime = 0f;
+                GamePlayController.instance.SetScore(totalScore);
+                GamePlayController.instance.SetTime(currentTime);
 
-            GameManager.instance.gameRestarted = false;
+                GameManager.instance.gameRestarted = false;
+            }
         }
 
     }
