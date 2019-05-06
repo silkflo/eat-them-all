@@ -18,10 +18,10 @@ public class Lose : MonoBehaviour
 
     void Update()
     {
-        
+
         SetCanLoseTrue();
 
-      //  print("Can Lose : "+ canLose);
+        //  print("Can Lose : "+ canLose);
     }
 
 
@@ -32,18 +32,18 @@ public class Lose : MonoBehaviour
             print("GAME OVER by food!!!");
             gameOver = true;
 
-            GameManager.instance.CheckGameStatus(Score.totalScore);
-          
-            
+            GameManager.instance.CheckGameStatus(Score.totalScore, Score.currentTime);
+
+
         }
     }
 
- 
-    
+
+
     void SetCanLoseTrue()
     {
-        
-        if ( BombRadius.hasExploded == true)
+
+        if (BombRadius.hasExploded == true)
         {
             StopCoroutine("CanLoseTiming");
             BombRadius.hasExploded = false;

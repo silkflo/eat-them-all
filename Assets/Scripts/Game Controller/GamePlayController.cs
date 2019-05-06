@@ -8,32 +8,37 @@ public class GamePlayController : MonoBehaviour
 {
     public static GamePlayController instance;
 
-    [SerializeField] 
+    [SerializeField]
     private Text timeText, scoreText, gameOverScoreText, gameOverTimeText;
 
-  
-
     [SerializeField]
-    private GameObject pausePanel, gameOverPanel;
+    private GameObject pausePanel, gameOverPanel, musicButtonOn, musicButtonOff;
+
+
 
     private float seconds, minutes;
 
+
     private int totalScore;
-    
+
     static public float totalTimeScore;
 
     void Awake()
     {
         MakeInstance();
-    
-       
+
+
     }
 
-    // Update is called once per frame
+    private void Start()
+    {
+
+    }
+
     void Update()
     {
-     
-        SetTime();
+
+
         PauseGameByEsc();
 
 
@@ -41,7 +46,7 @@ public class GamePlayController : MonoBehaviour
 
     void MakeInstance()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -71,7 +76,7 @@ public class GamePlayController : MonoBehaviour
                 pausePanel.SetActive(false);
             }
         }
-        
+
     }
 
     //GAME RESUME
@@ -91,49 +96,96 @@ public class GamePlayController : MonoBehaviour
     }
 
 
-    
+
     //RESTART GAME
-    public void RestartGame (string sceneName)
+    public void RestartGame(string sceneName)
     {
         Time.timeScale = 1f;
         Lose.gameOver = false;
         GameManager.instance.gameRestarted = true;
 
         gameOverPanel.SetActive(false);
-        
+
         SceneManager.LoadScene(TagManager.LEVEL1_SCENE);
-      
+
     }
 
+    //DISPLAY SCORE
     public void SetScore(int score)
     {
-        
-            scoreText.text = "" + score;
-     
+
+        scoreText.text = "" + score;
+
     }
 
-    public void SetTime()
+
+    //DISPLAY TIME
+    public void SetTime(float time)
     {
-        minutes = (int)(Time.time / 60f);
-        seconds = (int)(Time.time % 60f);
+        minutes = (int)(time / 60f);
+        seconds = (int)(time % 60f);
 
         timeText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
     }
 
 
-    public void GameOver(int score)
+    //DISPLAY GAMEOVER
+    public void GameOver(int score, float time)
     {
         if (Lose.gameOver == true)
         {
             print("print you lose");
             gameOverPanel.SetActive(true);
             gameOverScoreText.text = score.ToString();
+
+            minutes = (int)(time / 60f);
+            seconds = (int)(time % 60f);
             gameOverTimeText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
-            
+
 
 
             Time.timeScale = 0f;
         }
     }
+
+    //MUSIC
+
+    void CheckToPlayTheMusic()
+    {
+        if (GamePreferences.GetIsMusicOn() == 1)
+        {
+            MusicController.instance.PlayMusic(true);
+            musicButtonOn.SetActive(false);
+            musicButtonOff.SetActive(true);
+        }
+        else
+        {
+            MusicController.instance.PlayMusic(false);
+            musicButtonOn.SetActive(true);
+            musicButtonOff.SetActive(false);
+        }
+    }
+
+
+    public void PlayMusic()
+    {
+        if (GamePreferences.GetIsMusicOn() == 0)
+        {
+            GamePreferences.SetIsMusicOn(1);
+            MusicController.instance.PlayMusic(true);
+            musicButtonOn.SetActive(false);
+            musicButtonOff.SetActive(true);
+        }
+        else if (GamePreferences.GetIsMusicOn() == 1)
+        {
+            GamePreferences.SetIsMusicOn(0);
+            musicButtonOn.SetActive(true);
+            musicButtonOff.SetActive(false);
+        }
+    }
+
+
+
+
 
 }

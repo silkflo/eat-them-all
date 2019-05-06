@@ -20,12 +20,12 @@ public class GameManager : MonoBehaviour
         MakeSingleton();
     }
 
- 
+
 
     void Update()
     {
-     
-       // print("gameStartedFromMainMenu : " + gameRestarted);
+
+        // print("gameStartedFromMainMenu : " + gameRestarted);
     }
 
 
@@ -77,23 +77,23 @@ public class GameManager : MonoBehaviour
 
       */
 
-    public void CheckGameStatus(int score)
+    public void CheckGameStatus(int score, float time)
     {
-               if(Lose.gameOver == true)
-               {
-                 gameRestarted = false;
+        if (Lose.gameOver == true)
+        {
+            gameRestarted = false;
 
-                GamePlayController.instance.GameOver(score);
+            GamePlayController.instance.GameOver(score, time);
 
-                  // GamePlayController.instance.GameOver(score);    
-               }
+            // GamePlayController.instance.GameOver(score);    
+        }
 
-     
+
     }
 
 
 
-     
+
 
 
 }
