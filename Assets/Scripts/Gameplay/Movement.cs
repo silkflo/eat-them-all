@@ -14,7 +14,6 @@ public class Movement : MonoBehaviour
     private float rotateZ = 0;
     private float smash = 20;
     public static float fallingSpeed = -2.5f;
-    private float fallingSpeedAdjust = 0.5f;
     
     //bool
     private bool cantMove ;
@@ -34,6 +33,7 @@ public class Movement : MonoBehaviour
         //INCREASE THE SPEED LAUNCHER, COMMENT THIS LINE IF YOU DON T WANT INCREASE THE SPEED
         //Over 4' speed and move to fast and can creates bugs of colliders
         //[speedname,1st time, frequency) --1-4-7-10'
+<<<<<<< HEAD
 
         if (Lose.gameOver == false || GameManager.instance.gameRestarted == true)
         {
@@ -45,6 +45,9 @@ public class Movement : MonoBehaviour
             CancelInvoke();
             fallingSpeed = -2.5f;
         }
+=======
+        InvokeRepeating("increaseSpeed", 60f, 240f);
+>>>>>>> 3198fcff2c46aec379088271d9ea197b6110d8cb
        
     }
 
@@ -58,8 +61,12 @@ public class Movement : MonoBehaviour
         }
 
          LetFallItem();
+<<<<<<< HEAD
         
        
+=======
+
+>>>>>>> 3198fcff2c46aec379088271d9ea197b6110d8cb
     }
 
 
@@ -151,8 +158,11 @@ public class Movement : MonoBehaviour
     }
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3198fcff2c46aec379088271d9ea197b6110d8cb
 }
 
 

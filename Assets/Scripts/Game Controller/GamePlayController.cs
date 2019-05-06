@@ -12,12 +12,9 @@ public class GamePlayController : MonoBehaviour
     private Text timeText, scoreText, gameOverScoreText, gameOverTimeText;
 
     [SerializeField]
-    private GameObject pausePanel, gameOverPanel, musicButtonOn, musicButtonOff;
-
-
+    private GameObject pausePanel, gameOverPanel;
 
     private float seconds, minutes;
-    
 
     private int totalScore;
     
@@ -26,19 +23,15 @@ public class GamePlayController : MonoBehaviour
     void Awake()
     {
         MakeInstance();
-        
+    
        
     }
 
-    private void Start()
-    {
-        
-    }
-
+    // Update is called once per frame
     void Update()
     {
-         
-       
+     
+        SetTime();
         PauseGameByEsc();
 
 
@@ -110,7 +103,6 @@ public class GamePlayController : MonoBehaviour
       
     }
 
-    //DISPLAY SCORE
     public void SetScore(int score)
     {
         
@@ -118,28 +110,22 @@ public class GamePlayController : MonoBehaviour
      
     }
 
-
-    //DISPLAY TIME
-    public void SetTime(float time)
+    public void SetTime()
     {
-        minutes = (int)(time / 60f);
-        seconds = (int)(time % 60f);
+        minutes = (int)(Time.time / 60f);
+        seconds = (int)(Time.time % 60f);
 
         timeText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
     }
 
 
-    //DISPLAY GAMEOVER
-    public void GameOver(int score, float time)
+    public void GameOver(int score)
     {
         if (Lose.gameOver == true)
         {
             print("print you lose");
             gameOverPanel.SetActive(true);
             gameOverScoreText.text = score.ToString();
-
-            minutes = (int)(time / 60f);
-            seconds = (int)(time % 60f);
             gameOverTimeText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
             
 
@@ -147,45 +133,5 @@ public class GamePlayController : MonoBehaviour
             Time.timeScale = 0f;
         }
     }
-
-    //MUSIC
-
-    void CheckToPlayTheMusic()
-    {
-        if (GamePreferences.GetIsMusicOn() == 1)
-        {
-            MusicController.instance.PlayMusic(true);
-            musicButtonOn.SetActive(false);
-            musicButtonOff.SetActive(true);
-        }
-        else
-        {
-            MusicController.instance.PlayMusic(false);
-            musicButtonOn.SetActive(true);
-            musicButtonOff.SetActive(false);
-        }
-    }
-
-
-    public void PlayMusic()
-    {
-        if (GamePreferences.GetIsMusicOn() == 0)
-        {
-            GamePreferences.SetIsMusicOn(1);
-            MusicController.instance.PlayMusic(true);
-            musicButtonOn.SetActive(false);
-            musicButtonOff.SetActive(true);
-        }
-        else if (GamePreferences.GetIsMusicOn() == 1)
-        {
-            GamePreferences.SetIsMusicOn(0);
-            musicButtonOn.SetActive(true);
-            musicButtonOff.SetActive(false);
-        }
-    }
-
-
-
-
 
 }

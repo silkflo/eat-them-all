@@ -32,7 +32,7 @@ public class Lose : MonoBehaviour
             print("GAME OVER by food!!!");
             gameOver = true;
 
-            GameManager.instance.CheckGameStatus(Score.totalScore, Score.currentTime);
+            GameManager.instance.CheckGameStatus(Score.totalScore);
           
             
         }

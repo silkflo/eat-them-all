@@ -7,11 +7,6 @@ public class Score : MonoBehaviour
 
     static public int totalScore;
 
-
-    static public float currentTime;
-
-    private float addTotime = 1f;
-
     void Awake()
     {
    
@@ -20,12 +15,7 @@ public class Score : MonoBehaviour
     
     void Update()
     {
-
-        currentTime += addTotime * Time.deltaTime;
-        
-
-        //print("current time : " + currentTime);
-        CalculateTheScore();
+       CalculateTheScore();
         
     }
 
@@ -37,8 +27,7 @@ public class Score : MonoBehaviour
             totalScore = SpawnSecurity.scoreBySpawn + BombScript.scoreByBomb + DeactivateScript.itemDeactivateScore;
 
             GamePlayController.instance.SetScore(totalScore);
-            GamePlayController.instance.GameOver(totalScore,currentTime);
-            GamePlayController.instance.SetTime(currentTime);
+            GamePlayController.instance.GameOver(totalScore);
 
         
         if(Lose.gameOver == true)
@@ -53,9 +42,8 @@ public class Score : MonoBehaviour
             BombScript.scoreByBomb = 0;
             DeactivateScript.itemDeactivateScore = 0;
             totalScore = SpawnSecurity.scoreBySpawn + BombScript.scoreByBomb + DeactivateScript.itemDeactivateScore;
-            currentTime = 0f;
+
             GamePlayController.instance.SetScore(totalScore);
-            GamePlayController.instance.SetTime(currentTime);
 
             GameManager.instance.gameRestarted = false;
         }

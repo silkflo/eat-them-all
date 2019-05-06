@@ -47,8 +47,8 @@ public class BombScript : MonoBehaviour
         {
             print("GAME OVER by a bomb!!!");
             Lose.gameOver = true;
-            GameManager.instance.CheckGameStatus(Score.totalScore, Score.currentTime);
-
+           
+            
         }
     }
 

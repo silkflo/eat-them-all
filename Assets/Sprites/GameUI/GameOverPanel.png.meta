@@ -1,22 +1,13 @@
 fileFormatVersion: 2
-guid: 2079c645b2f2ad84199fcbaeb95711a1
+guid: 7c41664e1add4154e9bf7319d59dd117
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5652939182684387322
-    second: Menu Buttons_0
+      213: 6836234078016266964
+    second: GameOverPanel_0
   - first:
-      213: -3047018070302559869
-    second: Menu Buttons_1
-  - first:
-      213: 5307979427446768364
-    second: Menu Buttons_2
-  - first:
-      213: -3242226755293709199
-    second: Menu Buttons_3
-  - first:
-      213: -7380087767416289086
-    second: Menu Buttons_4
+      213: -4382714661074334888
+    second: GameOverPanel_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -62,7 +53,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -75,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -86,29 +77,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -119,7 +88,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -132,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Menu Buttons_0
+      name: GameOverPanel_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 207
-        width: 204
-        height: 49
+        x: 8
+        y: 510
+        width: 220
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,62 +126,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d0d3857108bd4a489a60d210a7e861c
-      internalID: -5652939182684387322
+      spriteID: 3d02b007903046041b23d1bb2b3cb452
+      internalID: 6836234078016266964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu Buttons_1
+      name: GameOverPanel_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 156
-        width: 204
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd2d195ce5c8a334c85925675a1883a9
-      internalID: -3047018070302559869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Menu Buttons_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 105
-        width: 204
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24f7714c339a1b446a115b41fb321d5b
-      internalID: 5307979427446768364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Menu Buttons_3
-      rect:
-        serializedVersion: 2
-        x: 85
         y: 0
-        width: 53
-        height: 53
+        width: 512
+        height: 496
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,29 +147,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77a7e7605d6a4c143938e714193ddadb
-      internalID: -3242226755293709199
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Menu Buttons_4
-      rect:
-        serializedVersion: 2
-        x: 202
-        y: 1
-        width: 53
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3cd8204748223bb46957202293e74738
-      internalID: -7380087767416289086
+      spriteID: 71dfc73d7cf6f914db7f67a307f58386
+      internalID: -4382714661074334888
       vertices: []
       indices: 
       edges: []
@@ -239,7 +156,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8dc24ec6abcfa48469eda3f3586516f0
+    spriteID: ed8c707d37e4258469ad181f82f2a5f1
     internalID: 0
     vertices: []
     indices: 
