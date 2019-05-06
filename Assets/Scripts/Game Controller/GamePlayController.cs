@@ -11,6 +11,8 @@ public class GamePlayController : MonoBehaviour
     [SerializeField] 
     private Text timeText, scoreText, gameOverScoreText, gameOverTimeText;
 
+  
+
     [SerializeField]
     private GameObject pausePanel, gameOverPanel;
 
