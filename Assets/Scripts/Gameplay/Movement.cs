@@ -14,12 +14,11 @@ public class Movement : MonoBehaviour
     private float rotateZ = 0;
     private float smash = 20;
     public static float fallingSpeed = -2.5f;
-    private float fallingSpeedAdjust = 0.5f;
+    private float fallingSpeedAdjust = 0.15f;
+    
     
     //bool
     private bool cantMove ;
-    
-
 
 
     void Awake()
@@ -31,22 +30,13 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        //INCREASE THE SPEED LAUNCHER, COMMENT THIS LINE IF YOU DON T WANT INCREASE THE SPEED
-        //Over 4' speed and move to fast and can creates bugs of colliders
-        //[speedname,1st time, frequency) --1-4-7-10'
-
+        fallingSpeed = -2.5f;
+      
         if (Lose.gameOver == false || GameManager.instance.gameRestarted == true)
         {
-
-            InvokeRepeating("increaseSpeed", 60f, 240f);
+            //INCREASE THE SPEED, COMMENT THIS LINE IF YOU DON T WANT INCREASE THE SPEED
+            InvokeRepeating("increaseSpeed", 10f, 15f);
         }
-        else
-        {
-            fallingSpeed = -2.5f;
-            CancelInvoke();
-            
-        }
-       
     }
 
 
@@ -58,9 +48,14 @@ public class Movement : MonoBehaviour
             CheckUserInput();
         }
 
-         LetFallItem();
-        
-       
+        if (fallingSpeed < -11)
+        {
+            print("Invoke canceled");
+            
+            CancelInvoke("increaseSpeed");
+        }
+
+        LetFallItem();
     }
 
 
@@ -134,7 +129,7 @@ public class Movement : MonoBehaviour
 
     void LetFallItem()
     {
-        if (SpawnSecurity.timeElapsed == 230)
+        if (SpawnSecurity.timeElapsed == SpawnSecurity.spawnSecurityTime - 20) //230
         {
             print("fall");
             cantMove = true;
@@ -146,14 +141,10 @@ public class Movement : MonoBehaviour
     void increaseSpeed()
     {
         fallingSpeed = fallingSpeed - 0.2f;
-        forwardSpeed = forwardSpeed + 50f;
-
-        print("speed increased by : (" + fallingSpeed + ";" + forwardSpeed + ")");
+        print("speed increased by : (" + fallingSpeed +  ")");
     }
 
-
-
-
+    
 }
 
 

@@ -6,9 +6,10 @@ public class SpawnSecurity : MonoBehaviour
 {
     static public float timeElapsed;
     static public int scoreBySpawn;
+    static public int spawnSecurityTime = 250; //250
 
     private bool newObject;
-    private int spawnSecurityTime = 250; //250
+  
 
    
 

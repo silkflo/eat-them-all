@@ -10,6 +10,7 @@ public class Score : MonoBehaviour
 
     static public float currentTime;
 
+
     private float addTotime = 1f;
 
     void Awake()
@@ -22,7 +23,7 @@ public class Score : MonoBehaviour
     {
 
         currentTime += addTotime * Time.deltaTime;
-
+     
 
         //print("current time : " + currentTime);
         CalculateTheScore();
