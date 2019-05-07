@@ -34,6 +34,8 @@ public class TagManager
     public static string IDLE_TONGUE_ANIM = "IdleTongue";
     public static string FROG_DELAYED_ANIM = "FrogDelayedAnim";
     public static string FLAME_PARAMETER = "Flame";
+    public static string GAMEOVER_PARAMETER = "GameOver";
+
 
     //LOADLEVEL
     public static string MAIN_MENU_SCENE = "MainMenu";

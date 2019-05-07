@@ -14,6 +14,7 @@ public class GamePlayController : MonoBehaviour
     [SerializeField]
     private GameObject pausePanel, gameOverPanel, musicButtonOn, musicButtonOff;
 
+    
 
 
     private float seconds, minutes;
@@ -142,9 +143,13 @@ public class GamePlayController : MonoBehaviour
             seconds = (int)(time % 60f);
             gameOverTimeText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
 
-
+           
 
             Time.timeScale = 0f;
+
+
+
+
         }
     }
 
