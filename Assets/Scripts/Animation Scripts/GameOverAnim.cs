@@ -14,7 +14,7 @@ public class GameOverAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GameOverPanelAnim();
     }
 
 
@@ -23,6 +23,9 @@ public class GameOverAnim : MonoBehaviour
         if (Lose.gameOver == true)
         {
             anim.SetBool(TagManager.GAMEOVER_PARAMETER, true);
+        }
+        else {
+            anim.SetBool(TagManager.GAMEOVER_PARAMETER, false);
         }
     }
 
