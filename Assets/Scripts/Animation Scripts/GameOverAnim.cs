@@ -22,10 +22,12 @@ public class GameOverAnim : MonoBehaviour
     {
         if (Lose.gameOver == true)
         {
-            anim.SetBool(TagManager.GAMEOVER_PARAMETER, true);
+          
+           // anim.SetBool(TagManager.GAMEOVER_PARAMETER, true);
         }
         else {
             anim.SetBool(TagManager.GAMEOVER_PARAMETER, false);
+
         }
     }
 

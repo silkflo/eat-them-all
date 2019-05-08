@@ -815,9 +815,10 @@ MonoBehaviour:
   gameOverScoreText: {fileID: 1889711049}
   gameOverTimeText: {fileID: 1889711048}
   pausePanel: {fileID: 1889711053}
-  gameOverPanel: {fileID: 1889711050}
   musicButtonOn: {fileID: 1889711055}
+  gameOverPanel: {fileID: 1889711050}
   musicButtonOff: {fileID: 1889711054}
+  gameOverAnim: {fileID: 1889711057}
 --- !u!4 &1156020317
 Transform:
   m_ObjectHideFlags: 0
@@ -1455,7 +1456,13 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -394
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1707089187814218126, guid: 0e61fa520137eab428d90a57096e1348,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8691405556081443465, guid: 0e61fa520137eab428d90a57096e1348, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0e61fa520137eab428d90a57096e1348, type: 3}
 --- !u!114 &1889711048 stripped
 MonoBehaviour:
@@ -1529,18 +1536,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1889711047}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1889711056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!95 &1889711057 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3140423179192428815, guid: 0e61fa520137eab428d90a57096e1348,
+    type: 3}
+  m_PrefabInstance: {fileID: 1889711047}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889711050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55dad6b7106003040b6e100c573fa797, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1909591354
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,10 +12,10 @@ public class GamePlayController : MonoBehaviour
     private Text timeText, scoreText, gameOverScoreText, gameOverTimeText;
 
     [SerializeField]
-    private GameObject pausePanel, gameOverPanel, musicButtonOn, musicButtonOff;
+    private GameObject pausePanel, musicButtonOn, gameOverPanel, musicButtonOff;
 
-    
-
+    [SerializeField]
+    private Animator gameOverAnim;
 
     private float seconds, minutes;
 
@@ -104,12 +104,21 @@ public class GamePlayController : MonoBehaviour
         Time.timeScale = 1f;
         Lose.gameOver = false;
         GameManager.instance.gameRestarted = true;
-
         gameOverPanel.SetActive(false);
-
         SceneManager.LoadScene(TagManager.LEVEL1_SCENE);
+     
+
+       
+
+        
 
     }
+
+
+   
+
+
+   
 
     //DISPLAY SCORE
     public void SetScore(int score)
@@ -137,6 +146,8 @@ public class GamePlayController : MonoBehaviour
         {
             print("print you lose");
             gameOverPanel.SetActive(true);
+            gameOverAnim.SetBool(TagManager.GAMEOVER_PARAMETER, true);
+
             gameOverScoreText.text = score.ToString();
 
             minutes = (int)(time / 60f);
