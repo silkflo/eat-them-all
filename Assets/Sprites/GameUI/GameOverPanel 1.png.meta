@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 7c41664e1add4154e9bf7319d59dd117
+guid: bb60eae862a0cdf41a7ba43061122a29
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6836234078016266964
-    second: GameOverPanel_0
+      213: 2102069521707266065
+    second: GameOverPanel 1_0
   - first:
-      213: -4382714661074334888
-    second: GameOverPanel_1
+      213: 3957316886164063531
+    second: GameOverPanel 1_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -77,7 +77,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -88,7 +88,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Android
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -99,7 +99,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: WebGL
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -112,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GameOverPanel_0
+      name: GameOverPanel 1_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 510
-        width: 220
-        height: 68
+        x: 15
+        y: 378
+        width: 214
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,20 +126,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d02b007903046041b23d1bb2b3cb452
-      internalID: 6836234078016266964
+      spriteID: 99fbee9d769a74b44b2d3e88489fdeb6
+      internalID: 2102069521707266065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameOverPanel_1
+      name: GameOverPanel 1_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 496
+        width: 511
+        height: 371
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,8 +147,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71dfc73d7cf6f914db7f67a307f58386
-      internalID: -4382714661074334888
+      spriteID: 6717517ea42184d44a976e9305fc7b53
+      internalID: 3957316886164063531
       vertices: []
       indices: 
       edges: []
@@ -156,7 +156,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ed8c707d37e4258469ad181f82f2a5f1
+    spriteID: a932de7a5b14fd84bacfc3d92f05b485
     internalID: 0
     vertices: []
     indices: 
