@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 4415825237258168446}
   - component: {fileID: 2603088203277673853}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DragonFlyTailCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
