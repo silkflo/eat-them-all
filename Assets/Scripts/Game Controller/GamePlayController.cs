@@ -93,6 +93,7 @@ public class GamePlayController : MonoBehaviour
     {
         Time.timeScale = 1f;
         Lose.gameOver = false;
+        Movement.fallingSpeed = -2.5f;
         SceneManager.LoadScene(TagManager.MAIN_MENU_SCENE);
     }
 
@@ -103,22 +104,12 @@ public class GamePlayController : MonoBehaviour
     {
         Time.timeScale = 1f;
         Lose.gameOver = false;
+        Movement.fallingSpeed = -2.5f;
         GameManager.instance.gameRestarted = true;
         gameOverPanel.SetActive(false);
         SceneManager.LoadScene(TagManager.LEVEL1_SCENE);
      
-
-       
-
-        
-
-    }
-
-
-   
-
-
-   
+     }
 
     //DISPLAY SCORE
     public void SetScore(int score)
@@ -145,6 +136,7 @@ public class GamePlayController : MonoBehaviour
         if (Lose.gameOver == true)
         {
             print("print you lose");
+            
             gameOverPanel.SetActive(true);
             gameOverAnim.SetBool(TagManager.GAMEOVER_PARAMETER, true);
 

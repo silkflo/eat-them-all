@@ -9,7 +9,7 @@ public class SpawnSecurity : MonoBehaviour
     static public int spawnSecurityTime = 250; //250
 
     private bool newObject;
-  
+   
 
    
 

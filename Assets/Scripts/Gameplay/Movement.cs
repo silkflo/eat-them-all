@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        fallingSpeed = -2.5f;
+        
       
         if (Lose.gameOver == false || GameManager.instance.gameRestarted == true)
         {
@@ -48,11 +48,12 @@ public class Movement : MonoBehaviour
             CheckUserInput();
         }
 
-        if (fallingSpeed < -11)
+        if (fallingSpeed < -4f)
         {
             print("Invoke canceled");
             
             CancelInvoke("increaseSpeed");
+            fallingSpeed = -4f;
         }
 
         LetFallItem();
