@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
     private float smash = 20;
     public static float fallingSpeed = -2.5f;
     private float fallingSpeedAdjust = 0.15f;
+    private float maxSpeed = -11f;
     
     
     //bool
@@ -35,7 +36,8 @@ public class Movement : MonoBehaviour
         if (Lose.gameOver == false || GameManager.instance.gameRestarted == true)
         {
             //INCREASE THE SPEED, COMMENT THIS LINE IF YOU DON T WANT INCREASE THE SPEED
-            InvokeRepeating("increaseSpeed", 10f, 15f);
+            //start at 10sec and every 15sec 
+            InvokeRepeating("increaseSpeed", 20f, 180f);
         }
     }
 
@@ -43,17 +45,17 @@ public class Movement : MonoBehaviour
     void Update()
     {
         
-        if (cantMove == false)
+        if (cantMove == false && GamePlayController.panelOnCantMove == false)
         {
             CheckUserInput();
         }
 
-        if (fallingSpeed < -4f)
+        if (fallingSpeed < maxSpeed)
         {
             print("Invoke canceled");
             
             CancelInvoke("increaseSpeed");
-            fallingSpeed = -4f;
+            fallingSpeed = maxSpeed;
         }
 
         LetFallItem();
@@ -141,7 +143,7 @@ public class Movement : MonoBehaviour
 
     void increaseSpeed()
     {
-        fallingSpeed = fallingSpeed - 0.2f;
+        fallingSpeed = fallingSpeed - 0.05f;
         print("speed increased by : (" + fallingSpeed +  ")");
     }
 

@@ -19,6 +19,7 @@ public class GamePlayController : MonoBehaviour
 
     private float seconds, minutes;
 
+    static public bool panelOnCantMove;
 
     private int totalScore;
 
@@ -41,6 +42,7 @@ public class GamePlayController : MonoBehaviour
 
 
         PauseGameByEsc();
+        PausePanelTouchControl();
 
 
     }
@@ -58,32 +60,70 @@ public class GamePlayController : MonoBehaviour
     //GAME PAUSE
     public void PauseTheGame()
     {
+        panelOnCantMove = true;
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
+       
     }
 
     public void PauseGameByEsc()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && Lose.gameOver != true)
         {
+         
             if (pausePanel.activeSelf == false)
             {
+                panelOnCantMove = true;
                 Time.timeScale = 0f;
                 pausePanel.SetActive(true);
+                
             }
             else
             {
+               
                 Time.timeScale = 1f;
+                panelOnCantMove = false;
                 pausePanel.SetActive(false);
             }
         }
 
     }
 
+    void PausePanelTouchControl()
+    {
+        if (pausePanel.activeSelf == true)
+        {
+
+            print("Pause");
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                ResumeGame();
+            }
+
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                RestartGame(TagManager.LEVEL1_SCENE);
+            }
+
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                //music ON OFF
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                QuitGame(TagManager.MAIN_MENU_SCENE);
+            }
+        }
+    }
+
     //GAME RESUME
     public void ResumeGame()
     {
         Time.timeScale = 1f;
+        panelOnCantMove = false;
         pausePanel.SetActive(false);
         SpawnSecurity.timeElapsed = 0f;
     }
@@ -92,6 +132,7 @@ public class GamePlayController : MonoBehaviour
     public void QuitGame(string sceneName)
     {
         Time.timeScale = 1f;
+        panelOnCantMove = false;
         Lose.gameOver = false;
         Movement.fallingSpeed = -2.5f;
         SceneManager.LoadScene(TagManager.MAIN_MENU_SCENE);
@@ -103,6 +144,7 @@ public class GamePlayController : MonoBehaviour
     public void RestartGame(string sceneName)
     {
         Time.timeScale = 1f;
+        panelOnCantMove = false;
         Lose.gameOver = false;
         Movement.fallingSpeed = -2.5f;
         GameManager.instance.gameRestarted = true;
@@ -136,7 +178,7 @@ public class GamePlayController : MonoBehaviour
         if (Lose.gameOver == true)
         {
             print("print you lose");
-            
+            panelOnCantMove = true;
             gameOverPanel.SetActive(true);
             gameOverAnim.SetBool(TagManager.GAMEOVER_PARAMETER, true);
 
@@ -150,8 +192,16 @@ public class GamePlayController : MonoBehaviour
 
             Time.timeScale = 0f;
 
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                RestartGame(TagManager.LEVEL1_SCENE);
+            }
 
 
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                QuitGame(TagManager.MAIN_MENU_SCENE);
+            }
 
         }
     }
