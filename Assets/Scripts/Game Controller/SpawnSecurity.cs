@@ -60,7 +60,7 @@ public class SpawnSecurity : MonoBehaviour
 
         IEnumerator SpawnNewFood()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             print("Spawning!!");
                       
             SpawnFood.instance.StartSpawningFood();

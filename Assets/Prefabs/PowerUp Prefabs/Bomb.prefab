@@ -306,7 +306,7 @@ MonoBehaviour:
   bombBody: {fileID: 4459781722316496430}
   anim: {fileID: 3156256642729395238}
   powerX: 5
-  powerY: 7
+  powerY: 15
 --- !u!50 &248588196748563350
 Rigidbody2D:
   serializedVersion: 4
