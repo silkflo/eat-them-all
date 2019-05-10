@@ -15,7 +15,8 @@ public class GamePlayController : MonoBehaviour
     private GameObject pausePanel, musicButtonOn, gameOverPanel, musicButtonOff;
 
     [SerializeField]
-    private Animator gameOverAnim;
+    private Animator gameOverAnim, pauseAnim;
+    private bool pauseAnimBoool;
 
     private float seconds, minutes;
 
@@ -63,8 +64,10 @@ public class GamePlayController : MonoBehaviour
         panelOnCantMove = true;
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
-       
+        pauseAnimBoool = true;
+        pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, pauseAnimBoool);
     }
+
 
     public void PauseGameByEsc()
     {
@@ -76,18 +79,28 @@ public class GamePlayController : MonoBehaviour
                 panelOnCantMove = true;
                 Time.timeScale = 0f;
                 pausePanel.SetActive(true);
-                
+                pauseAnimBoool = true;
+                pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, pauseAnimBoool);
+
             }
             else
             {
                
                 Time.timeScale = 1f;
                 panelOnCantMove = false;
+                pauseAnimBoool = false;
+                pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, pauseAnimBoool);
                 pausePanel.SetActive(false);
             }
-        }
 
+         
+
+        }
+       
     }
+
+
+ 
 
     void PausePanelTouchControl()
     {
@@ -124,8 +137,9 @@ public class GamePlayController : MonoBehaviour
     {
         Time.timeScale = 1f;
         panelOnCantMove = false;
-        pausePanel.SetActive(false);
+        pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, false);
         SpawnSecurity.timeElapsed = 0f;
+        pausePanel.SetActive(false);
     }
 
     //QUIT GAME
