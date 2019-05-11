@@ -37,23 +37,20 @@ public class GamePlayController : MonoBehaviour
     private void Start()
     {
 
-        print("Easy :" + GamePreferences.GetEasyDifficulty());
-        print("Medium :" + GamePreferences.GetMediumDifficulty());
-        print("Hard : " + GamePreferences.GetHardDifficulty());
-
-
         if (GamePreferences.GetEasyDifficulty() == 1)
         {
             levelMode = 1;
+            print("it's easy");
         }
         if (GamePreferences.GetMediumDifficulty() == 1)
         {
-            levelMode = 2;
+           levelMode = 2;
+           print("It's medium level");
         }
         if (GamePreferences.GetHardDifficulty() == 1)
         {
-            print("That's Hard");
-            levelMode = 3;
+           levelMode = 3;
+           print("That's Hard");
         }
     }
 
@@ -112,21 +109,17 @@ public class GamePlayController : MonoBehaviour
                 pausePanel.SetActive(false);
             }
 
-         
-
         }
-       
+      
     }
 
-
- 
 
     void PausePanelTouchControl()
     {
         if (pausePanel.activeSelf == true)
         {
 
-            print("Pause");
+            
 
             if (Input.GetKeyDown(KeyCode.Return))
             {

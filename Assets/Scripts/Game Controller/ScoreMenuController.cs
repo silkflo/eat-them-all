@@ -12,12 +12,12 @@ public class ScoreMenuController : MonoBehaviour
 
 
     [SerializeField]
-    private Text scoreText;
+    private Text easyScoreText, mediumScoreText, hardScoreText;
 
 
     void Start()
     {
-        
+        SetScoreBasedOnDifficulty();
     }
 
     
@@ -27,26 +27,33 @@ public class ScoreMenuController : MonoBehaviour
     }
 
 
-    void SetScore (int score)
+    void SetEasyScore (int score)
     {
-        scoreText.text = score.ToString();
+        easyScoreText.text = score.ToString();
+    }
+
+    void SetMediumScore (int score)
+    {
+        mediumScoreText.text = score.ToString();
+    }
+
+    void SetHardScore(int score)
+    {
+        hardScoreText.text = score.ToString();
     }
 
 
     void SetScoreBasedOnDifficulty()
     {
-        if(GamePreferences.GetEasyDifficulty() == 1)
-        {
-            SetScore(GamePreferences.GetEasyDifficultyHighScore());
-        }
-        if (GamePreferences.GetMediumDifficulty() == 1)
-        {
-            SetScore(GamePreferences.GetMediumDifficultyHighScore());
-        }
-        if (GamePreferences.GetHardDifficulty() == 1)
-        {
-            SetScore(GamePreferences.GetHardDifficultyHighScore());
-        }
+       
+            SetEasyScore(GamePreferences.GetEasyDifficultyHighScore());
+        
+       
+            SetMediumScore(GamePreferences.GetMediumDifficultyHighScore());
+        
+       
+            SetHardScore(GamePreferences.GetHardDifficultyHighScore());
+        
     }
 
 

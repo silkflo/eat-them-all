@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     private BoxCollider2D myBoxCollier;
 
     //movement
-    private float forwardSpeed = 10f;
+    private float forwardSpeed = 15f;
     private Vector3 angleZ;
     private float rotateZ = 0;
     private float smash = 20;

@@ -20,12 +20,7 @@ public class DifficultyController : MonoBehaviour
         SetTheDifficulty();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
 
     void SetInitialDifficulty(string difficulty)
     {
@@ -38,9 +33,8 @@ public class DifficultyController : MonoBehaviour
                 mediumButtonActivated.SetActive(false);
                 hardButtonActivated.SetActive(false);
                 easyButton.SetActive(false);
+            break;
 
-             //   levelMode = 1;
-                break;
             case "medium":
                 easyButton.SetActive(true);
                 mediumButtonActivated.SetActive(true);
@@ -48,9 +42,8 @@ public class DifficultyController : MonoBehaviour
                 easyButtonActivated.SetActive(false);
                 hardButtonActivated.SetActive(false);
                 mediumButton.SetActive(false);
+            break;
 
-             //   levelMode = 2;
-                break;
             case "hard":
                 easyButton.SetActive(true);
                 mediumButton.SetActive(true);
@@ -58,14 +51,8 @@ public class DifficultyController : MonoBehaviour
                 easyButtonActivated.SetActive(false);
                 mediumButtonActivated.SetActive(false);
                 hardButton.SetActive(false);
-
-              //  levelMode = 3;
-                break;
+            break;
         }
-       
-
-
-
     }
 
 
@@ -100,12 +87,6 @@ public class DifficultyController : MonoBehaviour
         mediumButtonActivated.SetActive(false);
         hardButtonActivated.SetActive(false);
         easyButton.SetActive(false);
-
-        // levelMode = 1;
-        print("Easy :" + GamePreferences.GetEasyDifficulty());
-        print("Medium :" + GamePreferences.GetMediumDifficulty());
-        print("Hard : " + GamePreferences.GetHardDifficulty());
-
     }
 
 
@@ -121,12 +102,6 @@ public class DifficultyController : MonoBehaviour
         easyButtonActivated.SetActive(false);
         hardButtonActivated.SetActive(false);
         mediumButton.SetActive(false);
-
-        print("Easy :" + GamePreferences.GetEasyDifficulty());
-        print("Medium :" + GamePreferences.GetMediumDifficulty());
-        print("Hard : " + GamePreferences.GetHardDifficulty());
-
-        //  levelMode = 2;
     }
 
     public void HardMode()
@@ -141,12 +116,6 @@ public class DifficultyController : MonoBehaviour
         easyButtonActivated.SetActive(false);
         mediumButtonActivated.SetActive(false);
         hardButton.SetActive(false);
-
-
-        print("Easy :" + GamePreferences.GetEasyDifficulty());
-        print("Medium :" + GamePreferences.GetMediumDifficulty());
-        print("Hard : " + GamePreferences.GetHardDifficulty());
-        // levelMode = 3;
     }
 
 
