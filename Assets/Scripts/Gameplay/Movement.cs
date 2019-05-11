@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     private Vector3 angleZ;
     private float rotateZ = 0;
     private float smash = 20;
-    public static float fallingSpeed;
+    public static float fallingSpeed = -2.5f;
     private float fallingSpeedAdjust = 0.15f;
     private float maxSpeed = -11f;
     
@@ -146,11 +146,11 @@ public class Movement : MonoBehaviour
     void increaseSpeed()
     {
 
-        if(DifficultyController.levelMode == 1)
+        if(GamePlayController.levelMode == 1)
         fallingSpeed = fallingSpeed - 0.05f;
-        if(DifficultyController.levelMode == 2)
+        if(GamePlayController.levelMode == 2)
             fallingSpeed = fallingSpeed - 0.3f;
-        if(DifficultyController.levelMode == 3)
+        if(GamePlayController.levelMode == 3)
             fallingSpeed = fallingSpeed - 0.6f;
         print("speed increased by : (" + fallingSpeed +  ")");
     }

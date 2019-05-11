@@ -11,6 +11,10 @@ public class ScoreMenuController : MonoBehaviour
     private GameObject backButton;
 
 
+    [SerializeField]
+    private Text scoreText;
+
+
     void Start()
     {
         
@@ -21,6 +25,32 @@ public class ScoreMenuController : MonoBehaviour
     {
         
     }
+
+
+    void SetScore (int score)
+    {
+        scoreText.text = score.ToString();
+    }
+
+
+    void SetScoreBasedOnDifficulty()
+    {
+        if(GamePreferences.GetEasyDifficulty() == 1)
+        {
+            SetScore(GamePreferences.GetEasyDifficultyHighScore());
+        }
+        if (GamePreferences.GetMediumDifficulty() == 1)
+        {
+            SetScore(GamePreferences.GetMediumDifficultyHighScore());
+        }
+        if (GamePreferences.GetHardDifficulty() == 1)
+        {
+            SetScore(GamePreferences.GetHardDifficultyHighScore());
+        }
+    }
+
+
+
 
     public void MainMenu()
     {

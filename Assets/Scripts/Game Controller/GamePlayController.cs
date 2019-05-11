@@ -21,6 +21,7 @@ public class GamePlayController : MonoBehaviour
     private float seconds, minutes;
 
     static public bool panelOnCantMove;
+    static public int levelMode;
 
     private int totalScore;
 
@@ -36,6 +37,24 @@ public class GamePlayController : MonoBehaviour
     private void Start()
     {
 
+        print("Easy :" + GamePreferences.GetEasyDifficulty());
+        print("Medium :" + GamePreferences.GetMediumDifficulty());
+        print("Hard : " + GamePreferences.GetHardDifficulty());
+
+
+        if (GamePreferences.GetEasyDifficulty() == 1)
+        {
+            levelMode = 1;
+        }
+        if (GamePreferences.GetMediumDifficulty() == 1)
+        {
+            levelMode = 2;
+        }
+        if (GamePreferences.GetHardDifficulty() == 1)
+        {
+            print("That's Hard");
+            levelMode = 3;
+        }
     }
 
     void Update()
@@ -213,7 +232,7 @@ public class GamePlayController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                QuitGame(TagManager.MAIN_MENU_SCENE);
+                QuitGame(TagManager.MAIN_MENU_SCENE );
             }
 
 

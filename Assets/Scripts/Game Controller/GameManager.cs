@@ -20,7 +20,10 @@ public class GameManager : MonoBehaviour
         MakeSingleton();
     }
 
-
+    void Start()
+    {
+        InitializeVariables();
+    }
 
     void Update()
     {
@@ -41,6 +44,80 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+
+
+
+    void InitializeVariables()
+    {
+        if(!PlayerPrefs.HasKey("Game Initialized"))
+        {
+            GamePreferences.SetEasyDifficulty(1);
+            GamePreferences.SetEasyDifficultyHighScore(0);
+
+            GamePreferences.SetMediumDifficulty(0);
+            GamePreferences.SetMediumDifficultyHighScore(0);
+
+            GamePreferences.SetHardDifficulty(0);
+            GamePreferences.SetHardDifficultyHighScore(0);
+
+            GamePreferences.SetIsMusicOn(0);
+
+            PlayerPrefs.SetInt("Game Initialized", 123);  //giving a key to just use that condition a the first start of the game
+        }
+    }
+
+    public void CheckGameStatus(int score, float time)
+    {
+        if (Lose.gameOver == true)
+        {
+
+            if (GamePreferences.GetEasyDifficulty() == 1)
+            {
+                int highScore = GamePreferences.GetEasyDifficultyHighScore();
+
+                if (highScore < score)
+                {
+                    GamePreferences.SetEasyDifficultyHighScore(score);
+                }
+
+            }
+
+            if (GamePreferences.GetMediumDifficulty() == 1)
+            {
+                int highScore = GamePreferences.GetMediumDifficultyHighScore();
+
+                if (highScore < score)
+                {
+                    GamePreferences.SetMediumDifficultyHighScore(score);
+                }
+
+            }
+
+            if (GamePreferences.GetHardDifficulty() == 1)
+            {
+                int highScore = GamePreferences.GetHardDifficultyHighScore();
+
+                if (highScore < score)
+                {
+                    GamePreferences.SetHardDifficultyHighScore(score);
+                }
+
+            }
+
+            gameRestarted = false;
+            GamePlayController.instance.GameOver(score, time);
+
+            // GamePlayController.instance.GameOver(score);    
+        }
+
+
+    }
+
+
+
+
+
+
 
     /*
            void OnEnable()
@@ -77,19 +154,6 @@ public class GameManager : MonoBehaviour
 
       */
 
-    public void CheckGameStatus(int score, float time)
-    {
-        if (Lose.gameOver == true)
-        {
-            gameRestarted = false;
-
-            GamePlayController.instance.GameOver(score, time);
-
-            // GamePlayController.instance.GameOver(score);    
-        }
-
-
-    }
 
 
 

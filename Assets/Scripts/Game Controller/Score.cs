@@ -44,7 +44,7 @@ public class Score : MonoBehaviour
 
         if (Lose.gameOver == true)
         {
-            //  GameManager.instance.CheckGameStatus(totalScore);
+             GameManager.instance.CheckGameStatus(totalScore, currentTime);
         }
 
         if (GameManager.instance != null)
