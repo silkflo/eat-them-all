@@ -149,10 +149,10 @@ public class Movement : MonoBehaviour
         if(GamePlayController.levelMode == 1)
         fallingSpeed = fallingSpeed - 0.05f;
         if(GamePlayController.levelMode == 2)
-            fallingSpeed = fallingSpeed - 0.3f;
+            fallingSpeed = fallingSpeed - 0.2f;
         if(GamePlayController.levelMode == 3)
             fallingSpeed = fallingSpeed - 0.6f;
-        print("speed increased by : (" + fallingSpeed +  ")");
+        print("speed increased by : (" + fallingSpeed +  " ; "+Score.currentTime+")");
     }
 
     

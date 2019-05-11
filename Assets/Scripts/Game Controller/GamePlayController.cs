@@ -25,7 +25,7 @@ public class GamePlayController : MonoBehaviour
 
     private int totalScore;
 
-    static public float totalTimeScore;
+    //static public float totalTimeScore;
 
     void Awake()
     {
