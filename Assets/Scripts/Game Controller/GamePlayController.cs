@@ -211,6 +211,11 @@ public class GamePlayController : MonoBehaviour
                 RestartGame(TagManager.LEVEL1_SCENE);
             }
 
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                QuitGame(TagManager.MAIN_MENU_SCENE);
+            }
+
 
             if (Input.GetKeyDown(KeyCode.Q))
             {

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject musicButtonOn, musicButtonOff;
+    private GameObject musicButtonOn, musicButtonOff, difficultyButton,scoreButton;
 
 
     void Start()
@@ -28,6 +28,19 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene(TagManager.LEVEL1_SCENE);
 
     }
+
+    public void DifficultyMenu()
+    {
+        SceneManager.LoadScene(TagManager.DIFFICULTY_MENU_SCENE);
+    }
+
+
+
+    public void ScoreMenu()
+    {
+        SceneManager.LoadScene(TagManager.SCORE_SCENE);
+    }
+
 
     public void QuitGame()
     {

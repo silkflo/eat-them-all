@@ -41,6 +41,8 @@ public class TagManager
     //LOADLEVEL
     public static string MAIN_MENU_SCENE = "MainMenu";
     public static string LEVEL1_SCENE = "Level1";
+    public static string DIFFICULTY_MENU_SCENE = "DifficultyMenu";
+    public static string SCORE_SCENE = "ScoreMenu";
 
 
 
