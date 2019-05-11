@@ -10,9 +10,9 @@ public class MainMenuController : MonoBehaviour
     private GameObject musicButtonOn, musicButtonOff, difficultyButton,scoreButton;
 
 
-    void Start()
+    void Awake()
     {
-        CheckToPlayTheMusic();
+        InitializeMusicButtonOnStart();
     }
 
     void Update()
@@ -48,42 +48,46 @@ public class MainMenuController : MonoBehaviour
     }
 
 
-    void CheckToPlayTheMusic()
-    {
-        if (GamePreferences.GetIsMusicOn() == 1)
-        {
-            MusicController.instance.PlayMusic(true);
-            musicButtonOn.SetActive(false);
-            musicButtonOff.SetActive(true);
-        }
-        else
-        {
-            MusicController.instance.PlayMusic(false);
-            musicButtonOn.SetActive(true);
-            musicButtonOff.SetActive(false);
-        }
-    }
-
     public void PlayMusic()
     {
-
-        print(GamePreferences.GetIsMusicOn());
+       
+      
         if (GamePreferences.GetIsMusicOn() == 0)
         {
             GamePreferences.SetIsMusicOn(1);
             MusicController.instance.PlayMusic(true);
             musicButtonOn.SetActive(false);
             musicButtonOff.SetActive(true);
+           
         }
         else if (GamePreferences.GetIsMusicOn() == 1)
         {
             GamePreferences.SetIsMusicOn(0);
+            MusicController.instance.PlayMusic(true);
             musicButtonOn.SetActive(true);
             musicButtonOff.SetActive(false);
+           
         }
-        print(GamePreferences.GetIsMusicOn());
+        
     }
 
+   void InitializeMusicButtonOnStart ()
+   {
+        if (GamePreferences.GetIsMusicOn() == 1)
+        {
+           
+            musicButtonOn.SetActive(false);
+            musicButtonOff.SetActive(true);
 
+        }
+        else if (GamePreferences.GetIsMusicOn() == 0)
+        {
+        
+            musicButtonOn.SetActive(true);
+            musicButtonOff.SetActive(false);
+
+        }
+
+    }
 
 }

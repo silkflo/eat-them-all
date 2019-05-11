@@ -238,24 +238,6 @@ public class GamePlayController : MonoBehaviour
     }
 
     //MUSIC
-
-    void CheckToPlayTheMusic()
-    {
-        if (GamePreferences.GetIsMusicOn() == 1)
-        {
-            MusicController.instance.PlayMusic(true);
-            musicButtonOn.SetActive(false);
-            musicButtonOff.SetActive(true);
-        }
-        else
-        {
-            MusicController.instance.PlayMusic(false);
-            musicButtonOn.SetActive(true);
-            musicButtonOff.SetActive(false);
-        }
-    }
-
-
     public void PlayMusic()
     {
         if (GamePreferences.GetIsMusicOn() == 0)
@@ -268,11 +250,11 @@ public class GamePlayController : MonoBehaviour
         else if (GamePreferences.GetIsMusicOn() == 1)
         {
             GamePreferences.SetIsMusicOn(0);
+            MusicController.instance.PlayMusic(true);
             musicButtonOn.SetActive(true);
             musicButtonOff.SetActive(false);
         }
     }
-
 
 
 

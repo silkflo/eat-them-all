@@ -23,12 +23,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         InitializeVariables();
+        CheckToPlayTheMusic();
     }
 
     void Update()
     {
 
-        // print("gameStartedFromMainMenu : " + gameRestarted);
+       
     }
 
 
@@ -107,57 +108,27 @@ public class GameManager : MonoBehaviour
             gameRestarted = false;
             GamePlayController.instance.GameOver(score, time);
 
-            // GamePlayController.instance.GameOver(score);    
+           
         }
 
 
     }
 
-
-
-
-
-
-
-    /*
-           void OnEnable()
-       {
-           SceneManager.sceneLoaded += GameLoading;
-       }
-
-       void OnDisable()
-       {
-           SceneManager.sceneLoaded -= GameLoading;
-       }
-
-
-       void GameLoading(Scene scene, LoadSceneMode mode)
+    void CheckToPlayTheMusic()
+    {
+        if (GamePreferences.GetIsMusicOn() == 1)
         {
-          if( scene.name == TagManager.LEVEL1_SCENE)
-           {
-                if (gameRestarted == true)
-                  {
-
-                    Score.totalScore = 0;
-
-                    print("new game score : " + Score.totalScore);
-
-                    GamePlayController.instance.SetScore(0);
-
-
-
-                   //gameStartedFromMainMenu = false;
-
-                }
-           }
+            MusicController.instance.PlayMusic(true);
+           // musicButtonOn.SetActive(false);
+           // musicButtonOff.SetActive(true);
         }
-
-      */
-
-
-
-
-
+        else
+        {
+            MusicController.instance.PlayMusic(false);
+           // musicButtonOn.SetActive(true);
+          //  musicButtonOff.SetActive(false);
+        }
+    }
 
 
 }

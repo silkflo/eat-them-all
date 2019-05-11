@@ -27,7 +27,7 @@ public static class GamePreferences
     }
     public static void SetIsMusicOn(int state)
     {
-        PlayerPrefs.SetInt(IS_MUSIC_ON, state);
+        PlayerPrefs.SetInt(GamePreferences.IS_MUSIC_ON, state);
     }
 
 
