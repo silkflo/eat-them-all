@@ -136,7 +136,7 @@ public class Movement : MonoBehaviour
     {
         if (SpawnSecurity.timeElapsed == SpawnSecurity.spawnSecurityTime - 20) //230
         {
-            print("fall");
+           
             cantMove = true;
             myRigidBody.velocity = new Vector2(0, fallingSpeed);
         }
@@ -152,7 +152,7 @@ public class Movement : MonoBehaviour
             fallingSpeed = fallingSpeed - 0.2f;
         if(GamePlayController.levelMode == 3)
             fallingSpeed = fallingSpeed - 0.6f;
-        print("speed increased by : (" + fallingSpeed +  " ; "+Score.currentTime+")");
+       // print("speed increased by : (" + fallingSpeed +  " ; "+Score.currentTime+")");
     }
 
     

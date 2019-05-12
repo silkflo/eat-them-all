@@ -17,6 +17,8 @@ TagManager:
   - MaxY
   - DeactivateLine
   - SpawnDetector
+  - ScoreDeactivate
+  - GreatTag
   layers:
   - Default
   - TransparentFX

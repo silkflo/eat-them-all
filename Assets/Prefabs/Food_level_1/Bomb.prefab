@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5362a2d12c4901408825248a82f9c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deactivateScoreAnim: {fileID: 0}
 --- !u!1 &4306887331055859567
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,11 +299,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f53c5750fa03174d824337f77ba624a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wormBody: {fileID: 4900768471418665181, guid: f8f70c72c252c774695a6879c4315c2a,
+  wormBody: {fileID: 2669437662897226638, guid: f8f70c72c252c774695a6879c4315c2a,
     type: 3}
   scarabeBody: {fileID: 4604686401972237769, guid: 09455c8e7fddbb34eb5de81b26ada24d,
     type: 3}
-  flyBody: {fileID: 5952734701540911319, guid: cb643c564e55fb2419240e28feb696e3, type: 3}
+  flyBody: {fileID: 1488091882203495132, guid: 39dbc43962ac8cb4a9f21e9da6259e58, type: 3}
   bombBody: {fileID: 4459781722316496430}
   anim: {fileID: 3156256642729395238}
   powerX: 5

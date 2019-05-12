@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5362a2d12c4901408825248a82f9c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deactivateScoreAnim: {fileID: 0}

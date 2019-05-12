@@ -15,7 +15,7 @@ public class GamePlayController : MonoBehaviour
     private GameObject pausePanel, musicButtonOn, gameOverPanel, musicButtonOff;
 
     [SerializeField]
-    private Animator gameOverAnim, pauseAnim;
+    private Animator gameOverAnim, pauseAnim, greatAnim;
     private bool pauseAnimBoool;
 
     private float seconds, minutes;
@@ -24,6 +24,10 @@ public class GamePlayController : MonoBehaviour
     static public int levelMode;
 
     private int totalScore;
+
+    private int totalDeactivate;
+
+    private bool greatBoolParam;
 
     //static public float totalTimeScore;
 
@@ -60,6 +64,7 @@ public class GamePlayController : MonoBehaviour
 
         PauseGameByEsc();
         PausePanelTouchControl();
+        ItemDeactivateCount();
 
 
     }
@@ -256,6 +261,38 @@ public class GamePlayController : MonoBehaviour
         }
     }
 
+    //ITEM DEACTIVATE
+    public void ItemDeactivateCount()
+    {
+        int countnow;
+        int countafter;
+        
+
+        countnow = DeactivateScript.countDeactivateobject;
+        StartCoroutine(CountAfter());
+
+        IEnumerator CountAfter()
+        {
+            yield return new WaitForSeconds(5f);
+            countafter = DeactivateScript.countDeactivateobject;
+            totalDeactivate = countafter - countnow;
+            
+        }
+
+        if (totalDeactivate  > 2)
+        {
+          
+            print("Total Combo = " + totalDeactivate);
+            greatAnim.SetBool(TagManager.GREAT_ANIM, true);
+            totalDeactivate = 0;
+          
+        }
+
+      
+       
+        
+
+    }
 
 
 
