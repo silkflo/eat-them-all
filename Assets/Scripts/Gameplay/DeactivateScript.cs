@@ -30,8 +30,8 @@ public class DeactivateScript : MonoBehaviour
         {
             scoreAnim = true;
             countDeactivateobject++;
-            print("food deactivated = " + countDeactivateobject);
-            //deactivateScoreAnim.SetBool(TagManager.DEACTIVATE_SCORE_PARAMETER, scoreAnim);
+            //print("food deactivated = " + countDeactivateobject);
+          
 
             itemDeactivateScore = itemDeactivateScore + 5;
            
