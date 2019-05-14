@@ -22,20 +22,27 @@ public class DeactivateScoreAnimation : MonoBehaviour
         deactivateScore = GameObject.FindGameObjectWithTag(TagManager.SCORE_DEACTIVATE_TAG);
     }
 
-    // Update is called once per frame
+  
     void Update()
     {
         
     }
 
 
+    //DISPLAY +5 SCORE
     private void OnTriggerEnter2D(Collider2D target)
     {
         if(target.tag == TagManager.FOOD_TAG || target.tag == TagManager.BOMB_TAG)
         {
             deactivateScore.transform.position = new Vector3(Random.Range(minX,maxX),Random.Range(minY,maxY));
-            print(deactivateScore.transform.position);
+           // print("spawn anim position : " + deactivateScore.transform.position);
             greatAnim.Play(TagManager.DEACTIVATE_ANIMATION);
         }
     }
+
+
+
+
+
+
 }

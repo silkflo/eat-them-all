@@ -669,6 +669,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &526929095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 526929095, guid: 0e61fa520137eab428d90a57096e1348,
+    type: 3}
+  m_PrefabInstance: {fileID: 1889711047}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695243692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &682805136
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,10 +969,12 @@ MonoBehaviour:
   scoreText: {fileID: 1889711051}
   gameOverScoreText: {fileID: 1889711049}
   gameOverTimeText: {fileID: 1889711048}
+  deactivateScoreAnim: {fileID: 526929095}
   pausePanel: {fileID: 1889711053}
   musicButtonOn: {fileID: 1889711055}
   gameOverPanel: {fileID: 1889711050}
   musicButtonOff: {fileID: 1889711054}
+  deactivateScoreObject: {fileID: 1695243692}
   gameOverAnim: {fileID: 1889711057}
   pauseAnim: {fileID: 1889711068}
   greatAnim: {fileID: 1030769403}
@@ -1420,6 +1434,12 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1695243692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 526929093, guid: 0e61fa520137eab428d90a57096e1348,
+    type: 3}
+  m_PrefabInstance: {fileID: 1889711047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1723095370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,10 +1738,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1156020316}
-    - target: {fileID: 982508983, guid: 0e61fa520137eab428d90a57096e1348, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1631337421, guid: 0e61fa520137eab428d90a57096e1348, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1740,22 +1756,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1156020316}
-    - target: {fileID: 982508984, guid: 0e61fa520137eab428d90a57096e1348, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -394
-      objectReference: {fileID: 0}
-    - target: {fileID: 1707089187814218126, guid: 0e61fa520137eab428d90a57096e1348,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1707089187814218121, guid: 0e61fa520137eab428d90a57096e1348,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1210
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8691405556081443465, guid: 0e61fa520137eab428d90a57096e1348, type: 3}
+    - target: {fileID: 1889711068, guid: 0e61fa520137eab428d90a57096e1348, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 1905797352}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e61fa520137eab428d90a57096e1348, type: 3}
 --- !u!114 &1889711048 stripped
 MonoBehaviour:
@@ -1835,25 +1840,12 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1889711047}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1889711068
+--- !u!95 &1889711068 stripped
 Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1889711068, guid: 0e61fa520137eab428d90a57096e1348,
+    type: 3}
+  m_PrefabInstance: {fileID: 1889711047}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889711053}
-  m_Enabled: 1
-  m_Avatar: {fileID: 1905797352}
-  m_Controller: {fileID: 9100000, guid: 35125f24446e13440be7566fbd520efd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!90 &1905797352
 Avatar:
   m_ObjectHideFlags: 0

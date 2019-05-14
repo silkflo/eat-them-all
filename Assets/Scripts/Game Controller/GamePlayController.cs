@@ -9,10 +9,10 @@ public class GamePlayController : MonoBehaviour
     public static GamePlayController instance;
 
     [SerializeField]
-    private Text timeText, scoreText, gameOverScoreText, gameOverTimeText;
+    private Text timeText, scoreText, gameOverScoreText, gameOverTimeText, deactivateScoreAnim;
 
     [SerializeField]
-    private GameObject pausePanel, musicButtonOn, gameOverPanel, musicButtonOff;
+    private GameObject pausePanel, musicButtonOn, gameOverPanel, musicButtonOff, deactivateScoreObject;
 
     [SerializeField]
     private Animator gameOverAnim, pauseAnim, greatAnim;
@@ -266,26 +266,41 @@ public class GamePlayController : MonoBehaviour
     {
         int countnow;
         int countafter;
-        
+     
 
         countnow = DeactivateScript.countDeactivateobject;
         StartCoroutine(CountAfter());
+        // deactivateScoreAnim.text = countnow.ToString();
+        deactivateScoreObject.SetActive(false);
 
         IEnumerator CountAfter()
         {
             yield return new WaitForSeconds(5f);
             countafter = DeactivateScript.countDeactivateobject;
             totalDeactivate = countafter - countnow;
-            
+            print("Total Combo = " + totalDeactivate);
+            deactivateScoreObject.SetActive(true);
+            deactivateScoreAnim.text = totalDeactivate.ToString() + " x 5";
+
+            StartCoroutine(DisableScoreAnim());
+
+        }
+
+        IEnumerator DisableScoreAnim()
+        {
+            yield return new WaitForSeconds(2f);
+            deactivateScoreObject.SetActive(false);
         }
 
         if (totalDeactivate  > 2)
         {
           
-            print("Total Combo = " + totalDeactivate);
-            greatAnim.SetBool(TagManager.GREAT_ANIM, true);
+           
+            
+            greatAnim.Play(TagManager.GREAT_ANIM);
+           
             totalDeactivate = 0;
-          
+            
         }
 
       
@@ -294,6 +309,7 @@ public class GamePlayController : MonoBehaviour
 
     }
 
+  
 
 
 }
