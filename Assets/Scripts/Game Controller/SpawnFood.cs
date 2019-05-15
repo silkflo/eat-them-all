@@ -6,7 +6,8 @@ using UnityEngine;
 public class SpawnFood : MonoBehaviour
 {
     public static SpawnFood instance;
-      
+    static public int scoreBySpawn;
+
     public float startPositionFoodX = -1f;
     public float startPositionFoodY = 20f;
 
@@ -18,12 +19,15 @@ public class SpawnFood : MonoBehaviour
     void Awake()
     {
         MakeInstance();
+        
+
     }
 
     void Start()
     {
-        
         StartSpawningFood();
+        
+
     }
      
     void OnDisable()
@@ -43,6 +47,7 @@ public class SpawnFood : MonoBehaviour
     {
         Instantiate(foods[Random.Range(0, foods.Length)],
         new Vector3(startPositionFoodX, startPositionFoodY, 0f), Quaternion.identity);
+        scoreBySpawn = scoreBySpawn + 1;
 
     }
 

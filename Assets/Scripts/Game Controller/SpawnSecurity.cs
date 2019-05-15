@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnSecurity : MonoBehaviour
 {
     static public float timeElapsed;
-    static public int scoreBySpawn;
+    
     static public int spawnSecurityTime = 250; //250
 
     private bool newObject;
@@ -35,15 +35,13 @@ public class SpawnSecurity : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D target)
     {
 
-        if(target.tag == TagManager.FOOD_TAG ||
+        if(target.tag == TagManager.FOOD_TAG||
           target.tag == TagManager.BOMB_TAG)
         {
             newObject = true;
-
-            scoreBySpawn = scoreBySpawn + 1;
-
-            
         }
+
+       
     }
 
 

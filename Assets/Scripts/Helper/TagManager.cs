@@ -18,6 +18,7 @@ public class TagManager
     public static string MAX_Y = "MaxY";
     public static string SCORE_DEACTIVATE_TAG = "ScoreDeactivate";
     public static string SPAWN_DETECTOR_TAG = "SpawnDetector";
+    
   
 
    // public static string GREAT_TAG = "GreatTag";

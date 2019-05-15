@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     private float rotateZ = 0;
     private float smash = 20;
     public static float fallingSpeed = -2.5f;
-    private float fallingSpeedAdjust = 0.15f;
+   // private float fallingSpeedAdjust = 0.15f;
     private float maxSpeed = -11f;
     
     
