@@ -15,7 +15,7 @@ public class GamePlayController : MonoBehaviour
     private GameObject pausePanel, musicButtonOn, gameOverPanel, musicButtonOff, deactivateScoreObject;
 
     [SerializeField]
-    private Animator gameOverAnim, pauseAnim, greatAnim;
+    private Animator gameOverAnim, pauseAnim, greatAnim, fiveScoreAnim;
     private bool pauseAnimBoool;
 
     private float seconds, minutes;
@@ -270,36 +270,39 @@ public class GamePlayController : MonoBehaviour
 
         countnow = DeactivateScript.countDeactivateobject;
         StartCoroutine(CountAfter());
-        // deactivateScoreAnim.text = countnow.ToString();
-        deactivateScoreObject.SetActive(false);
+       
+        //deactivateScoreObject.SetActive(false);
 
         IEnumerator CountAfter()
         {
             yield return new WaitForSeconds(5f);
             countafter = DeactivateScript.countDeactivateobject;
             totalDeactivate = countafter - countnow;
-            print("Total Combo = " + totalDeactivate);
-            deactivateScoreObject.SetActive(true);
-            deactivateScoreAnim.text = totalDeactivate.ToString() + " x 5";
-
-            StartCoroutine(DisableScoreAnim());
+           // print("Total Combo = " + totalDeactivate);
+          // deactivateScoreObject.SetActive(true);
+           
 
         }
 
-        IEnumerator DisableScoreAnim()
+        if (totalDeactivate > 0)
         {
-            yield return new WaitForSeconds(2f);
-            deactivateScoreObject.SetActive(false);
+            fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
+            deactivateScoreAnim.text = totalDeactivate.ToString() + " x 5";
         }
+        else
+        {
+            fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, false);
+        }
+       
+       
 
         if (totalDeactivate  > 2)
         {
-          
-           
+               
             
-            greatAnim.Play(TagManager.GREAT_ANIM);
+          //  greatAnim.Play(TagManager.GREAT_ANIM);
            
-            totalDeactivate = 0;
+           // totalDeactivate = 0;
             
         }
 

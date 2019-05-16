@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
 
                 if (highScore < score)
                 {
+                    print("You beat your easy high Score");
                     GamePreferences.SetEasyDifficultyHighScore(score);
                 }
 
@@ -89,6 +90,7 @@ public class GameManager : MonoBehaviour
 
                 if (highScore < score)
                 {
+                    print("You beat your medium high Score");
                     GamePreferences.SetMediumDifficultyHighScore(score);
                 }
 
@@ -100,6 +102,7 @@ public class GameManager : MonoBehaviour
 
                 if (highScore < score)
                 {
+                    print("You beat your hard high Score");
                     GamePreferences.SetHardDifficultyHighScore(score);
                 }
 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1912778323887194374}
   - component: {fileID: 1695188581182702707}
   - component: {fileID: 5909364476002953759}
+  - component: {fileID: 2227256894321608797}
   m_Layer: 0
   m_Name: DragonFly
   m_TagString: Food
@@ -201,7 +202,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &1912778323887194374
 MonoBehaviour:
@@ -234,7 +235,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3322190802693861029}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -244,9 +245,71 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -1.3509668, y: 1.2164956}
-  - {x: 0.9993334, y: -0.9919949}
-  - {x: 1.4962711, y: 1.1077493}
+  - {x: -1.591894, y: 0.9253485}
+  - {x: -1.6446489, y: 0.7875342}
+  - {x: -1.1859574, y: 0.30420777}
+  - {x: -0.14162499, y: 0.21880455}
+  - {x: 0.55853045, y: -0.54890853}
+  - {x: 0.60610807, y: -0.61563236}
+  - {x: 0.7890999, y: -0.87354046}
+  - {x: 0.8753577, y: -1.1100463}
+  - {x: 0.9635277, y: -1.225692}
+  - {x: 1.0796704, y: -1.2243938}
+  - {x: 1.1397722, y: -1.1575094}
+  - {x: 1.1472721, y: -1.0475943}
+  - {x: 0.60205215, y: -0.23547944}
+  - {x: 1.5342441, y: 1.1022955}
+  - {x: 1.445097, y: 1.1808549}
   - {x: -1.3629143, y: 1.2064161}
+--- !u!60 &2227256894321608797
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322190802693861029}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.23, y: 2.48}
+    newSize: {x: 3.23, y: 2.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.9931251, y: -0.6781248}
+      - {x: -0.64104867, y: 1.301533}
+      - {x: -1.4312314, y: 1.2315966}
+      - {x: -1.6131247, y: 0.89687514}
+      - {x: -0.169696, y: 0.34095216}
+      - {x: 0.7493751, y: -0.7531248}
+      - {x: 0.8993751, y: -1.1468748}
+      - {x: 0.9931251, y: -1.2406248}
+      - {x: 1.105625, y: -1.2406248}
+      - {x: 1.1806251, y: -1.1468748}
+      - {x: 1.1806251, y: -1.0531248}
+      - {x: 1.1618751, y: -0.99687475}
+    - - {x: -1.1818748, y: 0.82187515}
+      - {x: -1.1631248, y: 0.78437513}
+      - {x: -1.1631248, y: 0.80312514}
+    - - {x: 0.70072246, y: 0.9508668}
+      - {x: 0.8020289, y: 0.9093588}
+      - {x: 0.92065483, y: 1.11303}
+    - - {x: 1.2743751, y: 1.1031251}
+      - {x: 0.9557159, y: 1.1486408}
+      - {x: 1.1806251, y: 1.1406251}
+    - - {x: 0.849022, y: 0.8969657}
+      - {x: 0.98322064, y: 0.98141026}
+      - {x: 0.95433545, y: 1.0966285}
 --- !u!1 &5063089588841589851
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class DeactivateScoreAnimation : MonoBehaviour
     [SerializeField]
     private Animator greatAnim;
 
-    private GameObject deactivateScore;
+    //private GameObject deactivateScore;
 
 
     private float minX = -8.6f;
@@ -19,7 +19,7 @@ public class DeactivateScoreAnimation : MonoBehaviour
 
     void Awake()
     {
-        deactivateScore = GameObject.FindGameObjectWithTag(TagManager.SCORE_DEACTIVATE_TAG);
+      //  deactivateScore = GameObject.FindGameObjectWithTag(TagManager.SCORE_DEACTIVATE_TAG);
     }
 
   
@@ -34,9 +34,9 @@ public class DeactivateScoreAnimation : MonoBehaviour
     {
         if(target.tag == TagManager.FOOD_TAG || target.tag == TagManager.BOMB_TAG)
         {
-            deactivateScore.transform.position = new Vector3(Random.Range(minX,maxX),Random.Range(minY,maxY));
+            //deactivateScore.transform.position = new Vector3(Random.Range(minX,maxX),Random.Range(minY,maxY));
            // print("spawn anim position : " + deactivateScore.transform.position);
-            greatAnim.Play(TagManager.DEACTIVATE_ANIMATION);
+           // greatAnim.Play(TagManager.DEACTIVATE_ANIMATION);
         }
     }
 

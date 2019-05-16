@@ -25,9 +25,6 @@ public class TagManager
 
 
     //STRING OBJECT NAME
-    public static string BURGER_OBJECT = "Food Prefabs/Burger";
-    public static string BREAD_OBJECT = "Food Prefabs/Bread";
-    public static string CHICKEN_OBJECT = "Food Prefabs/Chicken";
     public static string BOMB_OBJECT = "Food Prefabs/Bomb";
     public static string FLY_OBJECT = "Food Prefabs/Fly";
 
@@ -39,10 +36,11 @@ public class TagManager
     public static string FLAME_PARAMETER = "Flame";
     public static string GAMEOVER_PARAMETER = "GameOver";
     public static string PAUSE_PARAMETER = "PauseAnim";
-    public static string DEACTIVATE_SCORE_PARAMETER = "DeactivateScore";
+   // public static string DEACTIVATE_SCORE_PARAMETER = "DeactivateScore";
     public static string DEACTIVATE_ANIMATION = "DeactivateScore";
-    public static string GREAT_ANIM = "great_Animation";
-    public static string GREAT_PARAMETER = "GreatParam";
+    public static string DISPLAY_5_PARAMETER = "Display5";
+   // public static string GREAT_ANIM = "great_Animation";
+   // public static string GREAT_PARAMETER = "GreatParam";
 
 
 
