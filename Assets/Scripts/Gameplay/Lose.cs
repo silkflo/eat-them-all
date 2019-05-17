@@ -10,6 +10,8 @@ public class Lose : MonoBehaviour
     public float maxY = 21f;
 
     static public bool gameOver = false;
+    static public int endCountCombo;
+    static public int comboScore;
 
     private void Awake()
     {
@@ -58,8 +60,13 @@ public class Lose : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
 
+        endCountCombo = DeactivateScript.countDeactivateobject;
+        comboScore = endCountCombo - BombScript.startCountCombo;
+        print("combo score : " + comboScore + " - EndCombo : " + Lose.endCountCombo + " - StartCombo : " + BombScript.startCountCombo);
+
         canLose = true;
         BombRadius.hasExploded = false;
+
 
 
     }

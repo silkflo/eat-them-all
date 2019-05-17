@@ -30,14 +30,14 @@ public class DeactivateScript : MonoBehaviour
 
             if(triggerOnce == true)
             {
-                countDeactivateobject++;
-                print("food deactivated = " + countDeactivateobject);
+                countDeactivateobject = countDeactivateobject +1 ;
+               print("food deactivated = " + countDeactivateobject + "name : " + gameObject.name);
 
 
                 itemDeactivateScore = itemDeactivateScore + 5;
-
-                gameObject.SetActive(false);
                 triggerOnce = false;
+                gameObject.SetActive(false);
+                
             }
             
           

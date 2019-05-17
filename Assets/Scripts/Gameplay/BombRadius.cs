@@ -13,6 +13,8 @@ public class BombRadius : MonoBehaviour
 
     public float powerX = 3f, powerY = 1f;
 
+   
+
     // Variable use to set canLose in Lose.cs
     public static bool hasExploded;
 
@@ -29,6 +31,8 @@ public class BombRadius : MonoBehaviour
         {
             hasExploded = true;
             Lose.canLose = false;
+
+            
 
             if (target.tag == TagManager.FOOD_TAG || 
                 target.tag == TagManager.BOMB_TAG)

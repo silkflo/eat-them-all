@@ -29,6 +29,12 @@ public class GamePlayController : MonoBehaviour
 
     private bool greatBoolParam;
 
+
+    static public float comboTime;
+
+
+    private float addTotime = 1f;
+
     //static public float totalTimeScore;
 
     void Awake()
@@ -278,44 +284,67 @@ public class GamePlayController : MonoBehaviour
     }
 
     //ITEM DEACTIVATE
+
+    int countnow;
+    int countafter;
+    int maxcount;
+    int comboScore;
+
     public void ItemDeactivateCount()
     {
-        int countnow;
-        int countafter;
-        int maxcount;
-
-        countnow = DeactivateScript.countDeactivateobject;
-        StartCoroutine(CountAfter());
-    
-        IEnumerator CountAfter()
+        fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
+        if (BombRadius.hasExploded == true)
         {
-            yield return new WaitForSeconds(5f);
-            countafter = DeactivateScript.countDeactivateobject;
-            totalDeactivate = countafter - countnow;
+            StartCoroutine(EndComboScore());
+        }
+       
+       // countnow = DeactivateScript.countDeactivateobject;
 
-            // print("Total Combo = " + totalDeactivate);
+        //  StartCoroutine(CountAfter());
 
-            if (totalDeactivate >= 6)
-            {
-                print("combo == 6");
-                greatText.text = "AWESOME";
-                greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
-            }
-            else
-            {
-                greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, false);
-            }
+        /*  IEnumerator CountAfter()
+          {
+              yield return new WaitForSeconds(5f);
+              countafter = DeactivateScript.countDeactivateobject;
+              totalDeactivate = countafter - countnow;
+
+              // print("Total Combo = " + totalDeactivate);
+
+              if (comboScore >= 6)
+              {
+                  print("combo == 6");
+                  greatText.text = "AWESOME";
+                  greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
+              }
+              else
+              {
+                  greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, false);
+              }
+
+          }
+  */
+
+        IEnumerator EndComboScore(){
+            yield return new WaitForSeconds(5.1f);
+
+          
+
+           
+            fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
+            deactivateScoreAnim.text = comboScore.ToString() + " x 5";
+            fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, false);
+           // comboScore = 0;
 
         }
-
-        if (totalDeactivate > 0)
+        if (comboScore > 0)
         {
-            fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
-            deactivateScoreAnim.text = totalDeactivate.ToString() + " x 5";
+         
+
         }
         else
         {
-            fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, false);
+           
+           
         }
        
        
@@ -327,7 +356,16 @@ public class GamePlayController : MonoBehaviour
 
     }
 
-  
+   
+    float endComboTime;
+    public int ComboScore()
+    {
+
+        
+
+               
+        return comboScore;
+    }
 
 
 }

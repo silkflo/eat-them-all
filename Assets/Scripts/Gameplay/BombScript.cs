@@ -8,7 +8,7 @@ public class BombScript : MonoBehaviour
     private Animator anim;
 
     static public int scoreByBomb = 0;
-
+    static public int startCountCombo;
     void Awake()
     {
         anim = GetComponentInParent<Animator>();
@@ -25,6 +25,9 @@ public class BombScript : MonoBehaviour
     {
         if(target.tag == TagManager.FLAME_TAG)
         {
+            startCountCombo = DeactivateScript.countDeactivateobject;
+
+            print("start bomb deactivate = " + startCountCombo);
             anim.SetBool(TagManager.FLAME_PARAMETER, true);
             StartCoroutine(BombDeactivate());
         }
