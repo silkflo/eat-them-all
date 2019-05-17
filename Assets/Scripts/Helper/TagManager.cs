@@ -39,6 +39,7 @@ public class TagManager
    // public static string DEACTIVATE_SCORE_PARAMETER = "DeactivateScore";
     public static string DEACTIVATE_ANIMATION = "DeactivateScore";
     public static string DISPLAY_5_PARAMETER = "Display5";
+    public static string DISPLAY_GREAT_PARAMETER = "DisplayGreat";
    // public static string GREAT_ANIM = "great_Animation";
    // public static string GREAT_PARAMETER = "GreatParam";
 

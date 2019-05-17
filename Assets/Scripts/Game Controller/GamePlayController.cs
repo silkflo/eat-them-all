@@ -9,7 +9,7 @@ public class GamePlayController : MonoBehaviour
     public static GamePlayController instance;
 
     [SerializeField]
-    private Text timeText, scoreText, gameOverScoreText, gameOverTimeText, deactivateScoreAnim;
+    private Text timeText, scoreText, gameOverScoreText, gameOverTimeText, deactivateScoreAnim, greatText;
 
     [SerializeField]
     private GameObject pausePanel, musicButtonOn, gameOverPanel, musicButtonOff, deactivateScoreObject;
@@ -56,6 +56,22 @@ public class GamePlayController : MonoBehaviour
            levelMode = 3;
            print("That's Hard");
         }
+
+
+        if (GamePreferences.GetIsMusicOn() == 0)
+        {
+            musicButtonOn.SetActive(true);
+            musicButtonOff.SetActive(false);
+        }
+        else if (GamePreferences.GetIsMusicOn() == 1)
+        {
+            musicButtonOn.SetActive(false);
+            musicButtonOff.SetActive(true);
+        }
+
+
+
+
     }
 
     void Update()
@@ -266,21 +282,29 @@ public class GamePlayController : MonoBehaviour
     {
         int countnow;
         int countafter;
-     
+        int maxcount;
 
         countnow = DeactivateScript.countDeactivateobject;
         StartCoroutine(CountAfter());
-       
-        //deactivateScoreObject.SetActive(false);
-
+    
         IEnumerator CountAfter()
         {
             yield return new WaitForSeconds(5f);
             countafter = DeactivateScript.countDeactivateobject;
             totalDeactivate = countafter - countnow;
-           // print("Total Combo = " + totalDeactivate);
-          // deactivateScoreObject.SetActive(true);
-           
+
+            // print("Total Combo = " + totalDeactivate);
+
+            if (totalDeactivate >= 6)
+            {
+                print("combo == 6");
+                greatText.text = "AWESOME";
+                greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
+            }
+            else
+            {
+                greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, false);
+            }
 
         }
 
@@ -295,20 +319,11 @@ public class GamePlayController : MonoBehaviour
         }
        
        
-
-        if (totalDeactivate  > 2)
-        {
-               
-            
-          //  greatAnim.Play(TagManager.GREAT_ANIM);
-           
-           // totalDeactivate = 0;
-            
-        }
-
-      
-       
         
+    
+
+
+
 
     }
 

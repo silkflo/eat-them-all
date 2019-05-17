@@ -59,7 +59,6 @@ public class MainMenuController : MonoBehaviour
             MusicController.instance.PlayMusic(true);
             musicButtonOn.SetActive(false);
             musicButtonOff.SetActive(true);
-           
         }
         else if (GamePreferences.GetIsMusicOn() == 1)
         {

@@ -122,7 +122,8 @@ public class GameManager : MonoBehaviour
         if (GamePreferences.GetIsMusicOn() == 1)
         {
             MusicController.instance.PlayMusic(true);
-         
+            
+
         }
         else
         {

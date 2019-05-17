@@ -9,13 +9,13 @@ public class DeactivateScoreAnimation : MonoBehaviour
 
     //private GameObject deactivateScore;
 
-
+/*
     private float minX = -8.6f;
     private float maxX = 1.3f;
     private float minY = 8f;
     private float maxY = 18f;
     
-
+*/
 
     void Awake()
     {

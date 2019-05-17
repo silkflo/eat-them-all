@@ -855,6 +855,7 @@ MonoBehaviour:
   gameOverScoreText: {fileID: 1241998714}
   gameOverTimeText: {fileID: 943147858}
   deactivateScoreAnim: {fileID: 1694705106}
+  greatText: {fileID: 1171678632}
   pausePanel: {fileID: 1457966710}
   musicButtonOn: {fileID: 760659494}
   gameOverPanel: {fileID: 1294703609}
@@ -862,7 +863,7 @@ MonoBehaviour:
   deactivateScoreObject: {fileID: 1694705103}
   gameOverAnim: {fileID: 1294703610}
   pauseAnim: {fileID: 1457966711}
-  greatAnim: {fileID: 0}
+  greatAnim: {fileID: 1171678631}
   fiveScoreAnim: {fileID: 1694705104}
 --- !u!4 &1156020317
 Transform:
@@ -1047,6 +1048,24 @@ PrefabInstance:
       objectReference: {fileID: 1156020316}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e61fa520137eab428d90a57096e1348, type: 3}
+--- !u!95 &1171678631 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7261746175674114496, guid: 0e61fa520137eab428d90a57096e1348,
+    type: 3}
+  m_PrefabInstance: {fileID: 1171678630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1171678632 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1527953614161226489, guid: 0e61fa520137eab428d90a57096e1348,
+    type: 3}
+  m_PrefabInstance: {fileID: 1171678630}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1241998714 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1665604440740402164, guid: 0e61fa520137eab428d90a57096e1348,
