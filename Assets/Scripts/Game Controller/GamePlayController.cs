@@ -24,16 +24,15 @@ public class GamePlayController : MonoBehaviour
     static public int levelMode;
 
     private int totalScore;
-
-    private int totalDeactivate;
-
-    private bool greatBoolParam;
-
-
-    static public float comboTime;
+   // private int totalDeactivate;
+   // private bool greatBoolParam;
+    private int comboScoreDisplay;
 
 
-    private float addTotime = 1f;
+   // static public float comboTime;
+
+
+  //  private float addTotime = 1f;
 
     //static public float totalTimeScore;
 
@@ -283,12 +282,12 @@ public class GamePlayController : MonoBehaviour
         }
     }
 
+   
+
+
+
+
     //ITEM DEACTIVATE
-
-
-  private int comboScoreDisplay;
-
-
     public void ItemDeactivateCount()
     {
 
@@ -313,37 +312,26 @@ public class GamePlayController : MonoBehaviour
             {
                 fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
                 deactivateScoreAnim.text = comboScoreDisplay.ToString() + " x 5";
-
-
-
             }
             else
             {
                 fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, false);
-
             }
 
 
-            if (comboScoreDisplay >= 2 && comboScoreDisplay < 4 && greatText.text != "AWESOME" && greatText.text != "AMAZING" && greatText.text == "")
+            if (comboScoreDisplay >= 4 && comboScoreDisplay < 8 &&  greatText.text == "")
             {
-
-                greatText.text = "GREAT";
-                // greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
+               greatText.text = "GREAT";
                 StartCoroutine(DisplayText());
             }
-            else if (comboScoreDisplay >= 4 && comboScoreDisplay < 6 && greatText.text != "GREAT" && greatText.text != "AMAZING" && greatText.text == "")
+            else if (comboScoreDisplay >= 8 && comboScoreDisplay < 12 && greatText.text == "")
             {
-
                 greatText.text = "AWESOME";
-                //greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
                 StartCoroutine(DisplayText());
-
             }
-            else if (comboScoreDisplay >= 6 && greatText.text != "AWESOME" && greatText.text != "GREAT" && greatText.text == "")
+            else if (comboScoreDisplay >= 12 && greatText.text == "")
             {
-
                 greatText.text = "AMAZING";
-                //greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
                 StartCoroutine(DisplayText());
             }
             else
@@ -363,12 +351,9 @@ public class GamePlayController : MonoBehaviour
             {
                 yield return new WaitForSeconds(1f);
                 greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
-
             }
 
-
         }
-
 
     }
 
