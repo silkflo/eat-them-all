@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject musicButtonOn, musicButtonOff, difficultyButton,scoreButton;
+    private GameObject optionButton, successButton, levelButton;
 
 
     void Awake()
     {
-        InitializeMusicButtonOnStart();
+        
     }
 
     void Update()
@@ -30,16 +30,22 @@ public class MainMenuController : MonoBehaviour
 
     }
 
-    public void DifficultyMenu()
+ 
+    public void OptionMenu()
     {
-        SceneManager.LoadScene(TagManager.DIFFICULTY_MENU_SCENE);
+        SceneManager.LoadScene(TagManager.OPTION_SCENE);
     }
 
 
-
-    public void ScoreMenu()
+    public void SuccessMenu()
     {
-        SceneManager.LoadScene(TagManager.SCORE_SCENE);
+        SceneManager.LoadScene(TagManager.SUCCESS_SCENE);
+    }
+
+
+    public void LevelMenu()
+    {
+        SceneManager.LoadScene(TagManager.LEVEL_SCENE);
     }
 
 
@@ -49,45 +55,6 @@ public class MainMenuController : MonoBehaviour
     }
 
 
-    public void PlayMusic()
-    {
-       
-      
-        if (GamePreferences.GetIsMusicOn() == 0)
-        {
-            GamePreferences.SetIsMusicOn(1);
-            MusicController.instance.PlayMusic(true);
-            musicButtonOn.SetActive(false);
-            musicButtonOff.SetActive(true);
-        }
-        else if (GamePreferences.GetIsMusicOn() == 1)
-        {
-            GamePreferences.SetIsMusicOn(0);
-            MusicController.instance.PlayMusic(true);
-            musicButtonOn.SetActive(true);
-            musicButtonOff.SetActive(false);
-           
-        }
-        
-    }
-
-   void InitializeMusicButtonOnStart ()
-   {
-        if (GamePreferences.GetIsMusicOn() == 1)
-        {
-           
-            musicButtonOn.SetActive(false);
-            musicButtonOff.SetActive(true);
-
-        }
-        else if (GamePreferences.GetIsMusicOn() == 0)
-        {
-        
-            musicButtonOn.SetActive(true);
-            musicButtonOff.SetActive(false);
-
-        }
-
-    }
+   
 
 }

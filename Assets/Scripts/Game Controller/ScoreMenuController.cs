@@ -61,7 +61,7 @@ public class ScoreMenuController : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(TagManager.MAIN_MENU_SCENE);
+        SceneManager.LoadScene(TagManager.SUCCESS_SCENE);
     }
 
 

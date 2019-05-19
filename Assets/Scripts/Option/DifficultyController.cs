@@ -119,9 +119,9 @@ public class DifficultyController : MonoBehaviour
     }
 
 
-    public void MainMenu()
+    public void OptionMenu()
     {
-        SceneManager.LoadScene(TagManager.MAIN_MENU_SCENE);
+        SceneManager.LoadScene(TagManager.OPTION_SCENE);
     }
 
 
