@@ -116,6 +116,7 @@ public class Movement : MonoBehaviour
             cantMove = true;
             //TO AVOID THE DOUBLE SPAWN
             SpawnSecurity.timeElapsed = 0f;
+            if(gameObject.activeSelf)
             StartCoroutine(SpawnDelay());
 
         }

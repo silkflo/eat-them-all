@@ -60,9 +60,13 @@ public class Lose : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
 
-        endCountCombo = DeactivateScript.countDeactivateobject;
+        if(canLose == true)
+        {
+            endCountCombo = DeactivateFood.countDeactivateobject;
+        }
+       // endCountCombo = DeactivateFood.countDeactivateobject;
         comboScore = endCountCombo - BombScript.startCountCombo;
-        print("combo score : " + comboScore + " - EndCombo : " + Lose.endCountCombo + " - StartCombo : " + BombScript.startCountCombo);
+        print("combo score : " + comboScore + " - EndCombo : " + endCountCombo + " - StartCombo : " + BombScript.startCountCombo);
 
         canLose = true;
         BombRadius.hasExploded = false;

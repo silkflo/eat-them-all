@@ -10,8 +10,6 @@ TagManager:
   - Collider_Level
   - Lose
   - Flame
-  - Scarabe
-  - Worm
   - Bomb
   - MinY
   - MaxY
@@ -19,6 +17,7 @@ TagManager:
   - SpawnDetector
   - ScoreDeactivate
   - GreatTag
+  - NotTrigDeact
   layers:
   - Default
   - TransparentFX

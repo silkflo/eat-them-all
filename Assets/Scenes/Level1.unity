@@ -1046,6 +1046,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1156020316}
+    - target: {fileID: 1527953614161226489, guid: 0e61fa520137eab428d90a57096e1348,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e61fa520137eab428d90a57096e1348, type: 3}
 --- !u!95 &1171678631 stripped
@@ -1689,7 +1694,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -49.874767, y: 0}
+  m_Offset: {x: -89.94417, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1700,7 +1705,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 82.78312, y: 1}
+  m_Size: {x: 162.92194, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1909591357
 MonoBehaviour:
@@ -1870,15 +1875,15 @@ MonoBehaviour:
   - {fileID: 833787677989317233, guid: f8f70c72c252c774695a6879c4315c2a, type: 3}
   - {fileID: 833787677989317233, guid: f8f70c72c252c774695a6879c4315c2a, type: 3}
   - {fileID: 3156256642729395239, guid: 0c7a3f7275d4a8f499d551afa59571eb, type: 3}
-  - {fileID: 3156256642729395239, guid: 7d6ee8ab712a8164eae08943e5978182, type: 3}
-  - {fileID: 3156256642729395239, guid: 7d6ee8ab712a8164eae08943e5978182, type: 3}
-  - {fileID: 3156256642729395239, guid: 7d6ee8ab712a8164eae08943e5978182, type: 3}
+  - {fileID: 3156256642729395239, guid: 0c7a3f7275d4a8f499d551afa59571eb, type: 3}
+  - {fileID: 3156256642729395239, guid: 0c7a3f7275d4a8f499d551afa59571eb, type: 3}
+  - {fileID: 3156256642729395239, guid: 0c7a3f7275d4a8f499d551afa59571eb, type: 3}
   - {fileID: 3322190802693861029, guid: 87245368e2c2e4e4ca68f3509f67882a, type: 3}
-  - {fileID: 3156256642729395239, guid: 7d6ee8ab712a8164eae08943e5978182, type: 3}
-  - {fileID: 3156256642729395239, guid: 7d6ee8ab712a8164eae08943e5978182, type: 3}
-  - {fileID: 3156256642729395239, guid: 7d6ee8ab712a8164eae08943e5978182, type: 3}
+  - {fileID: 3156256642729395239, guid: 0c7a3f7275d4a8f499d551afa59571eb, type: 3}
+  - {fileID: 3156256642729395239, guid: 0c7a3f7275d4a8f499d551afa59571eb, type: 3}
+  - {fileID: 3156256642729395239, guid: 0c7a3f7275d4a8f499d551afa59571eb, type: 3}
   - {fileID: 3322190802693861029, guid: 87245368e2c2e4e4ca68f3509f67882a, type: 3}
-  - {fileID: 3156256642729395239, guid: 7d6ee8ab712a8164eae08943e5978182, type: 3}
+  - {fileID: 3156256642729395239, guid: 0c7a3f7275d4a8f499d551afa59571eb, type: 3}
 --- !u!1 &2020611611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,6 +1969,7 @@ GameObject:
   - component: {fileID: 2022304086}
   - component: {fileID: 2022304087}
   - component: {fileID: 2022304088}
+  - component: {fileID: 2022304089}
   m_Layer: 0
   m_Name: DeactivateObject
   m_TagString: DeactivateLine
@@ -2115,3 +2121,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.711403, y: 49.89232}
   m_EdgeRadius: 0
+--- !u!114 &2022304089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022304082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497a4f5023409e6438d074538162f9d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

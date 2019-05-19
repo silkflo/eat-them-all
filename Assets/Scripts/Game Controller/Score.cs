@@ -35,7 +35,7 @@ public class Score : MonoBehaviour
 
 
 
-        totalScore = SpawnFood.scoreBySpawn + BombScript.scoreByBomb + DeactivateScript.itemDeactivateScore;
+        totalScore = SpawnFood.scoreBySpawn + BombScript.scoreByBomb + DeactivateFood.itemDeactivateScore;
 
         GamePlayController.instance.SetScore(totalScore);
         GamePlayController.instance.GameOver(totalScore, currentTime);
@@ -54,8 +54,8 @@ public class Score : MonoBehaviour
                 print("reset score");
                 SpawnFood.scoreBySpawn = 0;
                 BombScript.scoreByBomb = 0;
-                DeactivateScript.itemDeactivateScore = 0;
-                totalScore = SpawnFood.scoreBySpawn + BombScript.scoreByBomb + DeactivateScript.itemDeactivateScore;
+                DeactivateFood.itemDeactivateScore = 0;
+                totalScore = SpawnFood.scoreBySpawn + BombScript.scoreByBomb + DeactivateFood.itemDeactivateScore;
                 currentTime = 0f;
                 GamePlayController.instance.SetScore(totalScore);
                 GamePlayController.instance.SetTime(currentTime);

@@ -285,86 +285,91 @@ public class GamePlayController : MonoBehaviour
 
     //ITEM DEACTIVATE
 
-    int countnow;
-    int countafter;
-    int maxcount;
-    int comboScore;
+
+  private int comboScoreDisplay;
+
 
     public void ItemDeactivateCount()
     {
-        fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
-        if (BombRadius.hasExploded == true)
+
+        int countnow;
+        int countafter;
+
+        countnow = DeactivateFood.countDeactivateobject;
+        //  print("countnow : " + countnow);
+
+        StartCoroutine(CountAfter());
+
+        IEnumerator CountAfter()
         {
-            StartCoroutine(EndComboScore());
+            yield return new WaitForSeconds(5f);
+
+            countafter = DeactivateFood.countDeactivateobject;
+            comboScoreDisplay = countafter - countnow;
+            // print("countafter : " + countafter);
+            // print("Total Combo = " + comboScoreDisplay);
+
+            if (comboScoreDisplay > 0)
+            {
+                fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
+                deactivateScoreAnim.text = comboScoreDisplay.ToString() + " x 5";
+
+
+
+            }
+            else
+            {
+                fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, false);
+
+            }
+
+
+            if (comboScoreDisplay >= 2 && comboScoreDisplay < 4 && greatText.text != "AWESOME" && greatText.text != "AMAZING" && greatText.text == "")
+            {
+
+                greatText.text = "GREAT";
+                // greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
+                StartCoroutine(DisplayText());
+            }
+            else if (comboScoreDisplay >= 4 && comboScoreDisplay < 6 && greatText.text != "GREAT" && greatText.text != "AMAZING" && greatText.text == "")
+            {
+
+                greatText.text = "AWESOME";
+                //greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
+                StartCoroutine(DisplayText());
+
+            }
+            else if (comboScoreDisplay >= 6 && greatText.text != "AWESOME" && greatText.text != "GREAT" && greatText.text == "")
+            {
+
+                greatText.text = "AMAZING";
+                //greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
+                StartCoroutine(DisplayText());
+            }
+            else
+            {
+                greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, false);
+                StartCoroutine(SetTextNull());
+
+            }
+
+            IEnumerator SetTextNull()
+            {
+                yield return new WaitForSeconds(2f);
+                greatText.text = "";
+            }
+
+            IEnumerator DisplayText()
+            {
+                yield return new WaitForSeconds(1f);
+                greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
+
+            }
+
+
         }
-       
-       // countnow = DeactivateScript.countDeactivateobject;
-
-        //  StartCoroutine(CountAfter());
-
-        /*  IEnumerator CountAfter()
-          {
-              yield return new WaitForSeconds(5f);
-              countafter = DeactivateScript.countDeactivateobject;
-              totalDeactivate = countafter - countnow;
-
-              // print("Total Combo = " + totalDeactivate);
-
-              if (comboScore >= 6)
-              {
-                  print("combo == 6");
-                  greatText.text = "AWESOME";
-                  greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
-              }
-              else
-              {
-                  greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, false);
-              }
-
-          }
-  */
-
-        IEnumerator EndComboScore(){
-            yield return new WaitForSeconds(5.1f);
-
-          
-
-           
-            fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
-            deactivateScoreAnim.text = comboScore.ToString() + " x 5";
-            fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, false);
-           // comboScore = 0;
-
-        }
-        if (comboScore > 0)
-        {
-         
-
-        }
-        else
-        {
-           
-           
-        }
-       
-       
-        
-    
 
 
-
-
-    }
-
-   
-    float endComboTime;
-    public int ComboScore()
-    {
-
-        
-
-               
-        return comboScore;
     }
 
 

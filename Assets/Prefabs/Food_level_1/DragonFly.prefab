@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2244645438934784045}
   - component: {fileID: 3052707400155705564}
-  - component: {fileID: 5640509424169542281}
   - component: {fileID: 2437093014016943513}
-  - component: {fileID: 1912778323887194374}
-  - component: {fileID: 1695188581182702707}
+  - component: {fileID: 5640509424169542281}
   - component: {fileID: 5909364476002953759}
   - component: {fileID: 2227256894321608797}
+  - component: {fileID: 1695188581182702707}
   m_Layer: 0
   m_Name: DragonFly
   m_TagString: Food
@@ -87,6 +86,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &2437093014016943513
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322190802693861029}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.5
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!60 &5640509424169542281
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -183,51 +203,6 @@ PolygonCollider2D:
       - {x: -0.265, y: 1.18}
       - {x: -0.275, y: 1.2099999}
       - {x: -0.305, y: 1.2099999}
---- !u!50 &2437093014016943513
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3322190802693861029}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.5
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &1912778323887194374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3322190802693861029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5362a2d12c4901408825248a82f9c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1695188581182702707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3322190802693861029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e16a12e68fa8694099e3342048b7de5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!68 &5909364476002953759
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -287,6 +262,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.9931251, y: -0.6781248}
+      - {x: 0.20202397, y: 0.40987518}
+      - {x: 1.4189075, y: 1.1240499}
       - {x: -0.64104867, y: 1.301533}
       - {x: -1.4312314, y: 1.2315966}
       - {x: -1.6131247, y: 0.89687514}
@@ -310,6 +287,18 @@ PolygonCollider2D:
     - - {x: 0.849022, y: 0.8969657}
       - {x: 0.98322064, y: 0.98141026}
       - {x: 0.95433545, y: 1.0966285}
+--- !u!114 &1695188581182702707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322190802693861029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e16a12e68fa8694099e3342048b7de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5063089588841589851
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +311,7 @@ GameObject:
   - component: {fileID: 3271792960818203871}
   - component: {fileID: 5175133473068684312}
   - component: {fileID: 1728203537057201761}
+  - component: {fileID: 5172468075806444526}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Flame
@@ -419,7 +409,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5063089588841589851}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -449,6 +439,22 @@ PolygonCollider2D:
       - {x: 0.48762536, y: -0.070813954}
       - {x: 0.5107522, y: 0.12499988}
       - {x: 0.4017253, y: 0.33659285}
+--- !u!58 &5172468075806444526
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5063089588841589851}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.034109153, y: 0.025581907}
+  serializedVersion: 2
+  m_Radius: 0.4897623
 --- !u!1 &8001138935230383426
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,11 +467,11 @@ GameObject:
   - component: {fileID: 2603088203277673853}
   m_Layer: 0
   m_Name: DragonFlyTailCollider
-  m_TagString: Untagged
+  m_TagString: NotTrigDeact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4415825237258168446
 Transform:
   m_ObjectHideFlags: 0

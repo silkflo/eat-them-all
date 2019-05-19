@@ -84,7 +84,6 @@ GameObject:
   - component: {fileID: 2042415461}
   - component: {fileID: 4459781722316496430}
   - component: {fileID: 284765223589233318}
-  - component: {fileID: 4528723605136478235}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Bomb
@@ -225,18 +224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e16a12e68fa8694099e3342048b7de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4528723605136478235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3156256642729395239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5362a2d12c4901408825248a82f9c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4306887331055859567
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,8 +234,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8060058382520226174}
   - component: {fileID: 1717474265487986495}
-  - component: {fileID: 6301976850965572980}
   - component: {fileID: 248588196748563350}
+  - component: {fileID: 6301976850965572980}
   m_Layer: 0
   m_Name: Radius
   m_TagString: Untagged
@@ -286,27 +273,6 @@ CircleCollider2D:
   m_Offset: {x: -0.08437221, y: -0.6300001}
   serializedVersion: 2
   m_Radius: 2.355502
---- !u!114 &6301976850965572980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4306887331055859567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f53c5750fa03174d824337f77ba624a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wormBody: {fileID: 2669437662897226638, guid: f8f70c72c252c774695a6879c4315c2a,
-    type: 3}
-  scarabeBody: {fileID: 4604686401972237769, guid: 09455c8e7fddbb34eb5de81b26ada24d,
-    type: 3}
-  flyBody: {fileID: 1488091882203495132, guid: 39dbc43962ac8cb4a9f21e9da6259e58, type: 3}
-  bombBody: {fileID: 4459781722316496430}
-  anim: {fileID: 3156256642729395238}
-  powerX: 5
-  powerY: 15
 --- !u!50 &248588196748563350
 Rigidbody2D:
   serializedVersion: 4
@@ -328,3 +294,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6301976850965572980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306887331055859567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f53c5750fa03174d824337f77ba624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wormBody: {fileID: 2669437662897226638, guid: f8f70c72c252c774695a6879c4315c2a,
+    type: 3}
+  scarabeBody: {fileID: 4604686401972237769, guid: 09455c8e7fddbb34eb5de81b26ada24d,
+    type: 3}
+  flyBody: {fileID: 1488091882203495132, guid: 39dbc43962ac8cb4a9f21e9da6259e58, type: 3}
+  bombBody: {fileID: 4459781722316496430}
+  anim: {fileID: 3156256642729395238}
+  powerX: 5
+  powerY: 15

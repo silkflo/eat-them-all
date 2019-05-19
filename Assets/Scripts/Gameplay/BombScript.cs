@@ -19,15 +19,21 @@ public class BombScript : MonoBehaviour
     {
         LoseByBomb();
     }
-    
-    
+
+    private int startCountCombo2ndBomb;
     public void OnTriggerEnter2D(Collider2D target)
     {
         if(target.tag == TagManager.FLAME_TAG)
         {
-            startCountCombo = DeactivateScript.countDeactivateobject;
+            //startCountCombo = DeactivateFood.countDeactivateobject;
+
+            if(Lose.canLose == true)
+            {
+                startCountCombo = DeactivateFood.countDeactivateobject;
+            }
 
             print("start bomb deactivate = " + startCountCombo);
+
             anim.SetBool(TagManager.FLAME_PARAMETER, true);
             StartCoroutine(BombDeactivate());
         }
