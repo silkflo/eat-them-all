@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject optionButton, successButton, levelButton;
+    private GameObject optionButton, successButton;
 
 
     void Awake()
@@ -25,7 +25,7 @@ public class MainMenuController : MonoBehaviour
     {
         GameManager.instance.gameRestarted = true;
 
-        SceneManager.LoadScene(TagManager.LEVEL1_SCENE);
+        SceneManager.LoadScene(TagManager.LEVEL_SCENE);
         
 
     }
@@ -40,12 +40,6 @@ public class MainMenuController : MonoBehaviour
     public void SuccessMenu()
     {
         SceneManager.LoadScene(TagManager.SUCCESS_SCENE);
-    }
-
-
-    public void LevelMenu()
-    {
-        SceneManager.LoadScene(TagManager.LEVEL_SCENE);
     }
 
 

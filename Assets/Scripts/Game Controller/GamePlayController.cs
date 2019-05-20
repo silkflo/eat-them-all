@@ -155,7 +155,11 @@ public class GamePlayController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                RestartGame(TagManager.LEVEL1_SCENE);
+                if(LevelController.frogLevel == true)
+                {
+                    RestartGame(TagManager.FROG_SCENE);
+                }
+               
             }
 
             if (Input.GetKeyDown(KeyCode.M))
@@ -201,9 +205,12 @@ public class GamePlayController : MonoBehaviour
         Movement.fallingSpeed = -2.5f;
         GameManager.instance.gameRestarted = true;
         gameOverPanel.SetActive(false);
-        SceneManager.LoadScene(TagManager.LEVEL1_SCENE);
-     
-     }
+         if (LevelController.frogLevel == true)
+        {
+        SceneManager.LoadScene(TagManager.FROG_SCENE);
+        }
+
+    }
 
     //DISPLAY SCORE
     public void SetScore(int score)
@@ -246,7 +253,10 @@ public class GamePlayController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                RestartGame(TagManager.LEVEL1_SCENE);
+               if (LevelController.frogLevel == true)
+               {
+                 RestartGame(TagManager.FROG_SCENE);
+               }
             }
 
             if (Input.GetKeyDown(KeyCode.Escape))

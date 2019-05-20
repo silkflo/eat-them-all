@@ -6,8 +6,14 @@ using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour
 {
 
+    static public bool frogLevel;
+
     [SerializeField]
-    private GameObject  backButton;
+    private GameObject frogLevelButton, backButton;
+
+
+
+
 
     void Start()
     {
@@ -20,6 +26,18 @@ public class LevelController : MonoBehaviour
         
     }
 
+
+    public void FrogLevel()
+    {
+        frogLevel = true; // add other level = false
+        SceneManager.LoadScene(TagManager.FROG_SCENE);
+    }
+
+    public void OtherLEvel()
+    {
+        frogLevel = false; // new level = true
+
+    }
 
     public void MainMenu()
     {

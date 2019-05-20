@@ -19,14 +19,6 @@ public class TagManager
     public static string SCORE_DEACTIVATE_TAG = "ScoreDeactivate";
     public static string SPAWN_DETECTOR_TAG = "SpawnDetector";
     
-  
-
-   // public static string GREAT_TAG = "GreatTag";
-
-
-    //STRING OBJECT NAME
-    public static string BOMB_OBJECT = "Food Prefabs/Bomb";
-    public static string FLY_OBJECT = "Food Prefabs/Fly";
 
 
     //ANIMATION AND TRIGGER
@@ -43,13 +35,13 @@ public class TagManager
 
     //LOADLEVEL
     public static string MAIN_MENU_SCENE = "MainMenu";
-    public static string LEVEL1_SCENE = "Level1";
+    public static string FROG_SCENE = "Level1";
     public static string DIFFICULTY_MENU_SCENE = "DifficultyMenu";
     public static string SCORE_SCENE = "ScoreMenu";
     public static string OPTION_SCENE = "Option";
     public static string SUCCESS_SCENE = "SuccessMenu";
     public static string TROPHEE_SCENE = "TropheeMenu";
-    public static string LEVEL_SCENE = "LevelMEnu";
+    public static string LEVEL_SCENE = "LevelMenu";
 
 
 
