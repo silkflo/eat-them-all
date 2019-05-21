@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TropheeController : MonoBehaviour
+public class AchievementController : MonoBehaviour
 {
 
     [SerializeField]
