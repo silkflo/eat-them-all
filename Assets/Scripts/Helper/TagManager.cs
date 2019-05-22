@@ -6,6 +6,7 @@ public class TagManager
 {
 
     //TAG
+    public static string ACHIEVEMENT_LIST_TAG = "AchievementList";
     public static string BOMB_TAG = "Bomb";
     public static string BORDER_LEFT_TAG = "BorderLeft";
     public static string BORDER_RIGHT_TAG = "BorderRight";
@@ -43,6 +44,10 @@ public class TagManager
     public static string TROPHEE_SCENE = "AchievementMenu";
     public static string LEVEL_SCENE = "LevelMenu";
 
+
+    //OBJECTS
+    public static string FROG_BUTTON = "FrogButton";
+    public static string FROG_ACHIEVEMENT = "Frog";
 
 
 }

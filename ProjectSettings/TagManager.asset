@@ -18,6 +18,7 @@ TagManager:
   - ScoreDeactivate
   - GreatTag
   - NotTrigDeact
+  - AchievementList
   layers:
   - Default
   - TransparentFX

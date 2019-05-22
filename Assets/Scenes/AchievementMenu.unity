@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 54932560}
   m_Layer: 5
   m_Name: Frog
-  m_TagString: Untagged
+  m_TagString: AchievementList
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 118982764}
   m_Layer: 5
   m_Name: Other
-  m_TagString: Untagged
+  m_TagString: AchievementList
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -637,6 +637,7 @@ GameObject:
   - component: {fileID: 297415511}
   - component: {fileID: 297415510}
   - component: {fileID: 297415509}
+  - component: {fileID: 297415513}
   m_Layer: 5
   m_Name: Level2Button
   m_TagString: Untagged
@@ -726,7 +727,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 297415511}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 394037497}
+        m_MethodName: ChangeCategory
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 297415507}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &297415511
@@ -766,6 +778,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297415507}
   m_CullTransparentMesh: 0
+--- !u!114 &297415513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297415507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20af4755849efe94f90954bff3089bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementList: {fileID: 118982762}
+  neutral: {fileID: 21300000, guid: f33f3125656d2a142ac374c3f80edb07, type: 3}
+  highlight: {fileID: 21300000, guid: 6b7dac99e90c2e54fb29412da8f01144, type: 3}
 --- !u!1 &317631624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,6 +1050,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   achievementPrefab: {fileID: 2979025245053117463, guid: 9f5dd046a117f36429b3ad0cc394eb12,
     type: 3}
+  medals:
+  - {fileID: 21300000, guid: d63a0db4ac5922c48ab791cc47286426, type: 3}
+  - {fileID: 21300000, guid: 84ae41782e477144bae138c10c13fb0e, type: 3}
+  - {fileID: 21300000, guid: 401361958a098eb46b3e2850bccb3d6f, type: 3}
+  scrollRect: {fileID: 1388954279}
+  achievementMenu: {fileID: 266673186}
+  visualAchievement: {fileID: 0}
 --- !u!4 &394037498
 Transform:
   m_ObjectHideFlags: 0
@@ -1183,6 +1217,7 @@ GameObject:
   - component: {fileID: 479521451}
   - component: {fileID: 479521450}
   - component: {fileID: 479521449}
+  - component: {fileID: 479521453}
   m_Layer: 5
   m_Name: FrogButton
   m_TagString: Untagged
@@ -1272,7 +1307,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 479521451}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 394037497}
+        m_MethodName: ChangeCategory
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 479521447}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &479521451
@@ -1312,6 +1358,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479521447}
   m_CullTransparentMesh: 0
+--- !u!114 &479521453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479521447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20af4755849efe94f90954bff3089bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementList: {fileID: 54932558}
+  neutral: {fileID: 21300000, guid: f33f3125656d2a142ac374c3f80edb07, type: 3}
+  highlight: {fileID: 21300000, guid: 6b7dac99e90c2e54fb29412da8f01144, type: 3}
 --- !u!1 &542398695
 GameObject:
   m_ObjectHideFlags: 0
