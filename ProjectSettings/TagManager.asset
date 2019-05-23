@@ -19,6 +19,7 @@ TagManager:
   - GreatTag
   - NotTrigDeact
   - AchievementList
+  - GoldReward
   layers:
   - Default
   - TransparentFX
