@@ -36,8 +36,6 @@ public class AchievementManager : MonoBehaviour
 
     public Dictionary<string, Achievement> achievements = new Dictionary<string, Achievement>();
 
-   [HideInInspector]
-    public  GameObject reward;
    
 
     private void Awake()
@@ -47,8 +45,9 @@ public class AchievementManager : MonoBehaviour
 
     void Start()
     {
-
-        reward = GameObject.FindGameObjectWithTag("GoldReward");
+        //Delete all sanve data (to test if also hish score or only achievement as it s in different scene
+        //PlayerPrefs.DeleteAll();
+       
         activeButton = GameObject.Find(TagManager.FROG_BUTTON).GetComponent<AchievementButton>();
 
 
@@ -62,18 +61,18 @@ public class AchievementManager : MonoBehaviour
         
 
         activeButton.Click();
-       // achievementMenu.SetActive(false);
+        achievementMenu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-    /*    if (Input.GetKeyDown(KeyCode.I))
+       if (Input.GetKeyDown(KeyCode.I))
         {
             achievementMenu.SetActive(!achievementMenu.activeSelf); 
         }
-        */
+        
         if (Input.GetKeyDown(KeyCode.W))
         {
             EarnAchievement("Press W");

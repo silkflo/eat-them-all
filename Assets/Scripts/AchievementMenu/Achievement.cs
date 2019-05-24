@@ -35,7 +35,8 @@ public class Achievement
         this.description = description;
         this.unlocked = false;
         this.spriteIndex = spriteIndex;
-        this.achievementRef = achievementRef;
+        this.achievementRef = achievementRef.transform.Find("Reward").gameObject;
+        LoadAchievement();
     }
 
    
@@ -44,11 +45,37 @@ public class Achievement
     {
         if (!unlocked)
         {
-            AchievementManager.Instance.reward.SetActive(true);
-
-            unlocked = true;
+            achievementRef.SetActive(true);
+            SaveAchievement(true);
+           
             return true;
         }
         return false;
     }
+
+    public void SaveAchievement(bool value)
+    {
+        unlocked = value;
+
+        PlayerPrefs.SetInt(name, value ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+
+
+    public void LoadAchievement()
+    {
+        unlocked = PlayerPrefs.GetInt(name) == 1 ? true : false;
+
+        if (unlocked)
+        {
+            achievementRef.SetActive(true);
+        }
+
+    }
+
+
+
+
+
+
 }
