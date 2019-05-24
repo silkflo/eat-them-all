@@ -1058,7 +1058,6 @@ MonoBehaviour:
   achievementMenu: {fileID: 266673186}
   visualAchievement: {fileID: 4331652938548205314, guid: d447e2425854bff48ae433bac9a5ad20,
     type: 3}
-  reward: {fileID: 0}
 --- !u!4 &394037498
 Transform:
   m_ObjectHideFlags: 0
