@@ -252,6 +252,7 @@ public class GamePlayController : MonoBehaviour
            
 
             Time.timeScale = 0f;
+            SpawnFood.scoreBySpawn = 0;
 
             if (Input.GetKeyDown(KeyCode.Return))
             {

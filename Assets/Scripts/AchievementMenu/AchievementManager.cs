@@ -49,7 +49,7 @@ public class AchievementManager : MonoBehaviour
     void Start()
     {
         //Delete all save data in game
-       // PlayerPrefs.DeleteAll();
+     // PlayerPrefs.DeleteAll();
 
 
 
@@ -207,7 +207,7 @@ public class AchievementManager : MonoBehaviour
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press X", "beat 800 in easy difficulty", 1);
 
 
-        //SCORE ACHIEVEMENT
+        //SCORE ACHIEVEMENT-----------------------------------------------------------------------------------------
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy Score 400", "Beat 400 in easy difficulty", 2);
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy Score 800", "Beat 800 in easy difficulty", 1);
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy Score 2000", "Beat 2000 in easy difficulty", 0);
@@ -221,11 +221,35 @@ public class AchievementManager : MonoBehaviour
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult Score 2000", "Beat 2000 in easy difficulty", 0);
 
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "All Score Achievement", "Beat all scores in all dificulties", 2, 
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "All Score Achievement", "Beat all scores in all dificulties", 0, 
                           new string[] { "Easy Score 400", "Easy Score 800", "Easy Score 2000",
                                          "Medium Score 400", "Medium Score 800", "Medium Score 2000",
                                          "Difficult Score 400", "Difficult Score 800", "Difficult Score 2000"});
 
+     
+
+        //EXPULSION FOODS ACHIEVEMENT---------------------------------------------------------------------------------------
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eat 50 insects", "Eat 50 insects in easy difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eat 100 insects", "Eat 100 insects in easy difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eat 200 insects", "Eat 200 insects in easy difficulty", 0);
+
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eat 50 insects", "Eat 50 insects in easy difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eat 100 insects", "Eat 100 insects in easy difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eat 200 insects", "Eat 200 insects in easy difficulty", 0);
+
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eat 50 insects", "Eat 50 insects in easy difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eat 100 insects", "Eat 100 insects in easy difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eat 200 insects", "Eat 200 insects in easy difficulty", 0);
+
+
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "All insects eaten", "Eat all insects in all dificulties", 0,
+                         new string[] {  "Easy eat 50 insects","Easy eat 100 insects","Easy eat 200 insects",
+                                         "Medium eat 50 insects","Medium eat 100 insects","Medium eat 200 insects",
+                                         "Difficult eat 50 insects","Easy eat 100 insects","Difficult eat 200 insects"});
+
+
+
+        //OTHER LEVEL
         CreateAchievement("Other", "Press ABC", "press ABC to unlock this achievement", 1);
     }
 
@@ -233,50 +257,8 @@ public class AchievementManager : MonoBehaviour
     //SET GOAL of all achievement here
     void AchievementGoal()
     {
-        //SCORE
-        if (Score.totalScore > 10 && GamePreferences.GetEasyDifficulty() == 1)
-        {
-            EarnAchievement("Easy Score 400");
-        }
-        if (Score.totalScore > 20 && GamePreferences.GetEasyDifficulty() == 1)
-        {
-            EarnAchievement("Easy Score 800");
-        }
-        if (Score.totalScore > 30 && GamePreferences.GetEasyDifficulty() == 1)
-        {
-            EarnAchievement("Easy Score 2000");
-        }
 
-
-        if (Score.totalScore > 10 && GamePreferences.GetMediumDifficulty() == 1)
-        {
-            EarnAchievement("Medium Score 400");
-        }
-        if (Score.totalScore > 20 && GamePreferences.GetMediumDifficulty() == 1)
-        {
-            EarnAchievement("Medium Score 800");
-        }
-        if (Score.totalScore > 30 && GamePreferences.GetMediumDifficulty() == 1)
-        {
-            EarnAchievement("Medium Score 2000");
-        }
-
-
-        if (Score.totalScore > 10 && GamePreferences.GetHardDifficulty() == 1)
-        {
-            EarnAchievement("Difficult Score 400");
-        }
-        if (Score.totalScore > 20 && GamePreferences.GetHardDifficulty() == 1)
-        {
-            EarnAchievement("Difficult Score 800");
-        }
-        if (Score.totalScore > 30 && GamePreferences.GetHardDifficulty() == 1)
-        {
-            EarnAchievement("Difficult Score 2000");
-        }
-
-
-     
+        //TEST-----------------------------------------------------------------------------------------
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -286,6 +268,95 @@ public class AchievementManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             EarnAchievement("Press X");
+        }
+
+
+        //SCORE--------------------------------------------------------------------------------------
+        //Easy
+        if (Score.totalScore > 399 && GamePreferences.GetEasyDifficulty() == 1)
+        {
+            EarnAchievement("Easy Score 400");
+        }
+        if (Score.totalScore > 799 && GamePreferences.GetEasyDifficulty() == 1)
+        {
+            EarnAchievement("Easy Score 800");
+        }
+        if (Score.totalScore > 2000 && GamePreferences.GetEasyDifficulty() == 1)
+        {
+            EarnAchievement("Easy Score 2000");
+        }
+
+        //Medium
+        if (Score.totalScore > 399 && GamePreferences.GetMediumDifficulty() == 1)
+        {
+            EarnAchievement("Medium Score 400");
+        }
+        if (Score.totalScore > 799 && GamePreferences.GetMediumDifficulty() == 1)
+        {
+            EarnAchievement("Medium Score 800");
+        }
+        if (Score.totalScore > 2000 && GamePreferences.GetMediumDifficulty() == 1)
+        {
+            EarnAchievement("Medium Score 2000");
+        }
+
+        //Difficult
+        if (Score.totalScore > 399 && GamePreferences.GetHardDifficulty() == 1)
+        {
+            EarnAchievement("Difficult Score 400");
+        }
+        if (Score.totalScore > 799 && GamePreferences.GetHardDifficulty() == 1)
+        {
+            EarnAchievement("Difficult Score 800");
+        }
+        if (Score.totalScore > 2000 && GamePreferences.GetHardDifficulty() == 1)
+        {
+            EarnAchievement("Difficult Score 2000");
+        }
+
+
+
+        //INSECT EATEN-----------------------------------------------------------------
+        //Easy
+        if (SpawnFood.scoreBySpawn > 50 && GamePreferences.GetEasyDifficulty() == 1)
+        {
+            EarnAchievement("Easy eat 50 insects");
+        }
+        if (SpawnFood.scoreBySpawn >100 && GamePreferences.GetEasyDifficulty() == 1)
+        {
+            EarnAchievement("Easy eat 100 insects");
+        }
+        if (SpawnFood.scoreBySpawn > 200 && GamePreferences.GetEasyDifficulty() == 1)
+        {
+            EarnAchievement("Easy eat 200 insects");
+        }
+
+        //Medium
+        if (SpawnFood.scoreBySpawn > 50 && GamePreferences.GetMediumDifficulty() == 1)
+        {
+            EarnAchievement("Medium eat 50 insects");
+        }
+        if (SpawnFood.scoreBySpawn > 100 && GamePreferences.GetMediumDifficulty() == 1)
+        {
+            EarnAchievement("Medium eat 100 insects");
+        }
+        if (SpawnFood.scoreBySpawn > 200 && GamePreferences.GetMediumDifficulty() == 1)
+        {
+            EarnAchievement("Medium eat 200 insects");
+        }
+
+        //Difficult
+        if (SpawnFood.scoreBySpawn > 50 && GamePreferences.GetHardDifficulty() == 1)
+        {
+            EarnAchievement("Difficult eat 50 insects");
+        }
+        if (SpawnFood.scoreBySpawn > 100 && GamePreferences.GetHardDifficulty() == 1)
+        {
+            EarnAchievement("Difficult eat 100 insects");
+        }
+        if (SpawnFood.scoreBySpawn > 200 && GamePreferences.GetHardDifficulty() == 1)
+        {
+            EarnAchievement("Difficult eat 200 insects");
         }
 
     }

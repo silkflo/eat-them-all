@@ -46,6 +46,7 @@ public class SpawnFood : MonoBehaviour
     public void StartSpawningFood()
     {
         scoreBySpawn = scoreBySpawn + 1;
+        print("scoreBySpawn : " + scoreBySpawn);
         Instantiate(foods[Random.Range(0, foods.Length)],
         new Vector3(startPositionFoodX, startPositionFoodY, 0f), Quaternion.identity);
        
