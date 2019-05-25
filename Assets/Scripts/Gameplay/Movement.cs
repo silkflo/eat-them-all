@@ -90,6 +90,11 @@ public class Movement : MonoBehaviour
             GetComponent<Transform>().eulerAngles = new Vector3(0, 0, rotateZ - 90);
             rotateZ = transform.eulerAngles.z;
         }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            GetComponent<Transform>().eulerAngles = new Vector3(0, 0, rotateZ + 90);
+            rotateZ = transform.eulerAngles.z;
+        }
         //DOWN
         else if (Input.GetKey(KeyCode.Space))
         {

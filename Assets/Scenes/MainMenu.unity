@@ -746,6 +746,8 @@ MonoBehaviour:
   gameRestarted: 0
   score: 0
   timeScore: 0
+  visualAchievement: {fileID: 4331652938548205314, guid: d447e2425854bff48ae433bac9a5ad20,
+    type: 3}
 --- !u!4 &938953158
 Transform:
   m_ObjectHideFlags: 0
@@ -1555,7 +1557,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Success
+  m_Text: Achievement
 --- !u!222 &1950581012
 CanvasRenderer:
   m_ObjectHideFlags: 0

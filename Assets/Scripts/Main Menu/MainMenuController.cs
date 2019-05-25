@@ -24,7 +24,7 @@ public class MainMenuController : MonoBehaviour
     public void StartGame()
     {
         GameManager.instance.gameRestarted = true;
-
+   
         SceneManager.LoadScene(TagManager.LEVEL_SCENE);
         
 

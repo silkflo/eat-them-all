@@ -20,6 +20,8 @@ public class AchievementButton : MonoBehaviour
 
     public void Click()
     {
+
+        print("click");
         if(sprite.sprite == neutral)
         {
             sprite.sprite = highlight;

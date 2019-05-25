@@ -19,15 +19,14 @@ public class Achievement
 
     private int spriteIndex;
     public int SpriteIndex { get => spriteIndex; set => spriteIndex = value; }
-   
+
+    private string child;
+    public string Child { get => child; set => child = value; }
 
 
-
-    private GameObject Reward;
-
-
+  //  private GameObject achievementRef;
     private GameObject achievementRef;
-
+    private List<Achievement> depedencies = new List<Achievement>();
 
     public Achievement(string name, string description,int spriteIndex, GameObject achievementRef)
     {
@@ -36,20 +35,37 @@ public class Achievement
         this.unlocked = false;
         this.spriteIndex = spriteIndex;
         this.achievementRef = achievementRef.transform.Find("Reward").gameObject;
+        //this.achievementRef2 = achievementRef2;
         LoadAchievement();
     }
 
    
 
+    public void AddDepedency(Achievement dependency)
+    {
+        depedencies.Add(dependency);
+    }
+
+
     public bool EarnAchivement()
     {
-        if (!unlocked)
+        if (!unlocked && !depedencies.Exists(x => x.unlocked == false))
         {
-            achievementRef.SetActive(true);
+           
+             achievementRef.SetActive(true);
+
+          
+
             SaveAchievement(true);
+
+           if (child != null)
+            {
+                AchievementManager.Instance.EarnAchievement(child);
+            }
            
             return true;
         }
+      
         return false;
     }
 
@@ -68,7 +84,8 @@ public class Achievement
 
         if (unlocked)
         {
-            achievementRef.SetActive(true);
+           achievementRef.SetActive(true);
+        
         }
 
     }

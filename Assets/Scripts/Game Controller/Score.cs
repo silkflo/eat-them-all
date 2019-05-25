@@ -15,7 +15,7 @@ public class Score : MonoBehaviour
 
     void Awake()
     {
-
+        totalScore = 0;
     }
 
 

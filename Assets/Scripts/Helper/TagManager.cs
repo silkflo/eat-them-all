@@ -41,7 +41,7 @@ public class TagManager
     public static string SCORE_SCENE = "ScoreMenu";
     public static string OPTION_SCENE = "Option";
     public static string SUCCESS_SCENE = "SuccessMenu";
-    public static string TROPHEE_SCENE = "AchievementMenu";
+    public static string ACHIEVEMENT_SCENE = "AchievementMenu";
     public static string LEVEL_SCENE = "LevelMenu";
 
 

@@ -19,14 +19,14 @@ public class SpawnFood : MonoBehaviour
     void Awake()
     {
         MakeInstance();
-        
+       
 
     }
 
     void Start()
     {
         StartSpawningFood();
-        
+      
 
     }
      
@@ -45,9 +45,10 @@ public class SpawnFood : MonoBehaviour
 
     public void StartSpawningFood()
     {
+        scoreBySpawn = scoreBySpawn + 1;
         Instantiate(foods[Random.Range(0, foods.Length)],
         new Vector3(startPositionFoodX, startPositionFoodY, 0f), Quaternion.identity);
-        scoreBySpawn = scoreBySpawn + 1;
+       
 
     }
 

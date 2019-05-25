@@ -30,7 +30,7 @@ public class SuccessController : MonoBehaviour
 
     public void TropheeMenu()
     {
-        SceneManager.LoadScene(TagManager.TROPHEE_SCENE);
+        SceneManager.LoadScene(TagManager.ACHIEVEMENT_SCENE);
     }
 
 

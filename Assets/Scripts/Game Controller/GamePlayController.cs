@@ -182,6 +182,7 @@ public class GamePlayController : MonoBehaviour
         pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, false);
         SpawnSecurity.timeElapsed = 0f;
         pausePanel.SetActive(false);
+        AchievementManager.Instance.achievementMenu.SetActive(false);
     }
 
     //QUIT GAME
@@ -205,7 +206,8 @@ public class GamePlayController : MonoBehaviour
         Movement.fallingSpeed = -2.5f;
         GameManager.instance.gameRestarted = true;
         gameOverPanel.SetActive(false);
-         if (LevelController.frogLevel == true)
+
+        if (LevelController.frogLevel == true)
         {
         SceneManager.LoadScene(TagManager.FROG_SCENE);
         }

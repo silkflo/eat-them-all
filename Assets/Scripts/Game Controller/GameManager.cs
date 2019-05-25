@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public float timeScore;
 
+    public GameObject visualAchievement;
+   
+
     void Awake()
     {
         MakeSingleton();
@@ -24,12 +27,18 @@ public class GameManager : MonoBehaviour
     {
         InitializeVariables();
         CheckToPlayTheMusic();
+
+
+  
+
+
     }
 
     void Update()
     {
+        
 
-       
+
     }
 
 
@@ -132,5 +141,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+  
 
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AchievementManager : MonoBehaviour
 {
@@ -29,14 +30,16 @@ public class AchievementManager : MonoBehaviour
 
     private AchievementButton activeButton;
     public ScrollRect scrollRect;
-
+        
     public GameObject achievementMenu;
 
     public GameObject visualAchievement;
 
-    public Dictionary<string, Achievement> achievements = new Dictionary<string, Achievement>();
+    public  Dictionary<string, Achievement> achievements = new Dictionary<string, Achievement>();
 
-   
+  
+
+    private int fadeTime = 2;
 
     private void Awake()
     {
@@ -45,18 +48,20 @@ public class AchievementManager : MonoBehaviour
 
     void Start()
     {
-        //Delete all sanve data (to test if also hish score or only achievement as it s in different scene
-        //PlayerPrefs.DeleteAll();
-       
+        //Delete all save data in game
+       // PlayerPrefs.DeleteAll();
+
+
+
         activeButton = GameObject.Find(TagManager.FROG_BUTTON).GetComponent<AchievementButton>();
 
+        AchievementList();
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press W", "press W to unlock this achievement", 0);
 
 
-        foreach (GameObject achievementList in GameObject.FindGameObjectsWithTag(TagManager.ACHIEVEMENT_LIST_TAG))
-        {
-            achievementList.SetActive(false);
+       foreach (GameObject achievementList in GameObject.FindGameObjectsWithTag(TagManager.ACHIEVEMENT_LIST_TAG))
+       {
+           achievementList.SetActive(false);
         }
         
 
@@ -67,54 +72,104 @@ public class AchievementManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-       if (Input.GetKeyDown(KeyCode.I))
-        {
-            achievementMenu.SetActive(!achievementMenu.activeSelf); 
-        }
         
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            EarnAchievement("Press W");
-        }
+               if (Input.GetKeyDown(KeyCode.A) && SceneManager.GetActiveScene() == SceneManager.GetSceneByName(TagManager.FROG_SCENE))
+               {
+                    achievementMenu.SetActive(!achievementMenu.activeSelf); 
+                    
+                   if(achievementMenu.activeSelf == true)
+                    {
+                        Time.timeScale = 0f;
+                    }
+                    else
+                    {
+                        Time.timeScale = 1f;
+                    }
+               }
+              else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName(TagManager.ACHIEVEMENT_SCENE))
+               {
+                    achievementMenu.SetActive(true);
+               }
 
+
+                AchievementGoal();
     }
-
 
     public void EarnAchievement(string title)
     {
         if (achievements[title].EarnAchivement())
         {
-            //DO something
-            GameObject achievement = (GameObject)Instantiate(visualAchievement);
+         
+            GameObject achievement = Instantiate(visualAchievement);
 
             SetAchievementInfo("EarnCanvas", achievement, title);
 
-            StartCoroutine(HideAchievement(achievement));
+            StartCoroutine(FadeAchievemen(achievement));
         }
 
 
     }
 
-  
-
-    public IEnumerator HideAchievement(GameObject achievement)
+    private IEnumerator FadeAchievemen(GameObject achievement)
     {
-        yield return new WaitForSeconds(3f);
+        CanvasGroup canvasGroup = achievement.GetComponent<CanvasGroup>();
+        float rate = 1.0f / fadeTime;
+
+        int startAlpha = 0;
+        int endAlpha = 1;
+
+
+
+
+        for (int i = 0; i < 2; i++)
+        {
+            float progress = 0.0f;
+
+            while (progress < 1.0)
+            {
+
+                canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, progress);
+
+                progress += rate * Time.deltaTime;
+
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(2f);
+            startAlpha = 1;
+            endAlpha = 0;
+
+        }
+
         Destroy(achievement);
+
+
     }
 
 
-    public void CreateAchievement(string parent, string title, string description, int medalIndex)
+
+    public void CreateAchievement(string parent, string title, string description, int medalIndex, string[] depedencies = null)
     {
         GameObject achievement = (GameObject)Instantiate(achievementPrefab);
 
 
-        Achievement newAchievement = new Achievement(name, description, medalIndex, achievement);
+        Achievement newAchievement = new Achievement(title, description, medalIndex, achievement);
 
         achievements.Add(title, newAchievement);
 
         SetAchievementInfo(parent, achievement, title);
+
+      
+
+        if (depedencies != null)
+        {
+            foreach(string achievementTitle in depedencies)
+            {
+                Achievement depedency = achievements[achievementTitle];
+                depedency.Child = title;
+                newAchievement.AddDepedency(depedency);
+            } // creation of achievement dependency
+        }
     }
 
 
@@ -140,4 +195,101 @@ public class AchievementManager : MonoBehaviour
 
 
     }
+
+
+
+
+    void AchievementList()
+    {
+        // CREATE ACHIEVEMENT LIST
+        //ACHIEVEMENT TEST
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press W", "beat 400 in easy difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press X", "beat 800 in easy difficulty", 1);
+
+
+        //SCORE ACHIEVEMENT
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy Score 400", "Beat 400 in easy difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy Score 800", "Beat 800 in easy difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy Score 2000", "Beat 2000 in easy difficulty", 0);
+
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium Score 400", "Beat 400 in easy difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium Score 800", "Beat 800 in easy difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium Score 2000", "Beat 2000 in easy difficulty", 0);
+
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult Score 400", "Beat 400 in easy difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult Score 800", "Beat 800 in easy difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult Score 2000", "Beat 2000 in easy difficulty", 0);
+
+
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "All Score Achievement", "Beat all scores in all dificulties", 2, 
+                          new string[] { "Easy Score 400", "Easy Score 800", "Easy Score 2000",
+                                         "Medium Score 400", "Medium Score 800", "Medium Score 2000",
+                                         "Difficult Score 400", "Difficult Score 800", "Difficult Score 2000"});
+
+        CreateAchievement("Other", "Press ABC", "press ABC to unlock this achievement", 1);
+    }
+
+
+    //SET GOAL of all achievement here
+    void AchievementGoal()
+    {
+        //SCORE
+        if (Score.totalScore > 10 && GamePreferences.GetEasyDifficulty() == 1)
+        {
+            EarnAchievement("Easy Score 400");
+        }
+        if (Score.totalScore > 20 && GamePreferences.GetEasyDifficulty() == 1)
+        {
+            EarnAchievement("Easy Score 800");
+        }
+        if (Score.totalScore > 30 && GamePreferences.GetEasyDifficulty() == 1)
+        {
+            EarnAchievement("Easy Score 2000");
+        }
+
+
+        if (Score.totalScore > 10 && GamePreferences.GetMediumDifficulty() == 1)
+        {
+            EarnAchievement("Medium Score 400");
+        }
+        if (Score.totalScore > 20 && GamePreferences.GetMediumDifficulty() == 1)
+        {
+            EarnAchievement("Medium Score 800");
+        }
+        if (Score.totalScore > 30 && GamePreferences.GetMediumDifficulty() == 1)
+        {
+            EarnAchievement("Medium Score 2000");
+        }
+
+
+        if (Score.totalScore > 10 && GamePreferences.GetHardDifficulty() == 1)
+        {
+            EarnAchievement("Difficult Score 400");
+        }
+        if (Score.totalScore > 20 && GamePreferences.GetHardDifficulty() == 1)
+        {
+            EarnAchievement("Difficult Score 800");
+        }
+        if (Score.totalScore > 30 && GamePreferences.GetHardDifficulty() == 1)
+        {
+            EarnAchievement("Difficult Score 2000");
+        }
+
+
+     
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            EarnAchievement("Press W");
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            EarnAchievement("Press X");
+        }
+
+    }
+
+
+
 }
