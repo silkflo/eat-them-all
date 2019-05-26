@@ -50,7 +50,7 @@ public class AchievementManager : MonoBehaviour
     void Start()
     {
         //Delete all save data in game
-        // PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
 
 
 
@@ -90,6 +90,7 @@ public class AchievementManager : MonoBehaviour
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName(TagManager.ACHIEVEMENT_SCENE))
         {
             achievementMenu.SetActive(true);
+            Score.totalScore = 0;  //fix a bug not resolved
            
         }
      
@@ -364,43 +365,43 @@ public class AchievementManager : MonoBehaviour
 
         //SCORE--------------------------------------------------------------------------------------
         //Easy
-        if (Score.totalScore > 150 && GamePreferences.GetEasyDifficulty() == 1)
+        if (Score.totalScore > 399 && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy Score 400");
         }
-        if (Score.totalScore > 170 && GamePreferences.GetEasyDifficulty() == 1)
+        if (Score.totalScore > 699 && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy Score 700");
         }
-        if (Score.totalScore > 200 && GamePreferences.GetEasyDifficulty() == 1)
+        if (Score.totalScore > 999 && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy Score 1000");
         }
 
         //Medium
-        if (Score.totalScore > 150 && GamePreferences.GetMediumDifficulty() == 1)
+        if (Score.totalScore > 399 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium Score 400");
         }
-        if (Score.totalScore > 170 && GamePreferences.GetMediumDifficulty() == 1)
+        if (Score.totalScore > 699 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium Score 700");
         }
-        if (Score.totalScore > 200 && GamePreferences.GetMediumDifficulty() == 1)
+        if (Score.totalScore > 999 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium Score 1000");
         }
 
         //Difficult
-        if (Score.totalScore > 150 && GamePreferences.GetHardDifficulty() == 1)
+        if (Score.totalScore > 399 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult Score 400");
         }
-        if (Score.totalScore > 170 && GamePreferences.GetHardDifficulty() == 1)
+        if (Score.totalScore > 699 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult Score 700");
         }
-        if (Score.totalScore > 200 && GamePreferences.GetHardDifficulty() == 1)
+        if (Score.totalScore > 999 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult Score 1000");
         }
@@ -409,43 +410,43 @@ public class AchievementManager : MonoBehaviour
 
         //INSECT EATEN-----------------------------------------------------------------
         //Easy
-        if (SpawnFood.scoreBySpawn > 5 && GamePreferences.GetEasyDifficulty() == 1)
+        if (SpawnFood.scoreBySpawn > 49 && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy eat 50 insects");
         }
-        if (SpawnFood.scoreBySpawn > 10 && GamePreferences.GetEasyDifficulty() == 1)
+        if (SpawnFood.scoreBySpawn > 99 && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy eat 100 insects");
         }
-        if (SpawnFood.scoreBySpawn > 15 && GamePreferences.GetEasyDifficulty() == 1)
+        if (SpawnFood.scoreBySpawn > 149 && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy eat 150 insects");
         }
 
         //Medium
-        if (SpawnFood.scoreBySpawn > 5 && GamePreferences.GetMediumDifficulty() == 1)
+        if (SpawnFood.scoreBySpawn > 49 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium eat 50 insects");
         }
-        if (SpawnFood.scoreBySpawn > 10 && GamePreferences.GetMediumDifficulty() == 1)
+        if (SpawnFood.scoreBySpawn > 99 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium eat 100 insects");
         }
-        if (SpawnFood.scoreBySpawn > 15 && GamePreferences.GetMediumDifficulty() == 1)
+        if (SpawnFood.scoreBySpawn > 149 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium eat 150 insects");
         }
 
         //Difficult
-        if (SpawnFood.scoreBySpawn > 5 && GamePreferences.GetHardDifficulty() == 1)
+        if (SpawnFood.scoreBySpawn > 49 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult eat 50 insects");
         }
-        if (SpawnFood.scoreBySpawn > 10 && GamePreferences.GetHardDifficulty() == 1)
+        if (SpawnFood.scoreBySpawn > 99 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult eat 100 insects");
         }
-        if (SpawnFood.scoreBySpawn > 15 && GamePreferences.GetHardDifficulty() == 1)
+        if (SpawnFood.scoreBySpawn > 149 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult eat 150 insects");
         }
@@ -454,43 +455,43 @@ public class AchievementManager : MonoBehaviour
 
         //EXPULSE INSECTS---------------------------------------------------------------
         //Easy
-        if(DeactivateFood.countDeactivateobject >2 && GamePreferences.GetEasyDifficulty() == 1)
+        if(DeactivateFood.countDeactivateobject >24 && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy expulse 25 insects");
         }
-        if (DeactivateFood.countDeactivateobject > 3 && GamePreferences.GetEasyDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 49 && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy expulse 50 insects");
         }
-        if (DeactivateFood.countDeactivateobject > 4 && GamePreferences.GetEasyDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 74 && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy expulse 75 insects");
         }
 
         //Medium
-        if (DeactivateFood.countDeactivateobject > 2 && GamePreferences.GetMediumDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 24 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium expulse 25 insects");
         }
-        if (DeactivateFood.countDeactivateobject > 3 && GamePreferences.GetMediumDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 49 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium expulse 50 insects");
         }
-        if (DeactivateFood.countDeactivateobject > 4 && GamePreferences.GetMediumDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 74 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium expulse 75 insects");
         }
 
         //Difficult
-        if (DeactivateFood.countDeactivateobject > 2 && GamePreferences.GetHardDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 24 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult expulse 25 insects");
         }
-        if (DeactivateFood.countDeactivateobject > 3 && GamePreferences.GetHardDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 49 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult expulse 50 insects");
         }
-        if (DeactivateFood.countDeactivateobject > 4 && GamePreferences.GetHardDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 74 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult expulse 75 insects");
         }
@@ -545,43 +546,43 @@ public class AchievementManager : MonoBehaviour
 
         //BOMB EXPLOSE---------------------------------------------------------------
         //Easy
-        if (BombScript.scoreByBomb > 10 && GamePreferences.GetEasyDifficulty() == 1)
+        if (BombScript.scoreByBomb > 100 && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy 10 Bombs explode");
         }
-        if (BombScript.scoreByBomb > 20 && GamePreferences.GetEasyDifficulty() == 1)
+        if (BombScript.scoreByBomb > 250 && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy 25 Bombs explode");
         }
-        if (BombScript.scoreByBomb > 30  && GamePreferences.GetEasyDifficulty() == 1)
+        if (BombScript.scoreByBomb > 500  && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy 50 Bombs explode");
         }
 
         //Medium
-        if (BombScript.scoreByBomb > 10 && GamePreferences.GetMediumDifficulty() == 1)
+        if (BombScript.scoreByBomb > 100 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium 10 Bombs explode");
         }
-        if (BombScript.scoreByBomb > 20 && GamePreferences.GetMediumDifficulty() == 1)
+        if (BombScript.scoreByBomb > 250 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium 25 Bombs explode");
         }
-        if (BombScript.scoreByBomb > 30  && GamePreferences.GetMediumDifficulty() == 1)
+        if (BombScript.scoreByBomb > 500  && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium 50 Bombs explode");
         }
 
         //Difficult
-        if (BombScript.scoreByBomb > 10 && GamePreferences.GetHardDifficulty() == 1)
+        if (BombScript.scoreByBomb > 100 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult 10 Bombs explode");
         }
-        if (BombScript.scoreByBomb > 20 && GamePreferences.GetHardDifficulty() == 1)
+        if (BombScript.scoreByBomb > 250 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult 25 Bombs explode");
         }
-        if (BombScript.scoreByBomb > 30  && GamePreferences.GetHardDifficulty() == 1)
+        if (BombScript.scoreByBomb > 500  && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult 50 Bombs explode");
         }
@@ -589,43 +590,43 @@ public class AchievementManager : MonoBehaviour
 
         //SURVIVOR---------------------------------------------------------------
         //Easy
-        if (Score.currentTime > 10 && GamePreferences.GetEasyDifficulty() == 1)
+        if (Score.currentTime > 240 && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy 4 minutes survival");
         }
-        if (Score.currentTime > 20 && GamePreferences.GetEasyDifficulty() == 1)
+        if (Score.currentTime > 420 && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy 7 minutes survival");
         }
-        if (Score.currentTime > 30 == true && GamePreferences.GetEasyDifficulty() == 1)
+        if (Score.currentTime > 600 == true && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy 10 minutes survival");
         }
 
         //Medium
-        if (Score.currentTime > 10 && GamePreferences.GetMediumDifficulty() == 1)
+        if (Score.currentTime > 240 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium 4 minutes survival");
         }
-        if (Score.currentTime > 20 && GamePreferences.GetMediumDifficulty() == 1)
+        if (Score.currentTime > 420 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium 7 minutes survival");
         }
-        if (Score.currentTime > 30 && GamePreferences.GetMediumDifficulty() == 1)
+        if (Score.currentTime > 600 && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium 10 minutes survival");
         }
 
         //Difficult
-        if (Score.currentTime > 10 && GamePreferences.GetHardDifficulty() == 1)
+        if (Score.currentTime > 240 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult 4 minutes survival");
         }
-        if (Score.currentTime > 20 && GamePreferences.GetHardDifficulty() == 1)
+        if (Score.currentTime > 420 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult 7 minutes survival");
         }
-        if (Score.currentTime > 30 && GamePreferences.GetHardDifficulty() == 1)
+        if (Score.currentTime > 600 && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult 10 minutes survival");
         }

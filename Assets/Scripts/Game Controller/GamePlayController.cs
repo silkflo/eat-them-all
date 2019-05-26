@@ -340,7 +340,7 @@ public class GamePlayController : MonoBehaviour
             if (comboScoreDisplay > 0)
             {
                 fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
-                deactivateScoreAnim.text = comboScoreDisplay.ToString() + " x 5";
+                deactivateScoreAnim.text = "X "+comboScoreDisplay.ToString();
             }
             else
             {
@@ -348,19 +348,19 @@ public class GamePlayController : MonoBehaviour
             }
 
 
-            if (comboScoreDisplay >= 1 && comboScoreDisplay < 2 &&  greatText.text == "") //4-8
+            if (comboScoreDisplay >= 4 && comboScoreDisplay < 8 &&  greatText.text == "") 
             {
                 greatBoolAnim = true;
                greatText.text = "GREAT";
                 StartCoroutine(DisplayText());
             }
-            else if (comboScoreDisplay >= 2 && comboScoreDisplay < 3 && greatText.text == "") //8-12
+            else if (comboScoreDisplay >= 8 && comboScoreDisplay < 12 && greatText.text == "")
             {
                 awesomeBoolAnim = true;
                 greatText.text = "AWESOME";
                 StartCoroutine(DisplayText());
             }
-            else if (comboScoreDisplay >= 3 && greatText.text == "")//12
+            else if (comboScoreDisplay >= 12 && greatText.text == "")
             {
                 amazingBoolAnim = true;
                 greatText.text = "AMAZING";
