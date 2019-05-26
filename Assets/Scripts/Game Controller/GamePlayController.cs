@@ -24,17 +24,12 @@ public class GamePlayController : MonoBehaviour
     static public int levelMode;
 
     private int totalScore;
-   // private int totalDeactivate;
-   // private bool greatBoolParam;
+ 
     private int comboScoreDisplay;
 
+    [HideInInspector]
+    public bool greatBoolAnim, awesomeBoolAnim, amazingBoolAnim;
 
-   // static public float comboTime;
-
-
-  //  private float addTotime = 1f;
-
-    //static public float totalTimeScore;
 
     void Awake()
     {
@@ -113,7 +108,7 @@ public class GamePlayController : MonoBehaviour
 
     public void PauseGameByEsc()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && Lose.gameOver != true)
+        if (Input.GetKeyDown(KeyCode.Escape) && Lose.gameOver != true &&  AchievementManager.Instance.achievementMenu.activeSelf == false)
         {
          
             if (pausePanel.activeSelf == false)
@@ -189,6 +184,13 @@ public class GamePlayController : MonoBehaviour
     public void QuitGame(string sceneName)
     {
         Time.timeScale = 1f;
+        print("reset score?");
+        Score.totalScore = 0;
+        SpawnFood.scoreBySpawn = 0;
+        DeactivateFood.countDeactivateobject = 0;
+        BombScript.scoreByBomb = 0;
+        Score.currentTime = 0;
+
         panelOnCantMove = false;
         Lose.gameOver = false;
         Movement.fallingSpeed = -2.5f;
@@ -206,6 +208,8 @@ public class GamePlayController : MonoBehaviour
         Movement.fallingSpeed = -2.5f;
         GameManager.instance.gameRestarted = true;
         gameOverPanel.SetActive(false);
+
+        DeactivateFood.countDeactivateobject = 0;
 
         if (LevelController.frogLevel == true)
         {
@@ -252,7 +256,7 @@ public class GamePlayController : MonoBehaviour
            
 
             Time.timeScale = 0f;
-            SpawnFood.scoreBySpawn = 0;
+           // 
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
@@ -264,12 +268,24 @@ public class GamePlayController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                Score.totalScore = 0;
+                SpawnFood.scoreBySpawn = 0;
+                DeactivateFood.countDeactivateobject = 0;
+                BombScript.scoreByBomb = 0;
+                Score.currentTime = 0;
+
                 QuitGame(TagManager.MAIN_MENU_SCENE );
             }
 
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                Score.totalScore = 0;
+                SpawnFood.scoreBySpawn = 0;
+                DeactivateFood.countDeactivateobject = 0;
+                BombScript.scoreByBomb = 0;
+                Score.currentTime = 0;
+
                 QuitGame(TagManager.MAIN_MENU_SCENE);
             }
 
@@ -332,18 +348,21 @@ public class GamePlayController : MonoBehaviour
             }
 
 
-            if (comboScoreDisplay >= 4 && comboScoreDisplay < 8 &&  greatText.text == "")
+            if (comboScoreDisplay >= 1 && comboScoreDisplay < 2 &&  greatText.text == "") //4-8
             {
+                greatBoolAnim = true;
                greatText.text = "GREAT";
                 StartCoroutine(DisplayText());
             }
-            else if (comboScoreDisplay >= 8 && comboScoreDisplay < 12 && greatText.text == "")
+            else if (comboScoreDisplay >= 2 && comboScoreDisplay < 3 && greatText.text == "") //8-12
             {
+                awesomeBoolAnim = true;
                 greatText.text = "AWESOME";
                 StartCoroutine(DisplayText());
             }
-            else if (comboScoreDisplay >= 12 && greatText.text == "")
+            else if (comboScoreDisplay >= 3 && greatText.text == "")//12
             {
+                amazingBoolAnim = true;
                 greatText.text = "AMAZING";
                 StartCoroutine(DisplayText());
             }
@@ -364,6 +383,9 @@ public class GamePlayController : MonoBehaviour
             {
                 yield return new WaitForSeconds(1f);
                 greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
+                greatBoolAnim = false;
+                awesomeBoolAnim = false;
+                amazingBoolAnim = false;
             }
 
         }

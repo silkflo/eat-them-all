@@ -1122,6 +1122,9 @@ MonoBehaviour:
   pauseAnim: {fileID: 1457966711}
   greatAnim: {fileID: 1171678631}
   fiveScoreAnim: {fileID: 1694705104}
+  greatBoolAnim: 0
+  awesomeBoolAnim: 0
+  amazingBoolAnim: 0
 --- !u!4 &1156020317
 Transform:
   m_ObjectHideFlags: 0
@@ -1397,23 +1400,13 @@ PrefabInstance:
     - target: {fileID: 1707089188012560171, guid: 0e61fa520137eab428d90a57096e1348,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1707089188012560171, guid: 0e61fa520137eab428d90a57096e1348,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1317535951
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1707089187462420611, guid: 0e61fa520137eab428d90a57096e1348,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1156020316}
-    - target: {fileID: 1707089187462420611, guid: 0e61fa520137eab428d90a57096e1348,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PauseTheGame
-      objectReference: {fileID: 0}
     - target: {fileID: 1631337421, guid: 0e61fa520137eab428d90a57096e1348, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1447,10 +1440,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1156020316}
-    - target: {fileID: 1527953614161226489, guid: 0e61fa520137eab428d90a57096e1348,
+    - target: {fileID: 1707089187462420608, guid: 0e61fa520137eab428d90a57096e1348,
         type: 3}
-      propertyPath: m_Text
-      value: 
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e61fa520137eab428d90a57096e1348, type: 3}

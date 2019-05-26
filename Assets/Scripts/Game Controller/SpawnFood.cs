@@ -19,14 +19,14 @@ public class SpawnFood : MonoBehaviour
     void Awake()
     {
         MakeInstance();
-       
 
+       
     }
 
     void Start()
     {
+
         StartSpawningFood();
-      
 
     }
      

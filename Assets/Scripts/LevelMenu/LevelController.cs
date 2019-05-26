@@ -11,6 +11,7 @@ public class LevelController : MonoBehaviour
     [SerializeField]
     private GameObject frogLevelButton, backButton;
 
+    static public bool fromMainMenu;
 
 
 
@@ -30,6 +31,7 @@ public class LevelController : MonoBehaviour
     public void FrogLevel()
     {
         frogLevel = true; // add other level = false
+        fromMainMenu = true;
         SceneManager.LoadScene(TagManager.FROG_SCENE);
     }
 

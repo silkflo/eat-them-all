@@ -52,8 +52,18 @@ public class Score : MonoBehaviour
             if (GameManager.instance.gameRestarted == true)
             {
                 print("reset score");
-                SpawnFood.scoreBySpawn = 0;
+                if(SpawnFood.scoreBySpawn == 1 && LevelController.fromMainMenu == true)
+                {
+                    SpawnFood.scoreBySpawn = 1;
+                    LevelController.fromMainMenu = false;
+                }
+                else
+                {
+                    SpawnFood.scoreBySpawn = 0;
+                }
+               
                 BombScript.scoreByBomb = 0;
+                DeactivateFood.countDeactivateobject = 0;
                 DeactivateFood.itemDeactivateScore = 0;
                 totalScore = SpawnFood.scoreBySpawn + BombScript.scoreByBomb + DeactivateFood.itemDeactivateScore;
                 currentTime = 0f;

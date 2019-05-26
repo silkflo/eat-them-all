@@ -23,6 +23,7 @@ public class AchievementController : MonoBehaviour
 
     public void SuccessMenu()
     {
+        
         SceneManager.LoadScene(TagManager.SUCCESS_SCENE);
     }
 

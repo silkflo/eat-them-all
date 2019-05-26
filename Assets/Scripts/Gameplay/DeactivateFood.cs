@@ -38,8 +38,9 @@ public class DeactivateFood : MonoBehaviour
 
 
                 itemDeactivateScore = itemDeactivateScore + 5;
-              
-                target.gameObject.SetActive(false);
+
+           target.gameObject.SetActive(false);
+           
 
         }
 
