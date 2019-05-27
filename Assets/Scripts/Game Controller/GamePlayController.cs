@@ -12,7 +12,18 @@ public class GamePlayController : MonoBehaviour
     private Text timeText, scoreText, gameOverScoreText, gameOverTimeText, deactivateScoreAnim, greatText;
 
     [SerializeField]
-    private GameObject pausePanel, musicButtonOn, gameOverPanel, musicButtonOff, deactivateScoreObject;
+    private GameObject   musicButtonOn, gameOverPanel, musicButtonOff, deactivateScoreObject,
+                         moveGuidePanel,bombGuidePanel, exploseGuidePanel, loseGuidePanel, shortcutGuidePanel;
+
+    public GameObject pausePanel;
+
+    [SerializeField]
+    private Button  nextMoveButton, 
+                    previousBombButton, nextBombButton,
+                    previousExploseButton,NextExploseButton,
+                    previousLoseButton,nextLoseButton,
+                    previousShortcutButton;
+
 
     [SerializeField]
     private Animator gameOverAnim, pauseAnim, greatAnim, fiveScoreAnim;
@@ -82,6 +93,11 @@ public class GamePlayController : MonoBehaviour
         PausePanelTouchControl();
         ItemDeactivateCount();
 
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            PlayMusic();
+        }
+
 
     }
 
@@ -150,17 +166,14 @@ public class GamePlayController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                if(LevelController.frogLevel == true)
-                {
+               // if(LevelController.frogLevel == true)
+                //{
                     RestartGame(TagManager.FROG_SCENE);
-                }
+               // }
                
             }
 
-            if (Input.GetKeyDown(KeyCode.M))
-            {
-                //music ON OFF
-            }
+           
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -178,6 +191,22 @@ public class GamePlayController : MonoBehaviour
         SpawnSecurity.timeElapsed = 0f;
         pausePanel.SetActive(false);
         AchievementManager.Instance.achievementMenu.SetActive(false);
+    }
+
+    //SHOW ACHIEVEMENT
+    public void AchievementPanel()
+    {
+
+        AchievementManager.Instance.achievementMenu.SetActive(!AchievementManager.Instance.achievementMenu.activeSelf);
+
+        if (AchievementManager.Instance.achievementMenu.activeSelf == true)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     //QUIT GAME
@@ -211,10 +240,10 @@ public class GamePlayController : MonoBehaviour
 
         DeactivateFood.countDeactivateobject = 0;
 
-        if (LevelController.frogLevel == true)
-        {
+       // if (LevelController.frogLevel == true)
+      //  {
         SceneManager.LoadScene(TagManager.FROG_SCENE);
-        }
+       // }
 
     }
 
@@ -312,10 +341,6 @@ public class GamePlayController : MonoBehaviour
     }
 
    
-
-
-
-
     //ITEM DEACTIVATE
     public void ItemDeactivateCount()
     {
@@ -391,6 +416,62 @@ public class GamePlayController : MonoBehaviour
         }
 
     }
+
+    //GUIDE
+
+    public void GuideButtons()
+    {
+        //moveGuidePanel.SetActive(false);
+        //Time.timeScale = 0f;
+
+        nextMoveButton.onClick.AddListener(() => {
+            moveGuidePanel.SetActive(false);
+            bombGuidePanel.SetActive(true);
+        });
+
+        previousBombButton.onClick.AddListener(() => {
+            moveGuidePanel.SetActive(true);
+            bombGuidePanel.SetActive(false);
+        });
+
+        nextBombButton.onClick.AddListener(() => {
+            bombGuidePanel.SetActive(false);
+            exploseGuidePanel.SetActive(true);
+        });
+
+        previousExploseButton.onClick.AddListener(() => {
+            exploseGuidePanel.SetActive(false);
+            bombGuidePanel.SetActive(true);
+        });
+
+        NextExploseButton.onClick.AddListener(() => {
+            exploseGuidePanel.SetActive(false);
+            loseGuidePanel.SetActive(true);
+        });
+
+        previousLoseButton.onClick.AddListener(() =>
+        {
+            loseGuidePanel.SetActive(false);
+            exploseGuidePanel.SetActive(true);
+        });
+
+        nextLoseButton.onClick.AddListener(() => {
+            shortcutGuidePanel.SetActive(true);
+            loseGuidePanel.SetActive(false);
+
+        });
+
+        previousShortcutButton.onClick.AddListener(() => {
+            shortcutGuidePanel.SetActive(false);
+            loseGuidePanel.SetActive(true);
+        });
+
+
+
+    }
+
+
+   
 
 
 }

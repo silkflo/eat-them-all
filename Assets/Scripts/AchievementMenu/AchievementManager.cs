@@ -74,19 +74,28 @@ public class AchievementManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.A) && SceneManager.GetActiveScene() == SceneManager.GetSceneByName(TagManager.FROG_SCENE))
+        if (Input.GetKeyDown(KeyCode.M) && SceneManager.GetActiveScene() == SceneManager.GetSceneByName(TagManager.FROG_SCENE))
         {
             achievementMenu.SetActive(!achievementMenu.activeSelf);
 
             if (achievementMenu.activeSelf == true)
             {
                 Time.timeScale = 0f;
+
+              
+
             }
             else
             {
+                GamePlayController.instance.pausePanel.SetActive(false);
+                GamePlayController.panelOnCantMove = false;
                 Time.timeScale = 1f;
             }
         }
+     
+
+
+
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName(TagManager.ACHIEVEMENT_SCENE))
         {
             achievementMenu.SetActive(true);
