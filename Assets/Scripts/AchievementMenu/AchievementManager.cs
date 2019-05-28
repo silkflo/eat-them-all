@@ -509,44 +509,44 @@ public class AchievementManager : MonoBehaviour
 
         //COMBO---------------------------------------------------------------
         //Easy
-        if (GamePlayController.instance.greatBoolAnim == true && GamePreferences.GetEasyDifficulty() == 1)
+        if (GameManager.instance.greatBoolAnim == true && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy Great Combo");
         }
-        if (GamePlayController.instance.awesomeBoolAnim == true  && GamePreferences.GetEasyDifficulty() == 1)
+        if (GameManager.instance.awesomeBoolAnim == true  && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy Awesome Combo");
         }
-        if (GamePlayController.instance.amazingBoolAnim == true && GamePreferences.GetEasyDifficulty() == 1)
+        if (GameManager.instance.amazingBoolAnim == true && GamePreferences.GetEasyDifficulty() == 1)
         {
             EarnAchievement("Easy Amazing Combo");
         }
 
 
         //Medium
-        if (GamePlayController.instance.greatBoolAnim == true && GamePreferences.GetMediumDifficulty() == 1)
+        if (GameManager.instance.greatBoolAnim == true && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium Great Combo");
         }
-        if (GamePlayController.instance.awesomeBoolAnim == true && GamePreferences.GetMediumDifficulty() == 1)
+        if (GameManager.instance.awesomeBoolAnim == true && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium Awesome Combo");
         }
-        if (GamePlayController.instance.amazingBoolAnim == true && GamePreferences.GetMediumDifficulty() == 1)
+        if (GameManager.instance.amazingBoolAnim == true && GamePreferences.GetMediumDifficulty() == 1)
         {
             EarnAchievement("Medium Amazing Combo");
         }
 
         //Difficult
-        if (GamePlayController.instance.greatBoolAnim == true && GamePreferences.GetHardDifficulty() == 1)
+        if (GameManager.instance.greatBoolAnim == true && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult Great Combo");
         }
-        if (GamePlayController.instance.awesomeBoolAnim == true && GamePreferences.GetHardDifficulty() == 1)
+        if (GameManager.instance.awesomeBoolAnim == true && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult Awesome Combo");
         }
-        if (GamePlayController.instance.amazingBoolAnim == true && GamePreferences.GetHardDifficulty() == 1)
+        if (GameManager.instance.amazingBoolAnim == true && GamePreferences.GetHardDifficulty() == 1)
         {
             EarnAchievement("Difficult Amazing Combo");
         }

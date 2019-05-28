@@ -17,6 +17,9 @@ public static class GamePreferences
 
     public static string IS_MUSIC_ON = "IsMusicOn";
 
+    public static string FIRST_TIME = "FirstTime";
+
+
     //we are using int for bool value
     // 0 = false -- 1 = true
 
@@ -92,7 +95,15 @@ public static class GamePreferences
         PlayerPrefs.SetInt(GamePreferences.HardDifficultyHighScore, state);
     }
 
-
+    //first start game
+    public static int GetFirstTimeGamePlay()
+    {
+        return PlayerPrefs.GetInt(GamePreferences.FIRST_TIME);
+    }
+    public static void SetFirstTimeGamePlay(int state)
+    {
+        PlayerPrefs.SetInt(GamePreferences.FIRST_TIME, state);
+    }
 
 }
 

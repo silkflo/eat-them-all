@@ -2854,7 +2854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &777693882
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3602,6 +3602,7 @@ MonoBehaviour:
   exploseGuidePanel: {fileID: 386941937}
   loseGuidePanel: {fileID: 1112058114}
   shortcutGuidePanel: {fileID: 516114535}
+  guidePanel: {fileID: 1726157974}
   pausePanel: {fileID: 1457966710}
   nextMoveButton: {fileID: 182258157}
   previousBombButton: {fileID: 387744491}

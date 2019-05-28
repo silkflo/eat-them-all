@@ -15,7 +15,11 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public float timeScore;
 
-    public GameObject visualAchievement;
+    //public GameObject visualAchievement;
+
+    public bool greatBoolAnim, awesomeBoolAnim, amazingBoolAnim;
+    public GameObject guidePanel;
+
    
 
     void Awake()
@@ -25,6 +29,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+
+        //Delete all save data in game
+        PlayerPrefs.DeleteAll();
         InitializeVariables();
         CheckToPlayTheMusic();
 
@@ -36,9 +43,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
 
-
+     
+       
     }
 
 
@@ -72,9 +79,20 @@ public class GameManager : MonoBehaviour
 
             GamePreferences.SetIsMusicOn(0);
 
+            GamePreferences.SetFirstTimeGamePlay(0);
+
             PlayerPrefs.SetInt("Game Initialized", 123);  //giving a key to just use that condition a the first start of the game
+
+            
+
+
+
+
         }
     }
+
+
+
 
     public void CheckGameStatus(int score, float time)
     {

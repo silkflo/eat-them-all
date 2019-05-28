@@ -13,7 +13,8 @@ public class GamePlayController : MonoBehaviour
 
     [SerializeField]
     private GameObject   musicButtonOn, gameOverPanel, musicButtonOff, deactivateScoreObject,
-                         moveGuidePanel,bombGuidePanel, exploseGuidePanel, loseGuidePanel, shortcutGuidePanel;
+                         moveGuidePanel,bombGuidePanel, exploseGuidePanel, loseGuidePanel, shortcutGuidePanel,
+                        guidePanel;
 
     public GameObject pausePanel;
 
@@ -45,12 +46,13 @@ public class GamePlayController : MonoBehaviour
     void Awake()
     {
         MakeInstance();
-
-
     }
 
     private void Start()
     {
+       
+        GameFirstStart();
+
 
         if (GamePreferences.GetEasyDifficulty() == 1)
         {
@@ -79,16 +81,10 @@ public class GamePlayController : MonoBehaviour
             musicButtonOn.SetActive(false);
             musicButtonOff.SetActive(true);
         }
-
-
-
-
     }
 
     void Update()
     {
-
-
         PauseGameByEsc();
         PausePanelTouchControl();
         ItemDeactivateCount();
@@ -97,8 +93,6 @@ public class GamePlayController : MonoBehaviour
         {
             PlayMusic();
         }
-
-
     }
 
     void MakeInstance()
@@ -155,9 +149,6 @@ public class GamePlayController : MonoBehaviour
     {
         if (pausePanel.activeSelf == true)
         {
-
-            
-
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 ResumeGame();
@@ -285,7 +276,7 @@ public class GamePlayController : MonoBehaviour
            
 
             Time.timeScale = 0f;
-           // 
+           
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
@@ -375,19 +366,19 @@ public class GamePlayController : MonoBehaviour
 
             if (comboScoreDisplay >= 4 && comboScoreDisplay < 8 &&  greatText.text == "") 
             {
-                greatBoolAnim = true;
-               greatText.text = "GREAT";
+                GameManager.instance.greatBoolAnim = true;
+                greatText.text = "GREAT";
                 StartCoroutine(DisplayText());
             }
             else if (comboScoreDisplay >= 8 && comboScoreDisplay < 12 && greatText.text == "")
             {
-                awesomeBoolAnim = true;
+                GameManager.instance.awesomeBoolAnim = true;
                 greatText.text = "AWESOME";
                 StartCoroutine(DisplayText());
             }
             else if (comboScoreDisplay >= 12 && greatText.text == "")
             {
-                amazingBoolAnim = true;
+                GameManager.instance.amazingBoolAnim = true;
                 greatText.text = "AMAZING";
                 StartCoroutine(DisplayText());
             }
@@ -408,9 +399,9 @@ public class GamePlayController : MonoBehaviour
             {
                 yield return new WaitForSeconds(1f);
                 greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
-                greatBoolAnim = false;
-                awesomeBoolAnim = false;
-                amazingBoolAnim = false;
+                GameManager.instance.greatBoolAnim = false;
+                GameManager.instance.awesomeBoolAnim = false;
+                GameManager.instance.amazingBoolAnim = false;
             }
 
         }
@@ -421,9 +412,7 @@ public class GamePlayController : MonoBehaviour
 
     public void GuideButtons()
     {
-        //moveGuidePanel.SetActive(false);
-        //Time.timeScale = 0f;
-
+   
         nextMoveButton.onClick.AddListener(() => {
             moveGuidePanel.SetActive(false);
             bombGuidePanel.SetActive(true);
@@ -465,13 +454,23 @@ public class GamePlayController : MonoBehaviour
             shortcutGuidePanel.SetActive(false);
             loseGuidePanel.SetActive(true);
         });
-
-
-
     }
 
+    public void GameFirstStart()
+    {
+        if (GamePreferences.GetFirstTimeGamePlay() == 0)
+        {
+           Time.timeScale = 0f;
+            
+            guidePanel.SetActive(true);
 
-   
+            GamePreferences.SetFirstTimeGamePlay(1);
+        } else if(GamePreferences.GetFirstTimeGamePlay() == 1)
+        {
+            Destroy(guidePanel);
+        }
+    }
+  
 
 
 }
