@@ -12,17 +12,17 @@ public class GamePlayController : MonoBehaviour
     private Text timeText, scoreText, gameOverScoreText, gameOverTimeText, deactivateScoreAnim, greatText;
 
     [SerializeField]
-    private GameObject   musicButtonOn, gameOverPanel, musicButtonOff, deactivateScoreObject,
-                         moveGuidePanel,bombGuidePanel, exploseGuidePanel, loseGuidePanel, shortcutGuidePanel,
+    private GameObject musicButtonOn, gameOverPanel, musicButtonOff, deactivateScoreObject,
+                         moveGuidePanel, bombGuidePanel, exploseGuidePanel, loseGuidePanel, shortcutGuidePanel,
                         guidePanel;
 
     public GameObject pausePanel;
 
     [SerializeField]
-    private Button  nextMoveButton, 
+    private Button nextMoveButton,
                     previousBombButton, nextBombButton,
-                    previousExploseButton,NextExploseButton,
-                    previousLoseButton,nextLoseButton,
+                    previousExploseButton, NextExploseButton,
+                    previousLoseButton, nextLoseButton,
                     previousShortcutButton;
 
 
@@ -36,7 +36,7 @@ public class GamePlayController : MonoBehaviour
     static public int levelMode;
 
     private int totalScore;
- 
+
     private int comboScoreDisplay;
 
     [HideInInspector]
@@ -50,7 +50,7 @@ public class GamePlayController : MonoBehaviour
 
     private void Start()
     {
-       
+
         GameFirstStart();
 
 
@@ -61,13 +61,13 @@ public class GamePlayController : MonoBehaviour
         }
         if (GamePreferences.GetMediumDifficulty() == 1)
         {
-           levelMode = 2;
-           print("It's medium level");
+            levelMode = 2;
+            print("It's medium level");
         }
         if (GamePreferences.GetHardDifficulty() == 1)
         {
-           levelMode = 3;
-           print("That's Hard");
+            levelMode = 3;
+            print("That's Hard");
         }
 
 
@@ -118,9 +118,9 @@ public class GamePlayController : MonoBehaviour
 
     public void PauseGameByEsc()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && Lose.gameOver != true &&  AchievementManager.Instance.achievementMenu.activeSelf == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && Lose.gameOver != true && AchievementManager.Instance.achievementMenu.activeSelf == false)
         {
-         
+
             if (pausePanel.activeSelf == false)
             {
                 panelOnCantMove = true;
@@ -132,7 +132,7 @@ public class GamePlayController : MonoBehaviour
             }
             else
             {
-               
+
                 Time.timeScale = 1f;
                 panelOnCantMove = false;
                 pauseAnimBoool = false;
@@ -141,7 +141,7 @@ public class GamePlayController : MonoBehaviour
             }
 
         }
-      
+
     }
 
 
@@ -157,14 +157,14 @@ public class GamePlayController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-               // if(LevelController.frogLevel == true)
+                // if(LevelController.frogLevel == true)
                 //{
-                    RestartGame(TagManager.FROG_SCENE);
-               // }
-               
+                RestartGame(TagManager.FROG_SCENE);
+                // }
+
             }
 
-           
+
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -231,10 +231,10 @@ public class GamePlayController : MonoBehaviour
 
         DeactivateFood.countDeactivateobject = 0;
 
-       // if (LevelController.frogLevel == true)
-      //  {
+        // if (LevelController.frogLevel == true)
+        //  {
         SceneManager.LoadScene(TagManager.FROG_SCENE);
-       // }
+        // }
 
     }
 
@@ -273,17 +273,17 @@ public class GamePlayController : MonoBehaviour
             seconds = (int)(time % 60f);
             gameOverTimeText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
 
-           
+
 
             Time.timeScale = 0f;
-           
+
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
-               if (LevelController.frogLevel == true)
-               {
-                 RestartGame(TagManager.FROG_SCENE);
-               }
+                if (LevelController.frogLevel == true)
+                {
+                    RestartGame(TagManager.FROG_SCENE);
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -294,7 +294,7 @@ public class GamePlayController : MonoBehaviour
                 BombScript.scoreByBomb = 0;
                 Score.currentTime = 0;
 
-                QuitGame(TagManager.MAIN_MENU_SCENE );
+                QuitGame(TagManager.MAIN_MENU_SCENE);
             }
 
 
@@ -331,7 +331,7 @@ public class GamePlayController : MonoBehaviour
         }
     }
 
-   
+
     //ITEM DEACTIVATE
     public void ItemDeactivateCount()
     {
@@ -356,7 +356,7 @@ public class GamePlayController : MonoBehaviour
             if (comboScoreDisplay > 0)
             {
                 fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
-                deactivateScoreAnim.text = "X "+comboScoreDisplay.ToString();
+                deactivateScoreAnim.text = "X " + comboScoreDisplay.ToString();
             }
             else
             {
@@ -364,7 +364,7 @@ public class GamePlayController : MonoBehaviour
             }
 
 
-            if (comboScoreDisplay >= 4 && comboScoreDisplay < 8 &&  greatText.text == "") 
+            if (comboScoreDisplay >= 4 && comboScoreDisplay < 8 && greatText.text == "")
             {
                 GameManager.instance.greatBoolAnim = true;
                 greatText.text = "GREAT";
@@ -410,50 +410,92 @@ public class GamePlayController : MonoBehaviour
 
     //GUIDE
 
+    public void NextButton() {
+        moveGuidePanel.SetActive(false);
+        bombGuidePanel.SetActive(true);
+    }
+
+    public void PreviousBombButton() {
+        moveGuidePanel.SetActive(true);
+        bombGuidePanel.SetActive(false);
+    }
+
+    public void NextBombButton() {
+        bombGuidePanel.SetActive(false);
+        exploseGuidePanel.SetActive(true);
+    }
+
+    public void PreviousExploseButton() {
+        bombGuidePanel.SetActive(false);
+        exploseGuidePanel.SetActive(true);
+    }
+
+    public void NextExplodeButton() {
+        exploseGuidePanel.SetActive(false);
+        loseGuidePanel.SetActive(true);
+    }
+
+    public void PreviousLoseButton() {
+        loseGuidePanel.SetActive(false);
+        exploseGuidePanel.SetActive(true);
+    }
+
+    public void NextLoseButton() {
+        shortcutGuidePanel.SetActive(true);
+        loseGuidePanel.SetActive(false);
+    }
+
+    public void PreviousShortcutButton() {
+        shortcutGuidePanel.SetActive(false);
+        loseGuidePanel.SetActive(true);
+    }
+
     public void GuideButtons()
     {
-   
-        nextMoveButton.onClick.AddListener(() => {
-            moveGuidePanel.SetActive(false);
-            bombGuidePanel.SetActive(true);
-        });
+        /*
+             nextMoveButton.onClick.AddListener(() => {
+             moveGuidePanel.SetActive(false);
+             bombGuidePanel.SetActive(true);
+             });
 
-        previousBombButton.onClick.AddListener(() => {
-            moveGuidePanel.SetActive(true);
-            bombGuidePanel.SetActive(false);
-        });
+             previousBombButton.onClick.AddListener(() => {
+                 moveGuidePanel.SetActive(true);
+                 bombGuidePanel.SetActive(false);
+             });
 
-        nextBombButton.onClick.AddListener(() => {
-            bombGuidePanel.SetActive(false);
-            exploseGuidePanel.SetActive(true);
-        });
+             nextBombButton.onClick.AddListener(() => {
+                 bombGuidePanel.SetActive(false);
+                 exploseGuidePanel.SetActive(true);
+             });
 
-        previousExploseButton.onClick.AddListener(() => {
-            exploseGuidePanel.SetActive(false);
-            bombGuidePanel.SetActive(true);
-        });
+             previousExploseButton.onClick.AddListener(() => {
+                 exploseGuidePanel.SetActive(false);
+                 bombGuidePanel.SetActive(true);
+             });
 
-        NextExploseButton.onClick.AddListener(() => {
-            exploseGuidePanel.SetActive(false);
-            loseGuidePanel.SetActive(true);
-        });
+             NextExploseButton.onClick.AddListener(() => {
+                 exploseGuidePanel.SetActive(false);
+                 loseGuidePanel.SetActive(true);
+             });
 
-        previousLoseButton.onClick.AddListener(() =>
-        {
-            loseGuidePanel.SetActive(false);
-            exploseGuidePanel.SetActive(true);
-        });
+             previousLoseButton.onClick.AddListener(() =>
+             {
+                 loseGuidePanel.SetActive(false);
+                 exploseGuidePanel.SetActive(true);
+             });
 
-        nextLoseButton.onClick.AddListener(() => {
-            shortcutGuidePanel.SetActive(true);
-            loseGuidePanel.SetActive(false);
+             nextLoseButton.onClick.AddListener(() => {
+                 shortcutGuidePanel.SetActive(true);
+                 loseGuidePanel.SetActive(false);
 
-        });
+             });
 
-        previousShortcutButton.onClick.AddListener(() => {
-            shortcutGuidePanel.SetActive(false);
-            loseGuidePanel.SetActive(true);
-        });
+             previousShortcutButton.onClick.AddListener(() => {
+                 shortcutGuidePanel.SetActive(false);
+                 loseGuidePanel.SetActive(true);
+             });
+
+         */
     }
 
     public void GameFirstStart()
