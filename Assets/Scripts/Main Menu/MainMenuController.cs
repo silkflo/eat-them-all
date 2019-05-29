@@ -24,7 +24,8 @@ public class MainMenuController : MonoBehaviour
     public void StartGame()
     {
         GameManager.instance.gameRestarted = true;
-   
+        AudioManager.instance.ButtonPressedSound();
+
         SceneManager.LoadScene(TagManager.FROG_SCENE);
         
 
@@ -33,18 +34,25 @@ public class MainMenuController : MonoBehaviour
  
     public void OptionMenu()
     {
+
+        AudioManager.instance.ButtonPressedSound();
+     
         SceneManager.LoadScene(TagManager.OPTION_SCENE);
     }
 
 
     public void SuccessMenu()
     {
+         AudioManager.instance.ButtonPressedSound();
+       
         SceneManager.LoadScene(TagManager.SUCCESS_SCENE);
     }
 
 
     public void QuitGame()
     {
+        AudioManager.instance.ButtonPressedSound();
+      
         Application.Quit();
     }
 

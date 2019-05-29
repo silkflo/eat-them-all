@@ -76,6 +76,7 @@ public class DifficultyController : MonoBehaviour
 
     public void EasyMode()
     {
+        AudioManager.instance.ButtonPressedSound();
 
         GamePreferences.SetEasyDifficulty(1);
         GamePreferences.SetMediumDifficulty(0);
@@ -92,6 +93,8 @@ public class DifficultyController : MonoBehaviour
 
     public void MediumMode()
     {
+        AudioManager.instance.ButtonPressedSound();
+     
         GamePreferences.SetEasyDifficulty(0);
         GamePreferences.SetMediumDifficulty(1);
         GamePreferences.SetHardDifficulty(0);
@@ -106,6 +109,8 @@ public class DifficultyController : MonoBehaviour
 
     public void HardMode()
     {
+        AudioManager.instance.ButtonPressedSound();
+   
         GamePreferences.SetEasyDifficulty(0);
         GamePreferences.SetMediumDifficulty(0);
         GamePreferences.SetHardDifficulty(1);
@@ -121,6 +126,8 @@ public class DifficultyController : MonoBehaviour
 
     public void OptionMenu()
     {
+        AudioManager.instance.ButtonPressedSound();
+
         SceneManager.LoadScene(TagManager.OPTION_SCENE);
     }
 

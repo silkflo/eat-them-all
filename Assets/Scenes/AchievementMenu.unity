@@ -526,11 +526,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8612472025820943573, guid: 700d918bdc6caa9419a67c7349c4764d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8612472025491032156, guid: 700d918bdc6caa9419a67c7349c4764d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -735,6 +730,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeCategory
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612472025820943573, guid: 700d918bdc6caa9419a67c7349c4764d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612472025523747748, guid: 700d918bdc6caa9419a67c7349c4764d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612472025702285469, guid: 700d918bdc6caa9419a67c7349c4764d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 700d918bdc6caa9419a67c7349c4764d, type: 3}

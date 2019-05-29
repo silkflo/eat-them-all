@@ -108,6 +108,7 @@ public class GamePlayController : MonoBehaviour
     //GAME PAUSE
     public void PauseTheGame()
     {
+        AudioManager.instance.PauseSound();
         panelOnCantMove = true;
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
@@ -115,67 +116,10 @@ public class GamePlayController : MonoBehaviour
         pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, pauseAnimBoool);
     }
 
-
-    public void PauseGameByEsc()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && Lose.gameOver != true && AchievementManager.Instance.achievementMenu.activeSelf == false)
-        {
-
-            if (pausePanel.activeSelf == false)
-            {
-                panelOnCantMove = true;
-                Time.timeScale = 0f;
-                pausePanel.SetActive(true);
-                pauseAnimBoool = true;
-                pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, pauseAnimBoool);
-
-            }
-            else
-            {
-
-                Time.timeScale = 1f;
-                panelOnCantMove = false;
-                pauseAnimBoool = false;
-                pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, pauseAnimBoool);
-                pausePanel.SetActive(false);
-            }
-
-        }
-
-    }
-
-
-    void PausePanelTouchControl()
-    {
-        if (pausePanel.activeSelf == true)
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                ResumeGame();
-            }
-
-
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                // if(LevelController.frogLevel == true)
-                //{
-                RestartGame(TagManager.FROG_SCENE);
-                // }
-
-            }
-
-
-
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                QuitGame(TagManager.MAIN_MENU_SCENE);
-            }
-        }
-    }
-
     //GAME RESUME
     public void ResumeGame()
     {
+        AudioManager.instance.ButtonPressedSound();
         Time.timeScale = 1f;
         panelOnCantMove = false;
         pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, false);
@@ -184,25 +128,51 @@ public class GamePlayController : MonoBehaviour
         AchievementManager.Instance.achievementMenu.SetActive(false);
     }
 
-    //SHOW ACHIEVEMENT
-    public void AchievementPanel()
+    public void PauseGameByEsc()
     {
-
-        AchievementManager.Instance.achievementMenu.SetActive(!AchievementManager.Instance.achievementMenu.activeSelf);
-
-        if (AchievementManager.Instance.achievementMenu.activeSelf == true)
+        if (Input.GetKeyDown(KeyCode.Escape) && Lose.gameOver != true
+            && AchievementManager.Instance.achievementMenu.activeSelf == false
+             && pausePanel.activeSelf == false)
         {
-            Time.timeScale = 0f;
+
+
+            PauseTheGame();
         }
-        else
+
+        else if (Input.GetKeyDown(KeyCode.Escape) && pausePanel.activeSelf == true)
         {
-            Time.timeScale = 1f;
+
+            ResumeGame();
         }
+
+        
+
     }
+
+    //RESTART GAME
+    public void RestartGame(string sceneName)
+    {
+        AudioManager.instance.ButtonPressedSound();
+
+        Time.timeScale = 1f;
+        panelOnCantMove = false;
+        Lose.gameOver = false;
+        Movement.fallingSpeed = -2.5f;
+        GameManager.instance.gameRestarted = true;
+        gameOverPanel.SetActive(false);
+
+        DeactivateFood.countDeactivateobject = 0;
+
+        SceneManager.LoadScene(TagManager.FROG_SCENE);
+     
+
+    }
+
 
     //QUIT GAME
     public void QuitGame(string sceneName)
     {
+        AudioManager.instance.ButtonPressedSound();
         Time.timeScale = 1f;
         print("reset score?");
         Score.totalScore = 0;
@@ -218,25 +188,57 @@ public class GamePlayController : MonoBehaviour
     }
 
 
-
-    //RESTART GAME
-    public void RestartGame(string sceneName)
+    void PausePanelTouchControl()
     {
-        Time.timeScale = 1f;
-        panelOnCantMove = false;
-        Lose.gameOver = false;
-        Movement.fallingSpeed = -2.5f;
-        GameManager.instance.gameRestarted = true;
-        gameOverPanel.SetActive(false);
+        if (pausePanel.activeSelf == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Return) )
+            {
+               
+                ResumeGame();
+            }
 
-        DeactivateFood.countDeactivateobject = 0;
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+               
+                RestartGame(TagManager.FROG_SCENE);
+       
+            }
 
-        // if (LevelController.frogLevel == true)
-        //  {
-        SceneManager.LoadScene(TagManager.FROG_SCENE);
-        // }
 
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+               
+                QuitGame(TagManager.MAIN_MENU_SCENE);
+            }
+        }
     }
+
+ 
+
+    //SHOW ACHIEVEMENT
+    public void AchievementPanel()
+    {
+        AudioManager.instance.ButtonPressedSound();
+
+        AchievementManager.Instance.achievementMenu.SetActive(!AchievementManager.Instance.achievementMenu.activeSelf);
+
+        if (AchievementManager.Instance.achievementMenu.activeSelf == true)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
+
+
+
+
+
+ 
 
     //DISPLAY SCORE
     public void SetScore(int score)
@@ -263,6 +265,8 @@ public class GamePlayController : MonoBehaviour
         if (Lose.gameOver == true)
         {
             print("print you lose");
+            AudioManager.instance.GameOverSound();
+
             panelOnCantMove = true;
             gameOverPanel.SetActive(true);
             gameOverAnim.SetBool(TagManager.GAMEOVER_PARAMETER, true);
@@ -277,44 +281,34 @@ public class GamePlayController : MonoBehaviour
 
             Time.timeScale = 0f;
 
-
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (AchievementManager.Instance.achievementMenu.activeSelf == false)
             {
-                if (LevelController.frogLevel == true)
+                if (Input.GetKeyDown(KeyCode.Return))
                 {
+
                     RestartGame(TagManager.FROG_SCENE);
+
+                }
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+
+                    QuitGame(TagManager.MAIN_MENU_SCENE);
+                }
+
+
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    QuitGame(TagManager.MAIN_MENU_SCENE);
                 }
             }
-
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Score.totalScore = 0;
-                SpawnFood.scoreBySpawn = 0;
-                DeactivateFood.countDeactivateobject = 0;
-                BombScript.scoreByBomb = 0;
-                Score.currentTime = 0;
-
-                QuitGame(TagManager.MAIN_MENU_SCENE);
-            }
-
-
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                Score.totalScore = 0;
-                SpawnFood.scoreBySpawn = 0;
-                DeactivateFood.countDeactivateobject = 0;
-                BombScript.scoreByBomb = 0;
-                Score.currentTime = 0;
-
-                QuitGame(TagManager.MAIN_MENU_SCENE);
-            }
-
         }
     }
 
     //MUSIC
     public void PlayMusic()
     {
+        AudioManager.instance.ButtonPressedSound();
         if (GamePreferences.GetIsMusicOn() == 0)
         {
             GamePreferences.SetIsMusicOn(1);
@@ -366,6 +360,7 @@ public class GamePlayController : MonoBehaviour
 
             if (comboScoreDisplay >= 4 && comboScoreDisplay < 8 && greatText.text == "")
             {
+                //add sound
                 GameManager.instance.greatBoolAnim = true;
                 greatText.text = "GREAT";
                 StartCoroutine(DisplayText());
@@ -410,42 +405,50 @@ public class GamePlayController : MonoBehaviour
 
     //GUIDE
 
-    public void NextButton() {
+    public void NextMoveButton() {
+        AudioManager.instance.ButtonPressedSound();
         moveGuidePanel.SetActive(false);
         bombGuidePanel.SetActive(true);
     }
 
     public void PreviousBombButton() {
+        AudioManager.instance.ButtonPressedSound();
         moveGuidePanel.SetActive(true);
         bombGuidePanel.SetActive(false);
     }
 
     public void NextBombButton() {
+        AudioManager.instance.ButtonPressedSound();
         bombGuidePanel.SetActive(false);
         exploseGuidePanel.SetActive(true);
     }
 
     public void PreviousExploseButton() {
-        bombGuidePanel.SetActive(false);
-        exploseGuidePanel.SetActive(true);
+        AudioManager.instance.ButtonPressedSound();
+        bombGuidePanel.SetActive(true);
+        exploseGuidePanel.SetActive(false);
     }
 
     public void NextExplodeButton() {
+        AudioManager.instance.ButtonPressedSound();
         exploseGuidePanel.SetActive(false);
         loseGuidePanel.SetActive(true);
     }
 
     public void PreviousLoseButton() {
+        AudioManager.instance.ButtonPressedSound();
         loseGuidePanel.SetActive(false);
         exploseGuidePanel.SetActive(true);
     }
 
     public void NextLoseButton() {
+        AudioManager.instance.ButtonPressedSound();
         shortcutGuidePanel.SetActive(true);
         loseGuidePanel.SetActive(false);
     }
 
     public void PreviousShortcutButton() {
+        AudioManager.instance.ButtonPressedSound();
         shortcutGuidePanel.SetActive(false);
         loseGuidePanel.SetActive(true);
     }

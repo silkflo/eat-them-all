@@ -43,6 +43,7 @@ public class TagManager
     public static string SUCCESS_SCENE = "SuccessMenu";
     public static string ACHIEVEMENT_SCENE = "AchievementMenu";
     public static string LEVEL_SCENE = "LevelMenu";
+    public static string HELP_SCENE = "HelpScene";
 
 
     //OBJECTS

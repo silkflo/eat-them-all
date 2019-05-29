@@ -31,14 +31,10 @@ public class GameManager : MonoBehaviour
     {
 
         //Delete all save data in game
-        PlayerPrefs.DeleteAll();
+       // PlayerPrefs.DeleteAll();
+
         InitializeVariables();
         CheckToPlayTheMusic();
-
-
-  
-
-
     }
 
     void Update()

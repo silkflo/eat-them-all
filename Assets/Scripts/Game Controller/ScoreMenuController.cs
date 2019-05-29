@@ -61,6 +61,8 @@ public class ScoreMenuController : MonoBehaviour
 
     public void MainMenu()
     {
+        AudioManager.instance.ButtonPressedSound();
+       
         SceneManager.LoadScene(TagManager.SUCCESS_SCENE);
     }
 

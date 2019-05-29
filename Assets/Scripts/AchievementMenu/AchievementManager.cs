@@ -76,6 +76,7 @@ public class AchievementManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M) && SceneManager.GetActiveScene() == SceneManager.GetSceneByName(TagManager.FROG_SCENE))
         {
+            AudioManager.instance.ButtonPressedSound();
             achievementMenu.SetActive(!achievementMenu.activeSelf);
 
             if (achievementMenu.activeSelf == true)
@@ -217,8 +218,11 @@ public class AchievementManager : MonoBehaviour
     {
         // CREATE ACHIEVEMENT LIST
         //ACHIEVEMENT TEST
+      /*
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press W", "beat 400 in easy difficulty", 2);
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press X", "beat 800 in easy difficulty", 1);
+        */
+
 
         //-------------------------------------FROG-----------------------------------------------------------------
         //SCORE ACHIEVEMENT-----------------------------------------------------------------------------------------
@@ -360,7 +364,7 @@ public class AchievementManager : MonoBehaviour
     {
 
         //TEST-----------------------------------------------------------------------------------------
-
+/*
         if (Input.GetKeyDown(KeyCode.W))
         {
             EarnAchievement("Press W");
@@ -370,7 +374,7 @@ public class AchievementManager : MonoBehaviour
         {
             EarnAchievement("Press X");
         }
-
+*/
 
         //SCORE--------------------------------------------------------------------------------------
         //Easy

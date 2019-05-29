@@ -25,17 +25,23 @@ public class SuccessController : MonoBehaviour
 
     public void ScoreMenu()
     {
+        AudioManager.instance.ButtonPressedSound();
+
         SceneManager.LoadScene(TagManager.SCORE_SCENE);
     }
 
     public void TropheeMenu()
     {
+        AudioManager.instance.ButtonPressedSound();
+       
         SceneManager.LoadScene(TagManager.ACHIEVEMENT_SCENE);
     }
 
 
     public void MainMenu()
     {
+        AudioManager.instance.ButtonPressedSound();
+
         SceneManager.LoadScene(TagManager.MAIN_MENU_SCENE);
     }
 
