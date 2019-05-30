@@ -39,9 +39,13 @@ public class GamePlayController : MonoBehaviour
 
     private int comboScoreDisplay;
 
+    static public bool startCombo;
+
     [HideInInspector]
     public bool greatBoolAnim, awesomeBoolAnim, amazingBoolAnim;
 
+
+    private int maxCombo;
 
     void Awake()
     {
@@ -329,9 +333,10 @@ public class GamePlayController : MonoBehaviour
     //ITEM DEACTIVATE
     public void ItemDeactivateCount()
     {
-
+/*
         int countnow;
         int countafter;
+       
 
         countnow = DeactivateFood.countDeactivateobject;
         //  print("countnow : " + countnow);
@@ -347,8 +352,11 @@ public class GamePlayController : MonoBehaviour
             // print("countafter : " + countafter);
             // print("Total Combo = " + comboScoreDisplay);
 
+          
+
             if (comboScoreDisplay > 0)
             {
+               
                 fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
                 deactivateScoreAnim.text = "X " + comboScoreDisplay.ToString();
             }
@@ -358,21 +366,28 @@ public class GamePlayController : MonoBehaviour
             }
 
 
-            if (comboScoreDisplay >= 4 && comboScoreDisplay < 8 && greatText.text == "")
+            if (comboScoreDisplay >= 1 && comboScoreDisplay < 2 && greatText.text == "") //4-8
             {
-                //add sound
+
+                
+                AudioManager.instance.GreatSound();
+
                 GameManager.instance.greatBoolAnim = true;
                 greatText.text = "GREAT";
                 StartCoroutine(DisplayText());
             }
-            else if (comboScoreDisplay >= 8 && comboScoreDisplay < 12 && greatText.text == "")
+            else if (comboScoreDisplay >= 2 && comboScoreDisplay < 3 && greatText.text == "") //8-12
             {
+                
+                AudioManager.instance.AwesomeSound();
                 GameManager.instance.awesomeBoolAnim = true;
                 greatText.text = "AWESOME";
                 StartCoroutine(DisplayText());
             }
-            else if (comboScoreDisplay >= 12 && greatText.text == "")
+            else if (comboScoreDisplay >= 4 && greatText.text == "") //12
             {
+               
+                AudioManager.instance.AmazingSound();
                 GameManager.instance.amazingBoolAnim = true;
                 greatText.text = "AMAZING";
                 StartCoroutine(DisplayText());
@@ -386,8 +401,11 @@ public class GamePlayController : MonoBehaviour
 
             IEnumerator SetTextNull()
             {
+                
                 yield return new WaitForSeconds(2f);
                 greatText.text = "";
+                startCombo = false;
+              
             }
 
             IEnumerator DisplayText()
@@ -398,6 +416,65 @@ public class GamePlayController : MonoBehaviour
                 GameManager.instance.awesomeBoolAnim = false;
                 GameManager.instance.amazingBoolAnim = false;
             }
+          
+        }
+
+*/
+        if (DeactivateFood.countStartCombo >0)
+        {
+            fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
+            deactivateScoreAnim.text = "X " + DeactivateFood.countStartCombo.ToString();
+        }
+        else
+        {
+            fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, false);
+        }
+
+        if (DeactivateFood.countStartCombo >=4 && DeactivateFood.countStartCombo <8)
+        {
+            
+
+            GameManager.instance.greatBoolAnim = true;
+            greatText.text = "GREAT";
+            StartCoroutine(DisplayText());
+        }
+
+       else if (DeactivateFood.countStartCombo >= 8 && DeactivateFood.countStartCombo < 12)
+        {
+
+            
+            GameManager.instance.awesomeBoolAnim = true;
+            greatText.text = "AWESOME";
+            StartCoroutine(DisplayText());
+        }
+      else  if (DeactivateFood.countStartCombo >= 12 )
+        {
+           
+            GameManager.instance.amazingBoolAnim = true;
+            greatText.text = "AMAZING";
+            StartCoroutine(DisplayText());
+        }
+        else
+        {
+            greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, false);
+            StartCoroutine(SetTextNull());
+
+        }
+        IEnumerator DisplayText()
+        {
+            yield return new WaitForSeconds(1f);
+            greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
+            GameManager.instance.greatBoolAnim = false;
+            GameManager.instance.awesomeBoolAnim = false;
+            GameManager.instance.amazingBoolAnim = false;
+        }
+
+        IEnumerator SetTextNull()
+        {
+
+            yield return new WaitForSeconds(2f);
+            greatText.text = "";
+            startCombo = false;
 
         }
 

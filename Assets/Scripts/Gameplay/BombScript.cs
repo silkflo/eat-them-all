@@ -32,7 +32,7 @@ public class BombScript : MonoBehaviour
                 startCountCombo = DeactivateFood.countDeactivateobject;
             }
 
-            print("start bomb deactivate = " + startCountCombo);
+           // print("start bomb deactivate = " + startCountCombo);
 
             anim.SetBool(TagManager.FLAME_PARAMETER, true);
             StartCoroutine(BombDeactivate());
@@ -45,7 +45,7 @@ public class BombScript : MonoBehaviour
 
       
             scoreByBomb = scoreByBomb + 10;
-        print("score by BOmb : " + scoreByBomb);
+       // print("score by BOmb : " + scoreByBomb);
         
         this.transform.parent.gameObject.SetActive(false);
     }

@@ -7,8 +7,10 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
-    public AudioSource buttonPressedAudioSource, pauseAudioSource, gameOverAudioSource;
-    public AudioClip buttonPressedClip, pauseClip,gameOverClip;
+    public AudioSource buttonPressedAudioSource, pauseAudioSource, gameOverAudioSource,
+                       greatAudioSource,awesomeAudioSource, amazingAudioSource;
+    public AudioClip buttonPressedClip, pauseClip,gameOverClip,
+                    greatClip,awesomeClip,amazingClip;
 
 
 
@@ -48,7 +50,20 @@ public class AudioManager : MonoBehaviour
         pauseAudioSource.PlayOneShot(pauseClip, 1.0f);
     }
 
+    public void GreatSound()
+    {
+        greatAudioSource.PlayOneShot(greatClip, 1.0f);
+    }
 
+    public void AwesomeSound()
+    {
+        awesomeAudioSource.PlayOneShot(awesomeClip, 1.0f);
+    }
+
+    public void AmazingSound()
+    {
+        amazingAudioSource.PlayOneShot(amazingClip, 1.0f);
+    }
 
 
 

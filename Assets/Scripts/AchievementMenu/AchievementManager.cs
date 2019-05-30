@@ -107,7 +107,7 @@ public class AchievementManager : MonoBehaviour
 
         AchievementGoal();
 
-        print("Score : " + Score.totalScore);
+       // print("Score : " + Score.totalScore);
     }
 
     public void EarnAchievement(string title)

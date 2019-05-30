@@ -66,7 +66,7 @@ public class Lose : MonoBehaviour
         }
        // endCountCombo = DeactivateFood.countDeactivateobject;
         comboScore = endCountCombo - BombScript.startCountCombo;
-        print("combo score : " + comboScore + " - EndCombo : " + endCountCombo + " - StartCombo : " + BombScript.startCountCombo);
+     //   print("combo score : " + comboScore + " - EndCombo : " + endCountCombo + " - StartCombo : " + BombScript.startCountCombo);
 
         canLose = true;
         BombRadius.hasExploded = false;
@@ -76,5 +76,5 @@ public class Lose : MonoBehaviour
     }
 
     //Lose by bomb Cf BombScript
-
+   
 }
