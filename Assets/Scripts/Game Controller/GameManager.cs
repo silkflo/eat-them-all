@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     //public GameObject visualAchievement;
 
     public bool greatBoolAnim, awesomeBoolAnim, amazingBoolAnim;
-    public GameObject guidePanel;
+   // public GameObject guidePanel;
 
    
 
