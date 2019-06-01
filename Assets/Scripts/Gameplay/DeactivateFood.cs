@@ -51,7 +51,7 @@ public class DeactivateFood : MonoBehaviour
             countStartCombo++;
 
             print("canLose : " + Lose.canLose);
-                print("food deactivated = " + countDeactivateobject + " NAME : " + target.gameObject.name + " TAG : " + target.gameObject.tag);
+              //  print("food deactivated = " + countDeactivateobject + " NAME : " + target.gameObject.name + " TAG : " + target.gameObject.tag);
 
 
                 itemDeactivateScore = itemDeactivateScore + 5;

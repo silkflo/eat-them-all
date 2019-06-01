@@ -3387,7 +3387,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Explose the Bombs to expulse insects:
+  m_Text: 'Blow up the bombs to eject insects:
 
 
     +10 points per bomb
@@ -4740,7 +4740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4362268839356469341
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4875,7 +4875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4362268840288104061
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5137,7 +5137,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: PreviousLoseButton
+        m_MethodName: PreviousShortcutButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

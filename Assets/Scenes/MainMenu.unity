@@ -223,7 +223,7 @@ MonoBehaviour:
   amazingAudioSource: {fileID: 287906606}
   buttonPressedClip: {fileID: 8300000, guid: 20a8cf1e20323684b91f48465e07e9be, type: 3}
   pauseClip: {fileID: 8300000, guid: befc657e62fd6bc4cb045807211d1244, type: 3}
-  gameOverClip: {fileID: 8300000, guid: 4def76b1d170c714896d286a78e690cd, type: 3}
+  gameOverClip: {fileID: 8300000, guid: b060875c5f8cdf244ac301c338715b0b, type: 3}
   greatClip: {fileID: 8300000, guid: b060875c5f8cdf244ac301c338715b0b, type: 3}
   awesomeClip: {fileID: 8300000, guid: 58796bd4bfd72d7499d225d920fd0230, type: 3}
   amazingClip: {fileID: 8300000, guid: 6927cc5f7914ae14ca49fbd545ac22c7, type: 3}
@@ -235,7 +235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140863072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.8549905, y: -0.3340763, z: -9.697024}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 291826964}
@@ -1488,7 +1488,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4def76b1d170c714896d286a78e690cd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b060875c5f8cdf244ac301c338715b0b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

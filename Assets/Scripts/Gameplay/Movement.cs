@@ -61,6 +61,7 @@ public class Movement : MonoBehaviour
         }
 
         LetFallItem();
+        DeactivateHighObject();
     }
 
 
@@ -161,8 +162,19 @@ public class Movement : MonoBehaviour
        // print("speed increased by : (" + fallingSpeed +  " ; " + Score.currentTime + ")");
     }
 
-    
+
+    public void DeactivateHighObject()
+    {
+        if(gameObject.transform.position.y > 29)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+
+
 }
+
 
 
 

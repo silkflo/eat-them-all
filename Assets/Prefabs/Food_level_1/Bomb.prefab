@@ -313,5 +313,5 @@ MonoBehaviour:
   flyBody: {fileID: 1488091882203495132, guid: 39dbc43962ac8cb4a9f21e9da6259e58, type: 3}
   bombBody: {fileID: 4459781722316496430}
   anim: {fileID: 3156256642729395238}
-  powerX: 5
+  powerX: 25
   powerY: 15
