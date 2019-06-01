@@ -17,7 +17,7 @@ public class BombScript : MonoBehaviour
 
     private void Update()
     {
-        LoseByBomb();
+        //LoseByBomb();
     }
 
     private int startCountCombo2ndBomb;
@@ -35,6 +35,7 @@ public class BombScript : MonoBehaviour
            // print("start bomb deactivate = " + startCountCombo);
 
             anim.SetBool(TagManager.FLAME_PARAMETER, true);
+            AudioManager.instance.ExplosionSound();
             StartCoroutine(BombDeactivate());
         }
     }
@@ -51,15 +52,19 @@ public class BombScript : MonoBehaviour
     }
 
     // Can't figure out how to use it in LoseScript, so i put it here to made it work 
+
+        /*
     private void LoseByBomb()
     {
         if (transform.position.y <=-20f && Lose.canLose == true)
         {
             print("GAME OVER by a bomb!!!");
+            AudioManager.instance.GameOverSound();
             Lose.gameOver = true;
            
             
         }
     }
+    */
 
 }

@@ -91,7 +91,7 @@ public class GamePlayController : MonoBehaviour
     {
         PauseGameByEsc();
         PausePanelTouchControl();
-        ItemDeactivateCount();
+        ComboDisplay();
 
         if (Input.GetKeyDown(KeyCode.S))
         {
@@ -134,7 +134,7 @@ public class GamePlayController : MonoBehaviour
 
     public void PauseGameByEsc()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && Lose.gameOver != true
+        if (Input.GetKeyDown(KeyCode.Escape) && Lose.gameOver != true 
             && AchievementManager.Instance.achievementMenu.activeSelf == false
              && pausePanel.activeSelf == false)
         {
@@ -143,7 +143,7 @@ public class GamePlayController : MonoBehaviour
             PauseTheGame();
         }
 
-        else if (Input.GetKeyDown(KeyCode.Escape) && pausePanel.activeSelf == true)
+        else if (Input.GetKeyDown(KeyCode.Escape) && pausePanel.activeSelf == true )
         {
 
             ResumeGame();
@@ -269,8 +269,8 @@ public class GamePlayController : MonoBehaviour
         if (Lose.gameOver == true)
         {
             print("print you lose");
-            AudioManager.instance.GameOverSound();
 
+        
             panelOnCantMove = true;
             gameOverPanel.SetActive(true);
             gameOverAnim.SetBool(TagManager.GAMEOVER_PARAMETER, true);
@@ -280,8 +280,8 @@ public class GamePlayController : MonoBehaviour
             minutes = (int)(time / 60f);
             seconds = (int)(time % 60f);
             gameOverTimeText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
-
-
+           
+      
 
             Time.timeScale = 0f;
 
@@ -331,99 +331,13 @@ public class GamePlayController : MonoBehaviour
 
 
     //ITEM DEACTIVATE
-    public void ItemDeactivateCount()
+    public void ComboDisplay()
     {
-/*
-        int countnow;
-        int countafter;
-       
 
-        countnow = DeactivateFood.countDeactivateobject;
-        //  print("countnow : " + countnow);
-
-        StartCoroutine(CountAfter());
-
-        IEnumerator CountAfter()
-        {
-            yield return new WaitForSeconds(5f);
-
-            countafter = DeactivateFood.countDeactivateobject;
-            comboScoreDisplay = countafter - countnow;
-            // print("countafter : " + countafter);
-            // print("Total Combo = " + comboScoreDisplay);
-
-          
-
-            if (comboScoreDisplay > 0)
-            {
-               
-                fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
-                deactivateScoreAnim.text = "X " + comboScoreDisplay.ToString();
-            }
-            else
-            {
-                fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, false);
-            }
-
-
-            if (comboScoreDisplay >= 1 && comboScoreDisplay < 2 && greatText.text == "") //4-8
-            {
-
-                
-                AudioManager.instance.GreatSound();
-
-                GameManager.instance.greatBoolAnim = true;
-                greatText.text = "GREAT";
-                StartCoroutine(DisplayText());
-            }
-            else if (comboScoreDisplay >= 2 && comboScoreDisplay < 3 && greatText.text == "") //8-12
-            {
-                
-                AudioManager.instance.AwesomeSound();
-                GameManager.instance.awesomeBoolAnim = true;
-                greatText.text = "AWESOME";
-                StartCoroutine(DisplayText());
-            }
-            else if (comboScoreDisplay >= 4 && greatText.text == "") //12
-            {
-               
-                AudioManager.instance.AmazingSound();
-                GameManager.instance.amazingBoolAnim = true;
-                greatText.text = "AMAZING";
-                StartCoroutine(DisplayText());
-            }
-            else
-            {
-                greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, false);
-                StartCoroutine(SetTextNull());
-
-            }
-
-            IEnumerator SetTextNull()
-            {
-                
-                yield return new WaitForSeconds(2f);
-                greatText.text = "";
-                startCombo = false;
-              
-            }
-
-            IEnumerator DisplayText()
-            {
-                yield return new WaitForSeconds(1f);
-                greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
-                GameManager.instance.greatBoolAnim = false;
-                GameManager.instance.awesomeBoolAnim = false;
-                GameManager.instance.amazingBoolAnim = false;
-            }
-          
-        }
-
-*/
         if (DeactivateFood.countStartCombo >0)
         {
             fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, true);
-            deactivateScoreAnim.text = "X " + DeactivateFood.countStartCombo.ToString();
+            deactivateScoreAnim.text =  DeactivateFood.countStartCombo.ToString();
         }
         else
         {

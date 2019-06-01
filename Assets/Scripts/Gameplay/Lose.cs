@@ -13,9 +13,18 @@ public class Lose : MonoBehaviour
     static public int endCountCombo;
     static public int comboScore;
 
+   
+
+
     private void Awake()
     {
         gameOver = false;
+    }
+
+
+    private void Start()
+    {
+        
     }
 
     void Update()
@@ -29,11 +38,12 @@ public class Lose : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D target)
     {
-        if (target.tag == TagManager.FOOD_TAG && canLose == true)
+        if ((target.tag == TagManager.FOOD_TAG || target.tag == TagManager.BOMB_TAG) 
+            && canLose == true && target.tag != "BombLoseLine")
         {
             print("GAME OVER by food!!!");
             gameOver = true;
-
+            AudioManager.instance.GameOverSound();
             GameManager.instance.CheckGameStatus(Score.totalScore, Score.currentTime);
 
 
@@ -64,7 +74,7 @@ public class Lose : MonoBehaviour
         {
             endCountCombo = DeactivateFood.countDeactivateobject;
         }
-       // endCountCombo = DeactivateFood.countDeactivateobject;
+   
         comboScore = endCountCombo - BombScript.startCountCombo;
      //   print("combo score : " + comboScore + " - EndCombo : " + endCountCombo + " - StartCombo : " + BombScript.startCountCombo);
 

@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 6301976850965572980}
   m_Layer: 0
   m_Name: Radius
-  m_TagString: Untagged
+  m_TagString: BombLoseLine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

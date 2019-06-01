@@ -7,10 +7,19 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
-    public AudioSource buttonPressedAudioSource, pauseAudioSource, gameOverAudioSource,
-                       greatAudioSource,awesomeAudioSource, amazingAudioSource;
-    public AudioClip buttonPressedClip, pauseClip,gameOverClip,
-                    greatClip,awesomeClip,amazingClip;
+    public AudioSource  buttonPressedAudioSource, pauseAudioSource, gameOverAudioSource,
+                        greatAudioSource,awesomeAudioSource, amazingAudioSource,
+                        scarabeAudioSource, dragonFlyAudioSource, wormAudioSource, 
+                        flyAudioSource, bombAudioSource, explosionAudioSource,
+                        achievementAudioSource, freeFallAudioSource;
+
+
+
+    public AudioClip    buttonPressedClip, pauseClip,gameOverClip,
+                        greatClip,awesomeClip,amazingClip,
+                        scarabeClip, dragonFlyClip, wormClip,
+                        flyClip, bombClip, explosionClip,
+                        achievementClip, freeFallClip;
 
 
 
@@ -65,6 +74,44 @@ public class AudioManager : MonoBehaviour
         amazingAudioSource.PlayOneShot(amazingClip, 1.0f);
     }
 
+    public void ScarabeSound()
+    {
+        scarabeAudioSource.PlayOneShot(scarabeClip, 1.0f);
+    }
 
+    public void FlySound()
+    {
+        flyAudioSource.PlayOneShot(flyClip, 1.0f);
+    }
+
+    public void DragonFlySound()
+    {
+        dragonFlyAudioSource.PlayOneShot(dragonFlyClip, 1.0f);
+    }
+
+    public void WormSound()
+    {
+        wormAudioSource.PlayOneShot(wormClip, 1.0f);
+    }
+
+    public void BombSound()
+    {
+        bombAudioSource.PlayOneShot(bombClip, 1.0f);
+    }
+
+    public void ExplosionSound()
+    {
+        explosionAudioSource.PlayOneShot(explosionClip, 1.0f);
+    }
+
+    public void AchievementSound()
+    {
+        achievementAudioSource.PlayOneShot(achievementClip, 1.0f);
+    }
+
+    public void FreeFallSound()
+    {
+        freeFallAudioSource.PlayOneShot(freeFallClip, 1.0f);
+    }
 
 }

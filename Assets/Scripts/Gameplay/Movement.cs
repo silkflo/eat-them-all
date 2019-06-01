@@ -61,7 +61,7 @@ public class Movement : MonoBehaviour
         }
 
         LetFallItem();
-        DeactivateHighObject();
+      //  DeactivateHighObject();
     }
 
 
@@ -119,11 +119,34 @@ public class Movement : MonoBehaviour
              target.collider.tag == TagManager.FOOD_TAG) &&
              cantMove == false)
         {
+       
             cantMove = true;
             //TO AVOID THE DOUBLE SPAWN
             SpawnSecurity.timeElapsed = 0f;
             if(gameObject.activeSelf)
             StartCoroutine(SpawnDelay());
+
+
+            if(gameObject.name == "Scarabe(Clone)")
+            {
+                AudioManager.instance.ScarabeSound();
+            }
+            else if(gameObject.name == "DragonFly(Clone)")
+            {
+                AudioManager.instance.DragonFlySound();
+            }
+            else if(gameObject.name == "Bomb(Clone)")
+            {
+                AudioManager.instance.BombSound();
+            }
+            else if (gameObject.name == "Fly(Clone)")
+            {
+                AudioManager.instance.FlySound();
+            }
+            else if (gameObject.name == "Worm(Clone)")
+            {
+                AudioManager.instance.WormSound();
+            }
 
         }
     }
@@ -146,9 +169,12 @@ public class Movement : MonoBehaviour
            
             cantMove = true;
             myRigidBody.velocity = new Vector2(0, fallingSpeed);
+          //  AudioManager.instance.FreeFallSound();
         }
     }
 
+
+   
 
     void increaseSpeed()
     {
@@ -162,7 +188,7 @@ public class Movement : MonoBehaviour
        // print("speed increased by : (" + fallingSpeed +  " ; " + Score.currentTime + ")");
     }
 
-
+    /*
     public void DeactivateHighObject()
     {
         if(gameObject.transform.position.y > 29)
@@ -170,7 +196,7 @@ public class Movement : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
+*/
 
 
 }

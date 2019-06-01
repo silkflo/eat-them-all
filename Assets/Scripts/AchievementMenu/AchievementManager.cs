@@ -218,10 +218,10 @@ public class AchievementManager : MonoBehaviour
     {
         // CREATE ACHIEVEMENT LIST
         //ACHIEVEMENT TEST
-      /*
+      
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press W", "beat 400 in easy difficulty", 2);
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press X", "beat 800 in easy difficulty", 1);
-        */
+        
 
 
         //-------------------------------------FROG-----------------------------------------------------------------
@@ -268,26 +268,26 @@ public class AchievementManager : MonoBehaviour
 
 
         //EXPULSE OBJECTS----------------------------------------------------------------------------------------------------------
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eject 50 insects", "eject 50 insects in easy difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eject 75 insects", "eject 75 insects in easy difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eject 100 insects", "eject 100 insects in easy difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eject 30 insects", "eject 30 insects in easy difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eject 60 insects", "eject 60 insects in easy difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eject 90 insects", "eject 90 insects in easy difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eject 50 insects", "eject 50 insects in medium difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eject 75 insects", "eject 75 insects in medium difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eject 100 insects", "eject 100 insects in medium difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eject 30 insects", "eject 30 insects in medium difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eject 60 insects", "eject 60 insects in medium difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eject 90 insects", "eject 90 insects in medium difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eject 50 insects", "eject 50 insects in hard difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eject 75 insects", "eject 75 insects in hard difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eject 100 insects", "eject 100 insects in hard difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eject 30 insects", "eject 30 insects in hard difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eject 60 insects", "eject 60 insects in hard difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eject 90 insects", "eject 90 insects in hard difficulty", 0);
 
 
 
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Master of insects throw up", "eject all insects in all dificulties", 0,
-                      new string[] { "Easy eject 50 insects", "Easy eject 75 insects", "Easy eject 100 insects",
-                                     "Medium eject 50 insects", "Medium eject 75 insects", "Medium eject 100 insects",
-                                     "Difficult eject 50 insects", "Difficult eject 75 insects", "Difficult eject 100 insects",});
+                      new string[] { "Easy eject 30 insects", "Easy eject 60 insects", "Easy eject 90 insects",
+                                     "Medium eject 30 insects", "Medium eject 60 insects", "Medium eject 90 insects",
+                                     "Difficult eject 30 insects", "Difficult eject 60 insects", "Difficult eject 90 insects",});
 
-
+            
 
         //COMBO-----------------------------------------------------------------------------------------------------------------------
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy Great Combo", "Great combo in easy difficulty", 2);
@@ -364,7 +364,7 @@ public class AchievementManager : MonoBehaviour
     {
 
         //TEST-----------------------------------------------------------------------------------------
-/*
+
         if (Input.GetKeyDown(KeyCode.W))
         {
             EarnAchievement("Press W");
@@ -374,7 +374,7 @@ public class AchievementManager : MonoBehaviour
         {
             EarnAchievement("Press X");
         }
-*/
+
 
         //SCORE--------------------------------------------------------------------------------------
         //Easy
@@ -468,45 +468,45 @@ public class AchievementManager : MonoBehaviour
 
         //eject INSECTS---------------------------------------------------------------
         //Easy
-        if(DeactivateFood.countDeactivateobject >49 && GamePreferences.GetEasyDifficulty() == 1)
+        if(DeactivateFood.countDeactivateobject >29 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy eject 50 insects");
+            EarnAchievement("Easy eject 30 insects");
         }
-        if (DeactivateFood.countDeactivateobject > 74 && GamePreferences.GetEasyDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 59 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy eject 75 insects");
+            EarnAchievement("Easy eject 60 insects");
         }
-        if (DeactivateFood.countDeactivateobject > 99 && GamePreferences.GetEasyDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 89 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy eject 100 insects");
+            EarnAchievement("Easy eject 90 insects");
         }
 
         //Medium
-        if (DeactivateFood.countDeactivateobject > 49 && GamePreferences.GetMediumDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 29 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium eject 50 insects");
+            EarnAchievement("Medium eject 30 insects");
         }
-        if (DeactivateFood.countDeactivateobject > 74 && GamePreferences.GetMediumDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 59 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium eject 75 insects");
+            EarnAchievement("Medium eject 60 insects");
         }
-        if (DeactivateFood.countDeactivateobject > 99 && GamePreferences.GetMediumDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 89 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium eject 100 insects");
+            EarnAchievement("Medium eject 90 insects");
         }
 
         //Difficult
-        if (DeactivateFood.countDeactivateobject > 49 && GamePreferences.GetHardDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 29 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult eject 50 insects");
+            EarnAchievement("Difficult eject 30 insects");
         }
-        if (DeactivateFood.countDeactivateobject > 74 && GamePreferences.GetHardDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 59 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult eject 75 insects");
+            EarnAchievement("Difficult eject 60 insects");
         }
-        if (DeactivateFood.countDeactivateobject > 99 && GamePreferences.GetHardDifficulty() == 1)
+        if (DeactivateFood.countDeactivateobject > 89 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult eject 100 insects");
+            EarnAchievement("Difficult eject 90 insects");
         }
 
 

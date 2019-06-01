@@ -53,7 +53,7 @@ public class Achievement
         {
 
             achievementRef.SetActive(true);
-
+            AudioManager.instance.AchievementSound();
 
 
             SaveAchievement(true);
