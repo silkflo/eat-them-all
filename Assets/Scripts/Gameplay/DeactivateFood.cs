@@ -41,7 +41,9 @@ public class DeactivateFood : MonoBehaviour
     {
        
 
-        if ((target.tag == TagManager.FOOD_TAG || target.tag == TagManager.BOMB_TAG) && Lose.canLose == false)
+
+
+        if ((target.tag == TagManager.FOOD_TAG || target.tag == TagManager.BOMB_TAG ) && Lose.canLose == false)
         {
 
             StopCoroutine("ComboTime");

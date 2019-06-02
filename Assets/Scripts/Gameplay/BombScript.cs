@@ -7,64 +7,72 @@ public class BombScript : MonoBehaviour
     
     private Animator anim;
 
-    static public int scoreByBomb = 0;
+    static public int scoreByBomb;
     static public int startCountCombo;
+
+    private bool hasExploded;
+
     void Awake()
     {
         anim = GetComponentInParent<Animator>();
     }
 
+    private void Start()
+    {
+        hasExploded = true;
+    }
 
     private void Update()
     {
-        //LoseByBomb();
+       
+      
     }
 
-    private int startCountCombo2ndBomb;
+
     public void OnTriggerEnter2D(Collider2D target)
     {
         if(target.tag == TagManager.FLAME_TAG)
         {
-            //startCountCombo = DeactivateFood.countDeactivateobject;
-
-            if(Lose.canLose == true)
+           
+            if(hasExploded== true)
+            {
+                scoreByBomb = scoreByBomb + 10;
+                hasExploded = false;
+            }
+          
+            
+            if (Lose.canLose == true)
             {
                 startCountCombo = DeactivateFood.countDeactivateobject;
             }
 
-           // print("start bomb deactivate = " + startCountCombo);
-
+            
+         
             anim.SetBool(TagManager.FLAME_PARAMETER, true);
+
+
             AudioManager.instance.ExplosionSound();
+
+            
+
+
             StartCoroutine(BombDeactivate());
+            
         }
     }
+
+
+    
+
 
     IEnumerator BombDeactivate()
     {
         yield return new WaitForSeconds(2f);
+    
 
-      
-            scoreByBomb = scoreByBomb + 10;
-       print("score by BOmb : " + scoreByBomb);
-        
         this.transform.parent.gameObject.SetActive(false);
     }
 
-    // Can't figure out how to use it in LoseScript, so i put it here to made it work 
-
-        /*
-    private void LoseByBomb()
-    {
-        if (transform.position.y <=-20f && Lose.canLose == true)
-        {
-            print("GAME OVER by a bomb!!!");
-            AudioManager.instance.GameOverSound();
-            Lose.gameOver = true;
-           
-            
-        }
-    }
-    */
+  
 
 }

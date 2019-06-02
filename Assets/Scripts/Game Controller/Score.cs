@@ -9,7 +9,7 @@ public class Score : MonoBehaviour
 
 
     static public float currentTime;
-
+    static public int scoreByBombAdd10;
 
     private float addTotime = 1f;
 
@@ -23,9 +23,10 @@ public class Score : MonoBehaviour
     {
 
         currentTime += addTotime * Time.deltaTime;
-     
+
 
         //print("current time : " + currentTime);
+        print("Total Score : "+ totalScore +" =  Score by Spawn : " + SpawnFood.scoreBySpawn + " score by bomb : " + BombScript.scoreByBomb + " score by eject : " + DeactivateFood.itemDeactivateScore);
         CalculateTheScore();
 
     }
@@ -33,6 +34,7 @@ public class Score : MonoBehaviour
     void CalculateTheScore()
     {
 
+     
 
 
         totalScore = SpawnFood.scoreBySpawn + BombScript.scoreByBomb + DeactivateFood.itemDeactivateScore;
@@ -65,7 +67,11 @@ public class Score : MonoBehaviour
                 BombScript.scoreByBomb = 0;
                 DeactivateFood.countDeactivateobject = 0;
                 DeactivateFood.itemDeactivateScore = 0;
+
+
                 totalScore = SpawnFood.scoreBySpawn + BombScript.scoreByBomb + DeactivateFood.itemDeactivateScore;
+
+
                 currentTime = 0f;
                 GamePlayController.instance.SetScore(totalScore);
                 GamePlayController.instance.SetTime(currentTime);

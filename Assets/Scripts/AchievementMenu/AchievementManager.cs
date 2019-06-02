@@ -107,7 +107,7 @@ public class AchievementManager : MonoBehaviour
 
         AchievementGoal();
 
-       // print("Score : " + Score.totalScore);
+        
     }
 
     public void EarnAchievement(string title)
@@ -310,22 +310,22 @@ public class AchievementManager : MonoBehaviour
 
 
         //BOMB EXPLODE
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy 10 Bombs explode", "10 bombs explode in easy difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy 25 Bombs explode", "25 bombs explode in easy difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy 50 Bombs explode", "50 bombs explode in easy difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy 10 Bombs blow up", "10 bombs blow up in easy difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy 25 Bombs blow up", "25 bombs blow up in easy difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy 40 Bombs blow up", "40 bombs blow up in easy difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium 10 Bombs explode", "10 bombs explode in Medium difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium 25 Bombs explode", "25 bombs explode in Medium difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium 50 Bombs explode", "50 bombs explode in Medium difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium 10 Bombs blow up", "10 bombs blow up in Medium difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium 25 Bombs blow up", "25 bombs blow up in Medium difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium 40 Bombs blow up", "40 bombs blow up in Medium difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult 10 Bombs explode", "10 bombs explode in Hard difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult 25 Bombs explode", "25 bombs explode in Hard difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult 50 Bombs explode", "50 bombs explode in Hard difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult 10 Bombs blow up", "10 bombs blow up in Hard difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult 25 Bombs blow up", "25 bombs blow up in Hard difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult 40 Bombs blow up", "40 bombs blow up in Hard difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Master of Bombs", "Explode all bombs achievement in all dificulties", 0,
-                      new string[] { "Easy 10 Bombs explode", "Easy 25 Bombs explode", "Easy 50 Bombs explode",
-                                     "Medium 10 Bombs explode", "Medium 25 Bombs explode", "Medium 50 Bombs explode",
-                                     "Difficult 10 Bombs explode", "Difficult 25 Bombs explode", "Difficult 50 Bombs explode"});
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Master of Bombs", "blow up all bombs achievement in all dificulties", 0,
+                      new string[] { "Easy 10 Bombs blow up", "Easy 25 Bombs blow up", "Easy 40 Bombs blow up",
+                                     "Medium 10 Bombs blow up", "Medium 25 Bombs blow up", "Medium 40 Bombs blow up",
+                                     "Difficult 10 Bombs blow up", "Difficult 25 Bombs blow up", "Difficult 40 Bombs blow up"});
 
 
 
@@ -559,45 +559,45 @@ public class AchievementManager : MonoBehaviour
 
         //BOMB EXPLOSE---------------------------------------------------------------
         //Easy
-        if (BombScript.scoreByBomb > 100 && GamePreferences.GetEasyDifficulty() == 1)
+        if (BombScript.scoreByBomb > 90 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy 10 Bombs explode");
+            EarnAchievement("Easy 10 Bombs blow up");
         }
-        if (BombScript.scoreByBomb > 250 && GamePreferences.GetEasyDifficulty() == 1)
+        if (BombScript.scoreByBomb > 240 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy 25 Bombs explode");
+            EarnAchievement("Easy 25 Bombs blow up");
         }
-        if (BombScript.scoreByBomb > 500  && GamePreferences.GetEasyDifficulty() == 1)
+        if (BombScript.scoreByBomb > 390  && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy 50 Bombs explode");
+            EarnAchievement("Easy 40 Bombs blow up");
         }
 
         //Medium
-        if (BombScript.scoreByBomb > 100 && GamePreferences.GetMediumDifficulty() == 1)
+        if (BombScript.scoreByBomb > 90 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium 10 Bombs explode");
+            EarnAchievement("Medium 10 Bombs blow up");
         }
-        if (BombScript.scoreByBomb > 250 && GamePreferences.GetMediumDifficulty() == 1)
+        if (BombScript.scoreByBomb > 240 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium 25 Bombs explode");
+            EarnAchievement("Medium 25 Bombs blow up");
         }
-        if (BombScript.scoreByBomb > 500  && GamePreferences.GetMediumDifficulty() == 1)
+        if (BombScript.scoreByBomb > 390  && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium 50 Bombs explode");
+            EarnAchievement("Medium 40 Bombs blow up");
         }
 
         //Difficult
-        if (BombScript.scoreByBomb > 100 && GamePreferences.GetHardDifficulty() == 1)
+        if (BombScript.scoreByBomb > 90 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult 10 Bombs explode");
+            EarnAchievement("Difficult 10 Bombs blow up");
         }
-        if (BombScript.scoreByBomb > 250 && GamePreferences.GetHardDifficulty() == 1)
+        if (BombScript.scoreByBomb > 240 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult 25 Bombs explode");
+            EarnAchievement("Difficult 25 Bombs blow up");
         }
-        if (BombScript.scoreByBomb > 500  && GamePreferences.GetHardDifficulty() == 1)
+        if (BombScript.scoreByBomb > 390  && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult 50 Bombs explode");
+            EarnAchievement("Difficult 40 Bombs blow up");
         }
 
 

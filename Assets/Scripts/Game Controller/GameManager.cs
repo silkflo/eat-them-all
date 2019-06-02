@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-     
-       
+        print("score by bomb :  " + Score.scoreByBombAdd10); 
+
     }
 
 
