@@ -46,7 +46,7 @@ public class BombScript : MonoBehaviour
 
       
             scoreByBomb = scoreByBomb + 10;
-       // print("score by BOmb : " + scoreByBomb);
+       print("score by BOmb : " + scoreByBomb);
         
         this.transform.parent.gameObject.SetActive(false);
     }

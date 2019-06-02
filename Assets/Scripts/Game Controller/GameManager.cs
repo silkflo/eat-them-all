@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
             GamePreferences.SetHardDifficulty(0);
             GamePreferences.SetHardDifficultyHighScore(0);
 
-            GamePreferences.SetIsMusicOn(0);
+            GamePreferences.SetIsMusicOn(1);
 
             GamePreferences.SetFirstTimeGamePlay(0);
 
