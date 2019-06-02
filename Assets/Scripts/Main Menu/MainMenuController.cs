@@ -9,8 +9,10 @@ public class MainMenuController : MonoBehaviour
     [SerializeField]
     private GameObject optionButton, successButton;
 
+    [HideInInspector]
+    static public bool fromMainMenu;
 
-    void Awake()
+    void start()
     {
         
     }
@@ -25,7 +27,7 @@ public class MainMenuController : MonoBehaviour
     {
         GameManager.instance.gameRestarted = true;
         AudioManager.instance.ButtonPressedSound();
-
+        fromMainMenu = true;
         SceneManager.LoadScene(TagManager.FROG_SCENE);
         
 
