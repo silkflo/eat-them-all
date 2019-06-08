@@ -44,6 +44,9 @@ public class Score : MonoBehaviour
         GamePlayController.instance.SetTime(currentTime);
 
 
+       // GameObject.Find("DataManager").GetComponent<DataManager>().PostData();
+       // ScoreEvent(totalScore);
+
         if (Lose.gameOver == true)
         {
              GameManager.instance.CheckGameStatus(totalScore, currentTime);
@@ -82,6 +85,11 @@ public class Score : MonoBehaviour
 
     }
 
-
-
+    /*
+    public void ScoreEvent(int totalScoreEvent)
+    {
+        decimal value = Garter.I.Event("Easy Score", totalScoreEvent);
+       // StaticHelpersGarterSDK.SdkDebugger("Garter.I.Event (\"easy score 400\", " + totalScore + ")", value.ToString(), "all data (for illustration): easy score 400: " + value );
+    }
+*/
 }

@@ -32,7 +32,11 @@ public class TagManager
     public static string DEACTIVATE_ANIMATION = "DeactivateScore";
     public static string DISPLAY_5_PARAMETER = "Display5";
     public static string DISPLAY_GREAT_PARAMETER = "DisplayGreat";
-   
+    public static string BUTTON_PANEL_PARAMETER = "ButtonOut";
+    public static string HIGH_SCORE_VIEW_PARAMETER = "HighScoreView";
+    public static string BOTTOM_BUTTON_ICON_PARAMETER = "BottomButtonOut";
+    public static string SPEED_VIEW_PARAMETER = "SpeedView";
+
 
     //LOADLEVEL
     public static string MAIN_MENU_SCENE = "MainMenu";

@@ -102,11 +102,11 @@ public class HelpController : MonoBehaviour
 
 
 
-    public void ReturnOption()
+    public void ReturnMainMenu()
     {
         AudioManager.instance.ButtonPressedSound();
        
-        SceneManager.LoadScene(TagManager.OPTION_SCENE);
+        SceneManager.LoadScene(TagManager.MAIN_MENU_SCENE);
     }
 
 

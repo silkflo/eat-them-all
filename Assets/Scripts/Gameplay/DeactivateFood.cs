@@ -21,11 +21,11 @@ public class DeactivateFood : MonoBehaviour
            
             comboLevel = 1;
         }
-        else if( countStartCombo  == 8)
+        if( countStartCombo  == 8)
         {
             comboLevel = 2;
         }
-        else if(countStartCombo == 12)
+        if(countStartCombo == 12)
         {
             comboLevel = 3;
         }

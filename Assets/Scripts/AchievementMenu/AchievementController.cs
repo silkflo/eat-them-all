@@ -25,7 +25,7 @@ public class AchievementController : MonoBehaviour
     {
         AudioManager.instance.ButtonPressedSound();
 
-        SceneManager.LoadScene(TagManager.SUCCESS_SCENE);
+        SceneManager.LoadScene(TagManager.MAIN_MENU_SCENE);
     }
 
 

@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
             GamePreferences.SetHardDifficultyHighScore(0);
 
             GamePreferences.SetIsMusicOn(1);
+            GamePreferences.SetIsSoundOn(1);
 
             GamePreferences.SetFirstTimeGamePlay(0);
 
@@ -156,6 +157,20 @@ public class GameManager : MonoBehaviour
     }
 
 
+    void CheckToPlayTheSound()
+    {
+        if (GamePreferences.GetIsSoundOn() == 1)
+        {
+            MusicController.instance.PlayMusic(true);
+
+
+        }
+        else
+        {
+            MusicController.instance.PlayMusic(false);
+
+        }
+    }
 
 
 
@@ -165,6 +180,5 @@ public class GameManager : MonoBehaviour
 
 
 
-  
 
 }

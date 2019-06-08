@@ -16,6 +16,7 @@ public static class GamePreferences
 
 
     public static string IS_MUSIC_ON = "IsMusicOn";
+    public static string IS_SOUND_ON = "IsSoundOn";
 
     public static string FIRST_TIME = "FirstTime";
 
@@ -33,6 +34,15 @@ public static class GamePreferences
         PlayerPrefs.SetInt(GamePreferences.IS_MUSIC_ON, state);
     }
 
+
+    public static int GetIsSoundOn()
+    {
+        return PlayerPrefs.GetInt(IS_SOUND_ON);
+    }
+    public static void SetIsSoundOn(int state)
+    {
+        PlayerPrefs.SetInt(GamePreferences.IS_SOUND_ON, state);
+    }
 
     //easy difficulty state
     public static int GetEasyDifficulty()
@@ -104,6 +114,10 @@ public static class GamePreferences
     {
         PlayerPrefs.SetInt(GamePreferences.FIRST_TIME, state);
     }
+
+
+
+   
 
 }
 

@@ -9,12 +9,12 @@ public class GamePlayController : MonoBehaviour
     public static GamePlayController instance;
 
     [SerializeField]
-    private Text timeText, scoreText, gameOverScoreText, gameOverTimeText, deactivateScoreAnim, greatText;
+    private Text timeText, scoreText, gameOverScoreText, gameOverTimeText, deactivateScoreAnim, greatText, speedTextGameOver, speedTextPause, speedTextGeneral;
 
     [SerializeField]
     private GameObject musicButtonOn, gameOverPanel, musicButtonOff, deactivateScoreObject,
                          moveGuidePanel, bombGuidePanel, exploseGuidePanel, loseGuidePanel, shortcutGuidePanel,
-                        guidePanel;
+                        guidePanel, soundFxButtonOn, soundFxButtonOff;
 
     public GameObject pausePanel;
 
@@ -56,7 +56,7 @@ public class GamePlayController : MonoBehaviour
     {
 
         GameFirstStart();
-
+       
 
         if (GamePreferences.GetEasyDifficulty() == 1)
         {
@@ -85,6 +85,18 @@ public class GamePlayController : MonoBehaviour
             musicButtonOn.SetActive(false);
             musicButtonOff.SetActive(true);
         }
+
+
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            soundFxButtonOn.SetActive(true);
+            soundFxButtonOff.SetActive(false);
+        }
+        else if (GamePreferences.GetIsSoundOn() == 1)
+        {
+            soundFxButtonOn.SetActive(false);
+            soundFxButtonOff.SetActive(true);
+        }
     }
 
     void Update()
@@ -92,6 +104,7 @@ public class GamePlayController : MonoBehaviour
         PauseGameByEsc();
         PausePanelTouchControl();
         ComboDisplay();
+        SetSpeed();
 
         if (Input.GetKeyDown(KeyCode.S))
         {
@@ -109,15 +122,42 @@ public class GamePlayController : MonoBehaviour
 
 
 
-    //GAME PAUSE
+    //PAUSE PANEL
     public void PauseTheGame()
     {
-        AudioManager.instance.PauseSound();
-        panelOnCantMove = true;
-        Time.timeScale = 0f;
-        pausePanel.SetActive(true);
-        pauseAnimBoool = true;
-        pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, pauseAnimBoool);
+
+        if (pausePanel.activeSelf == false)
+        {
+            if (AchievementManager.Instance.achievementMenu.activeSelf == false && gameOverPanel.activeSelf == false)
+            { 
+                 AudioManager.instance.PauseSound();
+                 panelOnCantMove = true;
+                 Time.timeScale = 0f;
+                 pausePanel.SetActive(true);
+                 pauseAnimBoool = true;
+                 pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, pauseAnimBoool);
+
+
+
+
+                 if (levelMode == 1)
+                 {
+                     speedTextPause.text = "slow";
+                 }
+                 else if (levelMode == 2)
+                 {
+                     speedTextPause.text = "normal";
+                 }
+                 else if (levelMode == 3)
+                 {
+                     speedTextPause.text = "fast";
+                 }
+
+            }
+        } else
+        {
+            ResumeGame();
+        }
     }
 
     //GAME RESUME
@@ -262,6 +302,23 @@ public class GamePlayController : MonoBehaviour
         timeText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
     }
 
+    //DISPLAY SPEED
+    public void SetSpeed()
+    {
+        if (levelMode == 1)
+        {
+            speedTextGeneral.text = "slow";
+        }
+        else if (levelMode == 2)
+        {
+            speedTextGeneral.text = "normal";
+        }
+        else if (levelMode == 3)
+        {
+            speedTextGeneral.text = "fast";
+        }
+    } 
+
 
     //DISPLAY GAMEOVER
     public void GameOver(int score, float time)
@@ -276,6 +333,20 @@ public class GamePlayController : MonoBehaviour
             gameOverAnim.SetBool(TagManager.GAMEOVER_PARAMETER, true);
 
             gameOverScoreText.text = score.ToString();
+
+            if (levelMode == 1)
+            {
+                speedTextGameOver.text = "slow";
+            }
+            else if (levelMode == 2)
+            {
+                speedTextGameOver.text = "normal";
+            }
+            else if (levelMode == 3)
+            {
+                speedTextGameOver.text = "fast";
+            }
+
 
             minutes = (int)(time / 60f);
             seconds = (int)(time % 60f);
@@ -309,7 +380,7 @@ public class GamePlayController : MonoBehaviour
         }
     }
 
-    //MUSIC
+    //SOUND
     public void PlayMusic()
     {
         AudioManager.instance.ButtonPressedSound();
@@ -326,6 +397,28 @@ public class GamePlayController : MonoBehaviour
             MusicController.instance.PlayMusic(true);
             musicButtonOn.SetActive(true);
             musicButtonOff.SetActive(false);
+        }
+    }
+
+
+    public void PlaySound()
+    {
+        AudioManager.instance.ButtonPressedSound();
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            GamePreferences.SetIsSoundOn(1);
+            // MusicController.instance.PlayMusic(true);
+            //AudioManager.instance.PlaySound(true);
+
+            soundFxButtonOn.SetActive(false);
+            soundFxButtonOff.SetActive(true);
+        }
+        else if (GamePreferences.GetIsSoundOn() == 1)
+        {
+            GamePreferences.SetIsSoundOn(0);
+          //  AudioManager.instance.PlaySound(false);
+            soundFxButtonOn.SetActive(true);
+            soundFxButtonOff.SetActive(false);
         }
     }
 

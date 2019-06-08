@@ -26,6 +26,7 @@ public class ScoreMenuController : MonoBehaviour
         
     }
 
+ 
 
     void SetEasyScore (int score)
     {

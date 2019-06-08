@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
                         achievementClip, freeFallClip;
 
 
+    public bool soundPlaying;
 
     void Awake()
     {
@@ -46,72 +47,185 @@ public class AudioManager : MonoBehaviour
 
     public void ButtonPressedSound()
     {
-        buttonPressedAudioSource.PlayOneShot(buttonPressedClip, 1.0f);
+
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonPressedAudioSource.Stop();
+        }
+        else
+        {
+            buttonPressedAudioSource.PlayOneShot(buttonPressedClip, 1.0f);
+        }
     }
 
     public void GameOverSound()
     {
-        gameOverAudioSource.PlayOneShot(gameOverClip, 1.0f);
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonPressedAudioSource.Stop();
+        }
+        else
+        {
+            gameOverAudioSource.PlayOneShot(gameOverClip, 1.0f);
+        }
     }
 
     public void PauseSound()
     {
-        pauseAudioSource.PlayOneShot(pauseClip, 1.0f);
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonPressedAudioSource.Stop();
+        }
+        else
+        {
+            pauseAudioSource.PlayOneShot(pauseClip, 1.0f);
+        }
     }
 
     public void GreatSound()
     {
-        greatAudioSource.PlayOneShot(greatClip, 1.0f);
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonPressedAudioSource.Stop();
+        }
+        else
+        {
+            greatAudioSource.PlayOneShot(greatClip, 1.0f);
+        }
     }
 
     public void AwesomeSound()
     {
-        awesomeAudioSource.PlayOneShot(awesomeClip, 1.0f);
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonPressedAudioSource.Stop();
+        }
+        else
+        {
+            awesomeAudioSource.PlayOneShot(awesomeClip, 1.0f);
+        }
     }
 
     public void AmazingSound()
     {
-        amazingAudioSource.PlayOneShot(amazingClip, 1.0f);
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonPressedAudioSource.Stop();
+        }
+        else
+        {
+            amazingAudioSource.PlayOneShot(amazingClip, 1.0f);
+        }
     }
 
     public void ScarabeSound()
     {
-        scarabeAudioSource.PlayOneShot(scarabeClip, 1.0f);
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonPressedAudioSource.Stop();
+        }
+        else
+        {
+            scarabeAudioSource.PlayOneShot(scarabeClip, 1.0f);
+        }
     }
 
     public void FlySound()
     {
-        flyAudioSource.PlayOneShot(flyClip, 1.0f);
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonPressedAudioSource.Stop();
+        }
+        else
+        {
+            flyAudioSource.PlayOneShot(flyClip, 1.0f);
+        }
     }
 
     public void DragonFlySound()
     {
-        dragonFlyAudioSource.PlayOneShot(dragonFlyClip, 1.0f);
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonPressedAudioSource.Stop();
+        }
+        else
+        {
+            dragonFlyAudioSource.PlayOneShot(dragonFlyClip, 1.0f);
+        }
     }
 
     public void WormSound()
     {
-        wormAudioSource.PlayOneShot(wormClip, 1.0f);
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonPressedAudioSource.Stop();
+        }
+        else
+        {
+            wormAudioSource.PlayOneShot(wormClip, 1.0f);
+        }
     }
 
     public void BombSound()
     {
-        bombAudioSource.PlayOneShot(bombClip, 1.0f);
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonPressedAudioSource.Stop();
+        }
+        else
+        {
+            bombAudioSource.PlayOneShot(bombClip, 1.0f);
+        }
     }
 
     public void ExplosionSound()
     {
-        explosionAudioSource.PlayOneShot(explosionClip, 1.0f);
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonPressedAudioSource.Stop();
+        }
+        else
+        {
+            explosionAudioSource.PlayOneShot(explosionClip, 1.0f);
+        }
     }
 
     public void AchievementSound()
     {
-        achievementAudioSource.PlayOneShot(achievementClip, 1.0f);
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonPressedAudioSource.Stop();
+        }
+        else
+        {
+            achievementAudioSource.PlayOneShot(achievementClip, 1.0f);
+        }
     }
 
     public void FreeFallSound()
     {
-        freeFallAudioSource.PlayOneShot(freeFallClip, 1.0f);
+            if (GamePreferences.GetIsSoundOn() == 0)
+            {
+                buttonPressedAudioSource.Stop();
+            }
+            else
+            {
+                freeFallAudioSource.PlayOneShot(freeFallClip, 1.0f);
+            }
+    }
+
+
+
+    public void PlaySound(bool play)
+    {
+        if (play == true)
+        {
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
 }
