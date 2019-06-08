@@ -28,6 +28,8 @@ public class MainMenuController : MonoBehaviour
     {
         SetScoreBasedOnDifficulty();
         SetTheDifficulty();
+        InitializeMusicButtonOnStart();
+        InitializeSoundButtonOnStart();
     }
 
     void Update()
@@ -183,10 +185,12 @@ public class MainMenuController : MonoBehaviour
 
     }
 
+ 
 
 
 
-        public void PlayMusic()
+
+    public void PlayMusic()
     {
         AudioManager.instance.ButtonPressedSound();
         if (GamePreferences.GetIsMusicOn() == 0)
@@ -203,6 +207,26 @@ public class MainMenuController : MonoBehaviour
             musicButtonOn.SetActive(true);
             musicButtonOff.SetActive(false);
         }
+    }
+
+
+    void InitializeSoundButtonOnStart()
+    {
+        if (GamePreferences.GetIsSoundOn() == 1)
+        {
+
+            soundFxButtonOn.SetActive(false);
+            soundFxButtonOff.SetActive(true);
+
+        }
+        else if (GamePreferences.GetIsSoundOn() == 0)
+        {
+
+            soundFxButtonOn.SetActive(true);
+            soundFxButtonOff.SetActive(false);
+
+        }
+
     }
 
 
