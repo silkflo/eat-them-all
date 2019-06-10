@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class OptionController : MonoBehaviour
-{
-    [SerializeField]
+{/* [SerializeField]
     private GameObject musicButtonOn, musicButtonOff, difficultyButton, backButton, helpButton;
 
 
@@ -83,6 +82,6 @@ public class OptionController : MonoBehaviour
         }
 
     }
-
+*/
 
 }

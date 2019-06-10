@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DifficultyController : MonoBehaviour
-{
+{/*
     //static public int levelMode;
 
 
@@ -131,6 +131,6 @@ public class DifficultyController : MonoBehaviour
         SceneManager.LoadScene(TagManager.OPTION_SCENE);
     }
 
-
+    */
 
 }

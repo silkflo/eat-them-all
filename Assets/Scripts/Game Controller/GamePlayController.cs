@@ -28,6 +28,7 @@ public class GamePlayController : MonoBehaviour
 
     [SerializeField]
     private Animator gameOverAnim, pauseAnim, greatAnim, fiveScoreAnim;
+
     private bool pauseAnimBoool;
 
     private float seconds, minutes;
@@ -46,6 +47,10 @@ public class GamePlayController : MonoBehaviour
 
 
     private int maxCombo;
+
+
+    public static bool guideOnStart;
+
 
     void Awake()
     {
@@ -77,25 +82,25 @@ public class GamePlayController : MonoBehaviour
 
         if (GamePreferences.GetIsMusicOn() == 0)
         {
-            musicButtonOn.SetActive(true);
-            musicButtonOff.SetActive(false);
+            musicButtonOn.SetActive(false);
+            musicButtonOff.SetActive(true);
         }
         else if (GamePreferences.GetIsMusicOn() == 1)
         {
-            musicButtonOn.SetActive(false);
-            musicButtonOff.SetActive(true);
+            musicButtonOn.SetActive(true);
+            musicButtonOff.SetActive(false);
         }
 
 
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            soundFxButtonOn.SetActive(true);
-            soundFxButtonOff.SetActive(false);
+            soundFxButtonOn.SetActive(false);
+            soundFxButtonOff.SetActive(true);
         }
         else if (GamePreferences.GetIsSoundOn() == 1)
         {
-            soundFxButtonOn.SetActive(false);
-            soundFxButtonOff.SetActive(true);
+            soundFxButtonOn.SetActive(true);
+            soundFxButtonOff.SetActive(false);
         }
     }
 
@@ -163,7 +168,7 @@ public class GamePlayController : MonoBehaviour
     //GAME RESUME
     public void ResumeGame()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
         Time.timeScale = 1f;
         panelOnCantMove = false;
         pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, false);
@@ -196,7 +201,7 @@ public class GamePlayController : MonoBehaviour
     //RESTART GAME
     public void RestartGame(string sceneName)
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
 
         Time.timeScale = 1f;
         panelOnCantMove = false;
@@ -216,7 +221,7 @@ public class GamePlayController : MonoBehaviour
     //QUIT GAME
     public void QuitGame(string sceneName)
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
         Time.timeScale = 1f;
         print("reset score?");
         Score.totalScore = 0;
@@ -264,7 +269,7 @@ public class GamePlayController : MonoBehaviour
     //SHOW ACHIEVEMENT
     public void AchievementPanel()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
 
         AchievementManager.Instance.achievementMenu.SetActive(!AchievementManager.Instance.achievementMenu.activeSelf);
 
@@ -383,42 +388,41 @@ public class GamePlayController : MonoBehaviour
     //SOUND
     public void PlayMusic()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
         if (GamePreferences.GetIsMusicOn() == 0)
         {
             GamePreferences.SetIsMusicOn(1);
             MusicController.instance.PlayMusic(true);
-            musicButtonOn.SetActive(false);
-            musicButtonOff.SetActive(true);
+            musicButtonOn.SetActive(true);
+            musicButtonOff.SetActive(false);
         }
         else if (GamePreferences.GetIsMusicOn() == 1)
         {
             GamePreferences.SetIsMusicOn(0);
-            MusicController.instance.PlayMusic(true);
-            musicButtonOn.SetActive(true);
-            musicButtonOff.SetActive(false);
+            MusicController.instance.PlayMusic(false);
+            musicButtonOn.SetActive(false);
+            musicButtonOff.SetActive(true);
         }
     }
 
 
     public void PlaySound()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
         if (GamePreferences.GetIsSoundOn() == 0)
         {
             GamePreferences.SetIsSoundOn(1);
-            // MusicController.instance.PlayMusic(true);
-            //AudioManager.instance.PlaySound(true);
+           
 
-            soundFxButtonOn.SetActive(false);
-            soundFxButtonOff.SetActive(true);
+            soundFxButtonOn.SetActive(true);
+            soundFxButtonOff.SetActive(false);
         }
         else if (GamePreferences.GetIsSoundOn() == 1)
         {
             GamePreferences.SetIsSoundOn(0);
-          //  AudioManager.instance.PlaySound(false);
-            soundFxButtonOn.SetActive(true);
-            soundFxButtonOff.SetActive(false);
+        
+            soundFxButtonOn.SetActive(false);
+            soundFxButtonOff.SetActive(true);
         }
     }
 
@@ -490,49 +494,49 @@ public class GamePlayController : MonoBehaviour
     //GUIDE
 
     public void NextMoveButton() {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
         moveGuidePanel.SetActive(false);
         bombGuidePanel.SetActive(true);
     }
 
     public void PreviousBombButton() {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
         moveGuidePanel.SetActive(true);
         bombGuidePanel.SetActive(false);
     }
 
     public void NextBombButton() {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
         bombGuidePanel.SetActive(false);
         exploseGuidePanel.SetActive(true);
     }
 
     public void PreviousExploseButton() {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
         bombGuidePanel.SetActive(true);
         exploseGuidePanel.SetActive(false);
     }
 
     public void NextExplodeButton() {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
         exploseGuidePanel.SetActive(false);
         loseGuidePanel.SetActive(true);
     }
 
     public void PreviousLoseButton() {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
         loseGuidePanel.SetActive(false);
         exploseGuidePanel.SetActive(true);
     }
 
     public void NextLoseButton() {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
         shortcutGuidePanel.SetActive(true);
         loseGuidePanel.SetActive(false);
     }
 
     public void PreviousShortcutButton() {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
         shortcutGuidePanel.SetActive(false);
         loseGuidePanel.SetActive(true);
     }
@@ -589,14 +593,20 @@ public class GamePlayController : MonoBehaviour
     {
         if (GamePreferences.GetFirstTimeGamePlay() == 0)
         {
-           Time.timeScale = 0f;
-            
-            guidePanel.SetActive(true);
+            /*  Time.timeScale = 0f;
 
+               guidePanel.SetActive(true);
+
+               
+               */
+            guideOnStart = true;
             GamePreferences.SetFirstTimeGamePlay(1);
+            SceneManager.LoadScene(TagManager.HELP_SCENE);
+            print("1st start :  " + GamePreferences.GetFirstTimeGamePlay());
+
         } else if(GamePreferences.GetFirstTimeGamePlay() == 1)
         {
-            Destroy(guidePanel);
+            guideOnStart = false;
         }
     }
   

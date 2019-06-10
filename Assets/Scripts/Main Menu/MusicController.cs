@@ -32,27 +32,42 @@ public class MusicController : MonoBehaviour
         }
     }
 
-
-    public void PlayMusic (bool play)
-    {
-        if (play)
+    /*
+        public void PlayMusic (bool play)
         {
-            if (!audioSource.isPlaying)
+            if (play)
             {
-                audioSource.Play();
-            }
-            else
-            {
-                if(audioSource.isPlaying)
+                if (!audioSource.isPlaying)
                 {
-                    audioSource.Stop();
+                    audioSource.Play();
+                    print("PLAY");
+                }
+                else
+                {
+                    if(audioSource.isPlaying)
+                    {
+                        audioSource.Stop();
+                        print("stopPLAY");
+                    }
                 }
             }
+        }
+
+    */
+    public void PlayMusic(bool play)
+    {
+
+        if (play == true)
+        {
+            audioSource.Play();
+          
+        }
+        else
+        {
+            audioSource.Stop();
+            
         }
     }
 
 
-    
-
-
-}
+    }

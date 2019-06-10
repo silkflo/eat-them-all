@@ -76,7 +76,7 @@ public class AchievementManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M) && SceneManager.GetActiveScene() == SceneManager.GetSceneByName(TagManager.FROG_SCENE))
         {
-            AudioManager.instance.ButtonPressedSound();
+            AudioManager.instance.ClickMenuSound();
             achievementMenu.SetActive(!achievementMenu.activeSelf);
 
             if (achievementMenu.activeSelf == true)

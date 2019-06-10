@@ -25,22 +25,23 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         MakeSingleton();
+        //Delete all save data in game
+      //  PlayerPrefs.DeleteAll();
+
+        InitializeVariables();
     }
 
     void Start()
     {
 
-        //Delete all save data in game
-       // PlayerPrefs.DeleteAll();
-
-        InitializeVariables();
-        CheckToPlayTheMusic();
+       CheckToPlayTheMusic();
+      
     }
 
     void Update()
     {
 
-        print("score by bomb :  " + Score.scoreByBombAdd10); 
+        
 
     }
 
@@ -80,8 +81,8 @@ public class GameManager : MonoBehaviour
 
             PlayerPrefs.SetInt("Game Initialized", 123);  //giving a key to just use that condition a the first start of the game
 
-            
 
+        
 
 
 
@@ -146,7 +147,8 @@ public class GameManager : MonoBehaviour
         if (GamePreferences.GetIsMusicOn() == 1)
         {
             MusicController.instance.PlayMusic(true);
-            
+           
+
 
         }
         else
@@ -155,29 +157,6 @@ public class GameManager : MonoBehaviour
            
         }
     }
-
-
-    void CheckToPlayTheSound()
-    {
-        if (GamePreferences.GetIsSoundOn() == 1)
-        {
-            MusicController.instance.PlayMusic(true);
-
-
-        }
-        else
-        {
-            MusicController.instance.PlayMusic(false);
-
-        }
-    }
-
-
-
-
-
-
-
 
 
 

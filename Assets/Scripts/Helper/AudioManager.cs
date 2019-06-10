@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public  class AudioManager : MonoBehaviour
 {
 
     public static AudioManager instance;
 
-    public AudioSource  buttonPressedAudioSource, pauseAudioSource, gameOverAudioSource,
+    public AudioSource  clickButtonAudioSource, clickStartAudioSource, clickBackAudioSource, buttonHoverAudioSource, pauseAudioSource, gameOverAudioSource,
                         greatAudioSource,awesomeAudioSource, amazingAudioSource,
                         scarabeAudioSource, dragonFlyAudioSource, wormAudioSource, 
                         flyAudioSource, bombAudioSource, explosionAudioSource,
@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
 
 
 
-    public AudioClip    buttonPressedClip, pauseClip,gameOverClip,
+    public AudioClip    clickButtonClip,clickStartClip, clickBackClip, buttonHoverClip, pauseClip,gameOverClip,
                         greatClip,awesomeClip,amazingClip,
                         scarabeClip, dragonFlyClip, wormClip,
                         flyClip, bombClip, explosionClip,
@@ -45,24 +45,63 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public void ButtonPressedSound()
+    public void ClickMenuSound()
     {
 
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            buttonPressedAudioSource.Stop();
+            clickButtonAudioSource.Stop();
         }
         else
         {
-            buttonPressedAudioSource.PlayOneShot(buttonPressedClip, 1.0f);
+            clickButtonAudioSource.PlayOneShot(clickButtonClip, 1.0f);
         }
     }
+
+    public void ClickHoverSound()
+    {
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            buttonHoverAudioSource.Stop();
+        }
+        else
+        {
+            freeFallAudioSource.PlayOneShot(buttonHoverClip, 0.5f);
+        }
+    }
+
+    public void ClickStartSound()
+    {
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            clickStartAudioSource.Stop();
+        }
+        else
+        {
+            clickStartAudioSource.PlayOneShot(clickStartClip, 1.0f);
+        }
+    }
+
+
+    public void ClickBackSound()
+    {
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            clickBackAudioSource.Stop();
+        }
+        else
+        {
+            clickBackAudioSource.PlayOneShot(clickBackClip, 1.0f);
+        }
+    }
+
+
 
     public void GameOverSound()
     {
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            buttonPressedAudioSource.Stop();
+            gameOverAudioSource.Stop();
         }
         else
         {
@@ -74,7 +113,7 @@ public class AudioManager : MonoBehaviour
     {
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            buttonPressedAudioSource.Stop();
+            pauseAudioSource.Stop();
         }
         else
         {
@@ -86,7 +125,7 @@ public class AudioManager : MonoBehaviour
     {
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            buttonPressedAudioSource.Stop();
+            greatAudioSource.Stop();
         }
         else
         {
@@ -98,7 +137,7 @@ public class AudioManager : MonoBehaviour
     {
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            buttonPressedAudioSource.Stop();
+            awesomeAudioSource.Stop();
         }
         else
         {
@@ -110,7 +149,7 @@ public class AudioManager : MonoBehaviour
     {
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            buttonPressedAudioSource.Stop();
+            amazingAudioSource.Stop();
         }
         else
         {
@@ -122,7 +161,7 @@ public class AudioManager : MonoBehaviour
     {
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            buttonPressedAudioSource.Stop();
+            scarabeAudioSource.Stop();
         }
         else
         {
@@ -134,7 +173,7 @@ public class AudioManager : MonoBehaviour
     {
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            buttonPressedAudioSource.Stop();
+            flyAudioSource.Stop();
         }
         else
         {
@@ -146,7 +185,7 @@ public class AudioManager : MonoBehaviour
     {
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            buttonPressedAudioSource.Stop();
+            dragonFlyAudioSource.Stop();
         }
         else
         {
@@ -158,7 +197,7 @@ public class AudioManager : MonoBehaviour
     {
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            buttonPressedAudioSource.Stop();
+            wormAudioSource.Stop();
         }
         else
         {
@@ -170,7 +209,7 @@ public class AudioManager : MonoBehaviour
     {
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            buttonPressedAudioSource.Stop();
+            bombAudioSource.Stop();
         }
         else
         {
@@ -182,7 +221,7 @@ public class AudioManager : MonoBehaviour
     {
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            buttonPressedAudioSource.Stop();
+            explosionAudioSource.Stop();
         }
         else
         {
@@ -194,7 +233,7 @@ public class AudioManager : MonoBehaviour
     {
         if (GamePreferences.GetIsSoundOn() == 0)
         {
-            buttonPressedAudioSource.Stop();
+            achievementAudioSource.Stop();
         }
         else
         {
@@ -206,7 +245,7 @@ public class AudioManager : MonoBehaviour
     {
             if (GamePreferences.GetIsSoundOn() == 0)
             {
-                buttonPressedAudioSource.Stop();
+            freeFallAudioSource.Stop();
             }
             else
             {
@@ -227,5 +266,9 @@ public class AudioManager : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+
+  
+
 
 }

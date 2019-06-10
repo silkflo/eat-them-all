@@ -6,28 +6,27 @@ using UnityEngine.UI;
 
 public class HelpController : MonoBehaviour
 {
-
-
     [SerializeField]
     private GameObject moveGuidePanel, bombGuidePanel, exploseGuidePanel, loseGuidePanel, shortcutGuidePanel;
 
-   
-
     [SerializeField]
-    private Button  nextMoveButton,
-                    previousBombButton, nextBombButton,
-                    previousExploseButton, NextExploseButton,
-                    previousLoseButton, nextLoseButton,
-                    previousShortcutButton,
-                    optionButton;
+    private Text buttonText;
+
 
 
     void Start()
     {
-        
+        if (GamePlayController.guideOnStart == false)
+        {
+            buttonText.text = "Back";
+        }
+        else if (GamePlayController.guideOnStart == true)
+        {
+            buttonText.text = "Start";
+        }
     }
 
-   
+
     void Update()
     {
         
@@ -38,7 +37,7 @@ public class HelpController : MonoBehaviour
 
     public void NextMoveButton()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
 
         moveGuidePanel.SetActive(false);
         bombGuidePanel.SetActive(true);
@@ -46,7 +45,7 @@ public class HelpController : MonoBehaviour
 
     public void PreviousBombButton()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
         
         moveGuidePanel.SetActive(true);
         bombGuidePanel.SetActive(false);
@@ -54,7 +53,7 @@ public class HelpController : MonoBehaviour
 
     public void NextBombButton()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
    
         bombGuidePanel.SetActive(false);
         exploseGuidePanel.SetActive(true);
@@ -62,7 +61,7 @@ public class HelpController : MonoBehaviour
 
     public void PreviousExploseButton()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
    
         bombGuidePanel.SetActive(true);
         exploseGuidePanel.SetActive(false);
@@ -70,7 +69,7 @@ public class HelpController : MonoBehaviour
 
     public void NextExplodeButton()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
       
         exploseGuidePanel.SetActive(false);
         loseGuidePanel.SetActive(true);
@@ -78,7 +77,7 @@ public class HelpController : MonoBehaviour
 
     public void PreviousLoseButton()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
        
         loseGuidePanel.SetActive(false);
         exploseGuidePanel.SetActive(true);
@@ -86,7 +85,7 @@ public class HelpController : MonoBehaviour
 
     public void NextLoseButton()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
     
         shortcutGuidePanel.SetActive(true);
         loseGuidePanel.SetActive(false);
@@ -94,7 +93,7 @@ public class HelpController : MonoBehaviour
 
     public void PreviousShortcutButton()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
 
         shortcutGuidePanel.SetActive(false);
         loseGuidePanel.SetActive(true);
@@ -102,11 +101,23 @@ public class HelpController : MonoBehaviour
 
 
 
-    public void ReturnMainMenu()
+    public void ReturnMainMenuORPlay()
     {
-        AudioManager.instance.ButtonPressedSound();
-       
-        SceneManager.LoadScene(TagManager.MAIN_MENU_SCENE);
+      
+
+        if (GamePlayController.guideOnStart == false)
+        {
+            AudioManager.instance.ClickBackSound();
+            SceneManager.LoadScene(TagManager.MAIN_MENU_SCENE);
+        }
+        else if (GamePlayController.guideOnStart == true)
+        {
+            GamePlayController.guideOnStart = false;
+            AudioManager.instance.ClickStartSound();
+            SpawnFood.scoreBySpawn = 0;
+        
+            SceneManager.LoadScene(TagManager.FROG_SCENE);
+        }
     }
 
 

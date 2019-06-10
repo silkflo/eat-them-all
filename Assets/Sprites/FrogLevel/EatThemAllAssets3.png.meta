@@ -1,0 +1,1391 @@
+fileFormatVersion: 2
+guid: d0be0005e4af13142b8e178ee1488131
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4796104567163415233
+    second: Frog_0
+  - first:
+      213: 5215232897556451678
+    second: Frog_1
+  - first:
+      213: -6345632300854781318
+    second: Frog_2
+  - first:
+      213: -7716899696363461414
+    second: Frog_3
+  - first:
+      213: -5727609672015212226
+    second: Frog_4
+  - first:
+      213: -272613554387115090
+    second: EatThemAllAssets3_5
+  - first:
+      213: -1943324556806942831
+    second: Frog_5
+  - first:
+      213: -8561518571026095178
+    second: Frog_6
+  - first:
+      213: -6776679559809910602
+    second: EatThemAllAssets3_8
+  - first:
+      213: -8716187722060432253
+    second: EatThemAllAssets3_9
+  - first:
+      213: 3054078667672476869
+    second: EatThemAllAssets3_10
+  - first:
+      213: 238392138531991453
+    second: EatThemAllAssets3_11
+  - first:
+      213: -3449013102472534193
+    second: EatThemAllAssets3_12
+  - first:
+      213: 5187462515003290407
+    second: EatThemAllAssets3_13
+  - first:
+      213: -8676624049986219376
+    second: EatThemAllAssets3_14
+  - first:
+      213: 3871122050946707068
+    second: EatThemAllAssets3_15
+  - first:
+      213: -7679318767262715136
+    second: EatThemAllAssets3_16
+  - first:
+      213: 1462519666429395588
+    second: EatThemAllAssets3_17
+  - first:
+      213: 4174294926101909585
+    second: EatThemAllAssets3_18
+  - first:
+      213: 6434090989710501030
+    second: EatThemAllAssets3_19
+  - first:
+      213: -5210406162227572475
+    second: EatThemAllAssets3_20
+  - first:
+      213: -7630755634540440056
+    second: EatThemAllAssets3_21
+  - first:
+      213: -8054197732758478152
+    second: EatThemAllAssets3_22
+  - first:
+      213: 8770659203107475269
+    second: EatThemAllAssets3_23
+  - first:
+      213: -6586664524682484526
+    second: EatThemAllAssets3_24
+  - first:
+      213: -7855521787129336912
+    second: EatThemAllAssets3_25
+  - first:
+      213: -4631838360905361024
+    second: EatThemAllAssets3_26
+  - first:
+      213: 2632720073893979323
+    second: EatThemAllAssets3_27
+  - first:
+      213: -3475353753863417572
+    second: EatThemAllAssets3_28
+  - first:
+      213: -7284772986426304865
+    second: EatThemAllAssets3_29
+  - first:
+      213: -1433306744863468798
+    second: EatThemAllAssets3_30
+  - first:
+      213: -1305346819703705140
+    second: EatThemAllAssets3_31
+  - first:
+      213: -7256374486392965686
+    second: EatThemAllAssets3_32
+  - first:
+      213: 7478839800703691586
+    second: EatThemAllAssets3_33
+  - first:
+      213: 3527079426475708962
+    second: EatThemAllAssets3_34
+  - first:
+      213: -944622900920586301
+    second: EatThemAllAssets3_35
+  - first:
+      213: -1943899529318334246
+    second: EatThemAllAssets3_36
+  - first:
+      213: 8185626971649295499
+    second: EatThemAllAssets3_37
+  - first:
+      213: 5504172514139999839
+    second: EatThemAllAssets3_38
+  - first:
+      213: 755340244229506099
+    second: EatThemAllAssets3_39
+  - first:
+      213: 5202912136956532042
+    second: EatThemAllAssets3_40
+  - first:
+      213: 1603044166847733165
+    second: EatThemAllAssets3_41
+  - first:
+      213: 5839655502532264362
+    second: EatThemAllAssets3_42
+  - first:
+      213: 1045494634010018765
+    second: EatThemAllAssets3_43
+  - first:
+      213: 2437619109745261294
+    second: EatThemAllAssets3_44
+  - first:
+      213: -5314961651788088953
+    second: EatThemAllAssets3_45
+  - first:
+      213: -1018126742844432031
+    second: EatThemAllAssets3_46
+  - first:
+      213: 4344484797638735131
+    second: EatThemAllAssets3_47
+  - first:
+      213: -7148790628190973819
+    second: EatThemAllAssets3_48
+  - first:
+      213: -8611924122575204215
+    second: EatThemAllAssets3_49
+  - first:
+      213: 2117150082704064820
+    second: EatThemAllAssets3_50
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Lumin
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Frog_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 603
+        width: 297
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18224035be0324e48bd8d00d80f81156
+      internalID: -4796104567163415233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frog_1
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 603
+        width: 297
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4635c5bcfde1d849be87b5a32111ac6
+      internalID: 5215232897556451678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frog_2
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 603
+        width: 297
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6390fad63bcd25a4aa2aa1c782640aa1
+      internalID: -6345632300854781318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frog_3
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 603
+        width: 297
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e47b842105f504a9e3c6c243fecfee
+      internalID: -7716899696363461414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frog_4
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 603
+        width: 297
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d6ca51d4865a54f97e6589f04738d5
+      internalID: -5727609672015212226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_5
+      rect:
+        serializedVersion: 2
+        x: 1576
+        y: 428
+        width: 155
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b663253f70214e4db0939a5c7a1b9af
+      internalID: -272613554387115090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frog_5
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 603
+        width: 297
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f98df49faf08a45af2f7f24148fe5d
+      internalID: -1943324556806942831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frog_6
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 134
+        width: 297
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 722abeb4cd4febb4d87d25a9b4593fa6
+      internalID: -8561518571026095178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_8
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 342
+        width: 323
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa5bd097141f524ebb034a099dd03d5
+      internalID: -6776679559809910602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_9
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 439
+        width: 134
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48087605fbd83a442bd761500320ad35
+      internalID: -8716187722060432253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_10
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 433
+        width: 137
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4178f4cc6cb8f84b92d5a98e07ff8bc
+      internalID: 3054078667672476869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_11
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 436
+        width: 140
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d902a09a34c23b54995c292afbb42201
+      internalID: 238392138531991453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_12
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 434
+        width: 142
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c783b8415dfc874fa970ad1022163db
+      internalID: -3449013102472534193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_13
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 433
+        width: 145
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8445fc24cbba1e0439d5bbc08cae1a43
+      internalID: 5187462515003290407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_14
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 430
+        width: 149
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b5e659671e0124abd4e5b33d3bdf65
+      internalID: -8676624049986219376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_15
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 405
+        width: 158
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f4be99586ce674e8ad800250746207
+      internalID: 3871122050946707068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_16
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 189
+        width: 179
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e9d30f74603c34380d3115bc177f6f
+      internalID: -7679318767262715136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_17
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 181
+        width: 192
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015e55c6828204e4b9252a5a9c836042
+      internalID: 1462519666429395588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_18
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 359
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 561afb87db41ba54b87aaa5e23332a78
+      internalID: 4174294926101909585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_19
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 382
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1913c444f71a3a40969ae0afaf6e2a9
+      internalID: 6434090989710501030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_20
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 195
+        width: 157
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d17212e46763e4eaab831b628864b3
+      internalID: -5210406162227572475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_21
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 194
+        width: 162
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f56e46e123aaa42b47f8cbd7cd4372
+      internalID: -7630755634540440056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_22
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 335
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e5578cbbe99704498e96207f5fbbcae
+      internalID: -8054197732758478152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_23
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 339
+        width: 35
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6326d906c477b1469661efc3d8ebac2
+      internalID: 8770659203107475269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_24
+      rect:
+        serializedVersion: 2
+        x: 1850
+        y: 352
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a99e2173ba63ae44a5f21aea2fa2692
+      internalID: -6586664524682484526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_25
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 203
+        width: 168
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124bab677ca984649a3ae08f3f4cc31b
+      internalID: -7855521787129336912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_26
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 183
+        width: 186
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e923286c60a01c4aaffe6427c4339af
+      internalID: -4631838360905361024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_27
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 278
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3853814cb74e21b4185d0a54ef6b51b5
+      internalID: 2632720073893979323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_28
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 214
+        width: 117
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f099f4d69e52ee41a4842913a3bd08d
+      internalID: -3475353753863417572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_29
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 284
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f14f0fc659337494c9d8d10c02f53e1e
+      internalID: -7284772986426304865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_30
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 223
+        width: 39
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b1dadf60b061e459e859ea09bb6a7c
+      internalID: -1433306744863468798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_31
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 238
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12e82b4c7d098043b22d67372d81194
+      internalID: -1305346819703705140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_32
+      rect:
+        serializedVersion: 2
+        x: 1862
+        y: 219
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2865ac6b881dd45bc87388c467ff4c
+      internalID: -7256374486392965686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_33
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 173
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01489aaaf69ef4c47a91e99af7e61c1c
+      internalID: 7478839800703691586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_34
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 163
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f333c0514f5bc42b70d5045ccfe8c5
+      internalID: 3527079426475708962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_35
+      rect:
+        serializedVersion: 2
+        x: 1821
+        y: 188
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c796d86ff930da4c8a294c8e475d4ab
+      internalID: -944622900920586301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_36
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 23
+        width: 96
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea9d9e95646f6c4782527377bb2ca71
+      internalID: -1943899529318334246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_37
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 22
+        width: 98
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b909f78c1d7c114fa415f7c3a98bfdb
+      internalID: 8185626971649295499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_38
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 20
+        width: 94
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac1a0de6e6dca35439258fac73186d7a
+      internalID: 5504172514139999839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_39
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 19
+        width: 94
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a739f280654c69498b2652b1ed172ad
+      internalID: 755340244229506099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_40
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 13
+        width: 102
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf9c1f1ae5e69c4d8955c8ab842bfe2
+      internalID: 5202912136956532042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_41
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 12
+        width: 96
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b7a9eb96767ad4fb07e7c213d1d87b
+      internalID: 1603044166847733165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_42
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 9
+        width: 86
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa826dffd47347d4bb44be59189b77e9
+      internalID: 5839655502532264362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_43
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 24
+        width: 90
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3123dc3c60b8b1f4cb7a99bd27725dfe
+      internalID: 1045494634010018765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_44
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 29
+        width: 76
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab3e69229b084242ba5123516b27965
+      internalID: 2437619109745261294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_45
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 2
+        width: 110
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b5f151fe19381c47b6004c25a2e704c
+      internalID: -5314961651788088953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_46
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 2
+        width: 108
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa930292b53516140a6b1707300c766e
+      internalID: -1018126742844432031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_47
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 2
+        width: 109
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f0e3511a7222345a8713b03806ecfa
+      internalID: 4344484797638735131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_48
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 2
+        width: 107
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491988e143e940342a0b7308444e9caa
+      internalID: -7148790628190973819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_49
+      rect:
+        serializedVersion: 2
+        x: 1614
+        y: 2
+        width: 108
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbafa80c020d4b548a8d442051fc7263
+      internalID: -8611924122575204215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EatThemAllAssets3_50
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 2
+        width: 109
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e4ee3d437f1104a9bd10e158b3b023
+      internalID: 2117150082704064820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d93bf1da65ea8c74b95c817ff6c11b4c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

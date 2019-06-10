@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 
 public class ScoreMenuController : MonoBehaviour
-{
+{ /*
     [SerializeField]
     private GameObject backButton;
 
@@ -70,5 +70,5 @@ public class ScoreMenuController : MonoBehaviour
 
   
 
-
+    */
 }

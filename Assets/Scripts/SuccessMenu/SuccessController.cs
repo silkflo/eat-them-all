@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SuccessController : MonoBehaviour
 {
-
+    /*
 
     [SerializeField]
     private GameObject scoreButton, tropheeButton, backButton;
@@ -25,14 +25,14 @@ public class SuccessController : MonoBehaviour
 
     public void ScoreMenu()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
 
         SceneManager.LoadScene(TagManager.SCORE_SCENE);
     }
 
     public void TropheeMenu()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
        
         SceneManager.LoadScene(TagManager.ACHIEVEMENT_SCENE);
     }
@@ -40,9 +40,9 @@ public class SuccessController : MonoBehaviour
 
     public void MainMenu()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
 
         SceneManager.LoadScene(TagManager.MAIN_MENU_SCENE);
     }
-
+    */
 }

@@ -23,7 +23,7 @@ public class AchievementController : MonoBehaviour
 
     public void SuccessMenu()
     {
-        AudioManager.instance.ButtonPressedSound();
+        AudioManager.instance.ClickMenuSound();
 
         SceneManager.LoadScene(TagManager.MAIN_MENU_SCENE);
     }

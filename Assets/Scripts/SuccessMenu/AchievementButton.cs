@@ -24,7 +24,7 @@ public class AchievementButton : MonoBehaviour
      
         if(sprite.sprite == neutral)
         {
-            AudioManager.instance.ButtonPressedSound();
+           // AudioManager.instance.ClickMenuSound();
 
             sprite.sprite = highlight;
             achievementList.SetActive(true);
