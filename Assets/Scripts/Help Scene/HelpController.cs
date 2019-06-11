@@ -18,11 +18,11 @@ public class HelpController : MonoBehaviour
     {
         if (GamePlayController.guideOnStart == false)
         {
-            buttonText.text = "Back";
+            buttonText.text = "MENU";
         }
         else if (GamePlayController.guideOnStart == true)
         {
-            buttonText.text = "Start";
+            buttonText.text = "PLAY";
         }
     }
 
@@ -45,7 +45,7 @@ public class HelpController : MonoBehaviour
 
     public void PreviousBombButton()
     {
-        AudioManager.instance.ClickMenuSound();
+        AudioManager.instance.ClickBackSound();
         
         moveGuidePanel.SetActive(true);
         bombGuidePanel.SetActive(false);
@@ -61,7 +61,7 @@ public class HelpController : MonoBehaviour
 
     public void PreviousExploseButton()
     {
-        AudioManager.instance.ClickMenuSound();
+        AudioManager.instance.ClickBackSound();
    
         bombGuidePanel.SetActive(true);
         exploseGuidePanel.SetActive(false);
@@ -77,7 +77,7 @@ public class HelpController : MonoBehaviour
 
     public void PreviousLoseButton()
     {
-        AudioManager.instance.ClickMenuSound();
+        AudioManager.instance.ClickBackSound();
        
         loseGuidePanel.SetActive(false);
         exploseGuidePanel.SetActive(true);
@@ -93,7 +93,7 @@ public class HelpController : MonoBehaviour
 
     public void PreviousShortcutButton()
     {
-        AudioManager.instance.ClickMenuSound();
+        AudioManager.instance.ClickBackSound();
 
         shortcutGuidePanel.SetActive(false);
         loseGuidePanel.SetActive(true);

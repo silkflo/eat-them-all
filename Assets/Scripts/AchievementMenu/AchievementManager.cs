@@ -219,133 +219,133 @@ public class AchievementManager : MonoBehaviour
         // CREATE ACHIEVEMENT LIST
         //ACHIEVEMENT TEST
       
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press W", "beat 400 in easy difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press X", "beat 800 in easy difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press W", "beat 400 in slow difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press X", "beat 800 in slow difficulty", 1);
         
 
 
         //-------------------------------------FROG-----------------------------------------------------------------
         //SCORE ACHIEVEMENT-----------------------------------------------------------------------------------------
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy Score 400", "Beat 400 in easy difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy Score 700", "Beat 700 in easy difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy Score 1000", "Beat 1000 in easy difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow Score 400", "Beat 400 in slow difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow Score 700", "Beat 700 in slow difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow Score 1000", "Beat 1000 in slow difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium Score 400", "Beat 400 in medium difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium Score 700", "Beat 700 in medium difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium Score 1000", "Beat 1000 in medium difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal Score 400", "Beat 400 in normal difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal Score 700", "Beat 700 in normal difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal Score 1000", "Beat 1000 in normal difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult Score 400", "Beat 400 in hard difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult Score 700", "Beat 700 in hard difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult Score 1000", "Beat 1000 in hard difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast Score 400", "Beat 400 in fast difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast Score 700", "Beat 700 in fast difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast Score 1000", "Beat 1000 in fast difficulty", 0);
 
 
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "All Score Achievement", "Beat all scores in all dificulties", 0,
-                          new string[] { "Easy Score 400", "Easy Score 700", "Easy Score 1000",
-                                         "Medium Score 400", "Medium Score 700", "Medium Score 1000",
-                                         "Difficult Score 400", "Difficult Score 700", "Difficult Score 1000"});
+                          new string[] { "Slow Score 400", "Slow Score 700", "Slow Score 1000",
+                                         "Normal Score 400", "Normal Score 700", "Normal Score 1000",
+                                         "Fast Score 400", "Fast Score 700", "Fast Score 1000"});
 
 
 
         //EXPULSION FOODS ACHIEVEMENT---------------------------------------------------------------------------------------
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eat 50 insects", "Eat 50 insects in easy difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eat 100 insects", "Eat 100 insects in easy difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eat 150 insects", "Eat 150 insects in easy difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow eat 50 insects", "Eat 50 insects in slow difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow eat 100 insects", "Eat 100 insects in slow difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow eat 150 insects", "Eat 150 insects in slow difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eat 50 insects", "Eat 50 insects in medium difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eat 100 insects", "Eat 100 insects in medium difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eat 150 insects", "Eat 150 insects in medium difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal eat 50 insects", "Eat 50 insects in normal difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal eat 100 insects", "Eat 100 insects in normal difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal eat 150 insects", "Eat 150 insects in normal difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eat 50 insects", "Eat 50 insects in hard difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eat 100 insects", "Eat 100 insects in hard difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eat 150 insects", "Eat 150 insects in hard difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast eat 50 insects", "Eat 50 insects in fast difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast eat 100 insects", "Eat 100 insects in fast difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast eat 150 insects", "Eat 150 insects in fast difficulty", 0);
 
 
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Big eater", "Eat all insects in all dificulties", 0,
-                         new string[] {  "Easy eat 50 insects","Easy eat 100 insects","Easy eat 150 insects",
-                                         "Medium eat 50 insects","Medium eat 100 insects","Medium eat 150 insects",
-                                         "Difficult eat 50 insects","Easy eat 100 insects","Difficult eat 150 insects"});
+                         new string[] {  "Slow eat 50 insects","Slow eat 100 insects","Slow eat 150 insects",
+                                         "Normal eat 50 insects","Normal eat 100 insects","Normal eat 150 insects",
+                                         "Fast eat 50 insects","Fast eat 100 insects","Fast eat 150 insects"});
 
 
 
         //EXPULSE OBJECTS----------------------------------------------------------------------------------------------------------
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eject 30 insects", "eject 30 insects in easy difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eject 60 insects", "eject 60 insects in easy difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy eject 90 insects", "eject 90 insects in easy difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow eject 30 insects", "eject 30 insects in slow difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow eject 60 insects", "eject 60 insects in slow difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow eject 90 insects", "eject 90 insects in slow difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eject 30 insects", "eject 30 insects in medium difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eject 60 insects", "eject 60 insects in medium difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium eject 90 insects", "eject 90 insects in medium difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal eject 30 insects", "eject 30 insects in normal difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal eject 60 insects", "eject 60 insects in normal difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal eject 90 insects", "eject 90 insects in normal difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eject 30 insects", "eject 30 insects in hard difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eject 60 insects", "eject 60 insects in hard difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult eject 90 insects", "eject 90 insects in hard difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast eject 30 insects", "eject 30 insects in fast difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast eject 60 insects", "eject 60 insects in fast difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast eject 90 insects", "eject 90 insects in fast difficulty", 0);
 
 
 
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Master of insects throw up", "eject all insects in all dificulties", 0,
-                      new string[] { "Easy eject 30 insects", "Easy eject 60 insects", "Easy eject 90 insects",
-                                     "Medium eject 30 insects", "Medium eject 60 insects", "Medium eject 90 insects",
-                                     "Difficult eject 30 insects", "Difficult eject 60 insects", "Difficult eject 90 insects",});
+                      new string[] { "Slow eject 30 insects", "Slow eject 60 insects", "Slow eject 90 insects",
+                                     "Normal eject 30 insects", "Normal eject 60 insects", "Normal eject 90 insects",
+                                     "Fast eject 30 insects", "Fast eject 60 insects", "Fast eject 90 insects",});
 
             
 
         //COMBO-----------------------------------------------------------------------------------------------------------------------
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy Great Combo", "Great combo in easy difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy Awesome Combo", "Awesome combo in easy difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy Amazing Combo", "Amazing combo in easy difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow Great Combo", "Great combo in slow difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow Awesome Combo", "Awesome combo in slow difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow Amazing Combo", "Amazing combo in slow difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium Great Combo", "Great combo in medium difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium Awesome Combo", "Awesome combo in medium difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium Amazing Combo", "Amazing combo in medium difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal Great Combo", "Great combo in normal difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal Awesome Combo", "Awesome combo in normal difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal Amazing Combo", "Amazing combo in normal difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult Great Combo", "Great combo in hard difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult Awesome Combo", "Awesome combo in hard difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult Amazing Combo", "Amazing combo in hard difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast Great Combo", "Great combo in fast difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast Awesome Combo", "Awesome combo in fast difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast Amazing Combo", "Amazing combo in fast difficulty", 0);
 
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Master of Combo", "All combos in all dificulties", 0,
-                      new string[] { "Easy Great Combo", "Easy Awesome Combo", "Easy Amazing Combo",
-                                     "Medium Great Combo", "Medium Awesome Combo", "Medium Amazing Combo",
-                                     "Difficult Great Combo", "Difficult Awesome Combo", "Difficult Amazing Combo"});
+                      new string[] { "Slow Great Combo", "Slow Awesome Combo", "Slow Amazing Combo",
+                                     "Normal Great Combo", "Normal Awesome Combo", "Normal Amazing Combo",
+                                     "Fast Great Combo", "Fast Awesome Combo", "Fast Amazing Combo"});
 
 
 
         //BOMB EXPLODE
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy 10 Bombs blow up", "10 bombs blow up in easy difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy 25 Bombs blow up", "25 bombs blow up in easy difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy 40 Bombs blow up", "40 bombs blow up in easy difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow 10 Bombs blow up", "10 bombs blow up in slow difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow 25 Bombs blow up", "25 bombs blow up in slow difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow 40 Bombs blow up", "40 bombs blow up in slow difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium 10 Bombs blow up", "10 bombs blow up in Medium difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium 25 Bombs blow up", "25 bombs blow up in Medium difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium 40 Bombs blow up", "40 bombs blow up in Medium difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal 10 Bombs blow up", "10 bombs blow up in Normal difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal 25 Bombs blow up", "25 bombs blow up in Normal difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal 40 Bombs blow up", "40 bombs blow up in Normal difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult 10 Bombs blow up", "10 bombs blow up in Hard difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult 25 Bombs blow up", "25 bombs blow up in Hard difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult 40 Bombs blow up", "40 bombs blow up in Hard difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast 10 Bombs blow up", "10 bombs blow up in Hard difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast 25 Bombs blow up", "25 bombs blow up in Hard difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast 40 Bombs blow up", "40 bombs blow up in Hard difficulty", 0);
 
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Master of Bombs", "blow up all bombs achievement in all dificulties", 0,
-                      new string[] { "Easy 10 Bombs blow up", "Easy 25 Bombs blow up", "Easy 40 Bombs blow up",
-                                     "Medium 10 Bombs blow up", "Medium 25 Bombs blow up", "Medium 40 Bombs blow up",
-                                     "Difficult 10 Bombs blow up", "Difficult 25 Bombs blow up", "Difficult 40 Bombs blow up"});
+                      new string[] { "Slow 10 Bombs blow up", "Slow 25 Bombs blow up", "Slow 40 Bombs blow up",
+                                     "Normal 10 Bombs blow up", "Normal 25 Bombs blow up", "Normal 40 Bombs blow up",
+                                     "Fast 10 Bombs blow up", "Fast 25 Bombs blow up", "Fast 40 Bombs blow up"});
 
 
 
         //TIME ACHIEVEMENT
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy 4 minutes survival", "survive 4 minutes in easy difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy 7 minutes survival", "survive 7 minutes in easy difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Easy 10 minutes survival", "survive 10 minutes in easy difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow 4 minutes survival", "survive 4 minutes in slow difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow 7 minutes survival", "survive 7 minutes in slow difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Slow 10 minutes survival", "survive 10 minutes in slow difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium 4 minutes survival", "survive 4 minutes in Medium difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium 7 minutes survival", "survive 7 minutes in Medium difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Medium 10 minutes survival", "survive 10 minutes in Medium difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal 4 minutes survival", "survive 4 minutes in Normal difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal 7 minutes survival", "survive 7 minutes in Normal difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Normal 10 minutes survival", "survive 10 minutes in Normal difficulty", 0);
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult 4 minutes survival", "survive 4 minutes in hard difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult 7 minutes survival", "survive 7 minutes in hard difficulty", 1);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Difficult 10 minutes survival", "survive 10 minutes in hard difficulty", 0);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast 4 minutes survival", "survive 4 minutes in fast difficulty", 2);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast 7 minutes survival", "survive 7 minutes in fast difficulty", 1);
+        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Fast 10 minutes survival", "survive 10 minutes in fast difficulty", 0);
 
         CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Survivor", "survive in all dificulties", 0,
-                      new string[] { "Easy 4 minutes survival", "Easy 7 minutes survival", "Easy 10 minutes survival",
-                                     "Medium 4 minutes survival", "Medium 7 minutes survival", "Medium 10 minutes survival",
-                                     "Difficult 4 minutes survival", "Difficult 7 minutes survival", "Difficult 10 minutes survival"});
+                      new string[] { "Slow 4 minutes survival", "Slow 7 minutes survival", "Slow 10 minutes survival",
+                                     "Normal 4 minutes survival", "Normal 7 minutes survival", "Normal 10 minutes survival",
+                                     "Fast 4 minutes survival", "Fast 7 minutes survival", "Fast 10 minutes survival"});
 
 
 
@@ -377,271 +377,271 @@ public class AchievementManager : MonoBehaviour
 
 
         //SCORE--------------------------------------------------------------------------------------
-        //Easy
+        //slow
         if (Score.totalScore > 399 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy Score 400");
+            EarnAchievement("Slow Score 400");
         }
         if (Score.totalScore > 699 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy Score 700");
+            EarnAchievement("Slow Score 700");
         }
         if (Score.totalScore > 999 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy Score 1000");
+            EarnAchievement("Slow Score 1000");
         }
 
         //Medium
         if (Score.totalScore > 399 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium Score 400");
+            EarnAchievement("Normal Score 400");
         }
         if (Score.totalScore > 699 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium Score 700");
+            EarnAchievement("Normal Score 700");
         }
         if (Score.totalScore > 999 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium Score 1000");
+            EarnAchievement("Normal Score 1000");
         }
 
         //Difficult
         if (Score.totalScore > 399 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult Score 400");
+            EarnAchievement("Fast Score 400");
         }
         if (Score.totalScore > 699 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult Score 700");
+            EarnAchievement("Fast Score 700");
         }
         if (Score.totalScore > 999 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult Score 1000");
+            EarnAchievement("Fast Score 1000");
         }
 
 
 
         //INSECT EATEN-----------------------------------------------------------------
-        //Easy
+        //slow
         if (SpawnFood.scoreBySpawn > 49 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy eat 50 insects");
+            EarnAchievement("Slow eat 50 insects");
         }
         if (SpawnFood.scoreBySpawn > 99 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy eat 100 insects");
+            EarnAchievement("Slow eat 100 insects");
         }
         if (SpawnFood.scoreBySpawn > 149 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy eat 150 insects");
+            EarnAchievement("Slow eat 150 insects");
         }
 
         //Medium
         if (SpawnFood.scoreBySpawn > 49 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium eat 50 insects");
+            EarnAchievement("Normal eat 50 insects");
         }
         if (SpawnFood.scoreBySpawn > 99 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium eat 100 insects");
+            EarnAchievement("Normal eat 100 insects");
         }
         if (SpawnFood.scoreBySpawn > 149 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium eat 150 insects");
+            EarnAchievement("Normal eat 150 insects");
         }
 
         //Difficult
         if (SpawnFood.scoreBySpawn > 49 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult eat 50 insects");
+            EarnAchievement("Fast eat 50 insects");
         }
         if (SpawnFood.scoreBySpawn > 99 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult eat 100 insects");
+            EarnAchievement("Fast eat 100 insects");
         }
         if (SpawnFood.scoreBySpawn > 149 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult eat 150 insects");
+            EarnAchievement("Fast eat 150 insects");
         }
 
 
 
         //eject INSECTS---------------------------------------------------------------
-        //Easy
+        //slow
         if(DeactivateFood.countDeactivateobject >29 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy eject 30 insects");
+            EarnAchievement("Slow eject 30 insects");
         }
         if (DeactivateFood.countDeactivateobject > 59 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy eject 60 insects");
+            EarnAchievement("Slow eject 60 insects");
         }
         if (DeactivateFood.countDeactivateobject > 89 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy eject 90 insects");
+            EarnAchievement("Slow eject 90 insects");
         }
 
         //Medium
         if (DeactivateFood.countDeactivateobject > 29 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium eject 30 insects");
+            EarnAchievement("Normal eject 30 insects");
         }
         if (DeactivateFood.countDeactivateobject > 59 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium eject 60 insects");
+            EarnAchievement("Normal eject 60 insects");
         }
         if (DeactivateFood.countDeactivateobject > 89 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium eject 90 insects");
+            EarnAchievement("Normal eject 90 insects");
         }
 
         //Difficult
         if (DeactivateFood.countDeactivateobject > 29 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult eject 30 insects");
+            EarnAchievement("Fast eject 30 insects");
         }
         if (DeactivateFood.countDeactivateobject > 59 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult eject 60 insects");
+            EarnAchievement("Fast eject 60 insects");
         }
         if (DeactivateFood.countDeactivateobject > 89 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult eject 90 insects");
+            EarnAchievement("Fast eject 90 insects");
         }
 
 
 
         //COMBO---------------------------------------------------------------
-        //Easy
+        //slow
         if (GameManager.instance.greatBoolAnim == true && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy Great Combo");
+            EarnAchievement("Slow Great Combo");
         }
         if (GameManager.instance.awesomeBoolAnim == true  && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy Awesome Combo");
+            EarnAchievement("Slow Awesome Combo");
         }
         if (GameManager.instance.amazingBoolAnim == true && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy Amazing Combo");
+            EarnAchievement("Slow Amazing Combo");
         }
 
 
         //Medium
         if (GameManager.instance.greatBoolAnim == true && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium Great Combo");
+            EarnAchievement("Normal Great Combo");
         }
         if (GameManager.instance.awesomeBoolAnim == true && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium Awesome Combo");
+            EarnAchievement("Normal Awesome Combo");
         }
         if (GameManager.instance.amazingBoolAnim == true && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium Amazing Combo");
+            EarnAchievement("Normal Amazing Combo");
         }
 
         //Difficult
         if (GameManager.instance.greatBoolAnim == true && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult Great Combo");
+            EarnAchievement("Fast Great Combo");
         }
         if (GameManager.instance.awesomeBoolAnim == true && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult Awesome Combo");
+            EarnAchievement("Fast Awesome Combo");
         }
         if (GameManager.instance.amazingBoolAnim == true && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult Amazing Combo");
+            EarnAchievement("Fast Amazing Combo");
         }
 
 
 
         //BOMB EXPLOSE---------------------------------------------------------------
-        //Easy
+        //slow
         if (BombScript.scoreByBomb > 90 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy 10 Bombs blow up");
+            EarnAchievement("Slow 10 Bombs blow up");
         }
         if (BombScript.scoreByBomb > 240 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy 25 Bombs blow up");
+            EarnAchievement("Slow 25 Bombs blow up");
         }
         if (BombScript.scoreByBomb > 390  && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy 40 Bombs blow up");
+            EarnAchievement("Slow 40 Bombs blow up");
         }
 
         //Medium
         if (BombScript.scoreByBomb > 90 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium 10 Bombs blow up");
+            EarnAchievement("Normal 10 Bombs blow up");
         }
         if (BombScript.scoreByBomb > 240 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium 25 Bombs blow up");
+            EarnAchievement("Normal 25 Bombs blow up");
         }
         if (BombScript.scoreByBomb > 390  && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium 40 Bombs blow up");
+            EarnAchievement("Normal 40 Bombs blow up");
         }
 
         //Difficult
         if (BombScript.scoreByBomb > 90 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult 10 Bombs blow up");
+            EarnAchievement("Fast 10 Bombs blow up");
         }
         if (BombScript.scoreByBomb > 240 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult 25 Bombs blow up");
+            EarnAchievement("Fast 25 Bombs blow up");
         }
         if (BombScript.scoreByBomb > 390  && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult 40 Bombs blow up");
+            EarnAchievement("Fast 40 Bombs blow up");
         }
 
 
         //SURVIVOR---------------------------------------------------------------
-        //Easy
+        //slow
         if (Score.currentTime > 240 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy 4 minutes survival");
+            EarnAchievement("Slow 4 minutes survival");
         }
         if (Score.currentTime > 420 && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy 7 minutes survival");
+            EarnAchievement("Slow 7 minutes survival");
         }
         if (Score.currentTime > 600 == true && GamePreferences.GetEasyDifficulty() == 1)
         {
-            EarnAchievement("Easy 10 minutes survival");
+            EarnAchievement("Slow 10 minutes survival");
         }
 
         //Medium
         if (Score.currentTime > 240 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium 4 minutes survival");
+            EarnAchievement("Normal 4 minutes survival");
         }
         if (Score.currentTime > 420 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium 7 minutes survival");
+            EarnAchievement("Normal 7 minutes survival");
         }
         if (Score.currentTime > 600 && GamePreferences.GetMediumDifficulty() == 1)
         {
-            EarnAchievement("Medium 10 minutes survival");
+            EarnAchievement("Normal 10 minutes survival");
         }
 
         //Difficult
         if (Score.currentTime > 240 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult 4 minutes survival");
+            EarnAchievement("Fast 4 minutes survival");
         }
         if (Score.currentTime > 420 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult 7 minutes survival");
+            EarnAchievement("Fast 7 minutes survival");
         }
         if (Score.currentTime > 600 && GamePreferences.GetHardDifficulty() == 1)
         {
-            EarnAchievement("Difficult 10 minutes survival");
+            EarnAchievement("Fast 10 minutes survival");
         }
 
 

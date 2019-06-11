@@ -14,7 +14,10 @@ public class GamePlayController : MonoBehaviour
     [SerializeField]
     private GameObject musicButtonOn, gameOverPanel, musicButtonOff, deactivateScoreObject,
                          moveGuidePanel, bombGuidePanel, exploseGuidePanel, loseGuidePanel, shortcutGuidePanel,
-                        guidePanel, soundFxButtonOn, soundFxButtonOff;
+                        guidePanel, soundFxButtonOn, soundFxButtonOff,
+                        gameSlowIcon, gameNormalIcon,gameFastIcon,
+                        pauseSlowIcon, pauseNormalIcon,pauseFastIcon,
+                        gameoverSlowIcon,gameoverNormalIcon, gameOverFastIcon;
 
     public GameObject pausePanel;
 
@@ -102,6 +105,8 @@ public class GamePlayController : MonoBehaviour
             soundFxButtonOn.SetActive(true);
             soundFxButtonOff.SetActive(false);
         }
+
+        SetSpeed();
     }
 
     void Update()
@@ -109,7 +114,7 @@ public class GamePlayController : MonoBehaviour
         PauseGameByEsc();
         PausePanelTouchControl();
         ComboDisplay();
-        SetSpeed();
+        
 
         if (Input.GetKeyDown(KeyCode.S))
         {
@@ -229,6 +234,8 @@ public class GamePlayController : MonoBehaviour
         DeactivateFood.countDeactivateobject = 0;
         BombScript.scoreByBomb = 0;
         Score.currentTime = 0;
+        DeactivateFood.countStartCombo = 0;
+        Lose.canLose = true;
 
         panelOnCantMove = false;
         Lose.gameOver = false;
@@ -313,14 +320,50 @@ public class GamePlayController : MonoBehaviour
         if (levelMode == 1)
         {
             speedTextGeneral.text = "slow";
+
+            gameSlowIcon.SetActive(true);
+            pauseSlowIcon.SetActive(true);
+            gameoverSlowIcon.SetActive(true);
+
+            gameNormalIcon.SetActive(false);
+            pauseNormalIcon.SetActive(false);
+            gameoverNormalIcon.SetActive(false);
+
+            gameFastIcon.SetActive(false);
+            pauseFastIcon.SetActive(false);
+            gameOverFastIcon.SetActive(false);
         }
         else if (levelMode == 2)
         {
             speedTextGeneral.text = "normal";
+
+            gameSlowIcon.SetActive(false);
+            pauseSlowIcon.SetActive(false);
+            gameoverSlowIcon.SetActive(false);
+
+            gameNormalIcon.SetActive(true);
+            pauseNormalIcon.SetActive(true);
+            gameoverNormalIcon.SetActive(true);
+
+            gameFastIcon.SetActive(false);
+            pauseFastIcon.SetActive(false);
+            gameOverFastIcon.SetActive(false);
         }
         else if (levelMode == 3)
         {
             speedTextGeneral.text = "fast";
+
+            gameSlowIcon.SetActive(false);
+            pauseSlowIcon.SetActive(false);
+            gameoverSlowIcon.SetActive(false);
+
+            gameNormalIcon.SetActive(false);
+            pauseNormalIcon.SetActive(false);
+            gameoverNormalIcon.SetActive(false);
+
+            gameFastIcon.SetActive(true);
+            pauseFastIcon.SetActive(true);
+            gameOverFastIcon.SetActive(true);
         }
     } 
 

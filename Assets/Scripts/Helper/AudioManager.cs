@@ -66,7 +66,7 @@ public  class AudioManager : MonoBehaviour
         }
         else
         {
-            freeFallAudioSource.PlayOneShot(buttonHoverClip, 0.5f);
+            freeFallAudioSource.PlayOneShot(buttonHoverClip, 1f);
         }
     }
 
