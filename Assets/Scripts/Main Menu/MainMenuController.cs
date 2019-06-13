@@ -393,6 +393,9 @@ public class MainMenuController : MonoBehaviour
         hardButton.SetActive(false);
     }
 
-
+    public void FacebookButton()
+    {
+        Application.OpenURL("https://www.facebook.com/sandbunniesstudio/");
+    }
 
 }

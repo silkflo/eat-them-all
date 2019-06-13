@@ -226,7 +226,7 @@ public class GamePlayController : MonoBehaviour
     //QUIT GAME
     public void QuitGame(string sceneName)
     {
-        AudioManager.instance.ClickMenuSound();
+        AudioManager.instance.ClickBackSound();
         Time.timeScale = 1f;
         print("reset score?");
         Score.totalScore = 0;
