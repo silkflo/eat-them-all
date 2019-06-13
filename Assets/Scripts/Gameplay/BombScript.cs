@@ -12,9 +12,16 @@ public class BombScript : MonoBehaviour
 
     private bool hasExploded;
 
+
+    public Camera mainCamera;
+    private float shakeAmount;
+
     void Awake()
     {
         anim = GetComponentInParent<Animator>();
+
+        if (mainCamera == null)
+            mainCamera = Camera.main;
     }
 
     private void Start()
@@ -24,7 +31,7 @@ public class BombScript : MonoBehaviour
 
     private void Update()
     {
-       
+      
       
     }
 
@@ -38,6 +45,7 @@ public class BombScript : MonoBehaviour
             {
                 scoreByBomb = scoreByBomb + 10;
                 hasExploded = false;
+                StartCoroutine(DelayShake());
             }
           
             
@@ -62,7 +70,12 @@ public class BombScript : MonoBehaviour
     }
 
 
-    
+    IEnumerator DelayShake()
+    {
+        yield return new WaitForSeconds(1f);
+        Shake(0.1f, 0.2f);
+
+    }
 
 
     IEnumerator BombDeactivate()
@@ -74,5 +87,34 @@ public class BombScript : MonoBehaviour
     }
 
   
+    public void Shake(float amount, float lenght)
+    {
+        shakeAmount = amount;
+        InvokeRepeating("DoShake", 0, 0.005f);
+        Invoke("StopShake", lenght);
+    }
+
+    private void DoShake()
+    {
+        if (shakeAmount > 0)
+        {
+            Vector3 camPos = mainCamera.transform.position;
+
+            float offsetX = Random.value * shakeAmount * 2 - shakeAmount;
+            float offsetY = Random.value * shakeAmount * 2 - shakeAmount;
+
+            camPos.x += offsetX;
+            camPos.y += offsetY;
+
+            mainCamera.transform.position = camPos;
+
+        }
+    }
+
+    private void StopShake()
+    {
+        CancelInvoke("DoShake");
+        mainCamera.transform.localPosition = Vector3.zero;
+    }
 
 }
