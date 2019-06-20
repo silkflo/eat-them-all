@@ -15,13 +15,16 @@ public class MainMenuController : MonoBehaviour
        easyButton, easyButtonActivated,
                        mediumButton, mediumButtonActivated,
                        hardButton, hardButtonActivated,
-                       backButton, speedButton;
+                       backButton, speedButton,
+                       achievementMenu, closeAchievement;
    [SerializeField]
-    private Animator buttonPanelAnim, highScoreAnim, bottomButtonPanelAnim, speedAnimPanel;
+    private Animator buttonPanelAnim, highScoreAnim, bottomButtonPanelAnim, speedAnimPanel, achievementAnimPanel;
 
     [SerializeField]
     private Text easyScoreText, mediumScoreText, hardScoreText;
 
+
+    private int fadeTime = 2;
 
     void Start()
     {
@@ -46,22 +49,43 @@ public class MainMenuController : MonoBehaviour
 
     }
 
- /*
-    public void OptionMenu()
-    {
-
-        AudioManager.instance.ClickMenuSound();
-     
-        SceneManager.LoadScene(TagManager.OPTION_SCENE);
-    }
-
-*/
+    //ACHIEVEMENT
     public void SuccessMenu()
     {
          AudioManager.instance.ClickMenuSound();
-       
-        SceneManager.LoadScene(TagManager.ACHIEVEMENT_SCENE);
+        buttonPanelAnim.SetBool(TagManager.BUTTON_PANEL_PARAMETER, true);
+        bottomButtonPanelAnim.SetBool(TagManager.BOTTOM_BUTTON_ICON_PARAMETER, true);
+
+        StartCoroutine(DisplayAchievement());
+
     }
+
+    IEnumerator DisplayAchievement()
+    {
+        yield return new WaitForSeconds(1f);
+        achievementMenu.SetActive(true);
+        achievementAnimPanel.SetBool(TagManager.ACHIEVEMENT_FADE_PARAMETER, true);
+    }
+
+
+
+    public void CloseAchievement()
+    {
+        AudioManager.instance.ClickBackSound();
+     
+
+        achievementAnimPanel.SetBool(TagManager.ACHIEVEMENT_FADE_PARAMETER, false);
+        StartCoroutine(DeactivateAchievement());
+        StartCoroutine(ShowMenu());
+    }
+
+    IEnumerator DeactivateAchievement()
+    {
+        yield return new WaitForSeconds(2f);
+        achievementMenu.SetActive(false);
+    }
+
+
 
     public void HelpMenu()
     {
@@ -105,6 +129,7 @@ public class MainMenuController : MonoBehaviour
     IEnumerator ShowMenu()
     {
         yield return new WaitForSeconds(0.5f);
+       
         buttonPanelAnim.SetBool(TagManager.BUTTON_PANEL_PARAMETER, false);
         bottomButtonPanelAnim.SetBool(TagManager.BOTTOM_BUTTON_ICON_PARAMETER, false);
 
@@ -396,6 +421,7 @@ public class MainMenuController : MonoBehaviour
     public void FacebookButton()
     {
         Application.OpenURL("https://www.facebook.com/sandbunniesstudio/");
+        //Application.ExternalEval("window.open(\"https://www.facebook.com/sandbunniesstudio/\")");
     }
 
 }

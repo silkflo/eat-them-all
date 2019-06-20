@@ -9,30 +9,25 @@ public class GamePlayController : MonoBehaviour
     public static GamePlayController instance;
 
     [SerializeField]
-    private Text timeText, scoreText, gameOverScoreText, gameOverTimeText, deactivateScoreAnim, greatText, speedTextGameOver, speedTextPause, speedTextGeneral;
+    private Text timeText, scoreText, gameOverScoreText, gameOverTimeText, deactivateScoreAnim;
 
     [SerializeField]
     private GameObject musicButtonOn, gameOverPanel, musicButtonOff, deactivateScoreObject,
-                         moveGuidePanel, bombGuidePanel, exploseGuidePanel, loseGuidePanel, shortcutGuidePanel,
-                        guidePanel, soundFxButtonOn, soundFxButtonOff,
-                        gameSlowIcon, gameNormalIcon,gameFastIcon,
-                        pauseSlowIcon, pauseNormalIcon,pauseFastIcon,
-                        gameoverSlowIcon,gameoverNormalIcon, gameOverFastIcon;
+                         soundFxButtonOn, soundFxButtonOff,
+                        gameSlowIcon, gameNormalIcon,gameFastIcon, //game view
+                        selectSpeedPanel,                //select view
+                        choiceSlowIcon,choiceSlowIconActivated, choiceNormalIcon, choiceNormalIconActivated, choiceFastIcon, choiceFastIconActivated,
+                        starOn, starOff;
 
     public GameObject pausePanel;
 
-    [SerializeField]
-    private Button nextMoveButton,
-                    previousBombButton, nextBombButton,
-                    previousExploseButton, NextExploseButton,
-                    previousLoseButton, nextLoseButton,
-                    previousShortcutButton;
+    
+    public Animator gameOverAnim, pauseAnim,fiveScoreAnim,greatAnim;
+
+    
 
 
-    [SerializeField]
-    private Animator gameOverAnim, pauseAnim, greatAnim, fiveScoreAnim;
-
-    private bool pauseAnimBoool;
+   
 
     private float seconds, minutes;
 
@@ -45,10 +40,7 @@ public class GamePlayController : MonoBehaviour
 
     static public bool startCombo;
 
-    [HideInInspector]
-    public bool greatBoolAnim, awesomeBoolAnim, amazingBoolAnim;
-
-
+  
     private int maxCombo;
 
 
@@ -64,7 +56,9 @@ public class GamePlayController : MonoBehaviour
     {
 
         GameFirstStart();
-       
+        SetTheDifficulty();
+
+
 
         if (GamePreferences.GetEasyDifficulty() == 1)
         {
@@ -106,7 +100,7 @@ public class GamePlayController : MonoBehaviour
             soundFxButtonOff.SetActive(false);
         }
 
-        SetSpeed();
+        DisplaySpeed();
     }
 
     void Update()
@@ -114,9 +108,10 @@ public class GamePlayController : MonoBehaviour
         PauseGameByEsc();
         PausePanelTouchControl();
         ComboDisplay();
-        
+        DisplayStar();
 
-        if (Input.GetKeyDown(KeyCode.S))
+
+        if (Input.GetKeyDown(KeyCode.M))
         {
             PlayMusic();
         }
@@ -136,35 +131,30 @@ public class GamePlayController : MonoBehaviour
     public void PauseTheGame()
     {
 
-        if (pausePanel.activeSelf == false)
+        if (pausePanel.activeSelf == false || selectSpeedPanel.activeSelf == true)
         {
-            if (AchievementManager.Instance.achievementMenu.activeSelf == false && gameOverPanel.activeSelf == false)
-            { 
+            if ( gameOverPanel.activeSelf == false  && AchievementManager.Instance.achievementMenu.activeSelf == false)
+            {
+                if(selectSpeedPanel.activeSelf== true)
+                {
+                    DisplaySelectSpeed();
+                }
+                
+
+                
                  AudioManager.instance.PauseSound();
                  panelOnCantMove = true;
                  Time.timeScale = 0f;
                  pausePanel.SetActive(true);
-                 pauseAnimBoool = true;
-                 pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, pauseAnimBoool);
+               
+                
+                 pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, true);
 
 
 
-
-                 if (levelMode == 1)
-                 {
-                     speedTextPause.text = "slow";
-                 }
-                 else if (levelMode == 2)
-                 {
-                     speedTextPause.text = "normal";
-                 }
-                 else if (levelMode == 3)
-                 {
-                     speedTextPause.text = "fast";
-                 }
 
             }
-        } else
+        } else if (selectSpeedPanel.activeSelf== false)
         {
             ResumeGame();
         }
@@ -178,8 +168,15 @@ public class GamePlayController : MonoBehaviour
         panelOnCantMove = false;
         pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, false);
         SpawnSecurity.timeElapsed = 0f;
-        pausePanel.SetActive(false);
+        StartCoroutine(DeativatePausePanel());
         AchievementManager.Instance.achievementMenu.SetActive(false);
+    }
+
+
+    IEnumerator DeativatePausePanel()
+    {
+        yield return new WaitForSeconds(1f);
+        pausePanel.SetActive(false);
     }
 
     public void PauseGameByEsc()
@@ -206,7 +203,7 @@ public class GamePlayController : MonoBehaviour
     //RESTART GAME
     public void RestartGame(string sceneName)
     {
-        AudioManager.instance.ClickMenuSound();
+        AudioManager.instance.ClickStartSound();
 
         Time.timeScale = 1f;
         panelOnCantMove = false;
@@ -276,16 +273,31 @@ public class GamePlayController : MonoBehaviour
     //SHOW ACHIEVEMENT
     public void AchievementPanel()
     {
-        AudioManager.instance.ClickMenuSound();
+       
 
         AchievementManager.Instance.achievementMenu.SetActive(!AchievementManager.Instance.achievementMenu.activeSelf);
 
         if (AchievementManager.Instance.achievementMenu.activeSelf == true)
         {
+            AudioManager.instance.ClickMenuSound();
             Time.timeScale = 0f;
         }
         else
         {
+            AudioManager.instance.ClickBackSound();
+
+            if (selectSpeedPanel.activeSelf == true)
+            {
+                DisplaySelectSpeed();
+            }
+
+            if (pausePanel.activeSelf == true)
+            {
+                pausePanel.SetActive(false);
+                panelOnCantMove = false;
+            }
+
+
             Time.timeScale = 1f;
         }
     }
@@ -293,8 +305,6 @@ public class GamePlayController : MonoBehaviour
 
 
 
-
- 
 
     //DISPLAY SCORE
     public void SetScore(int score)
@@ -315,57 +325,216 @@ public class GamePlayController : MonoBehaviour
     }
 
     //DISPLAY SPEED
-    public void SetSpeed()
+    public void DisplaySpeed()
     {
         if (levelMode == 1)
         {
-            speedTextGeneral.text = "slow";
-
             gameSlowIcon.SetActive(true);
-            pauseSlowIcon.SetActive(true);
-            gameoverSlowIcon.SetActive(true);
-
             gameNormalIcon.SetActive(false);
-            pauseNormalIcon.SetActive(false);
-            gameoverNormalIcon.SetActive(false);
-
             gameFastIcon.SetActive(false);
-            pauseFastIcon.SetActive(false);
-            gameOverFastIcon.SetActive(false);
+
+       //    choiceSlowIcon.SetActive(false);
+       //    choiceNormalIcon.SetActive(true);
+       //    choiceFastIcon.SetActive(true);
+       //
+       //    choiceSlowIconActivated.SetActive(true);
+       //    choiceNormalIconActivated.SetActive(false);
+       //    choiceFastIconActivated.SetActive(false);
+
+
         }
         else if (levelMode == 2)
         {
-            speedTextGeneral.text = "normal";
-
             gameSlowIcon.SetActive(false);
-            pauseSlowIcon.SetActive(false);
-            gameoverSlowIcon.SetActive(false);
-
             gameNormalIcon.SetActive(true);
-            pauseNormalIcon.SetActive(true);
-            gameoverNormalIcon.SetActive(true);
-
             gameFastIcon.SetActive(false);
-            pauseFastIcon.SetActive(false);
-            gameOverFastIcon.SetActive(false);
+
+         //  choiceSlowIcon.SetActive(true);
+         //  choiceNormalIcon.SetActive(false);
+         //  choiceFastIcon.SetActive(true);
+         //
+         //  choiceSlowIconActivated.SetActive(false);
+         //  choiceNormalIconActivated.SetActive(true);
+         //  choiceFastIconActivated.SetActive(false);
+
+
         }
         else if (levelMode == 3)
         {
-            speedTextGeneral.text = "fast";
+           gameSlowIcon.SetActive(false);
+           gameNormalIcon.SetActive(false);
+           gameFastIcon.SetActive(true);
 
-            gameSlowIcon.SetActive(false);
-            pauseSlowIcon.SetActive(false);
-            gameoverSlowIcon.SetActive(false);
+        //    choiceSlowIcon.SetActive(true);
+        //    choiceNormalIcon.SetActive(true);
+        //    choiceFastIcon.SetActive(false);
+        //
+        //    choiceSlowIconActivated.SetActive(false);
+        //    choiceNormalIconActivated.SetActive(false);
+        //    choiceFastIconActivated.SetActive(true);
+        //
 
-            gameNormalIcon.SetActive(false);
-            pauseNormalIcon.SetActive(false);
-            gameoverNormalIcon.SetActive(false);
-
-            gameFastIcon.SetActive(true);
-            pauseFastIcon.SetActive(true);
-            gameOverFastIcon.SetActive(true);
         }
     } 
+
+    public void DisplaySelectSpeed()
+    {
+      
+            if (selectSpeedPanel.activeSelf == false)
+            {
+                 if (pausePanel.activeSelf == true)
+                 {
+                      AudioManager.instance.ClickMenuSound();
+                      pausePanel.SetActive(false);
+                      Time.timeScale = 1f;
+                      panelOnCantMove = false;
+                      SpawnSecurity.timeElapsed = 0f;
+                      AchievementManager.Instance.achievementMenu.SetActive(false);
+                 }
+
+                 if(AchievementManager.Instance.achievementMenu.activeSelf== true)
+                 {
+                AchievementPanel();
+                 }
+
+
+            AudioManager.instance.ClickMenuSound();
+            selectSpeedPanel.SetActive(true);
+        
+
+
+                Time.timeScale = 0f;
+            }
+            else if(selectSpeedPanel.activeSelf == true)
+            {
+            AudioManager.instance.ClickBackSound();
+            selectSpeedPanel.SetActive(false);
+            
+                Time.timeScale = 1f;
+            }
+
+      
+
+
+     }
+
+    void SetInitialDifficulty(string difficulty)
+    {
+        switch (difficulty)
+        {
+            case "easy":
+
+                choiceSlowIcon.SetActive(false);
+                choiceNormalIcon.SetActive(true);
+                choiceFastIcon.SetActive(true);
+
+                choiceSlowIconActivated.SetActive(true);
+                choiceNormalIconActivated.SetActive(false);
+                choiceFastIconActivated.SetActive(false);
+
+
+                break;
+
+            case "medium":
+
+                choiceSlowIcon.SetActive(true);
+                choiceNormalIcon.SetActive(false);
+                choiceFastIcon.SetActive(true);
+
+                choiceSlowIconActivated.SetActive(false);
+                choiceNormalIconActivated.SetActive(true);
+                choiceFastIconActivated.SetActive(false);
+
+                break;
+
+            case "hard":
+               
+                 choiceSlowIcon.SetActive(true);
+                 choiceNormalIcon.SetActive(true);
+                 choiceFastIcon.SetActive(false);
+                
+                 choiceSlowIconActivated.SetActive(false);
+                 choiceNormalIconActivated.SetActive(false);
+                 choiceFastIconActivated.SetActive(true);
+
+                break;
+        }
+    }
+
+    void SetTheDifficulty()
+    {
+        if (GamePreferences.GetEasyDifficulty() == 1)
+        {
+            SetInitialDifficulty("easy");
+        }
+        if (GamePreferences.GetMediumDifficulty() == 1)
+        {
+            SetInitialDifficulty("medium");
+        }
+        if (GamePreferences.GetHardDifficulty() == 1)
+        {
+            SetInitialDifficulty("hard");
+        }
+    }
+
+
+    public void EasyMode()
+    {
+        AudioManager.instance.ClickMenuSound();
+
+        GamePreferences.SetEasyDifficulty(1);
+        GamePreferences.SetMediumDifficulty(0);
+        GamePreferences.SetHardDifficulty(0);
+
+        choiceSlowIconActivated.SetActive(true);
+        choiceNormalIcon.SetActive(true);
+        choiceFastIcon.SetActive(true);
+        choiceNormalIconActivated.SetActive(false);
+        choiceFastIconActivated.SetActive(false);
+        choiceSlowIcon.SetActive(false);
+
+        RestartGame(TagManager.FROG_SCENE);
+
+    }
+
+
+    public void MediumMode()
+    {
+        AudioManager.instance.ClickMenuSound();
+
+        GamePreferences.SetEasyDifficulty(0);
+        GamePreferences.SetMediumDifficulty(1);
+        GamePreferences.SetHardDifficulty(0);
+
+        choiceSlowIcon.SetActive(true);
+        choiceNormalIconActivated.SetActive(true);
+        choiceFastIcon.SetActive(true);
+        choiceSlowIconActivated.SetActive(false);
+        choiceFastIconActivated.SetActive(false);
+        choiceNormalIcon.SetActive(false);
+
+        RestartGame(TagManager.FROG_SCENE);
+
+    }
+
+    public void HardMode()
+    {
+        AudioManager.instance.ClickMenuSound();
+
+        GamePreferences.SetEasyDifficulty(0);
+        GamePreferences.SetMediumDifficulty(0);
+        GamePreferences.SetHardDifficulty(1);
+
+        choiceSlowIcon.SetActive(true);
+        choiceNormalIcon.SetActive(true);
+        choiceFastIconActivated.SetActive(true);
+        choiceSlowIconActivated.SetActive(false);
+        choiceNormalIconActivated.SetActive(false);
+        choiceFastIcon.SetActive(false);
+
+        RestartGame(TagManager.FROG_SCENE);
+
+    }
 
 
     //DISPLAY GAMEOVER
@@ -381,21 +550,8 @@ public class GamePlayController : MonoBehaviour
             gameOverAnim.SetBool(TagManager.GAMEOVER_PARAMETER, true);
 
             gameOverScoreText.text = score.ToString();
-
-            if (levelMode == 1)
-            {
-                speedTextGameOver.text = "slow";
-            }
-            else if (levelMode == 2)
-            {
-                speedTextGameOver.text = "normal";
-            }
-            else if (levelMode == 3)
-            {
-                speedTextGameOver.text = "fast";
-            }
-
-
+        
+        
             minutes = (int)(time / 60f);
             seconds = (int)(time % 60f);
             gameOverTimeText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
@@ -470,7 +626,7 @@ public class GamePlayController : MonoBehaviour
     }
 
 
-    //ITEM DEACTIVATE
+    //COMBO
     public void ComboDisplay()
     {
 
@@ -484,164 +640,29 @@ public class GamePlayController : MonoBehaviour
             fiveScoreAnim.SetBool(TagManager.DISPLAY_5_PARAMETER, false);
         }
 
-        if (DeactivateFood.countStartCombo >=4 && DeactivateFood.countStartCombo <8)
-        {
-            
-
-            GameManager.instance.greatBoolAnim = true;
-            greatText.text = "GREAT";
-            StartCoroutine(DisplayText());
-        }
-
-       else if (DeactivateFood.countStartCombo >= 8 && DeactivateFood.countStartCombo < 12)
-        {
-
-            
-            GameManager.instance.awesomeBoolAnim = true;
-            greatText.text = "AWESOME";
-            StartCoroutine(DisplayText());
-        }
-      else  if (DeactivateFood.countStartCombo >= 12 )
-        {
-           
-            GameManager.instance.amazingBoolAnim = true;
-            greatText.text = "AMAZING";
-            StartCoroutine(DisplayText());
-        }
-        else
-        {
-            greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, false);
-            StartCoroutine(SetTextNull());
-
-        }
-        IEnumerator DisplayText()
-        {
-            yield return new WaitForSeconds(1f);
-            greatAnim.SetBool(TagManager.DISPLAY_GREAT_PARAMETER, true);
-            GameManager.instance.greatBoolAnim = false;
-            GameManager.instance.awesomeBoolAnim = false;
-            GameManager.instance.amazingBoolAnim = false;
-        }
-
-        IEnumerator SetTextNull()
-        {
-
-            yield return new WaitForSeconds(2f);
-            greatText.text = "";
-            startCombo = false;
-
-        }
-
     }
 
-    //GUIDE
-
-    public void NextMoveButton() {
-        AudioManager.instance.ClickMenuSound();
-        moveGuidePanel.SetActive(false);
-        bombGuidePanel.SetActive(true);
-    }
-
-    public void PreviousBombButton() {
-        AudioManager.instance.ClickMenuSound();
-        moveGuidePanel.SetActive(true);
-        bombGuidePanel.SetActive(false);
-    }
-
-    public void NextBombButton() {
-        AudioManager.instance.ClickMenuSound();
-        bombGuidePanel.SetActive(false);
-        exploseGuidePanel.SetActive(true);
-    }
-
-    public void PreviousExploseButton() {
-        AudioManager.instance.ClickMenuSound();
-        bombGuidePanel.SetActive(true);
-        exploseGuidePanel.SetActive(false);
-    }
-
-    public void NextExplodeButton() {
-        AudioManager.instance.ClickMenuSound();
-        exploseGuidePanel.SetActive(false);
-        loseGuidePanel.SetActive(true);
-    }
-
-    public void PreviousLoseButton() {
-        AudioManager.instance.ClickMenuSound();
-        loseGuidePanel.SetActive(false);
-        exploseGuidePanel.SetActive(true);
-    }
-
-    public void NextLoseButton() {
-        AudioManager.instance.ClickMenuSound();
-        shortcutGuidePanel.SetActive(true);
-        loseGuidePanel.SetActive(false);
-    }
-
-    public void PreviousShortcutButton() {
-        AudioManager.instance.ClickMenuSound();
-        shortcutGuidePanel.SetActive(false);
-        loseGuidePanel.SetActive(true);
-    }
-
-    public void GuideButtons()
+    public void DisplayStar()
     {
-        /*
-             nextMoveButton.onClick.AddListener(() => {
-             moveGuidePanel.SetActive(false);
-             bombGuidePanel.SetActive(true);
-             });
-
-             previousBombButton.onClick.AddListener(() => {
-                 moveGuidePanel.SetActive(true);
-                 bombGuidePanel.SetActive(false);
-             });
-
-             nextBombButton.onClick.AddListener(() => {
-                 bombGuidePanel.SetActive(false);
-                 exploseGuidePanel.SetActive(true);
-             });
-
-             previousExploseButton.onClick.AddListener(() => {
-                 exploseGuidePanel.SetActive(false);
-                 bombGuidePanel.SetActive(true);
-             });
-
-             NextExploseButton.onClick.AddListener(() => {
-                 exploseGuidePanel.SetActive(false);
-                 loseGuidePanel.SetActive(true);
-             });
-
-             previousLoseButton.onClick.AddListener(() =>
-             {
-                 loseGuidePanel.SetActive(false);
-                 exploseGuidePanel.SetActive(true);
-             });
-
-             nextLoseButton.onClick.AddListener(() => {
-                 shortcutGuidePanel.SetActive(true);
-                 loseGuidePanel.SetActive(false);
-
-             });
-
-             previousShortcutButton.onClick.AddListener(() => {
-                 shortcutGuidePanel.SetActive(false);
-                 loseGuidePanel.SetActive(true);
-             });
-
-         */
+        if(Lose.canLose == true)
+        {
+            starOn.SetActive(false);
+            starOff.SetActive(true);
+        }
+        else if( Lose.canLose == false)
+        {
+            starOn.SetActive(true);
+            starOff.SetActive(false);
+        }
     }
+
+
 
     public void GameFirstStart()
     {
         if (GamePreferences.GetFirstTimeGamePlay() == 0)
         {
-            /*  Time.timeScale = 0f;
-
-               guidePanel.SetActive(true);
-
-               
-               */
+           
             guideOnStart = true;
             GamePreferences.SetFirstTimeGamePlay(1);
             SceneManager.LoadScene(TagManager.HELP_SCENE);

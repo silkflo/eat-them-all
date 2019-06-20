@@ -13,9 +13,12 @@ public class Score : MonoBehaviour
 
     private float addTotime = 1f;
 
+
+
     void Awake()
     {
         totalScore = 0;
+        
     }
 
 
@@ -23,12 +26,17 @@ public class Score : MonoBehaviour
     {
 
         currentTime += addTotime * Time.deltaTime;
-
-
+       
+       
         //print("current time : " + currentTime);
-        print("Total Score : "+ totalScore +" =  Score by Spawn : " + SpawnFood.scoreBySpawn + " score by bomb : " + BombScript.scoreByBomb + " score by eject : " + DeactivateFood.itemDeactivateScore);
+     //   print("Total Score : "+ totalScore +" =  Score by Spawn : " + SpawnFood.scoreBySpawn + " score by bomb : " + BombScript.scoreByBomb + " score by eject : " + DeactivateFood.itemDeactivateScore);
         CalculateTheScore();
+  
+    }
 
+    private void LateUpdate()
+    {
+    // ScoreEvent(totalScore);
     }
 
     void CalculateTheScore()
@@ -84,12 +92,15 @@ public class Score : MonoBehaviour
         }
 
     }
-
-    /*
-    public void ScoreEvent(int totalScoreEvent)
+ 
+    public void ScoreEvent(int increaseAbout)
     {
-        decimal value = Garter.I.Event("Easy Score", totalScoreEvent);
-       // StaticHelpersGarterSDK.SdkDebugger("Garter.I.Event (\"easy score 400\", " + totalScore + ")", value.ToString(), "all data (for illustration): easy score 400: " + value );
+      
+            decimal value = Garter.I.Event("SlowScore", increaseAbout);
+        StaticHelpersGarterSDK.SdkDebugger("Garter.I.Event (\"REQUEST : SlowScore : \", " + increaseAbout + ")", value.ToString(), "SlowScore :  " + value + " | SCORE " + Garter.I.Event("SlowScore"));
+
+        print("increase about : " + increaseAbout);
+
     }
-*/
+    
 }

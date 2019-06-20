@@ -16,22 +16,23 @@ public class DeactivateFood : MonoBehaviour
   
     void Update()
     {
-        if(countStartCombo == 4)
+        if(countStartCombo == 4) //4
         {
            
             comboLevel = 1;
         }
-        if( countStartCombo  == 8)
+        if( countStartCombo  == 8) //8
         {
             comboLevel = 2;
         }
-        if(countStartCombo == 12)
+        if(countStartCombo >= 12) //12
         {
             comboLevel = 3;
         }
 
 
-        print("combo count" + countStartCombo);
+        print("combo count" + countStartCombo +" combo Level : " + comboLevel);
+        print("has Exploded : " + BombRadius.hasExploded);
     }
 
 
@@ -43,7 +44,7 @@ public class DeactivateFood : MonoBehaviour
 
 
 
-        if ((target.tag == TagManager.FOOD_TAG || target.tag == TagManager.BOMB_TAG ) && Lose.canLose == false)
+        if ((target.tag == TagManager.FOOD_TAG || target.tag == TagManager.BOMB_TAG ) && Lose.canLose == false && BombRadius.hasExploded == true)
         {
 
             StopCoroutine("ComboTime");
@@ -53,7 +54,7 @@ public class DeactivateFood : MonoBehaviour
             countStartCombo++;
 
             print("canLose : " + Lose.canLose);
-                print("food deactivated = " + countDeactivateobject + " NAME : " + target.gameObject.name + " TAG : " + target.gameObject.tag);
+          //      print("food deactivated = " + countDeactivateobject + " NAME : " + target.gameObject.name + " TAG : " + target.gameObject.tag);
 
 
                 itemDeactivateScore = itemDeactivateScore + 5;
@@ -74,22 +75,67 @@ public class DeactivateFood : MonoBehaviour
             print("COROUTINE");
             if (comboLevel == 1)
             {
+            
+            GamePlayController.instance.greatAnim.SetBool(TagManager.GREAT_PARAMETER, true);
+            StartCoroutine(SetAnimFalse());
+           StartCoroutine(GreatSoundDelay());
+            
+            IEnumerator GreatSoundDelay()
+            {
+                yield return new WaitForSeconds(0.5f);
                 AudioManager.instance.GreatSound();
-                print("great");
+            }
+
+            print("great");
             }
             else if (comboLevel == 2)
             {
+            GamePlayController.instance.greatAnim.SetBool(TagManager.AWESOME_PARAMETER, true);
+            
+            StartCoroutine(SetAnimFalse());
+            StartCoroutine(AwesomeSoundDelay());
+
+            IEnumerator AwesomeSoundDelay()
+            {
+                yield return new WaitForSeconds(0.5f);
                 AudioManager.instance.AwesomeSound();
-                print("awesome");
+            }
+
+            print("awesome");
             }
             else if (comboLevel == 3)
             {
-                AudioManager.instance.AmazingSound();
-                print("amazing");
+            GamePlayController.instance.greatAnim.SetBool(TagManager.AMAZING_PARAMETER, true);
+            StartCoroutine(SetAnimFalse());
+            StartCoroutine(AmazingSoundDelay());
+
+
+            IEnumerator AmazingSoundDelay()
+            {
+                yield return new WaitForSeconds(0.5f);
+                    AudioManager.instance.AmazingSound();
+               
+            }
+
+            print("amazing");
             }
             countStartCombo = 0;
             comboLevel = 0;
-            Lose.canLose = true;
+
+        BombRadius.hasExploded = false;
+        Lose.canLose = true;
+
+
+        IEnumerator SetAnimFalse()
+        {
+            yield return new WaitForSeconds(2f);
+            GamePlayController.instance.greatAnim.SetBool(TagManager.GREAT_PARAMETER, false);
+            GamePlayController.instance.greatAnim.SetBool(TagManager.AMAZING_PARAMETER, false);
+            GamePlayController.instance.greatAnim.SetBool(TagManager.AWESOME_PARAMETER, false);
+        }
+      
+      
+
         }
     
 }

@@ -43,6 +43,7 @@ public class BombScript : MonoBehaviour
            
             if(hasExploded== true)
             {
+                AudioManager.instance.DetonationSound();
                 scoreByBomb = scoreByBomb + 10;
                 hasExploded = false;
                 StartCoroutine(DelayShake());
@@ -59,7 +60,7 @@ public class BombScript : MonoBehaviour
             anim.SetBool(TagManager.FLAME_PARAMETER, true);
 
 
-            AudioManager.instance.ExplosionSound();
+           
 
             
 
@@ -73,6 +74,7 @@ public class BombScript : MonoBehaviour
     IEnumerator DelayShake()
     {
         yield return new WaitForSeconds(1f);
+        AudioManager.instance.ExplosionSound();
         Shake(0.1f, 0.2f);
 
     }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Star : MonoBehaviour
 {
-
+    /*
     private Image starImage;
 
 
@@ -35,5 +35,5 @@ public class Star : MonoBehaviour
         }
        
     }
-
+    */
 }

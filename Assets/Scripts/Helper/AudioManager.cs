@@ -10,16 +10,20 @@ public  class AudioManager : MonoBehaviour
     public AudioSource  clickButtonAudioSource, clickStartAudioSource, clickBackAudioSource, buttonHoverAudioSource, pauseAudioSource, gameOverAudioSource,
                         greatAudioSource,awesomeAudioSource, amazingAudioSource,
                         scarabeAudioSource, dragonFlyAudioSource, wormAudioSource, 
-                        flyAudioSource, bombAudioSource, explosionAudioSource,
+                        flyAudioSource,  bombAudioSource, detonationAudioSource,
                         achievementAudioSource, freeFallAudioSource;
 
 
 
+    public AudioSource[] turnAudioSource, explosionAudioSource;
+
     public AudioClip    clickButtonClip,clickStartClip, clickBackClip, buttonHoverClip, pauseClip,gameOverClip,
                         greatClip,awesomeClip,amazingClip,
                         scarabeClip, dragonFlyClip, wormClip,
-                        flyClip, bombClip, explosionClip,
+                        flyClip,bombClip, detonationClip,
                         achievementClip, freeFallClip;
+
+    public AudioClip[] turnClip, explosionClip;
 
 
     public bool soundPlaying;
@@ -205,6 +209,39 @@ public  class AudioManager : MonoBehaviour
         }
     }
 
+
+    public void DetonationSound()
+    {
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            detonationAudioSource.Stop();
+        }
+        else
+        {
+            detonationAudioSource.PlayOneShot(detonationClip, 1.0f);
+        }
+    }
+
+
+
+    public void ExplosionSound()
+    {
+        int i = Random.Range(0, 4);
+
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+
+            explosionAudioSource[i].Stop();
+
+
+        }
+        else
+        {
+
+            explosionAudioSource[i].PlayOneShot(explosionClip[i], 1.0f);
+        }
+    }
+
     public void BombSound()
     {
         if (GamePreferences.GetIsSoundOn() == 0)
@@ -214,18 +251,6 @@ public  class AudioManager : MonoBehaviour
         else
         {
             bombAudioSource.PlayOneShot(bombClip, 1.0f);
-        }
-    }
-
-    public void ExplosionSound()
-    {
-        if (GamePreferences.GetIsSoundOn() == 0)
-        {
-            explosionAudioSource.Stop();
-        }
-        else
-        {
-            explosionAudioSource.PlayOneShot(explosionClip, 1.0f);
         }
     }
 
@@ -253,7 +278,23 @@ public  class AudioManager : MonoBehaviour
             }
     }
 
+    public void TurnSound()
+    {
+       int i = Random.Range(0, 5);
 
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+         
+                turnAudioSource[i].Stop();
+            
+            
+        }
+        else
+        {
+
+            turnAudioSource[i].PlayOneShot(turnClip[i], 1.0f);
+        }
+    }
 
     public void PlaySound(bool play)
     {

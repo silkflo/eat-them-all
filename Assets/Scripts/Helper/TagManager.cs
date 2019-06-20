@@ -31,11 +31,15 @@ public class TagManager
     public static string PAUSE_PARAMETER = "PauseAnim";
     public static string DEACTIVATE_ANIMATION = "DeactivateScore";
     public static string DISPLAY_5_PARAMETER = "Display5";
-    public static string DISPLAY_GREAT_PARAMETER = "DisplayGreat";
+    public static string GREAT_PARAMETER = "DisplayGreat";
+    public static string AWESOME_PARAMETER = "DisplayAwesome";
+    public static string AMAZING_PARAMETER = "DisplayAmazing";
     public static string BUTTON_PANEL_PARAMETER = "ButtonOut";
     public static string HIGH_SCORE_VIEW_PARAMETER = "HighScoreView";
     public static string BOTTOM_BUTTON_ICON_PARAMETER = "BottomButtonOut";
     public static string SPEED_VIEW_PARAMETER = "SpeedView";
+    public static string ACHIEVEMENT_FADE_PARAMETER = "AchievementFade";
+    public static string SPEED_CHOICE_PARAMETER = "SpeedChoice";
 
 
     //LOADLEVEL

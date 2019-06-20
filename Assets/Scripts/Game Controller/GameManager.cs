@@ -15,10 +15,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public float timeScore;
 
-    //public GameObject visualAchievement;
+   
 
     public bool greatBoolAnim, awesomeBoolAnim, amazingBoolAnim;
-   // public GameObject guidePanel;
+  
 
    
 
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     {
         MakeSingleton();
         //Delete all save data in game
-      //  PlayerPrefs.DeleteAll();
+       // PlayerPrefs.DeleteAll();
 
         InitializeVariables();
     }

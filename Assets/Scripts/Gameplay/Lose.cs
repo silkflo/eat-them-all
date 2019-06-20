@@ -58,7 +58,7 @@ public class Lose : MonoBehaviour
         if (BombRadius.hasExploded == true)
         {
             StopCoroutine("CanLoseTiming");
-            BombRadius.hasExploded = false;
+         //   BombRadius.hasExploded = false;
         }
         else if (canLose == false)
         {
@@ -79,7 +79,7 @@ public class Lose : MonoBehaviour
      //   print("combo score : " + comboScore + " - EndCombo : " + endCountCombo + " - StartCombo : " + BombScript.startCountCombo);
 
         canLose = true;
-        BombRadius.hasExploded = false;
+       // BombRadius.hasExploded = false;
 
 
 
