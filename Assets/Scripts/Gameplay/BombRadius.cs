@@ -32,7 +32,7 @@ public class BombRadius : MonoBehaviour
             hasExploded = true;
             Lose.canLose = false;
 
-            
+
 
             if (target.tag == TagManager.FOOD_TAG || 
                 target.tag == TagManager.BOMB_TAG)

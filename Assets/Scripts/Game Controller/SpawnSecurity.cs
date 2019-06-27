@@ -6,7 +6,7 @@ public class SpawnSecurity : MonoBehaviour
 {
     static public float timeElapsed;
     
-    static public int spawnSecurityTime = 250; //250
+    static public int spawnSecurityTime ; //250
 
     private bool newObject;
    
@@ -16,7 +16,21 @@ public class SpawnSecurity : MonoBehaviour
      void Update()
      {
         
-        if (newObject == true || Time.deltaTime == 0)
+/*
+        if(BombRadius.hasExploded == true && Lose.canLose == false )
+        {
+           spawnSecurityTime = 150; //250
+            
+
+        }
+        else
+        {
+            spawnSecurityTime = 500;
+        }
+*/
+        print("SpawnTime = " + spawnSecurityTime);
+
+        if (newObject == true || Time.deltaTime == 0 || timeElapsed>500)
         {
             timeElapsed = 0f;
         }

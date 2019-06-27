@@ -46,6 +46,7 @@ public class BombScript : MonoBehaviour
                 AudioManager.instance.DetonationSound();
                 scoreByBomb = scoreByBomb + 10;
                 hasExploded = false;
+                
                 StartCoroutine(DelayShake());
             }
           

@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     {
         MakeSingleton();
         //Delete all save data in game
-       // PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
 
         InitializeVariables();
     }

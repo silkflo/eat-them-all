@@ -74,37 +74,6 @@ public class AchievementManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.A) && SceneManager.GetActiveScene() == SceneManager.GetSceneByName(TagManager.FROG_SCENE))
-        {
-            AudioManager.instance.ClickMenuSound();
-            achievementMenu.SetActive(!achievementMenu.activeSelf);
-
-            if (achievementMenu.activeSelf == true)
-            {
-                Time.timeScale = 0f;
-
-              
-
-            }
-            else
-            {
-                GamePlayController.instance.pausePanel.SetActive(false);
-                GamePlayController.panelOnCantMove = false;
-                Time.timeScale = 1f;
-            }
-        }
-     
-
-
-
-        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName(TagManager.ACHIEVEMENT_SCENE))
-        {
-            achievementMenu.SetActive(true);
-            Score.totalScore = 0;  //fix a bug not resolved
-           
-        }
-     
-
         AchievementGoal();
 
         
@@ -223,8 +192,8 @@ public class AchievementManager : MonoBehaviour
       
      
 
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press W", "beat 400 in slow difficulty", 2);
-        CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press X", "beat 800 in slow difficulty", 1);
+        //CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press W", "beat 400 in slow difficulty", 2);
+        //CreateAchievement(TagManager.FROG_ACHIEVEMENT, "Press X", "beat 800 in slow difficulty", 1);
         
 
 
@@ -368,7 +337,7 @@ public class AchievementManager : MonoBehaviour
     {
 
         //TEST-----------------------------------------------------------------------------------------
-
+/*
         if (Input.GetKeyDown(KeyCode.W))
         {
             EarnAchievement("Press W");
@@ -378,7 +347,7 @@ public class AchievementManager : MonoBehaviour
         {
             EarnAchievement("Press X");
         }
-
+*/
 
         //SCORE--------------------------------------------------------------------------------------
         //slow

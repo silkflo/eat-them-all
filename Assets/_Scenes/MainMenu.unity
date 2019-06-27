@@ -199,43 +199,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80501847}
   m_CullTransparentMesh: 0
---- !u!1 &100990706 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5141731349827827600, guid: 479e472b171d35c42b7b2fa71543c4bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1910572719}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &100990711
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100990706}
-  m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!95 &100990712
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100990706}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f1067bcb232eae149a097b24e157e389, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &113285242
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +492,7 @@ MonoBehaviour:
   detonationAudioSource: {fileID: 932993437}
   achievementAudioSource: {fileID: 1018244952}
   freeFallAudioSource: {fileID: 1692065369}
+  letsGoAudioSource: {fileID: 841659461}
   turnAudioSource:
   - {fileID: 968228753}
   - {fileID: 1498516749}
@@ -558,6 +522,7 @@ MonoBehaviour:
   detonationClip: {fileID: 8300000, guid: eaf7b1548651eec4ab67b1f018d80025, type: 3}
   achievementClip: {fileID: 8300000, guid: f095a0cdd57f0e844b6c7e644a0006e4, type: 3}
   freeFallClip: {fileID: 8300000, guid: daa91933e76863842adffa645e3ee84f, type: 3}
+  letsGoClip: {fileID: 8300000, guid: ce4762f4a91f60c4890fb042cc1c583d, type: 3}
   turnClip:
   - {fileID: 8300000, guid: f2253bfdbf23c774e9f6edf0fd55b7b6, type: 3}
   - {fileID: 8300000, guid: 10f08408b7cb5c84a8de754370804b6d, type: 3}
@@ -609,6 +574,7 @@ Transform:
   - {fileID: 1744135559}
   - {fileID: 1674018307}
   - {fileID: 932993438}
+  - {fileID: 841659462}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1931,6 +1897,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487077612}
   m_CullTransparentMesh: 0
+--- !u!95 &506040306 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 506040306, guid: 479e472b171d35c42b7b2fa71543c4bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1910572719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &529085055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2154,7 +2126,7 @@ MonoBehaviour:
   highScoreAnim: {fileID: 732249780}
   bottomButtonPanelAnim: {fileID: 690072608}
   speedAnimPanel: {fileID: 114899962}
-  achievementAnimPanel: {fileID: 100990712}
+  achievementAnimPanel: {fileID: 506040306}
   easyScoreText: {fileID: 1091661082}
   mediumScoreText: {fileID: 529085057}
   hardScoreText: {fileID: 359451436}
@@ -3417,6 +3389,133 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818694762}
   m_CullTransparentMesh: 0
+--- !u!1 &841659460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 841659462}
+  - component: {fileID: 841659461}
+  m_Layer: 0
+  m_Name: LetsGo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &841659461
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841659460}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ce4762f4a91f60c4890fb042cc1c583d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &841659462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841659460}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 140863074}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &932993436
 GameObject:
   m_ObjectHideFlags: 0
@@ -7687,11 +7786,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas AchivementMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 5141731349827827600, guid: 479e472b171d35c42b7b2fa71543c4bd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5141731349827827601, guid: 479e472b171d35c42b7b2fa71543c4bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7877,8 +7971,7 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1910572721, guid: 479e472b171d35c42b7b2fa71543c4bd, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 479e472b171d35c42b7b2fa71543c4bd, type: 3}
 --- !u!1 &1910572720 stripped
 GameObject:

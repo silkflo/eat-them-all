@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-   //Gameobject
+    //Gameobject
     private Rigidbody2D myRigidBody;
     private BoxCollider2D myBoxCollier;
 
     //movement
-    private float forwardSpeed = 15f;
+    private float forwardSpeed = 5f;
     private Vector3 angleZ;
     private float rotateZ = 0;
     private float smash = 20;
     public static float fallingSpeed = -2.5f;
-   // private float fallingSpeedAdjust = 0.15f;
+    // private float fallingSpeedAdjust = 0.15f;
     private float maxSpeed = -11f;
-    
-    
+
+
+
+    private float acceleration = 1 ;
+
+
     //bool
-    private bool cantMove ;
+    [HideInInspector]
+    private bool cantMove;
 
 
     void Awake()
@@ -33,8 +38,8 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        
-      
+
+
         if (Lose.gameOver == false || GameManager.instance.gameRestarted == true)
         {
             //INCREASE THE SPEED, COMMENT THIS LINE IF YOU DON T WANT INCREASE THE SPEED
@@ -46,7 +51,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        
+
         if (cantMove == false && GamePlayController.panelOnCantMove == false)
         {
             CheckUserInput();
@@ -55,38 +60,61 @@ public class Movement : MonoBehaviour
         if (fallingSpeed < maxSpeed)
         {
             print("Invoke canceled");
-            
+
             CancelInvoke("increaseSpeed");
             fallingSpeed = maxSpeed;
         }
 
         LetFallItem();
-      //  DeactivateHighObject();
+        //  DeactivateHighObject();
+
+        
+
+        acceleration = acceleration + 0.1f;
+       // print("Acceleration : " + acceleration);
+
     }
 
 
-    public void CheckUserInput()
+    private void LateUpdate()
     {
+        AdjustSpawnSecurityTime();
+    }
+
+
+    //BACKUP CheckUserInput_2
+    public void CheckUserInput_2()
+    {
+
+        if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            acceleration = 1;
+        }
         //RIGHT
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            myRigidBody.velocity = new Vector2(forwardSpeed, fallingSpeed);
+
+            print("hello ma geule");
+            myRigidBody.velocity = new Vector2(forwardSpeed * acceleration, fallingSpeed);
         }
         else if (Input.GetKeyUp(KeyCode.RightArrow))
         {
             myRigidBody.velocity = new Vector2(0, fallingSpeed);
+            acceleration = 1;
         }
         //LEFT
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            myRigidBody.velocity = new Vector2(-forwardSpeed, fallingSpeed);
+            myRigidBody.velocity = new Vector2(-forwardSpeed * acceleration, fallingSpeed);
         }
         else if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
             myRigidBody.velocity = new Vector2(0, fallingSpeed);
+            acceleration = 1;
         }
+        
         //TURN
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+       else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             AudioManager.instance.TurnSound();
 
@@ -123,23 +151,23 @@ public class Movement : MonoBehaviour
              target.collider.tag == TagManager.FOOD_TAG) &&
              cantMove == false)
         {
-       
+
             cantMove = true;
             //TO AVOID THE DOUBLE SPAWN
             SpawnSecurity.timeElapsed = 0f;
-            if(gameObject.activeSelf)
-            StartCoroutine(SpawnDelay());
+            if (gameObject.activeSelf)
+                StartCoroutine(SpawnDelay());
 
 
-            if(gameObject.name == "Scarabe(Clone)")
+            if (gameObject.name == "Scarabe(Clone)")
             {
                 AudioManager.instance.ScarabeSound();
             }
-            else if(gameObject.name == "DragonFly(Clone)")
+            else if (gameObject.name == "DragonFly(Clone)")
             {
                 AudioManager.instance.DragonFlySound();
             }
-            else if(gameObject.name == "Bomb(Clone)")
+            else if (gameObject.name == "Bomb(Clone)")
             {
                 AudioManager.instance.BombSound();
             }
@@ -170,26 +198,26 @@ public class Movement : MonoBehaviour
     {
         if (SpawnSecurity.timeElapsed == SpawnSecurity.spawnSecurityTime - 20) //230
         {
-           
+
             cantMove = true;
             myRigidBody.velocity = new Vector2(0, fallingSpeed);
-          //  AudioManager.instance.FreeFallSound();
+            //  AudioManager.instance.FreeFallSound();
         }
     }
 
 
-   
+
 
     void increaseSpeed()
     {
 
-        if(GamePlayController.levelMode == 1)
-        fallingSpeed = fallingSpeed - 0.05f;
-        if(GamePlayController.levelMode == 2)
+        if (GamePlayController.levelMode == 1)
+            fallingSpeed = fallingSpeed - 0.05f;
+        if (GamePlayController.levelMode == 2)
             fallingSpeed = fallingSpeed - 0.2f;
-        if(GamePlayController.levelMode == 3)
+        if (GamePlayController.levelMode == 3)
             fallingSpeed = fallingSpeed - 0.6f;
-       // print("speed increased by : (" + fallingSpeed +  " ; " + Score.currentTime + ")");
+        // print("speed increased by : (" + fallingSpeed +  " ; " + Score.currentTime + ")");
     }
 
     /*
@@ -203,8 +231,101 @@ public class Movement : MonoBehaviour
 */
 
 
-}
+    public void CheckUserInput()
+    {
+       
+        TurnUpDown();
+        SmashSpace();
+        MoveLeftRight();
+    }
 
+
+
+
+    public void MoveLeftRight()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            acceleration = 1;
+        }
+        //RIGHT
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+
+        
+            myRigidBody.velocity = new Vector2(forwardSpeed * acceleration, fallingSpeed);
+        }
+        else if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            myRigidBody.velocity = new Vector2(0, fallingSpeed);
+            acceleration = 1;
+        }
+        //LEFT
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            myRigidBody.velocity = new Vector2(-forwardSpeed * acceleration, fallingSpeed);
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            myRigidBody.velocity = new Vector2(0, fallingSpeed);
+            acceleration = 1;
+        }
+    }
+
+    
+    public void TurnUpDown()
+    {
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            AudioManager.instance.TurnSound();
+
+            GetComponent<Transform>().eulerAngles = new Vector3(0, 0, rotateZ - 90);
+            rotateZ = transform.eulerAngles.z;
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            AudioManager.instance.TurnSound();
+
+            GetComponent<Transform>().eulerAngles = new Vector3(0, 0, rotateZ + 90);
+            rotateZ = transform.eulerAngles.z;
+        }
+    }
+
+
+    public void SmashSpace()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            myRigidBody.velocity = new Vector2(0, fallingSpeed * smash);
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            myRigidBody.velocity = new Vector2(0, fallingSpeed);
+        }
+        else
+        {
+            myRigidBody.velocity = new Vector2(0, fallingSpeed);
+        }
+    }
+
+
+
+    public void AdjustSpawnSecurityTime()
+    {
+        if (cantMove == true)
+        {
+            SpawnSecurity.spawnSecurityTime = 150; //250
+
+
+        }
+        else 
+        {
+            SpawnSecurity.spawnSecurityTime = 500;
+           
+        }
+    }
+
+}
 
 
 

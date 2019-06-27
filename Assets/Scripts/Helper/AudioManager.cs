@@ -11,7 +11,8 @@ public  class AudioManager : MonoBehaviour
                         greatAudioSource,awesomeAudioSource, amazingAudioSource,
                         scarabeAudioSource, dragonFlyAudioSource, wormAudioSource, 
                         flyAudioSource,  bombAudioSource, detonationAudioSource,
-                        achievementAudioSource, freeFallAudioSource;
+                        achievementAudioSource, freeFallAudioSource,
+                        letsGoAudioSource;
 
 
 
@@ -21,7 +22,8 @@ public  class AudioManager : MonoBehaviour
                         greatClip,awesomeClip,amazingClip,
                         scarabeClip, dragonFlyClip, wormClip,
                         flyClip,bombClip, detonationClip,
-                        achievementClip, freeFallClip;
+                        achievementClip, freeFallClip,
+                        letsGoClip;
 
     public AudioClip[] turnClip, explosionClip;
 
@@ -308,8 +310,18 @@ public  class AudioManager : MonoBehaviour
         }
     }
 
+    public void LetsGoSound()
+    {
+        if (GamePreferences.GetIsSoundOn() == 0)
+        {
+            letsGoAudioSource.Stop();
+        }
+        else
+        {
+            letsGoAudioSource.PlayOneShot(letsGoClip, 1.0f);
+        }
+    }
 
-  
 
 
 }

@@ -22,7 +22,7 @@ public class GamePlayController : MonoBehaviour
     public GameObject pausePanel;
 
     
-    public Animator gameOverAnim, pauseAnim,fiveScoreAnim,greatAnim;
+    public Animator gameOverAnim, pauseAnim,fiveScoreAnim,greatAnim, achievementAnimPanel;
 
     
 
@@ -57,6 +57,8 @@ public class GamePlayController : MonoBehaviour
 
         GameFirstStart();
         SetTheDifficulty();
+
+        
 
 
 
@@ -164,12 +166,28 @@ public class GamePlayController : MonoBehaviour
     public void ResumeGame()
     {
         AudioManager.instance.ClickMenuSound();
-        Time.timeScale = 1f;
+       
         panelOnCantMove = false;
         pauseAnim.SetBool(TagManager.PAUSE_PARAMETER, false);
         SpawnSecurity.timeElapsed = 0f;
+        StartCoroutine(TimeScaleDelay());
         StartCoroutine(DeativatePausePanel());
+
+        if(AchievementManager.Instance.achievementMenu.activeSelf == true)
+        {
+            achievementAnimPanel.SetBool(TagManager.ACHIEVEMENT_FADE_PARAMETER, false);
+        }
+
+        
+     
+    }
+
+    IEnumerator TimeScaleDelay()
+    {
+        yield return new WaitForSecondsRealtime(1f);
         AchievementManager.Instance.achievementMenu.SetActive(false);
+        Time.timeScale = 1f;
+
     }
 
 
@@ -276,15 +294,18 @@ public class GamePlayController : MonoBehaviour
        
 
         AchievementManager.Instance.achievementMenu.SetActive(!AchievementManager.Instance.achievementMenu.activeSelf);
+        achievementAnimPanel.SetBool(TagManager.ACHIEVEMENT_FADE_PARAMETER, true);
 
         if (AchievementManager.Instance.achievementMenu.activeSelf == true)
         {
             AudioManager.instance.ClickMenuSound();
+          
             Time.timeScale = 0f;
         }
         else
         {
             AudioManager.instance.ClickBackSound();
+           
 
             if (selectSpeedPanel.activeSelf == true)
             {
@@ -480,7 +501,7 @@ public class GamePlayController : MonoBehaviour
 
     public void EasyMode()
     {
-        AudioManager.instance.ClickMenuSound();
+        AudioManager.instance.ClickStartSound();
 
         GamePreferences.SetEasyDifficulty(1);
         GamePreferences.SetMediumDifficulty(0);
@@ -500,7 +521,7 @@ public class GamePlayController : MonoBehaviour
 
     public void MediumMode()
     {
-        AudioManager.instance.ClickMenuSound();
+        AudioManager.instance.ClickStartSound();
 
         GamePreferences.SetEasyDifficulty(0);
         GamePreferences.SetMediumDifficulty(1);
@@ -519,7 +540,7 @@ public class GamePlayController : MonoBehaviour
 
     public void HardMode()
     {
-        AudioManager.instance.ClickMenuSound();
+        AudioManager.instance.ClickStartSound();
 
         GamePreferences.SetEasyDifficulty(0);
         GamePreferences.SetMediumDifficulty(0);
@@ -671,6 +692,7 @@ public class GamePlayController : MonoBehaviour
         } else if(GamePreferences.GetFirstTimeGamePlay() == 1)
         {
             guideOnStart = false;
+            AudioManager.instance.LetsGoSound();
         }
     }
   

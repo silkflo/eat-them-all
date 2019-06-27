@@ -12,7 +12,7 @@ public class MainMenuController : MonoBehaviour
 
     [SerializeField]
     private GameObject musicButtonOn, musicButtonOff, soundFxButtonOn, soundFxButtonOff, scorePanel, speedPanel,
-       easyButton, easyButtonActivated,
+                       easyButton, easyButtonActivated,
                        mediumButton, mediumButtonActivated,
                        hardButton, hardButtonActivated,
                        backButton, speedButton,

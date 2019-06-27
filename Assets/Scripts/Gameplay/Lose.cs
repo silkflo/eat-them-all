@@ -80,9 +80,6 @@ public class Lose : MonoBehaviour
 
         canLose = true;
        // BombRadius.hasExploded = false;
-
-
-
     }
 
     //Lose by bomb Cf BombScript
