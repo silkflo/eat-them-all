@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-  
+    public static MainMenuController instance;
     [HideInInspector]
     static public bool fromMainMenu;
 
@@ -17,7 +17,11 @@ public class MainMenuController : MonoBehaviour
                        hardButton, hardButtonActivated,
                        backButton, speedButton,
                        achievementMenu, closeAchievement;
-   [SerializeField]
+
+    public  GameObject blockButtonPanel;
+
+
+    [SerializeField]
     private Animator buttonPanelAnim, highScoreAnim, bottomButtonPanelAnim, speedAnimPanel, achievementAnimPanel;
 
     [SerializeField]
@@ -26,17 +30,38 @@ public class MainMenuController : MonoBehaviour
 
     private int fadeTime = 2;
 
+    public static int speedLevel;
+
+
+    private void Awake()
+    {
+        MakeInstance();
+    }
+
     void Start()
     {
+       
         SetScoreBasedOnDifficulty();
-        SetTheDifficulty();
+       
         InitializeMusicButtonOnStart();
         InitializeSoundButtonOnStart();
     }
 
     void Update()
     {
-        
+        print("level Mode : " + Garter.I.GetData<int>("speedLevel"));
+        SetInitialDifficulty();
+
+
+    }
+
+
+    void MakeInstance()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
     public void StartGame()
@@ -53,37 +78,14 @@ public class MainMenuController : MonoBehaviour
     public void SuccessMenu()
     {
          AudioManager.instance.ClickMenuSound();
-        buttonPanelAnim.SetBool(TagManager.BUTTON_PANEL_PARAMETER, true);
-        bottomButtonPanelAnim.SetBool(TagManager.BOTTOM_BUTTON_ICON_PARAMETER, true);
-
-        StartCoroutine(DisplayAchievement());
+        Garter.I.OpenSdkWindow("badge");
+        blockButtonPanel.SetActive(true);
 
     }
 
-    IEnumerator DisplayAchievement()
-    {
-        yield return new WaitForSeconds(1f);
-        achievementMenu.SetActive(true);
-        achievementAnimPanel.SetBool(TagManager.ACHIEVEMENT_FADE_PARAMETER, true);
-    }
 
 
 
-    public void CloseAchievement()
-    {
-        AudioManager.instance.ClickBackSound();
-     
-
-        achievementAnimPanel.SetBool(TagManager.ACHIEVEMENT_FADE_PARAMETER, false);
-        StartCoroutine(DeactivateAchievement());
-        StartCoroutine(ShowMenu());
-    }
-
-    IEnumerator DeactivateAchievement()
-    {
-        yield return new WaitForSeconds(2f);
-        achievementMenu.SetActive(false);
-    }
 
 
 
@@ -315,67 +317,49 @@ public class MainMenuController : MonoBehaviour
 
 
     //SETSPEED
-
-
-    void SetInitialDifficulty(string difficulty)
+    void SetInitialDifficulty()
     {
-        switch (difficulty)
+
+        if(Garter.I.GetData<int>("speedLevel") == 1)
         {
-            case "easy":
-                easyButtonActivated.SetActive(true);
-                mediumButton.SetActive(true);
-                hardButton.SetActive(true);
-                mediumButtonActivated.SetActive(false);
-                hardButtonActivated.SetActive(false);
-                easyButton.SetActive(false);
-                break;
-
-            case "medium":
-                easyButton.SetActive(true);
-                mediumButtonActivated.SetActive(true);
-                hardButton.SetActive(true);
-                easyButtonActivated.SetActive(false);
-                hardButtonActivated.SetActive(false);
-                mediumButton.SetActive(false);
-                break;
-
-            case "hard":
-                easyButton.SetActive(true);
-                mediumButton.SetActive(true);
-                hardButtonActivated.SetActive(true);
-                easyButtonActivated.SetActive(false);
-                mediumButtonActivated.SetActive(false);
-                hardButton.SetActive(false);
-                break;
+            easyButtonActivated.SetActive(true);
+            mediumButton.SetActive(true);
+            hardButton.SetActive(true);
+            mediumButtonActivated.SetActive(false);
+            hardButtonActivated.SetActive(false);
+            easyButton.SetActive(false);
         }
+        else if (Garter.I.GetData<int>("speedLevel") == 2)
+        {
+            easyButton.SetActive(true);
+            mediumButtonActivated.SetActive(true);
+            hardButton.SetActive(true);
+            easyButtonActivated.SetActive(false);
+            hardButtonActivated.SetActive(false);
+            mediumButton.SetActive(false);
+        }
+
+        else if(Garter.I.GetData<int>("speedLevel") == 3)
+        {
+            easyButton.SetActive(true);
+            mediumButton.SetActive(true);
+            hardButtonActivated.SetActive(true);
+            easyButtonActivated.SetActive(false);
+            mediumButtonActivated.SetActive(false);
+            hardButton.SetActive(false);
+        }
+
     }
-
-
-
-    void SetTheDifficulty()
-    {
-        if (GamePreferences.GetEasyDifficulty() == 1)
-        {
-            SetInitialDifficulty("easy");
-        }
-        if (GamePreferences.GetMediumDifficulty() == 1)
-        {
-            SetInitialDifficulty("medium");
-        }
-        if (GamePreferences.GetHardDifficulty() == 1)
-        {
-            SetInitialDifficulty("hard");
-        }
-    }
-
+  
 
     public void EasyMode()
     {
         AudioManager.instance.ClickMenuSound();
 
-        GamePreferences.SetEasyDifficulty(1);
-        GamePreferences.SetMediumDifficulty(0);
-        GamePreferences.SetHardDifficulty(0);
+        speedLevel = 1;
+        Garter.I.PostData<int>("speedLevel", speedLevel);
+
+       
 
         easyButtonActivated.SetActive(true);
         mediumButton.SetActive(true);
@@ -390,9 +374,10 @@ public class MainMenuController : MonoBehaviour
     {
         AudioManager.instance.ClickMenuSound();
 
-        GamePreferences.SetEasyDifficulty(0);
-        GamePreferences.SetMediumDifficulty(1);
-        GamePreferences.SetHardDifficulty(0);
+        speedLevel = 2;
+        Garter.I.PostData<int>("speedLevel", speedLevel);
+
+       
 
         easyButton.SetActive(true);
         mediumButtonActivated.SetActive(true);
@@ -406,9 +391,10 @@ public class MainMenuController : MonoBehaviour
     {
         AudioManager.instance.ClickMenuSound();
 
-        GamePreferences.SetEasyDifficulty(0);
-        GamePreferences.SetMediumDifficulty(0);
-        GamePreferences.SetHardDifficulty(1);
+        speedLevel = 3;
+        Garter.I.PostData<int>("speedLevel", speedLevel);
+
+      
 
         easyButton.SetActive(true);
         mediumButton.SetActive(true);
@@ -420,7 +406,9 @@ public class MainMenuController : MonoBehaviour
 
     public void FacebookButton()
     {
-        Application.OpenURL("https://www.facebook.com/sandbunniesstudio/");
+
+        Garter.I.OpenSdkWindow("share");
+        //Application.OpenURL("https://www.facebook.com/sandbunniesstudio/");
         //Application.ExternalEval("window.open(\"https://www.facebook.com/sandbunniesstudio/\")");
     }
 

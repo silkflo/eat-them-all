@@ -47,6 +47,12 @@ public class Score : MonoBehaviour
 
         totalScore = SpawnFood.scoreBySpawn + BombScript.scoreByBomb + DeactivateFood.itemDeactivateScore;
 
+
+        decimal bestAchievedValue = Garter.I.Event("SlowScore");
+        if (totalScore > bestAchievedValue) Garter.I.Event("SlowScore", (totalScore - bestAchievedValue));
+
+
+
         GamePlayController.instance.SetScore(totalScore);
         GamePlayController.instance.GameOver(totalScore, currentTime);
         GamePlayController.instance.SetTime(currentTime);

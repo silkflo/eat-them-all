@@ -19,7 +19,7 @@ public class GamePlayController : MonoBehaviour
                         choiceSlowIcon,choiceSlowIconActivated, choiceNormalIcon, choiceNormalIconActivated, choiceFastIcon, choiceFastIconActivated,
                         starOn, starOff;
 
-    public GameObject pausePanel;
+    public GameObject pausePanel, blockButtonPanel;
 
     
     public Animator gameOverAnim, pauseAnim,fiveScoreAnim,greatAnim, achievementAnimPanel;
@@ -56,27 +56,9 @@ public class GamePlayController : MonoBehaviour
     {
 
         GameFirstStart();
-        SetTheDifficulty();
+       
 
         
-
-
-
-        if (GamePreferences.GetEasyDifficulty() == 1)
-        {
-            levelMode = 1;
-            print("it's easy");
-        }
-        if (GamePreferences.GetMediumDifficulty() == 1)
-        {
-            levelMode = 2;
-            print("It's medium level");
-        }
-        if (GamePreferences.GetHardDifficulty() == 1)
-        {
-            levelMode = 3;
-            print("That's Hard");
-        }
 
 
         if (GamePreferences.GetIsMusicOn() == 0)
@@ -107,6 +89,7 @@ public class GamePlayController : MonoBehaviour
 
     void Update()
     {
+        SetInitialDifficulty();
         PauseGameByEsc();
         PausePanelTouchControl();
         ComboDisplay();
@@ -291,36 +274,10 @@ public class GamePlayController : MonoBehaviour
     //SHOW ACHIEVEMENT
     public void AchievementPanel()
     {
-       
+        Garter.I.OpenSdkWindow("badge");
+       // blockButtonPanel.SetActive(true);
 
-        AchievementManager.Instance.achievementMenu.SetActive(!AchievementManager.Instance.achievementMenu.activeSelf);
-        achievementAnimPanel.SetBool(TagManager.ACHIEVEMENT_FADE_PARAMETER, true);
-
-        if (AchievementManager.Instance.achievementMenu.activeSelf == true)
-        {
-            AudioManager.instance.ClickMenuSound();
-          
-            Time.timeScale = 0f;
-        }
-        else
-        {
-            AudioManager.instance.ClickBackSound();
-           
-
-            if (selectSpeedPanel.activeSelf == true)
-            {
-                DisplaySelectSpeed();
-            }
-
-            if (pausePanel.activeSelf == true)
-            {
-                pausePanel.SetActive(false);
-                panelOnCantMove = false;
-            }
-
-
-            Time.timeScale = 1f;
-        }
+        
     }
 
 
@@ -348,7 +305,7 @@ public class GamePlayController : MonoBehaviour
     //DISPLAY SPEED
     public void DisplaySpeed()
     {
-        if (levelMode == 1)
+        if (Garter.I.GetData<int>("speedLevel") == 1)
         {
             gameSlowIcon.SetActive(true);
             gameNormalIcon.SetActive(false);
@@ -364,7 +321,7 @@ public class GamePlayController : MonoBehaviour
 
 
         }
-        else if (levelMode == 2)
+        else if (Garter.I.GetData<int>("speedLevel") == 2)
         {
             gameSlowIcon.SetActive(false);
             gameNormalIcon.SetActive(true);
@@ -380,7 +337,7 @@ public class GamePlayController : MonoBehaviour
 
 
         }
-        else if (levelMode == 3)
+        else if (Garter.I.GetData<int>("speedLevel") == 3)
         {
            gameSlowIcon.SetActive(false);
            gameNormalIcon.SetActive(false);
@@ -439,63 +396,42 @@ public class GamePlayController : MonoBehaviour
 
      }
 
-    void SetInitialDifficulty(string difficulty)
+
+    void SetInitialDifficulty()
     {
-        switch (difficulty)
+
+        if (Garter.I.GetData<int>("speedLevel") == 1)
         {
-            case "easy":
+            choiceSlowIcon.SetActive(false);
+            choiceNormalIcon.SetActive(true);
+            choiceFastIcon.SetActive(true);
 
-                choiceSlowIcon.SetActive(false);
-                choiceNormalIcon.SetActive(true);
-                choiceFastIcon.SetActive(true);
-
-                choiceSlowIconActivated.SetActive(true);
-                choiceNormalIconActivated.SetActive(false);
-                choiceFastIconActivated.SetActive(false);
-
-
-                break;
-
-            case "medium":
-
-                choiceSlowIcon.SetActive(true);
-                choiceNormalIcon.SetActive(false);
-                choiceFastIcon.SetActive(true);
-
-                choiceSlowIconActivated.SetActive(false);
-                choiceNormalIconActivated.SetActive(true);
-                choiceFastIconActivated.SetActive(false);
-
-                break;
-
-            case "hard":
-               
-                 choiceSlowIcon.SetActive(true);
-                 choiceNormalIcon.SetActive(true);
-                 choiceFastIcon.SetActive(false);
-                
-                 choiceSlowIconActivated.SetActive(false);
-                 choiceNormalIconActivated.SetActive(false);
-                 choiceFastIconActivated.SetActive(true);
-
-                break;
+            choiceSlowIconActivated.SetActive(true);
+            choiceNormalIconActivated.SetActive(false);
+            choiceFastIconActivated.SetActive(false);
         }
-    }
-
-    void SetTheDifficulty()
-    {
-        if (GamePreferences.GetEasyDifficulty() == 1)
+        else if (Garter.I.GetData<int>("speedLevel") == 2)
         {
-            SetInitialDifficulty("easy");
+            choiceSlowIcon.SetActive(true);
+            choiceNormalIcon.SetActive(false);
+            choiceFastIcon.SetActive(true);
+
+            choiceSlowIconActivated.SetActive(false);
+            choiceNormalIconActivated.SetActive(true);
+            choiceFastIconActivated.SetActive(false);
         }
-        if (GamePreferences.GetMediumDifficulty() == 1)
+
+        else if (Garter.I.GetData<int>("speedLevel") == 3)
         {
-            SetInitialDifficulty("medium");
+            choiceSlowIcon.SetActive(true);
+            choiceNormalIcon.SetActive(true);
+            choiceFastIcon.SetActive(false);
+
+            choiceSlowIconActivated.SetActive(false);
+            choiceNormalIconActivated.SetActive(false);
+            choiceFastIconActivated.SetActive(true);
         }
-        if (GamePreferences.GetHardDifficulty() == 1)
-        {
-            SetInitialDifficulty("hard");
-        }
+
     }
 
 
@@ -503,9 +439,10 @@ public class GamePlayController : MonoBehaviour
     {
         AudioManager.instance.ClickStartSound();
 
-        GamePreferences.SetEasyDifficulty(1);
-        GamePreferences.SetMediumDifficulty(0);
-        GamePreferences.SetHardDifficulty(0);
+        MainMenuController.speedLevel = 1;
+        Garter.I.PostData<int>("speedLevel", MainMenuController.speedLevel);
+
+        
 
         choiceSlowIconActivated.SetActive(true);
         choiceNormalIcon.SetActive(true);
@@ -523,9 +460,8 @@ public class GamePlayController : MonoBehaviour
     {
         AudioManager.instance.ClickStartSound();
 
-        GamePreferences.SetEasyDifficulty(0);
-        GamePreferences.SetMediumDifficulty(1);
-        GamePreferences.SetHardDifficulty(0);
+        MainMenuController.speedLevel = 2;
+        Garter.I.PostData<int>("speedLevel", MainMenuController.speedLevel);
 
         choiceSlowIcon.SetActive(true);
         choiceNormalIconActivated.SetActive(true);
@@ -542,9 +478,8 @@ public class GamePlayController : MonoBehaviour
     {
         AudioManager.instance.ClickStartSound();
 
-        GamePreferences.SetEasyDifficulty(0);
-        GamePreferences.SetMediumDifficulty(0);
-        GamePreferences.SetHardDifficulty(1);
+        MainMenuController.speedLevel = 3;
+        Garter.I.PostData<int>("speedLevel", MainMenuController.speedLevel);
 
         choiceSlowIcon.SetActive(true);
         choiceNormalIcon.SetActive(true);

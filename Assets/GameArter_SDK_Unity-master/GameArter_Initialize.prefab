@@ -45,13 +45,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   enabledProtection: 0
-  projectId: 0
-  projectVersion: 0
-  platform: 0
-  multiplayer: 1
+  projectId: 8440
+  projectVersion: 1
+  multiplayer: 0
   garterNetwork: 0
   sdk: 1
-  ingameCurrency: 0
+  ingameCurrency: 1
   gamearterFeatures:
     notifications: 0
   advancedFeatureBox:
@@ -62,19 +61,35 @@ MonoBehaviour:
   progressModule:
     mode: 0
     sdkProgressBar: 0
+  ads:
+    platformAppId:
+      AndroidAppId: 
+      IosAppId: 
+    adUnits: []
   minimumTimescale: 0
   analyticsMode: 0
   autoSaving: 0
   events:
-  - groupName: MyEventsGroup1
+  - groupName: Score
     groupEvents:
-    - nameId: event1
+    - nameId: SlowScore
       initialValue: 0
       trend: 0
-    - nameId: event2
+    - nameId: NormalScore
       initialValue: 0
       trend: 0
-    - nameId: event3
+    - nameId: FastScore
+      initialValue: 0
+      trend: 0
+  - groupName: Bomb
+    groupEvents:
+    - nameId: SlowBomb
+      initialValue: 0
+      trend: 0
+    - nameId: NormalBomb
+      initialValue: 0
+      trend: 0
+    - nameId: FastBomb
       initialValue: 0
       trend: 0
   property:

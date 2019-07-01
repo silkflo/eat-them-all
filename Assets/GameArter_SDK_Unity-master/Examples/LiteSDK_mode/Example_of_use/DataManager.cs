@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class DataManagerExample : MonoBehaviour {
+public class DataManager : MonoBehaviour {
 
 	void Awake(){
 		// ADD LISTENERS FOR EXTERNAL EVENTS
@@ -101,7 +101,7 @@ public class DataManagerExample : MonoBehaviour {
 		});
 			
 		// Own data type (defined by Class)
-		JsonStructure complexData = new JsonStructure (someStringData, someIntegerData, someFloatData, new JsonStructure.MyTypeData (someListType, someArrayType, someJaggedArrayType));
+		JsonStructure complexData = new JsonStructure (speedLevel);
 		// WARNING - NEED TO CONVERT TO STRING
 		// REASON: THIS WOULD THROW ERROR FOR USERS PLAYING AS GUESTS. THE FORMAT IS BROKEN ONCE IS SAVED IN PLAYEPREFS. THEREFORE WE RECOMMEND TO USE CONVERSION TO STRING FOR ALL.
 		string complexDataString = Garter.I.ToJson(complexData); // own data types are not allowed for guests. Need to convert the data to string format
@@ -115,30 +115,23 @@ public class DataManagerExample : MonoBehaviour {
 	}
 
 
-	// YOUR GAME SURELY CONTAIN SOME USER'S PROGRESS DATA NEED TO BE SAVED
-	// FUNCTIONAL EVENTS LIKE KILLS SHOULD BE SAVED AS EVENTS
-	// ALL OTHER DATA YOU CAN SAVE IN YOUR OWN DEFINED STRUCTURE. SEE THE EXAMPLE BELOW. ALL DATA TYPES ARE SUPPORTED.
-	public string someStringData = "hello";
-	public int someIntegerData = Score.totalScore;
-	public float someFloatData = 1.3f;
-	public List<byte> someListType = new List<byte>(5) { 0, 1, 2, 3, 4 };
-	public bool[] someArrayType = new bool[] { true, false };
-	public ulong[][] someJaggedArrayType = new ulong[2][] { new ulong[] { 0, 1, 2, 3 }, new ulong[] { 4, 5, 6 } }; // array composted of arrays
+    // YOUR GAME SURELY CONTAIN SOME USER'S PROGRESS DATA NEED TO BE SAVED
+    // FUNCTIONAL EVENTS LIKE KILLS SHOULD BE SAVED AS EVENTS
+    // ALL OTHER DATA YOU CAN SAVE IN YOUR OWN DEFINED STRUCTURE. SEE THE EXAMPLE BELOW. ALL DATA TYPES ARE SUPPORTED.
+
+    public int speedLevel = MainMenuController.speedLevel;
 
     // DEFINE DATA STRUCTURE FORMAT FOR POSTING THE DATA TO SERVER
     [System.Serializable]
     internal class JsonStructure
     {
-        public string someStringData;
-        public int someIntegerData;
-        public float someFloatData;
-        public MyTypeData someOwnTypeData;
-        public JsonStructure(string stringData, int integerData, float floatData, MyTypeData ownTypeData)
+        
+        public int someSpeedLevel;
+        
+        public JsonStructure(int speedLevel)
         {
-            this.someStringData = stringData;
-            this.someIntegerData = integerData;
-            this.someFloatData = floatData;
-            this.someOwnTypeData = ownTypeData;
+            this.someSpeedLevel = speedLevel;
+           
         }
 
         [System.Serializable]
@@ -159,7 +152,7 @@ public class DataManagerExample : MonoBehaviour {
     // FUNCTION FOR POSTING THE DATA TO SERVER
 	public void PostDataInMeantime(string emptyString = null) // potreba prepracovat
     {
-        string dataToBeSaved = Garter.I.ToJson(new JsonStructure(someStringData, someIntegerData, someFloatData, new JsonStructure.MyTypeData(someListType, someArrayType, someJaggedArrayType)));
+        string dataToBeSaved = Garter.I.ToJson(new JsonStructure(speedLevel));
         Garter.I.SetIndividualGameData<string>("default",dataToBeSaved);
     }
 		
@@ -170,13 +163,8 @@ public class DataManagerExample : MonoBehaviour {
         // parse json data
         JsonStructure dataClass = Garter.I.FromJson<JsonStructure>(json);
         // overwrite default data by parsed data
-        someStringData = dataClass.someStringData;
-        someIntegerData = dataClass.someIntegerData;
-        someFloatData = dataClass.someFloatData;
+        speedLevel = dataClass.someSpeedLevel;
         // myTypeData
-        someListType = dataClass.someOwnTypeData.someListType;
-        someArrayType = dataClass.someOwnTypeData.someArrayType;
-        someJaggedArrayType = dataClass.someOwnTypeData.someJaggedArrayType;
     }
 
 	/// GENERAL FUNCTION FOR UPDATING DISPLAYED CURRENCY - DISPLAYES RECEIVED "currencyValue"

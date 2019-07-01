@@ -40,10 +40,18 @@ public class ServicesAdjustment {
 		//3) display pointer
 		if (Cursor.lockState != CursorLockMode.None) Cursor.lockState = CursorLockMode.None;
 		if (!Cursor.visible) Cursor.visible = true;
-		
-		/* individual customization for certain modules, if needed (available moduleNames: https://developers.gamearter.com/docs/gamearter-modules)
+
+
+        //4)activate block panel
+     /*   if (GameObject.Find("BlockPanel") != null)
+            GamePlayController.instance.blockButtonPanel.SetActive(true);
+      
+        if (GameObject.Find("BlockScreenPanel") != null)
+             MainMenuController.instance.blockButtonPanel.SetActive(true);
+*/
+        /* individual customization for certain modules, if needed (available moduleNames: https://developers.gamearter.com/docs/gamearter-modules)
 		if (moduleName == "ad") ...*/
-	}
+    }
 		
 	public void ModuleWindowClosed(string moduleName){
 		cachedValues = false;
@@ -62,9 +70,15 @@ public class ServicesAdjustment {
 		//3) pointer management
 		Cursor.lockState = cachedCursorLock;
 
-		/* individual customization for certain modules, if needed (available moduleNames: https://developers.gamearter.com/docs/gamearter-modules)
+        //4)deactivate blockPanel
+       /* if (GameObject.Find("BlockPanel") != null)
+            GamePlayController.instance.blockButtonPanel.SetActive(false);
+        if (GameObject.Find("BlockScreenPanel") != null)
+            MainMenuController.instance.blockButtonPanel.SetActive(false);
+*/
+        /* individual customization for certain modules, if needed (available moduleNames: https://developers.gamearter.com/docs/gamearter-modules)
 		if (moduleName == "ad") ...*/
-	}
+    }
 		
 	public void ModuleWindowChanged(string currentModule){ // switching between modules (optional adjustment)
 		Debug.Log ("Currently opened module: "+currentModule);

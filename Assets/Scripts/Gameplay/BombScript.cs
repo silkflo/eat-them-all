@@ -48,6 +48,39 @@ public class BombScript : MonoBehaviour
                 hasExploded = false;
                 
                 StartCoroutine(DelayShake());
+
+                if (Garter.I.GetData<int>("speedLevel") == 1)
+                { 
+                    decimal bestAchievedValue = Garter.I.Event("SlowBomb");
+                               
+                    if (scoreByBomb / 10 > bestAchievedValue)
+                    {
+                        Garter.I.Event("SlowBomb", (scoreByBomb / 10 - bestAchievedValue));
+                    }
+                }
+
+                if (Garter.I.GetData<int>("speedLevel") == 2)
+                {
+                    decimal bestAchievedValue = Garter.I.Event("NormalBomb");
+
+                    if (scoreByBomb / 10 > bestAchievedValue)
+                    {
+                        Garter.I.Event("NormalBomb", (scoreByBomb / 10 - bestAchievedValue));
+                    }
+                }
+
+                if (Garter.I.GetData<int>("speedLevel") == 3)
+                {
+                    decimal bestAchievedValue = Garter.I.Event("FastBomb");
+
+                    if (scoreByBomb / 10 > bestAchievedValue)
+                    {
+                        Garter.I.Event("FastBomb", (scoreByBomb / 10 - bestAchievedValue));
+                    }
+                }
+                 
+
+
             }
           
             

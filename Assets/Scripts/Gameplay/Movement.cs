@@ -211,11 +211,11 @@ public class Movement : MonoBehaviour
     void increaseSpeed()
     {
 
-        if (GamePlayController.levelMode == 1)
+        if (Garter.I.GetData<int>("speedLevel") == 1)
             fallingSpeed = fallingSpeed - 0.05f;
-        if (GamePlayController.levelMode == 2)
+        if (Garter.I.GetData<int>("speedLevel") == 2)
             fallingSpeed = fallingSpeed - 0.2f;
-        if (GamePlayController.levelMode == 3)
+        if (Garter.I.GetData<int>("speedLevel") == 3)
             fallingSpeed = fallingSpeed - 0.6f;
         // print("speed increased by : (" + fallingSpeed +  " ; " + Score.currentTime + ")");
     }

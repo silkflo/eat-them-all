@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class GHsDbData : MonoBehaviour
 {
-    private DataManagerExample garterLite = null;
+    private DataManager garterLite = null;
 
     void Awake()
     {
         try
         {
-            garterLite = GameObject.Find("ExampleObjectForSdkInteraction").GetComponent<DataManagerExample>();
+            garterLite = GameObject.Find("ExampleObjectForSdkInteraction").GetComponent<DataManager>();
         }
         catch
         {
