@@ -42,13 +42,7 @@ public class ServicesAdjustment {
 		if (!Cursor.visible) Cursor.visible = true;
 
 
-        //4)activate block panel
-     /*   if (GameObject.Find("BlockPanel") != null)
-            GamePlayController.instance.blockButtonPanel.SetActive(true);
-      
-        if (GameObject.Find("BlockScreenPanel") != null)
-             MainMenuController.instance.blockButtonPanel.SetActive(true);
-*/
+
         /* individual customization for certain modules, if needed (available moduleNames: https://developers.gamearter.com/docs/gamearter-modules)
 		if (moduleName == "ad") ...*/
     }
@@ -70,12 +64,7 @@ public class ServicesAdjustment {
 		//3) pointer management
 		Cursor.lockState = cachedCursorLock;
 
-        //4)deactivate blockPanel
-       /* if (GameObject.Find("BlockPanel") != null)
-            GamePlayController.instance.blockButtonPanel.SetActive(false);
-        if (GameObject.Find("BlockScreenPanel") != null)
-            MainMenuController.instance.blockButtonPanel.SetActive(false);
-*/
+
         /* individual customization for certain modules, if needed (available moduleNames: https://developers.gamearter.com/docs/gamearter-modules)
 		if (moduleName == "ad") ...*/
     }

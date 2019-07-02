@@ -79,7 +79,7 @@ public class MainMenuController : MonoBehaviour
     {
          AudioManager.instance.ClickMenuSound();
         Garter.I.OpenSdkWindow("badge");
-        blockButtonPanel.SetActive(true);
+        //blockButtonPanel.SetActive(true);
 
     }
 

@@ -92,6 +92,50 @@ MonoBehaviour:
     - nameId: FastBomb
       initialValue: 0
       trend: 0
+  - groupName: InsectIn
+    groupEvents:
+    - nameId: SlowInsectIn
+      initialValue: 0
+      trend: 0
+    - nameId: NormalInsectIn
+      initialValue: 0
+      trend: 0
+    - nameId: FastInsectIn
+      initialValue: 0
+      trend: 0
+  - groupName: InsectOut
+    groupEvents:
+    - nameId: SlowInsectOut
+      initialValue: 0
+      trend: 0
+    - nameId: NormalInsectOut
+      initialValue: 0
+      trend: 0
+    - nameId: FastInsectOut
+      initialValue: 0
+      trend: 0
+  - groupName: Combo
+    groupEvents:
+    - nameId: SlowCombo
+      initialValue: 0
+      trend: 0
+    - nameId: NormalCombo
+      initialValue: 0
+      trend: 0
+    - nameId: FastCombo
+      initialValue: 0
+      trend: 0
+  - groupName: Survival
+    groupEvents:
+    - nameId: SlowSurvival
+      initialValue: 0
+      trend: 0
+    - nameId: NormalSurvival
+      initialValue: 0
+      trend: 0
+    - nameId: FastSurvival
+      initialValue: 0
+      trend: 0
   property:
     items: []
     accessories: []

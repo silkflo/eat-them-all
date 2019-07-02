@@ -26,7 +26,7 @@ public class Score : MonoBehaviour
     {
 
         currentTime += addTotime * Time.deltaTime;
-       
+        EventGA.instance.SurvivalEvent((int)currentTime);
        
         //print("current time : " + currentTime);
      //   print("Total Score : "+ totalScore +" =  Score by Spawn : " + SpawnFood.scoreBySpawn + " score by bomb : " + BombScript.scoreByBomb + " score by eject : " + DeactivateFood.itemDeactivateScore);
@@ -48,10 +48,7 @@ public class Score : MonoBehaviour
         totalScore = SpawnFood.scoreBySpawn + BombScript.scoreByBomb + DeactivateFood.itemDeactivateScore;
 
 
-        decimal bestAchievedValue = Garter.I.Event("SlowScore");
-        if (totalScore > bestAchievedValue) Garter.I.Event("SlowScore", (totalScore - bestAchievedValue));
-
-
+        EventGA.instance.ScoreEvent(totalScore);
 
         GamePlayController.instance.SetScore(totalScore);
         GamePlayController.instance.GameOver(totalScore, currentTime);

@@ -85,6 +85,8 @@ public class DeactivateFood : MonoBehaviour
                 target.gameObject.SetActive(false);
                 StartCoroutine("ComboTime");
 
+            EventGA.instance.EjectInsectEvent(countDeactivateobject);
+
             //print("canLose : " + Lose.canLose);
             //print("food deactivated = " + countDeactivateobject + " NAME : " + target.gameObject.name + " TAG : " + target.gameObject.tag);
            }
@@ -102,6 +104,8 @@ public class DeactivateFood : MonoBehaviour
                 StartCoroutine(GreatSoundDelay());
                 print("great");
 
+            EventGA.instance.ComboEvent(comboLevel);
+
                   IEnumerator GreatSoundDelay()
                   {
                       yield return new WaitForSeconds(0.5f);
@@ -116,8 +120,10 @@ public class DeactivateFood : MonoBehaviour
             StartCoroutine(SetAnimFalse());
             StartCoroutine(AwesomeSoundDelay());
             print("awesome");
-            
-                 IEnumerator AwesomeSoundDelay()
+
+            EventGA.instance.ComboEvent(comboLevel);
+
+            IEnumerator AwesomeSoundDelay()
                  {
                     yield return new WaitForSeconds(0.5f);
                     AudioManager.instance.AwesomeSound();
@@ -132,7 +138,9 @@ public class DeactivateFood : MonoBehaviour
             StartCoroutine(AmazingSoundDelay());
             print("amazing");
 
-                 IEnumerator AmazingSoundDelay()
+            EventGA.instance.ComboEvent(comboLevel);
+
+            IEnumerator AmazingSoundDelay()
                  {
                     yield return new WaitForSeconds(0.5f);
                     AudioManager.instance.AmazingSound();
