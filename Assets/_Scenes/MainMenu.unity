@@ -2131,6 +2131,8 @@ MonoBehaviour:
   easyScoreText: {fileID: 1091661082}
   mediumScoreText: {fileID: 529085057}
   hardScoreText: {fileID: 359451436}
+  music: 0
+  sound: 0
 --- !u!4 &565721332
 Transform:
   m_ObjectHideFlags: 0
@@ -2659,7 +2661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &687311242
 RectTransform:
   m_ObjectHideFlags: 0

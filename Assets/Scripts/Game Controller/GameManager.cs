@@ -33,8 +33,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+      
 
-       CheckToPlayTheMusic();
+        CheckToPlayTheMusic();
       
     }
 
@@ -65,28 +66,21 @@ public class GameManager : MonoBehaviour
     {
         if(!PlayerPrefs.HasKey("Game Initialized"))
         {
-            GamePreferences.SetEasyDifficulty(1);
-            GamePreferences.SetEasyDifficultyHighScore(0);
-
-            GamePreferences.SetMediumDifficulty(0);
-            GamePreferences.SetMediumDifficultyHighScore(0);
-
-            GamePreferences.SetHardDifficulty(0);
-            GamePreferences.SetHardDifficultyHighScore(0);
-
-            GamePreferences.SetIsMusicOn(1);
-            GamePreferences.SetIsSoundOn(1);
+        
+            
 
             GamePreferences.SetFirstTimeGamePlay(0);
 
             PlayerPrefs.SetInt("Game Initialized", 123);  //giving a key to just use that condition a the first start of the game
 
-
-        
-
+            
 
 
         }
+
+
+        
+
     }
 
 

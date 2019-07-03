@@ -54,7 +54,7 @@ public  class AudioManager : MonoBehaviour
     public void ClickMenuSound()
     {
 
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             clickButtonAudioSource.Stop();
         }
@@ -66,7 +66,7 @@ public  class AudioManager : MonoBehaviour
 
     public void ClickHoverSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             buttonHoverAudioSource.Stop();
         }
@@ -78,7 +78,7 @@ public  class AudioManager : MonoBehaviour
 
     public void ClickStartSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             clickStartAudioSource.Stop();
         }
@@ -91,7 +91,7 @@ public  class AudioManager : MonoBehaviour
 
     public void ClickBackSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             clickBackAudioSource.Stop();
         }
@@ -105,7 +105,7 @@ public  class AudioManager : MonoBehaviour
 
     public void GameOverSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             gameOverAudioSource.Stop();
         }
@@ -117,7 +117,7 @@ public  class AudioManager : MonoBehaviour
 
     public void PauseSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             pauseAudioSource.Stop();
         }
@@ -129,7 +129,7 @@ public  class AudioManager : MonoBehaviour
 
     public void GreatSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             greatAudioSource.Stop();
         }
@@ -141,7 +141,7 @@ public  class AudioManager : MonoBehaviour
 
     public void AwesomeSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             awesomeAudioSource.Stop();
         }
@@ -153,7 +153,7 @@ public  class AudioManager : MonoBehaviour
 
     public void AmazingSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             amazingAudioSource.Stop();
         }
@@ -165,7 +165,7 @@ public  class AudioManager : MonoBehaviour
 
     public void ScarabeSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             scarabeAudioSource.Stop();
         }
@@ -177,7 +177,7 @@ public  class AudioManager : MonoBehaviour
 
     public void FlySound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             flyAudioSource.Stop();
         }
@@ -189,7 +189,7 @@ public  class AudioManager : MonoBehaviour
 
     public void DragonFlySound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             dragonFlyAudioSource.Stop();
         }
@@ -201,7 +201,7 @@ public  class AudioManager : MonoBehaviour
 
     public void WormSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             wormAudioSource.Stop();
         }
@@ -214,7 +214,7 @@ public  class AudioManager : MonoBehaviour
 
     public void DetonationSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             detonationAudioSource.Stop();
         }
@@ -230,7 +230,7 @@ public  class AudioManager : MonoBehaviour
     {
         int i = Random.Range(0, 4);
 
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
 
             explosionAudioSource[i].Stop();
@@ -246,7 +246,7 @@ public  class AudioManager : MonoBehaviour
 
     public void BombSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             bombAudioSource.Stop();
         }
@@ -258,7 +258,7 @@ public  class AudioManager : MonoBehaviour
 
     public void AchievementSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             achievementAudioSource.Stop();
         }
@@ -270,7 +270,7 @@ public  class AudioManager : MonoBehaviour
 
     public void FreeFallSound()
     {
-            if (GamePreferences.GetIsSoundOn() == 0)
+            if (MainMenuController.instance.sound == false)
             {
             freeFallAudioSource.Stop();
             }
@@ -284,7 +284,7 @@ public  class AudioManager : MonoBehaviour
     {
        int i = Random.Range(0, 5);
 
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
          
                 turnAudioSource[i].Stop();
@@ -312,7 +312,7 @@ public  class AudioManager : MonoBehaviour
 
     public void LetsGoSound()
     {
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             letsGoAudioSource.Stop();
         }

@@ -32,6 +32,7 @@ public class MainMenuController : MonoBehaviour
 
     public static int speedLevel;
 
+    public bool music, sound;
 
     private void Awake()
     {
@@ -40,7 +41,8 @@ public class MainMenuController : MonoBehaviour
 
     void Start()
     {
-       
+        music = true;
+        sound = true;
         SetScoreBasedOnDifficulty();
        
         InitializeMusicButtonOnStart();
@@ -50,11 +52,12 @@ public class MainMenuController : MonoBehaviour
     void Update()
     {
         print("level Mode : " + Garter.I.GetData<int>("speedLevel"));
-        SetInitialDifficulty();
 
+        SetInitialDifficulty();
 
     }
 
+  
 
     void MakeInstance()
     {
@@ -71,7 +74,6 @@ public class MainMenuController : MonoBehaviour
         fromMainMenu = true;
         SceneManager.LoadScene(TagManager.FROG_SCENE);
         
-
     }
 
     //ACHIEVEMENT
@@ -79,23 +81,15 @@ public class MainMenuController : MonoBehaviour
     {
          AudioManager.instance.ClickMenuSound();
         Garter.I.OpenSdkWindow("badge");
-        //blockButtonPanel.SetActive(true);
-
     }
 
-
-
-
-
-
-
+    //HELP
     public void HelpMenu()
     {
         AudioManager.instance.ClickMenuSound();
 
         SceneManager.LoadScene(TagManager.HELP_SCENE);
     }
-
 
 
     //HIGHSCORE MENU DISPLAY
@@ -114,8 +108,6 @@ public class MainMenuController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         scorePanel.SetActive(true);
         highScoreAnim.SetBool(TagManager.HIGH_SCORE_VIEW_PARAMETER, true);
-
-
     }
 
     public void BackScoreButton()
@@ -124,7 +116,6 @@ public class MainMenuController : MonoBehaviour
         highScoreAnim.SetBool(TagManager.HIGH_SCORE_VIEW_PARAMETER, false);
         StartCoroutine(HideHighScore());
         StartCoroutine(ShowMenu());
-
     }
 
 
@@ -190,62 +181,53 @@ public class MainMenuController : MonoBehaviour
     //SOUND
     void InitializeMusicButtonOnStart()
     {
-        if (GamePreferences.GetIsMusicOn() == 1)
+        if (music == true)
         {
-         
-         
             musicButtonOn.SetActive(true);
             musicButtonOff.SetActive(false);
 
         }
-        else if (GamePreferences.GetIsMusicOn() == 0)
+        else if (music == false)
         {
-          
-    
             musicButtonOn.SetActive(false);
             musicButtonOff.SetActive(true);
-
         }
 
     }
-
 
     
 
     public void PlayMusic()
     {
         AudioManager.instance.ClickMenuSound();
-        if (GamePreferences.GetIsMusicOn() == 0)
+        if (music == false)
         {
-         
-            GamePreferences.SetIsMusicOn(1);
+            music = true;
             MusicController.instance.PlayMusic(true);
             musicButtonOn.SetActive(true);
             musicButtonOff.SetActive(false);
-            print("music : " + GamePreferences.GetIsMusicOn());
         }
-        else if (GamePreferences.GetIsMusicOn() == 1)
+        else if (music == true)
         {
-
-            GamePreferences.SetIsMusicOn(0);
+            music = false;
             MusicController.instance.PlayMusic(false);
             musicButtonOn.SetActive(false);
             musicButtonOff.SetActive(true);
-            print("music : " + GamePreferences.GetIsMusicOn());
+           
         }
     }
 
 
     void InitializeSoundButtonOnStart()
     {
-        if (GamePreferences.GetIsSoundOn() == 1)
+        if (sound == true)
         {
 
             soundFxButtonOn.SetActive(true);
             soundFxButtonOff.SetActive(false);
 
         }
-        else if (GamePreferences.GetIsSoundOn() == 0)
+        else if (sound == false)
         {
 
             soundFxButtonOn.SetActive(false);
@@ -259,19 +241,17 @@ public class MainMenuController : MonoBehaviour
     public void PlaySound()
     {
         AudioManager.instance.ClickMenuSound();
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (sound == false)
         {
-            GamePreferences.SetIsSoundOn(1);
-            // MusicController.instance.PlayMusic(true);
-            //AudioManager.instance.PlaySound(true);
-
+            sound = true;
+         
             soundFxButtonOn.SetActive(true);
             soundFxButtonOff.SetActive(false);
         }
-        else if (GamePreferences.GetIsSoundOn() == 1)
+        else if (sound == true )
         {
-            GamePreferences.SetIsSoundOn(0);
-            //  AudioManager.instance.PlaySound(false);
+            sound = false;
+            
             soundFxButtonOn.SetActive(false);
             soundFxButtonOff.SetActive(true);
         }
@@ -283,8 +263,8 @@ public class MainMenuController : MonoBehaviour
         AudioManager.instance.ClickHoverSound();
     }
 
-    //HIGHSCORE
 
+    //HIGHSCORE
     void SetEasyScore(int score)
     {
         easyScoreText.text = score.ToString();
@@ -320,7 +300,9 @@ public class MainMenuController : MonoBehaviour
     void SetInitialDifficulty()
     {
 
-        if(Garter.I.GetData<int>("speedLevel") == 1)
+      
+        
+        if (Garter.I.GetData<int>("speedLevel") == 1)
         {
             easyButtonActivated.SetActive(true);
             mediumButton.SetActive(true);

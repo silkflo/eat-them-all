@@ -61,24 +61,24 @@ public class GamePlayController : MonoBehaviour
         
 
 
-        if (GamePreferences.GetIsMusicOn() == 0)
+        if (MainMenuController.instance.music == false)
         {
             musicButtonOn.SetActive(false);
             musicButtonOff.SetActive(true);
         }
-        else if (GamePreferences.GetIsMusicOn() == 1)
+        else if (MainMenuController.instance.sound == true)
         {
             musicButtonOn.SetActive(true);
             musicButtonOff.SetActive(false);
         }
 
 
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
             soundFxButtonOn.SetActive(false);
             soundFxButtonOff.SetActive(true);
         }
-        else if (GamePreferences.GetIsSoundOn() == 1)
+        else if (MainMenuController.instance.sound == true)
         {
             soundFxButtonOn.SetActive(true);
             soundFxButtonOff.SetActive(false);
@@ -544,16 +544,16 @@ public class GamePlayController : MonoBehaviour
     public void PlayMusic()
     {
         AudioManager.instance.ClickMenuSound();
-        if (GamePreferences.GetIsMusicOn() == 0)
+        if (MainMenuController.instance.music == false)
         {
-            GamePreferences.SetIsMusicOn(1);
+            MainMenuController.instance.music = true;
             MusicController.instance.PlayMusic(true);
             musicButtonOn.SetActive(true);
             musicButtonOff.SetActive(false);
         }
-        else if (GamePreferences.GetIsMusicOn() == 1)
+        else if (MainMenuController.instance.music == true)
         {
-            GamePreferences.SetIsMusicOn(0);
+            MainMenuController.instance.music = false;
             MusicController.instance.PlayMusic(false);
             musicButtonOn.SetActive(false);
             musicButtonOff.SetActive(true);
@@ -564,17 +564,17 @@ public class GamePlayController : MonoBehaviour
     public void PlaySound()
     {
         AudioManager.instance.ClickMenuSound();
-        if (GamePreferences.GetIsSoundOn() == 0)
+        if (MainMenuController.instance.sound == false)
         {
-            GamePreferences.SetIsSoundOn(1);
+            MainMenuController.instance.sound = true;
            
 
             soundFxButtonOn.SetActive(true);
             soundFxButtonOff.SetActive(false);
         }
-        else if (GamePreferences.GetIsSoundOn() == 1)
+        else if (MainMenuController.instance.sound == true)
         {
-            GamePreferences.SetIsSoundOn(0);
+            MainMenuController.instance.sound = false;
         
             soundFxButtonOn.SetActive(false);
             soundFxButtonOff.SetActive(true);

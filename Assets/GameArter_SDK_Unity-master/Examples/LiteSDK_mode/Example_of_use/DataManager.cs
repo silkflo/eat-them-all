@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class DataManager : MonoBehaviour {
 
+    
+
 	void Awake(){
 		// ADD LISTENERS FOR EXTERNAL EVENTS
 		Garter.I.AddExternalCbListener<string>(Garter.ExternalListener.SdkInitialized, GameArterSDKInitialized);
@@ -20,31 +22,26 @@ public class DataManager : MonoBehaviour {
 		DontDestroyOnLoad(transform.gameObject);
 	}
 
-	// SDK INITITALIZATION
-	private void GameArterSDKInitialized(string sdkError)
+
+
+
+    // SDK INITITALIZATION
+    private void GameArterSDKInitialized(string sdkError)
 	{
 		if (string.IsNullOrEmpty (sdkError)) {
 
-            /*
-			// User data are available
-			Debug.Log("UserNick: " + Garter.I.UserNick());
-			Debug.Log("UserLanguage: " + Garter.I.UserLang());
-			Debug.Log("UserCountry: " + Garter.I.UserCountry());
-			Debug.Log("LoggedUser?: " + Garter.I.IsLoggedUser());
-			Debug.Log("User Image:" + Garter.I.UserImage());
-			Debug.Log ("Game progress in game: " + Garter.I.UserProgress ());
-			Debug.Log ("User's game funds: " + Garter.I.LocalCurrency ());
-            */
 
-			// if your game is multiplayer, since now photon id and ver is available
-			if (Garter.I.GetMultiplayerNetwork() != null)
-			{
-				Debug.Log("PHOTON ID HERE");
-                Debug.Log(Garter.I.GetMultiplayerNetwork()[0] + " | "+ Garter.I.GetMultiplayerNetwork()[1]);
-				//string photonId = Garter.I.GetMultiplayerNetwork () [0]; - uncomment for using
-				//string photonVersion = Garter.I.GetMultiplayerNetwork () [1]; - uncomment for using
-				Debug.Log("Network authentication | " + Garter.I.NetworkAuthentication() + " / " + Garter.I.NetworkUniqueUserId());
+            if (Garter.I.GetData<int>("speedLevel") != 1 ||
+                Garter.I.GetData<int>("speedLevel") != 2 ||
+                Garter.I.GetData<int>("speedLevel") != 3)
+            {
+                Garter.I.PostData<int>("speedLevel", 1);
             }
+
+            MusicController.instance.PlayMusic(true);
+            MainMenuController.instance.sound = true;
+
+     
 				
 			// get value of a saved key
 			GetData();
@@ -119,7 +116,9 @@ public class DataManager : MonoBehaviour {
     // FUNCTIONAL EVENTS LIKE KILLS SHOULD BE SAVED AS EVENTS
     // ALL OTHER DATA YOU CAN SAVE IN YOUR OWN DEFINED STRUCTURE. SEE THE EXAMPLE BELOW. ALL DATA TYPES ARE SUPPORTED.
 
+ 
     public int speedLevel = MainMenuController.speedLevel;
+ 
 
     // DEFINE DATA STRUCTURE FORMAT FOR POSTING THE DATA TO SERVER
     [System.Serializable]
@@ -127,10 +126,13 @@ public class DataManager : MonoBehaviour {
     {
         
         public int someSpeedLevel;
+    
         
-        public JsonStructure(int speedLevel)
+        public JsonStructure( int speedLevel)
         {
+          
             this.someSpeedLevel = speedLevel;
+           
            
         }
 
@@ -163,7 +165,9 @@ public class DataManager : MonoBehaviour {
         // parse json data
         JsonStructure dataClass = Garter.I.FromJson<JsonStructure>(json);
         // overwrite default data by parsed data
+      
         speedLevel = dataClass.someSpeedLevel;
+    
         // myTypeData
     }
 
