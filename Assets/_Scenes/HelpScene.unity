@@ -354,6 +354,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasGuideHelp
       objectReference: {fileID: 0}
+    - target: {fileID: 5607312440220740640, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607312440333600104, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1011434669050776862, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -499,6 +509,57 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1378894399}
+    - target: {fileID: 5607312440333600107, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607312440333600107, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607312440333600107, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607312440342797582, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -606.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607312440342797582, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 710.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607312440342797582, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 505.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607312440342797582, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 62.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607312440342797569, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_Text
+      value: 'You can''t lose when a bomb blow up and the star is yellow displaying
+        the amount of insects out
+
+
+
+
+
+        +10 points per bomb
+
+        +5 points per insect out
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04a5f2657d75b2e438cd9aa2fedcf853, type: 3}
 --- !u!114 &5784743171782967922 stripped

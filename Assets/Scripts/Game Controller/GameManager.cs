@@ -69,9 +69,9 @@ public class GameManager : MonoBehaviour
         
             
 
-            GamePreferences.SetFirstTimeGamePlay(0);
+            //GamePreferences.SetFirstTimeGamePlay(0);
 
-            PlayerPrefs.SetInt("Game Initialized", 123);  //giving a key to just use that condition a the first start of the game
+          //  PlayerPrefs.SetInt("Game Initialized", 123);  //giving a key to just use that condition a the first start of the game
 
             
 

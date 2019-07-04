@@ -31,7 +31,7 @@ public class MainMenuController : MonoBehaviour
     private int fadeTime = 2;
 
     public static int speedLevel;
-
+    [HideInInspector]
     public bool music, sound;
 
     private void Awake()
@@ -72,6 +72,7 @@ public class MainMenuController : MonoBehaviour
         GameManager.instance.gameRestarted = true;
         AudioManager.instance.ClickStartSound();
         fromMainMenu = true;
+        SpawnSecurity.timeElapsed = 0f;
         SceneManager.LoadScene(TagManager.FROG_SCENE);
         
     }
@@ -81,6 +82,13 @@ public class MainMenuController : MonoBehaviour
     {
          AudioManager.instance.ClickMenuSound();
         Garter.I.OpenSdkWindow("badge");
+    }
+
+
+    public void LeaderBoardMenu()
+    {
+        AudioManager.instance.ClickMenuSound();
+        Garter.I.ShowLeaderboardUI();
     }
 
     //HELP

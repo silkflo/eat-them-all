@@ -280,8 +280,11 @@ public class GamePlayController : MonoBehaviour
         
     }
 
-
-
+    public void LeaderBoardMenu()
+    {
+        AudioManager.instance.ClickMenuSound();
+        Garter.I.ShowLeaderboardUI();
+    }
 
 
     //DISPLAY SCORE
@@ -310,16 +313,7 @@ public class GamePlayController : MonoBehaviour
             gameSlowIcon.SetActive(true);
             gameNormalIcon.SetActive(false);
             gameFastIcon.SetActive(false);
-
-       //    choiceSlowIcon.SetActive(false);
-       //    choiceNormalIcon.SetActive(true);
-       //    choiceFastIcon.SetActive(true);
-       //
-       //    choiceSlowIconActivated.SetActive(true);
-       //    choiceNormalIconActivated.SetActive(false);
-       //    choiceFastIconActivated.SetActive(false);
-
-
+  
         }
         else if (Garter.I.GetData<int>("speedLevel") == 2)
         {
@@ -327,30 +321,12 @@ public class GamePlayController : MonoBehaviour
             gameNormalIcon.SetActive(true);
             gameFastIcon.SetActive(false);
 
-         //  choiceSlowIcon.SetActive(true);
-         //  choiceNormalIcon.SetActive(false);
-         //  choiceFastIcon.SetActive(true);
-         //
-         //  choiceSlowIconActivated.SetActive(false);
-         //  choiceNormalIconActivated.SetActive(true);
-         //  choiceFastIconActivated.SetActive(false);
-
-
         }
         else if (Garter.I.GetData<int>("speedLevel") == 3)
         {
            gameSlowIcon.SetActive(false);
            gameNormalIcon.SetActive(false);
            gameFastIcon.SetActive(true);
-
-        //    choiceSlowIcon.SetActive(true);
-        //    choiceNormalIcon.SetActive(true);
-        //    choiceFastIcon.SetActive(false);
-        //
-        //    choiceSlowIconActivated.SetActive(false);
-        //    choiceNormalIconActivated.SetActive(false);
-        //    choiceFastIconActivated.SetActive(true);
-        //
 
         }
     } 
@@ -616,19 +592,21 @@ public class GamePlayController : MonoBehaviour
 
     public void GameFirstStart()
     {
-        if (GamePreferences.GetFirstTimeGamePlay() == 0)
+        
+        if (Garter.I.GetData<bool>("help") == false)
         {
            
             guideOnStart = true;
-            GamePreferences.SetFirstTimeGamePlay(1);
+            Garter.I.PostData<bool>("help", true);
             SceneManager.LoadScene(TagManager.HELP_SCENE);
             print("1st start :  " + GamePreferences.GetFirstTimeGamePlay());
 
-        } else if(GamePreferences.GetFirstTimeGamePlay() == 1)
+        } else if(Garter.I.GetData<bool>("help") == true)
         {
             guideOnStart = false;
             AudioManager.instance.LetsGoSound();
         }
+        
     }
   
 

@@ -9,11 +9,14 @@ public class SpawnSecurity : MonoBehaviour
     static public int spawnSecurityTime ; //250
 
     private bool newObject;
-   
 
-   
+    private void Awake()
+    {
+        spawnSecurityTime = 500;
+    }
 
-     void Update()
+
+    void Update()
      {
         
 /*
@@ -28,11 +31,12 @@ public class SpawnSecurity : MonoBehaviour
             spawnSecurityTime = 500;
         }
 */
-        print("SpawnTime = " + spawnSecurityTime);
+       
 
         if (newObject == true || Time.deltaTime == 0 || timeElapsed>500)
         {
             timeElapsed = 0f;
+            print("SpawnTime = " + spawnSecurityTime);
         }
         else
         {
