@@ -15,7 +15,11 @@ public class SpawnFood : MonoBehaviour
 
     public GameObject[] foods;
 
-    
+    [HideInInspector]
+    public int nextFoodToSpawn;
+    private int foodToSpawn;
+
+   
 
     void Awake()
     {
@@ -26,8 +30,9 @@ public class SpawnFood : MonoBehaviour
 
     void Start()
     {
-
-        StartSpawningFood();
+        Instantiate(foods[Random.Range(0, foods.Length)],
+            new Vector3(startPositionFoodX, startPositionFoodY, 0f), Quaternion.identity);
+        nextFoodToSpawn = Random.Range(0, foods.Length);
 
     }
      
@@ -51,11 +56,21 @@ public class SpawnFood : MonoBehaviour
 
         EventGA.instance.EatInsectEvent(scoreBySpawn);
 
-        Instantiate(foods[Random.Range(0, foods.Length)],
+       foodToSpawn = nextFoodToSpawn;
+
+       
+        // display the photo
+
+        Instantiate(foods[foodToSpawn],
         new Vector3(startPositionFoodX, startPositionFoodY, 0f), Quaternion.identity);
+
+       
+
+        nextFoodToSpawn = Random.Range(0, foods.Length);
+        print("Next FOOD : " + nextFoodToSpawn);
     }
 
-   
+
 
 
 }

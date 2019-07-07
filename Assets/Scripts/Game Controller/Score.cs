@@ -58,10 +58,7 @@ public class Score : MonoBehaviour
        // GameObject.Find("DataManager").GetComponent<DataManager>().PostData();
        // ScoreEvent(totalScore);
 
-        if (Lose.gameOver == true)
-        {
-             GameManager.instance.CheckGameStatus(totalScore, currentTime);
-        }
+        
 
         if (GameManager.instance != null)
         {

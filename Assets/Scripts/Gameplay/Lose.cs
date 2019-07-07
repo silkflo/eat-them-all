@@ -44,7 +44,7 @@ public class Lose : MonoBehaviour
             print("GAME OVER by food!!!");
             gameOver = true;
             AudioManager.instance.GameOverSound();
-            GameManager.instance.CheckGameStatus(Score.totalScore, Score.currentTime);
+           
 
 
         }
@@ -68,7 +68,7 @@ public class Lose : MonoBehaviour
 
     IEnumerator CanLoseTiming()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(6f);
 
         if(canLose == true)
         {

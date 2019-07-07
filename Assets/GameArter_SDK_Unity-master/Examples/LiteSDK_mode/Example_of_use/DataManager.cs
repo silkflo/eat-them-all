@@ -50,7 +50,8 @@ public class DataManager : MonoBehaviour {
                 print("set help true");
             }
             */
-            MusicController.instance.PlayMusic(true);
+
+            
             MainMenuController.instance.sound = true;
 
            // ClearDataFromKey();

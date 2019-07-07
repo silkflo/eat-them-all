@@ -17,9 +17,10 @@ public class GamePlayController : MonoBehaviour
                         gameSlowIcon, gameNormalIcon,gameFastIcon, //game view
                         selectSpeedPanel,                //select view
                         choiceSlowIcon,choiceSlowIconActivated, choiceNormalIcon, choiceNormalIconActivated, choiceFastIcon, choiceFastIconActivated,
-                        starOn, starOff;
+                        starOn, starOff,
+                        scarabe,bomb, dragonfly, fly, worm;
 
-    public GameObject pausePanel, blockButtonPanel;
+    public GameObject pausePanel;
 
     
     public Animator gameOverAnim, pauseAnim,fiveScoreAnim,greatAnim, achievementAnimPanel;
@@ -94,6 +95,7 @@ public class GamePlayController : MonoBehaviour
         PausePanelTouchControl();
         ComboDisplay();
         DisplayStar();
+        DisplayNextItem();
 
 
         if (Input.GetKeyDown(KeyCode.M))
@@ -118,7 +120,7 @@ public class GamePlayController : MonoBehaviour
 
         if (pausePanel.activeSelf == false || selectSpeedPanel.activeSelf == true)
         {
-            if ( gameOverPanel.activeSelf == false  && AchievementManager.Instance.achievementMenu.activeSelf == false)
+            if ( gameOverPanel.activeSelf == false)
             {
                 if(selectSpeedPanel.activeSelf== true)
                 {
@@ -156,22 +158,19 @@ public class GamePlayController : MonoBehaviour
         StartCoroutine(TimeScaleDelay());
         StartCoroutine(DeativatePausePanel());
 
-        if(AchievementManager.Instance.achievementMenu.activeSelf == true)
+
+        IEnumerator TimeScaleDelay()
         {
-            achievementAnimPanel.SetBool(TagManager.ACHIEVEMENT_FADE_PARAMETER, false);
+            yield return new WaitForSecondsRealtime(1f);
+         
+            Time.timeScale = 1f;
+
         }
 
-        
-     
-    }
-
-    IEnumerator TimeScaleDelay()
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        AchievementManager.Instance.achievementMenu.SetActive(false);
-        Time.timeScale = 1f;
 
     }
+
+
 
 
     IEnumerator DeativatePausePanel()
@@ -183,7 +182,6 @@ public class GamePlayController : MonoBehaviour
     public void PauseGameByEsc()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && Lose.gameOver != true 
-            && AchievementManager.Instance.achievementMenu.activeSelf == false
              && pausePanel.activeSelf == false)
         {
 
@@ -246,7 +244,7 @@ public class GamePlayController : MonoBehaviour
     {
         if (pausePanel.activeSelf == true)
         {
-            if (Input.GetKeyDown(KeyCode.Return) )
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                
                 ResumeGame();
@@ -269,6 +267,54 @@ public class GamePlayController : MonoBehaviour
         }
     }
 
+    //DISPLAY NEXT ITEM
+    public void DisplayNextItem()
+    {
+        if(SpawnFood.instance.nextFoodToSpawn <= 6)
+        {
+            scarabe.SetActive(false);
+            bomb.SetActive(true);
+            dragonfly.SetActive(false);
+            fly.SetActive(false);
+            worm.SetActive(false);
+        }
+        else if(SpawnFood.instance.nextFoodToSpawn >=7 && SpawnFood.instance.nextFoodToSpawn <= 8)
+        {
+            scarabe.SetActive(false);
+            bomb.SetActive(false);
+            dragonfly.SetActive(false);
+            fly.SetActive(true);
+            worm.SetActive(false);
+        }
+        else if (SpawnFood.instance.nextFoodToSpawn >= 9 && SpawnFood.instance.nextFoodToSpawn <= 11)
+        {
+            scarabe.SetActive(false);
+            bomb.SetActive(false);
+            dragonfly.SetActive(false);
+            fly.SetActive(false);
+            worm.SetActive(true);
+        }
+        else if (SpawnFood.instance.nextFoodToSpawn >= 12 && SpawnFood.instance.nextFoodToSpawn <= 14)
+        {
+            scarabe.SetActive(true);
+            bomb.SetActive(false);
+            dragonfly.SetActive(false);
+            fly.SetActive(false);
+            worm.SetActive(false);
+        }
+        else if (SpawnFood.instance.nextFoodToSpawn >= 15)
+        {
+            scarabe.SetActive(false);
+            bomb.SetActive(false);
+            dragonfly.SetActive(true);
+            fly.SetActive(false);
+            worm.SetActive(false);
+        }
+
+
+
+
+    }
  
 
     //SHOW ACHIEVEMENT
@@ -343,13 +389,10 @@ public class GamePlayController : MonoBehaviour
                       Time.timeScale = 1f;
                       panelOnCantMove = false;
                       SpawnSecurity.timeElapsed = 0f;
-                      AchievementManager.Instance.achievementMenu.SetActive(false);
+                     
                  }
 
-                 if(AchievementManager.Instance.achievementMenu.activeSelf== true)
-                 {
-                AchievementPanel();
-                 }
+                
 
 
             AudioManager.instance.ClickMenuSound();
@@ -492,8 +535,7 @@ public class GamePlayController : MonoBehaviour
 
             Time.timeScale = 0f;
 
-            if (AchievementManager.Instance.achievementMenu.activeSelf == false)
-            {
+          
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
 
@@ -512,7 +554,6 @@ public class GamePlayController : MonoBehaviour
                 {
                     QuitGame(TagManager.MAIN_MENU_SCENE);
                 }
-            }
         }
     }
 

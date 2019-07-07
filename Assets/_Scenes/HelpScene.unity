@@ -364,6 +364,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5607312440561462897, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607312441629110171, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1011434669050776862, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -547,9 +557,7 @@ PrefabInstance:
     - target: {fileID: 5607312440342797569, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
         type: 3}
       propertyPath: m_Text
-      value: 'You can''t lose when a bomb blow up and the star is yellow displaying
-        the amount of insects out
-
+      value: 'When the bomb blows up, the star becomes yellow and you can''t lose
 
 
 
@@ -559,6 +567,21 @@ PrefabInstance:
         +5 points per insect out
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607312440632591988, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607312440632591991, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_Text
+      value: Survive without any insects coming out
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607312440084439014, guid: 04a5f2657d75b2e438cd9aa2fedcf853,
+        type: 3}
+      propertyPath: m_Text
+      value: Use space to fall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04a5f2657d75b2e438cd9aa2fedcf853, type: 3}
