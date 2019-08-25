@@ -39,12 +39,14 @@ public class MusicController : MonoBehaviour
         if (play == true)
         {
             audioSource.Play();
-          
+            MainMenuController.music = 1;
+           
         }
         else
         {
             audioSource.Stop();
-            
+            MainMenuController.music = 0;
+        
         }
     }
 

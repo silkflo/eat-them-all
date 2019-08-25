@@ -24,8 +24,10 @@ public class SpawnFood : MonoBehaviour
     void Awake()
     {
         MakeInstance();
+        scoreBySpawn = 1;
 
-       
+
+
     }
 
     void Start()

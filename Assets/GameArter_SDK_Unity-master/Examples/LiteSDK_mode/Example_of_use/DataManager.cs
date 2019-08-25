@@ -51,16 +51,22 @@ public class DataManager : MonoBehaviour {
             }
             */
 
+           
+                Garter.I.PostData<int>("music", 1);
             
-            MainMenuController.instance.sound = true;
+          
+                Garter.I.PostData<int>("sound", 1);
+            
+               
 
-           // ClearDataFromKey();
+            // ClearDataFromKey();
 
 
             // get value of a saved key
             GetData();
 
-		} else {
+		}
+        else {
 			Debug.LogError("ERR: " + sdkError);
 			new HGarterGui().IlustrateBrowserBox("error", "Ops, something went wrong. We apologize");
 		}
@@ -112,7 +118,7 @@ public class DataManager : MonoBehaviour {
 		});
 			
 		// Own data type (defined by Class)
-		JsonStructure complexData = new JsonStructure (speedLevel,help);
+		JsonStructure complexData = new JsonStructure (speedLevel,help,music, sound);
 		// WARNING - NEED TO CONVERT TO STRING
 		// REASON: THIS WOULD THROW ERROR FOR USERS PLAYING AS GUESTS. THE FORMAT IS BROKEN ONCE IS SAVED IN PLAYEPREFS. THEREFORE WE RECOMMEND TO USE CONVERSION TO STRING FOR ALL.
 		string complexDataString = Garter.I.ToJson(complexData); // own data types are not allowed for guests. Need to convert the data to string format
@@ -133,6 +139,8 @@ public class DataManager : MonoBehaviour {
  
     public int speedLevel = MainMenuController.speedLevel;
     public bool help;
+    public int music;
+    public int sound;
  
 
     // DEFINE DATA STRUCTURE FORMAT FOR POSTING THE DATA TO SERVER
@@ -142,13 +150,17 @@ public class DataManager : MonoBehaviour {
         
         public int someSpeedLevel;
         public bool someHelp;
+        public int someMusic;
+        public int someSound;
     
         
-        public JsonStructure( int speedLevel, bool help)
+        public JsonStructure( int speedLevel, bool help, int music, int sound)
         {
           
             this.someSpeedLevel = speedLevel;
             this.someHelp = help;
+            this.someMusic = music;
+            this.someSound = sound;
            
            
         }
@@ -171,7 +183,7 @@ public class DataManager : MonoBehaviour {
     // FUNCTION FOR POSTING THE DATA TO SERVER
 	public void PostDataInMeantime(string emptyString = null) // potreba prepracovat
     {
-        string dataToBeSaved = Garter.I.ToJson(new JsonStructure(speedLevel, help));
+        string dataToBeSaved = Garter.I.ToJson(new JsonStructure(speedLevel, help, music, sound));
         Garter.I.SetIndividualGameData<string>("default",dataToBeSaved);
     }
 		
@@ -266,6 +278,18 @@ public class DataManager : MonoBehaviour {
 
         // with callback
         Garter.I.ClearDataKey<int>("speedLevel", (error, response) => { });
+
+        // without callback
+        Garter.I.ClearDataKey<int>("music");
+
+        // with callback
+        Garter.I.ClearDataKey<int>("music", (error, response) => { });
+
+        // without callback
+        Garter.I.ClearDataKey<int>("sound");
+
+        // with callback
+        Garter.I.ClearDataKey<int>("sound", (error, response) => { });
     }
     
 

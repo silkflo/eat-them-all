@@ -26,8 +26,9 @@ public class GameManager : MonoBehaviour
     {
         MakeSingleton();
         //Delete all save data in game
-       // PlayerPrefs.DeleteAll();
-
+        // PlayerPrefs.DeleteAll();
+     //   MainMenuController.instance.sound = true;
+       // MainMenuController.instance.music = true;
       
     }
 
@@ -38,12 +39,15 @@ public class GameManager : MonoBehaviour
       
         MusicController.instance.PlayMusic(true);
 
+       // MainMenuController.instance.InitializeMusicButtonOnStart(true);
+       // MainMenuController.instance.InitializeSoundButtonOnStart(true);
+      //  MainMenuController.instance.PlayMusic();
     }
 
     void Update()
     {
 
-        
+        print("sound : " + MainMenuController.sound + " Music : " + MainMenuController.music);
 
     }
 

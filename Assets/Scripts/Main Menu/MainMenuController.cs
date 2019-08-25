@@ -32,21 +32,27 @@ public class MainMenuController : MonoBehaviour
 
     public static int speedLevel;
     [HideInInspector]
-    public bool music, sound;
+    public static int music, sound;
 
     private void Awake()
     {
         MakeInstance();
+
+
+     
+
     }
 
     void Start()
     {
-        music = true;
-        sound = true;
-        SetScoreBasedOnDifficulty();
        
-        InitializeMusicButtonOnStart();
-        InitializeSoundButtonOnStart();
+     //   SetScoreBasedOnDifficulty();
+       // music = true;
+      // sound = true;
+       
+
+       // PlayMusic();
+      //  PlaySound();
     }
 
     void Update()
@@ -54,7 +60,8 @@ public class MainMenuController : MonoBehaviour
         print("level Mode : " + Garter.I.GetData<int>("speedLevel"));
 
         SetInitialDifficulty();
-
+        InitializeMusicButtonOnStart();
+        InitializeSoundButtonOnStart();
     }
 
   
@@ -187,15 +194,16 @@ public class MainMenuController : MonoBehaviour
     }
 
     //SOUND
-    void InitializeMusicButtonOnStart()
+   public  void InitializeMusicButtonOnStart()
     {
-        if (music == true)
+
+        if (Garter.I.GetData<int>("music") == 1)
         {
             musicButtonOn.SetActive(true);
             musicButtonOff.SetActive(false);
 
         }
-        else if (music == false)
+        else if (Garter.I.GetData<int>("music") == 0)
         {
             musicButtonOn.SetActive(false);
             musicButtonOff.SetActive(true);
@@ -208,16 +216,18 @@ public class MainMenuController : MonoBehaviour
     public void PlayMusic()
     {
         AudioManager.instance.ClickMenuSound();
-        if (music == false)
+        if (Garter.I.GetData<int>("music") == 0)
         {
-            music = true;
+            music = 1;
+            Garter.I.PostData<int>("music", music);
             MusicController.instance.PlayMusic(true);
             musicButtonOn.SetActive(true);
             musicButtonOff.SetActive(false);
         }
-        else if (music == true)
+        else if (Garter.I.GetData<int>("music") == 1)
         {
-            music = false;
+            music = 0;
+            Garter.I.PostData<int>("music", music);
             MusicController.instance.PlayMusic(false);
             musicButtonOn.SetActive(false);
             musicButtonOff.SetActive(true);
@@ -226,16 +236,16 @@ public class MainMenuController : MonoBehaviour
     }
 
 
-    void InitializeSoundButtonOnStart()
+    public void InitializeSoundButtonOnStart()
     {
-        if (sound == true)
+        if (Garter.I.GetData<int>("sound") == 1)
         {
 
             soundFxButtonOn.SetActive(true);
             soundFxButtonOff.SetActive(false);
 
         }
-        else if (sound == false)
+        else if (Garter.I.GetData<int>("sound") == 0)
         {
 
             soundFxButtonOn.SetActive(false);
@@ -249,17 +259,17 @@ public class MainMenuController : MonoBehaviour
     public void PlaySound()
     {
         AudioManager.instance.ClickMenuSound();
-        if (sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
-            sound = true;
-         
+            sound = 1;
+            Garter.I.PostData<int>("sound", sound);
             soundFxButtonOn.SetActive(true);
             soundFxButtonOff.SetActive(false);
         }
-        else if (sound == true )
+        else if (Garter.I.GetData<int>("sound") == 1)
         {
-            sound = false;
-            
+            sound = 0;
+            Garter.I.PostData<int>("sound", sound);
             soundFxButtonOn.SetActive(false);
             soundFxButtonOff.SetActive(true);
         }

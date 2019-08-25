@@ -54,7 +54,7 @@ public  class AudioManager : MonoBehaviour
     public void ClickMenuSound()
     {
 
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             clickButtonAudioSource.Stop();
         }
@@ -66,7 +66,7 @@ public  class AudioManager : MonoBehaviour
 
     public void ClickHoverSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             buttonHoverAudioSource.Stop();
         }
@@ -78,7 +78,7 @@ public  class AudioManager : MonoBehaviour
 
     public void ClickStartSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             clickStartAudioSource.Stop();
         }
@@ -91,7 +91,7 @@ public  class AudioManager : MonoBehaviour
 
     public void ClickBackSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             clickBackAudioSource.Stop();
         }
@@ -105,7 +105,7 @@ public  class AudioManager : MonoBehaviour
 
     public void GameOverSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             gameOverAudioSource.Stop();
         }
@@ -117,7 +117,7 @@ public  class AudioManager : MonoBehaviour
 
     public void PauseSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             pauseAudioSource.Stop();
         }
@@ -129,7 +129,7 @@ public  class AudioManager : MonoBehaviour
 
     public void GreatSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             greatAudioSource.Stop();
         }
@@ -141,7 +141,7 @@ public  class AudioManager : MonoBehaviour
 
     public void AwesomeSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             awesomeAudioSource.Stop();
         }
@@ -153,7 +153,7 @@ public  class AudioManager : MonoBehaviour
 
     public void AmazingSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             amazingAudioSource.Stop();
         }
@@ -165,7 +165,7 @@ public  class AudioManager : MonoBehaviour
 
     public void ScarabeSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             scarabeAudioSource.Stop();
         }
@@ -177,7 +177,7 @@ public  class AudioManager : MonoBehaviour
 
     public void FlySound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             flyAudioSource.Stop();
         }
@@ -189,7 +189,7 @@ public  class AudioManager : MonoBehaviour
 
     public void DragonFlySound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             dragonFlyAudioSource.Stop();
         }
@@ -201,7 +201,7 @@ public  class AudioManager : MonoBehaviour
 
     public void WormSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             wormAudioSource.Stop();
         }
@@ -214,7 +214,7 @@ public  class AudioManager : MonoBehaviour
 
     public void DetonationSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             detonationAudioSource.Stop();
         }
@@ -230,7 +230,7 @@ public  class AudioManager : MonoBehaviour
     {
         int i = Random.Range(0, 4);
 
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
 
             explosionAudioSource[i].Stop();
@@ -246,7 +246,7 @@ public  class AudioManager : MonoBehaviour
 
     public void BombSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             bombAudioSource.Stop();
         }
@@ -258,7 +258,7 @@ public  class AudioManager : MonoBehaviour
 
     public void AchievementSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             achievementAudioSource.Stop();
         }
@@ -270,7 +270,7 @@ public  class AudioManager : MonoBehaviour
 
     public void FreeFallSound()
     {
-            if (MainMenuController.instance.sound == false)
+            if (Garter.I.GetData<int>("sound") == 0)
             {
             freeFallAudioSource.Stop();
             }
@@ -284,7 +284,7 @@ public  class AudioManager : MonoBehaviour
     {
        int i = Random.Range(0, 5);
 
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
          
                 turnAudioSource[i].Stop();
@@ -312,7 +312,7 @@ public  class AudioManager : MonoBehaviour
 
     public void LetsGoSound()
     {
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             letsGoAudioSource.Stop();
         }

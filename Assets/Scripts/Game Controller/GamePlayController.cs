@@ -62,24 +62,24 @@ public class GamePlayController : MonoBehaviour
         
 
 
-        if (MainMenuController.instance.music == false)
+        if (Garter.I.GetData<int>("music") == 0)
         {
             musicButtonOn.SetActive(false);
             musicButtonOff.SetActive(true);
         }
-        else if (MainMenuController.instance.sound == true)
+        else if (Garter.I.GetData<int>("music") == 1)
         {
             musicButtonOn.SetActive(true);
             musicButtonOff.SetActive(false);
         }
 
 
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
             soundFxButtonOn.SetActive(false);
             soundFxButtonOff.SetActive(true);
         }
-        else if (MainMenuController.instance.sound == true)
+        else if (Garter.I.GetData<int>("sound") == 1)
         {
             soundFxButtonOn.SetActive(true);
             soundFxButtonOff.SetActive(false);
@@ -561,16 +561,18 @@ public class GamePlayController : MonoBehaviour
     public void PlayMusic()
     {
         AudioManager.instance.ClickMenuSound();
-        if (MainMenuController.instance.music == false)
+        if (Garter.I.GetData<int>("music") == 0)
         {
-            MainMenuController.instance.music = true;
+            MainMenuController.music = 1;
+            Garter.I.PostData<int>("music", MainMenuController.music);
             MusicController.instance.PlayMusic(true);
             musicButtonOn.SetActive(true);
             musicButtonOff.SetActive(false);
         }
-        else if (MainMenuController.instance.music == true)
+        else if (Garter.I.GetData<int>("music") == 1)
         {
-            MainMenuController.instance.music = false;
+            MainMenuController.music = 0;
+            Garter.I.PostData<int>("music", MainMenuController.music);
             MusicController.instance.PlayMusic(false);
             musicButtonOn.SetActive(false);
             musicButtonOff.SetActive(true);
@@ -581,18 +583,19 @@ public class GamePlayController : MonoBehaviour
     public void PlaySound()
     {
         AudioManager.instance.ClickMenuSound();
-        if (MainMenuController.instance.sound == false)
+        if (Garter.I.GetData<int>("sound") == 0)
         {
-            MainMenuController.instance.sound = true;
-           
+            MainMenuController.sound = 1;
+            Garter.I.PostData<int>("sound", MainMenuController.sound);
 
             soundFxButtonOn.SetActive(true);
             soundFxButtonOff.SetActive(false);
         }
-        else if (MainMenuController.instance.sound == true)
+        else if (Garter.I.GetData<int>("sound") == 1)
         {
-            MainMenuController.instance.sound = false;
-        
+            MainMenuController.sound = 0;
+            Garter.I.PostData<int>("sound", MainMenuController.sound);
+
             soundFxButtonOn.SetActive(false);
             soundFxButtonOff.SetActive(true);
         }
